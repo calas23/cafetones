@@ -233,6 +233,10 @@
 }
 
 @media (min-width: 1024px) {
+  .home-universes {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .home-products {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
