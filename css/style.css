@@ -743,6 +743,114 @@ p {
 .delay-4 { transition-delay: 400ms; }
 
 /* ========================================================================
+   Formulaire CTA (partagé entre pages)
+   ======================================================================== */
+
+.cta-section {
+  position: relative;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-crema), transparent);
+  border-radius: 2px;
+}
+
+.cta-form {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-xl);
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-light);
+}
+
+.cta-form__title {
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.cta-form__subtitle {
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 3rem;
+}
+
+.form-success.active {
+  display: block;
+}
+
+.form-success__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background-color: rgba(90, 122, 58, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-success);
+}
+
+.form-success__icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* ========================================================================
+   Sticky CTA Mobile (partagé entre pages)
+   ======================================================================== */
+
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background-color: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-border-light);
+  box-shadow: 0 -4px 20px rgba(44, 24, 16, 0.08);
+  transform: translateY(100%);
+  transition: transform var(--transition-base);
+}
+
+.sticky-cta.visible {
+  transform: translateY(0);
+}
+
+.sticky-cta__inner {
+  display: flex;
+  gap: 0.5rem;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sticky-cta .btn {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 0.88rem;
+}
+
+/* ========================================================================
    Media Queries (mobile-first)
    ======================================================================== */
 
@@ -777,10 +885,18 @@ p {
     flex-direction: row;
     justify-content: space-between;
   }
+
+  .sticky-cta {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {
   .reassurance {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .cta-form {
+    padding: 4rem;
   }
 }
