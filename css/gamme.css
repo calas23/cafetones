@@ -1,0 +1,134 @@
+/* ========================================================================
+   TONES — Page Catalogue / Gamme
+   Complète style.css — ne le remplace pas
+   ======================================================================== */
+
+/* ========================================================================
+   Hero bandeau (en-tête de page)
+   ======================================================================== */
+
+.page-hero {
+  background-color: var(--color-cream-warm);
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.page-hero p {
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================================================
+   Navigation sticky par ancres
+   ======================================================================== */
+
+.gamme-nav {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 100;
+  background-color: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 0.75rem 0;
+}
+
+.gamme-nav__inner {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  scrollbar-width: none;
+}
+
+.gamme-nav__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.gamme-nav__link {
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 100px;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+  background-color: transparent;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.gamme-nav__link:hover {
+  background-color: var(--color-cream-dark);
+}
+
+.gamme-nav__link.active {
+  background-color: var(--color-crema);
+  color: var(--color-white);
+}
+
+/* ========================================================================
+   Sections catalogue
+   ======================================================================== */
+
+.gamme-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  scroll-margin-top: 120px;
+}
+
+.gamme-section:nth-child(even) {
+  background-color: var(--color-cream-warm);
+}
+
+.gamme-section__intro {
+  margin-bottom: 2rem;
+}
+
+.gamme-section__intro h2 {
+  margin-bottom: 0.25rem;
+}
+
+.gamme-section__intro p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+/* ========================================================================
+   Tables responsives
+   ======================================================================== */
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--border-radius-lg);
+}
+
+.table-wrapper .pricing-table {
+  min-width: 500px;
+}
+
+/* Note prix */
+.pricing-global-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: 0;
+}
+
+/* ========================================================================
+   Media Queries
+   ======================================================================== */
+
+@media (min-width: 768px) {
+  .gamme-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
