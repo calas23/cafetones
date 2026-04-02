@@ -743,6 +743,23 @@ p {
 .delay-4 { transition-delay: 400ms; }
 
 /* ========================================================================
+   Hero bandeau de page (partagé entre pages)
+   ======================================================================== */
+
+.page-hero {
+  background-color: var(--color-cream-warm);
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.page-hero p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================================================
    Formulaire CTA (partagé entre pages)
    ======================================================================== */
 

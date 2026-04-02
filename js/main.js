@@ -90,7 +90,7 @@ function initScrollAnimations() {
 
 function initStickyCTA() {
   var stickyCta = document.querySelector('.sticky-cta');
-  var heroSection = document.querySelector('.hero');
+  var heroSection = document.querySelector('.hero') || document.querySelector('.home-hero');
   if (!stickyCta || !heroSection) return;
 
   var observer = new IntersectionObserver(function (entries) {
