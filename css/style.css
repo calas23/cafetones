@@ -868,6 +868,30 @@ p {
 }
 
 /* ========================================================================
+   Images produit (partagé entre pages)
+   ======================================================================== */
+
+.home-product-card__image img,
+.chr-product-card__image img,
+.part-product-card__image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background-color: var(--color-cream-warm);
+  padding: 1rem;
+}
+
+.table-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 4px;
+  background-color: var(--color-cream-warm);
+  padding: 4px;
+  vertical-align: middle;
+}
+
+/* ========================================================================
    Media Queries (mobile-first)
    ======================================================================== */
 
