@@ -1,0 +1,265 @@
+/* ========================================================================
+   TONES — Page À propos
+   Complète style.css — ne le remplace pas
+   ======================================================================== */
+
+/* ========================================================================
+   Hero bandeau
+   ======================================================================== */
+
+.page-hero {
+  background-color: var(--color-cream-warm);
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.page-hero p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================================================
+   Notre histoire — layout 2 cols
+   ======================================================================== */
+
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-story__text p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.about-story__visual img {
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+}
+
+.about-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--color-crema);
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.about-quote span {
+  display: block;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+}
+
+/* ========================================================================
+   Torréfacteurs partenaires
+   ======================================================================== */
+
+.about-roasters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.about-roaster-card {
+  overflow: hidden;
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-roaster-card__header {
+  background-color: var(--color-espresso);
+  padding: 2rem;
+}
+
+.about-roaster-card__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-cream);
+}
+
+.about-roaster-card__since {
+  font-size: 0.88rem;
+  color: var(--color-crema-light);
+  margin-top: 0.25rem;
+}
+
+.about-roaster-card__body {
+  background-color: var(--color-white);
+  padding: 2rem;
+}
+
+.about-roaster-card__body p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.about-roaster-card__body h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-blend-list {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.about-blend-item {
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border-light);
+  line-height: 1.5;
+}
+
+.about-blend-item strong {
+  color: var(--color-espresso);
+}
+
+/* ========================================================================
+   Certifications et médailles
+   ======================================================================== */
+
+.about-certs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.about-cert-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.about-cert-card:hover {
+  border-color: var(--color-crema);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-cert-card__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(200, 149, 108, 0.1);
+  border-radius: 50%;
+  color: var(--color-crema-dark);
+}
+
+.about-cert-card__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.about-cert-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.about-cert-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ========================================================================
+   Torréfaction à Air Pur — layout 2 cols
+   ======================================================================== */
+
+.about-airpur {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-airpur__text p {
+  color: var(--color-cream-dark);
+  line-height: 1.7;
+}
+
+.about-airpur__card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-xl);
+  padding: 2.5rem;
+}
+
+.about-airpur__trait {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-airpur__trait:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.about-airpur__trait:first-child {
+  padding-top: 0;
+}
+
+.about-airpur__trait-label {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-crema-light);
+  margin-bottom: 0.25rem;
+}
+
+.about-airpur__trait-desc {
+  font-size: 0.88rem;
+  color: var(--color-cream-dark);
+  line-height: 1.5;
+}
+
+/* ========================================================================
+   Media Queries
+   ======================================================================== */
+
+@media (min-width: 640px) {
+  .about-certs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-roasters {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .about-story {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .about-certs {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .about-airpur {
+    grid-template-columns: 3fr 2fr;
+  }
+}
