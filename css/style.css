@@ -868,6 +868,51 @@ p {
 }
 
 /* ========================================================================
+   Bloc CTA téléphone (partagé entre pages)
+   ======================================================================== */
+
+.phone-cta-block {
+  text-align: center;
+  background-color: var(--color-cream-warm);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem 2rem;
+  margin: 0 auto 1.5rem;
+  max-width: 400px;
+}
+
+.phone-cta-block__label {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.phone-cta-block__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-crema-dark);
+  margin-top: 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.phone-cta-block__number:hover {
+  color: var(--color-crema);
+}
+
+.phone-cta-block__hours {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  margin-top: 0.25rem;
+}
+
+.form-separator {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================================================
    Images produit (partagé entre pages)
    ======================================================================== */
 
