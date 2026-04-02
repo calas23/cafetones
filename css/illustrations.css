@@ -1,0 +1,57 @@
+/* ========================================================================
+   TONES — Illustrations decoratives hand-drawn
+   ======================================================================== */
+
+.illustration {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  color: var(--color-espresso);
+  opacity: 0.12;
+  line-height: 0;
+}
+
+.illustration--accent {
+  color: var(--color-crema);
+  opacity: 0.25;
+}
+
+.illustration svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Positionnement */
+.illustration--right {
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.illustration--left {
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.illustration--corner-br {
+  right: 20px;
+  bottom: 20px;
+}
+
+.illustration--corner-bl {
+  left: 20px;
+  bottom: 20px;
+}
+
+/* Tailles */
+.illustration--sm svg { width: 80px; }
+.illustration--md svg { width: 120px; }
+.illustration--lg svg { width: 160px; }
+
+/* Masquer sur mobile */
+@media (max-width: 768px) {
+  .illustration {
+    display: none;
+  }
+}
