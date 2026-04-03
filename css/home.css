@@ -14,7 +14,7 @@
   align-items: center;
   padding-top: calc(var(--header-height) + 3rem);
   padding-bottom: 4rem;
-  background-image: url('https://images.unsplash.com/photo-1447933601403-56dc2df531ed?w=1400&q=80');
+  background-image: url('../img/hero-accueil.jpg');
   background-size: cover;
   background-position: center;
 }

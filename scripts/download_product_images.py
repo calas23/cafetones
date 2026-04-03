@@ -79,8 +79,8 @@ IMAGES = {
     "origin-ethiopie": f"{BASE}/2020/08/prodotti_genovese43-Large.jpeg",
     "origin-kenya": f"{BASE}/2020/08/Kenya.webp",
     "origin-honduras": f"{BASE}/2020/08/prodotti_genovese132-Large.jpeg",
-    "origin-perou": "URL_A_REMPLIR",
-    "origin-mexique-decaf": "URL_A_REMPLIR",
+    "origin-perou": f"{BASE}/2021/04/Mokastyle-SantIgnazio-bio-grani-250g.webp",
+    "origin-mexique-decaf": f"{BASE}/2017/11/Mokastyle-Altura-Dek-Bio-grani-250g.webp",
 }
 
 

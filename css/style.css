@@ -251,6 +251,20 @@ p {
   color: var(--color-crema);
 }
 
+.header__logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  filter: brightness(0);
+}
+
+.footer__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
 .header__nav {
   display: none;
   gap: 2rem;
