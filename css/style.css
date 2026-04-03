@@ -980,6 +980,30 @@ p {
 }
 
 /* ========================================================================
+   Breadcrumb / Fil d'Ariane
+   ======================================================================== */
+
+.breadcrumb {
+  padding: calc(var(--header-height) + 1rem) 0 0;
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.breadcrumb a {
+  color: var(--color-text-light);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-crema-dark);
+}
+
+.breadcrumb__separator {
+  margin: 0 0.5rem;
+  opacity: 0.5;
+}
+
+/* ========================================================================
    Media Queries (mobile-first)
    ======================================================================== */
 

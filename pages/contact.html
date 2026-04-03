@@ -77,9 +77,28 @@
     <a href="cafe-bureau-entreprise.html#degustation" class="btn btn--primary" style="margin-top: auto;">Dégustation gratuite</a>
     <a href="tel:+33662119748" class="mobile-menu__phone" data-location="mobile-menu" aria-label="Appelez-nous">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      06 62 11 97 48
+      <span class="phone-text">06 62 11 97 48</span>
     </a>
   </div>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <div class="container">
+        <a href="/">Accueil</a>
+        <span class="breadcrumb__separator">›</span>
+        Contact
+      </div>
+    </nav>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cafetones.fr/"},
+        {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://cafetones.fr/pages/contact.html"}
+      ]
+    }
+    </script>
 
   <main>
 
@@ -90,7 +109,7 @@
       <div class="container">
         <span class="badge badge--gold">Parlons café</span>
         <h1 style="margin-top: 1rem;">Contactez-nous</h1>
-        <p class="text-muted" style="margin-top: 0.75rem;">Une question, un besoin en café pour vos locaux ? On vous répond sous 24h.</p>
+        <p class="text-muted" style="margin-top: 0.75rem;">Une question, un besoin en café pour vos locaux ? Nous vous répondons sous 24h.</p>
       </div>
     </section>
 
@@ -104,7 +123,7 @@
           <!-- Colonne gauche — Formulaire -->
           <div class="contact-form-card animate-on-scroll">
             <h2>Envoyez-nous un message</h2>
-            <p>Remplissez le formulaire ci-dessous, on vous recontacte rapidement.</p>
+            <p>Remplissez le formulaire ci-dessous, nous vous recontactons rapidement.</p>
 
             <form data-form="contact-page" novalidate>
               <div class="form-content">
@@ -201,7 +220,7 @@
             </div>
             <div class="contact-info-line">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:+33662119748" data-location="contact-page">06 62 11 97 48</a>
+              <a href="tel:+33662119748" data-location="contact-page"><span class="phone-text">06 62 11 97 48</span></a>
             </div>
             <div class="contact-info-line">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -213,7 +232,7 @@
             </div>
 
             <h3>Zone de livraison</h3>
-            <p>Nous livrons exclusivement en Île-de-France (Paris et tous les départements 77, 78, 91, 92, 93, 94, 95). La livraison est gratuite, du lundi au vendredi.</p>
+            <p>Nous livrons exclusivement en Île-de-France (Paris et tous les départements 77, 78, 91, 92, 93, 94, 95). Livraison du lundi au vendredi.</p>
 
             <h3>Dégustation gratuite</h3>
             <p>Vous souhaitez goûter nos cafés avant de commander ? Notre gérante se déplace dans vos locaux avec une sélection de mélanges. C'est gratuit et sans engagement.</p>
@@ -254,7 +273,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">
-              <div class="faq-answer__inner">Nous livrons exclusivement en Île-de-France : Paris et tous les départements limitrophes (77, 78, 91, 92, 93, 94, 95). La livraison est gratuite, du lundi au vendredi.</div>
+              <div class="faq-answer__inner">Nous livrons exclusivement en Île-de-France : Paris et tous les départements limitrophes (77, 78, 91, 92, 93, 94, 95). Livraison du lundi au vendredi.</div>
             </div>
           </div>
 
@@ -284,7 +303,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">
-              <div class="faq-answer__inner">Oui. Notre technicien partenaire vous installe une machine professionnelle adaptée à votre effectif. Son coût est financé par votre consommation de café — 0 € d'investissement initial. On vous explique tout lors de la dégustation.</div>
+              <div class="faq-answer__inner">Si besoin, notre partenaire DepanResto assure la vente, l'installation et la maintenance de votre machine à café professionnelle. Nous vous expliquons tout lors de la dégustation.</div>
             </div>
           </div>
 
@@ -325,7 +344,7 @@
           <div class="footer__logo">
             <img src="../img/logo-tones.svg" alt="TONES — Café Italien" class="footer__logo-img">
           </div>
-          <p class="footer__desc">Distributeur exclusif La Genovese France Nord. Café italien premium livré en Île-de-France depuis plus de 20 ans.</p>
+          <p class="footer__desc">Distributeur exclusif La Genovese France Nord. Café italien premium livré en Paris et Île-de-France depuis plus de 25 ans.</p>
         </div>
 
         <div>
@@ -358,7 +377,7 @@
           </div>
           <div class="footer__contact-line">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+33662119748" data-location="footer">06 62 11 97 48</a>
+            <a href="tel:+33662119748" data-location="footer"><span class="phone-text">06 62 11 97 48</span></a>
           </div>
           <div class="footer__contact-line">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
