@@ -116,11 +116,12 @@ function initStickyCTA() {
 function renderPhoneNumbers() {
   document.querySelectorAll('.phone-text').forEach(function (el) {
     var isLarge = el.classList.contains('phone-text--lg');
-    var fontSize = isLarge ? 24 : 14;
-    var height = isLarge ? '1.4em' : '1em';
-    var viewWidth = isLarge ? 210 : 140;
-    var yPos = isLarge ? 22 : 15;
-    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + viewWidth + ' ' + (fontSize + 6) + '" style="height:' + height + ';vertical-align:middle;display:inline-block;width:auto;"><text x="0" y="' + yPos + '" fill="currentColor" font-family="\'DM Sans\',sans-serif" font-size="' + fontSize + '" font-weight="600">06 62 11 97 48</text></svg>';
+    var fontSize = isLarge ? 26 : 16;
+    var height = isLarge ? '1.8em' : '1.2em';
+    var viewWidth = isLarge ? 220 : 160;
+    var viewHeight = isLarge ? 34 : 22;
+    var yPos = isLarge ? 26 : 17;
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + viewWidth + ' ' + viewHeight + '" style="height:' + height + ';vertical-align:middle;display:inline-block;width:auto;"><text x="0" y="' + yPos + '" fill="currentColor" font-family="\'DM Sans\',sans-serif" font-size="' + fontSize + '" font-weight="600">06 62 11 97 48</text></svg>';
     el.innerHTML = svg;
   });
 }
