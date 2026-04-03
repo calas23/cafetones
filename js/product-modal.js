@@ -179,10 +179,14 @@
     if (e.key === 'Escape') close();
   }
 
-  // Bind to cards with data-name
+  // Bind to all cards with data-product-modal
+  document.querySelectorAll('[data-product-modal]').forEach(function (card) {
+    card.style.cursor = 'pointer';
+  });
+
   document.addEventListener('click', function (e) {
-    var card = e.target.closest('[data-name][data-description]');
-    if (card) {
+    var card = e.target.closest('[data-product-modal]');
+    if (card && card.dataset.name) {
       e.preventDefault();
       open(card);
     }
