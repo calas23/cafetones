@@ -174,16 +174,20 @@
 
 .part-pastry-card__image {
   background-color: var(--color-cream-warm);
-  height: 180px;
+  height: 220px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  padding: 1rem 1.5rem 0;
+  overflow: hidden;
 }
 
-.part-pastry-card__image span {
-  font-style: italic;
-  font-size: 0.85rem;
-  color: var(--color-text-light);
+.part-pastry-card__image img {
+  max-height: 200px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom center;
 }
 
 .part-pastry-card__content {

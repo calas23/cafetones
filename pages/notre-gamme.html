@@ -95,13 +95,17 @@
     </section>
 
     <!-- ================================================================
-         Navigation par ancres
+         Filtres par catégorie
          ================================================================ -->
-    <nav class="gamme-nav" aria-label="Catégories produits">
+    <nav class="gamme-nav" aria-label="Filtres produits">
       <div class="gamme-nav__inner">
-        <a href="#grains" class="gamme-nav__link active">Cafés en grains</a>
-        <a href="#moulus" class="gamme-nav__link">Cafés moulus</a>
-        <a href="#dosettes" class="gamme-nav__link">Dosettes</a>
+        <button class="gamme-nav__btn active" data-filter="all">Tous</button>
+        <button class="gamme-nav__btn" data-filter="grain">En grain</button>
+        <button class="gamme-nav__btn" data-filter="moulu">Moulu</button>
+        <button class="gamme-nav__btn" data-filter="dosettes">Dosettes</button>
+        <button class="gamme-nav__btn" data-filter="grands-crus">Grands Crus</button>
+        <button class="gamme-nav__btn" data-filter="bio">Bio</button>
+        <button class="gamme-nav__btn" data-filter="patisseries">Pâtisseries</button>
       </div>
     </nav>
 
@@ -113,108 +117,161 @@
     <!-- ================================================================
          Cafés en grains
          ================================================================ -->
-    <section class="gamme-section" id="grains">
+    <section class="gamme-section" id="grains" data-section-cat="grain">
       <div class="container">
         <div class="gamme-section__intro animate-on-scroll">
           <h2>Cafés en grains</h2>
           <p>Torréfaction italienne La Genovese — en sachet 1 kg ou bonbonne 3 kg.</p>
         </div>
-        <div class="table-wrapper animate-on-scroll">
-          <table class="pricing-table">
-            <thead>
-              <tr>
-                <th>Produit</th>
-                <th>Format</th>
-                <th>Prix HT / kg</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background-color: var(--color-cream-warm); border-left: 3px solid var(--color-crema);">
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/grain-anniversario-1kg.jpg" alt="Anniversario 3kg" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Anniversario</div>
-                      <div class="product-subtitle">Legendary Blend</div>
-                      <div class="product-desc">100% Arabica — chocolat, fruits exotiques, floral</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Bonbonne 3 kg (tarif au kg)</td>
-                <td class="price">25,00 €</td>
-              </tr>
-              <tr style="background-color: var(--color-cream-warm); border-left: 3px solid var(--color-crema);">
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/grain-anniversario-1kg.jpg" alt="Anniversario 1kg" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Anniversario</div>
-                      <div class="product-subtitle">Legendary Blend</div>
-                      <div class="product-desc">100% Arabica — chocolat, fruits exotiques, floral</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Sachet 1 kg</td>
-                <td class="price">25,00 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/grain-royal-1kg.jpg" alt="Royal 1kg" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Royal</div>
-                      <div class="product-subtitle">Luxury Blend</div>
-                      <div class="product-desc">Assemblage premium — riche, complexe</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Sachet 1 kg</td>
-                <td class="price">25,00 €</td>
-              </tr>
-              <tr style="background-color: var(--color-cream-warm); border-left: 3px solid var(--color-crema);">
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/grain-oro-1kg.jpg" alt="Oro 1kg" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Oro</div>
-                      <div class="product-subtitle">Supreme Blend</div>
-                      <div class="product-desc">80% Arabica, 20% Robusta — équilibré, crémeux</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Sachet 1 kg</td>
-                <td class="price">23,00 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/grain-coloniale-1kg.jpg" alt="Colonial 1kg" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Colonial</div>
-                      <div class="product-subtitle">Premium Robusta</div>
-                      <div class="product-desc">Arabica / Robusta — corsé, crème dense</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Sachet 1 kg</td>
-                <td class="price">19,00 €</td>
-              </tr>
-              <tr id="bio" style="scroll-margin-top: 130px;">
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/grain-juta-bio-1kg.jpg" alt="Bio 1kg" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Juta Bio <span class="badge" style="margin-left: 0.5rem;">Bio</span></div>
-                      <div class="product-subtitle">Pure Organic Blend</div>
-                      <div class="product-desc">100% Arabica bio — certifié Rainforest Alliance</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Sachet 1 kg</td>
-                <td class="price">26,00 €</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="gamme-cards">
+
+          <div class="gamme-card animate-on-scroll" data-categories="grain" style="cursor:pointer;"
+            data-name="Anniversario" data-subtitle="Legendary Blend"
+            data-description="Hommage à la tradition et à l'excellence. La base brésilienne offre un corps doux et noisetté, enrichi par la Colombie Supremo et le Honduras SHG qui apportent fruits rouges et douceur miellée. L'Éthiopie Sidamo élève l'expérience avec des notes florales et citronnées."
+            data-acidity="4" data-body="3" data-intensity="3" data-roast="Moyenne"
+            data-notes="Chocolat au lait, Noisette torréfiée, Fruits rouges, Notes florales"
+            data-origins="Brésil, Honduras, Colombie, Éthiopie"
+            data-certifications="Espresso Italiano (INEI)" data-medals="2012, 2016, 2018, 2020, 2021"
+            data-format="Bonbonne 3kg / Sachet 1kg" data-price="25,00 € HT/kg"
+            data-image="../img/grain-anniversario-1kg.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/grain-anniversario-1kg.jpg" alt="La Genovese Anniversario grain 1kg" loading="lazy">
+              <span class="badge badge--gold gamme-card__badge">100% Arabica</span>
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Anniversario</div>
+              <div class="gamme-card__subtitle">Legendary Blend</div>
+              <div class="gamme-card__desc">Chocolat, fruits exotiques, floral. Certifié Espresso Italiano.</div>
+              <div class="gamme-card__format">Bonbonne 3kg / Sachet 1kg</div>
+              <div class="gamme-card__price">25,00 € HT/kg</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grain" style="cursor:pointer;"
+            data-name="Royal" data-subtitle="Luxury Blend"
+            data-description="Corps velouté et richesse aromatique. La base brésilienne apporte douceur et noisette, le Honduras et la Colombie une touche de fruits rouges et de miel. L'Inde Parchment Washed renforce le corps avec chocolat noir et épices chaudes."
+            data-acidity="3" data-body="4" data-intensity="4"
+            data-notes="Chocolat au lait, Noisette, Épices chaudes, Fruits rouges"
+            data-origins="Brésil, Honduras, Colombie, Inde"
+            data-certifications="Espresso Italiano" data-medals="2012, 2014"
+            data-format="Sachet 1kg" data-price="25,00 € HT/kg"
+            data-image="../img/grain-royal-1kg.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/grain-royal-1kg.jpg" alt="La Genovese Royal grain 1kg" loading="lazy">
+              <span class="badge badge--gold gamme-card__badge">100% Arabica</span>
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Royal</div>
+              <div class="gamme-card__subtitle">Luxury Blend</div>
+              <div class="gamme-card__desc">Chocolat noir, noisette, muscade. Corps velouté.</div>
+              <div class="gamme-card__format">Sachet 1kg</div>
+              <div class="gamme-card__price">25,00 € HT/kg</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grain" style="cursor:pointer;"
+            data-name="Oro" data-subtitle="Supreme Blend"
+            data-description="Profondeur, richesse et velouté en bouche. Caramel, noisette torréfiée, chocolat au lait sur la base brésilienne. Colombie et Honduras apportent luminosité, l'Inde renforce le corps avec chocolat noir et épices."
+            data-acidity="2" data-body="4" data-intensity="3"
+            data-notes="Caramel, Noisette, Chocolat noir, Épices chaudes"
+            data-origins="Brésil, Honduras, Colombie, Inde"
+            data-certifications="Espresso Italiano" data-medals="2008, 2010, 2012, 2014, 2016"
+            data-format="Sachet 1kg" data-price="23,00 € HT/kg"
+            data-image="../img/grain-oro-1kg.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/grain-oro-1kg.jpg" alt="La Genovese Oro grain 1kg" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Oro</div>
+              <div class="gamme-card__subtitle">Supreme Blend</div>
+              <div class="gamme-card__desc">Caramel, noisette, chocolat. Équilibré et crémeux.</div>
+              <div class="gamme-card__format">Sachet 1kg</div>
+              <div class="gamme-card__price">23,00 € HT/kg</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grain" style="cursor:pointer;"
+            data-name="Orientale" data-subtitle="Prestige Blend"
+            data-description="Intensité, structure et personnalité affirmée. La base brésilienne offre une douceur caramélisée, l'Inde Parchment Washed renforce le corps avec des notes de chocolat noir, épices chaudes et une touche fumée."
+            data-acidity="1" data-body="4" data-intensity="3"
+            data-notes="Caramel, Noisette, Chocolat noir, Épices chaudes"
+            data-origins="Brésil, Inde"
+            data-format="Sachet 1kg" data-price="Sur demande"
+            data-image="../img/grain-orientale-1kg.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/grain-orientale-1kg.jpg" alt="La Genovese Orientale grain 1kg" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Orientale</div>
+              <div class="gamme-card__subtitle">Prestige Blend</div>
+              <div class="gamme-card__desc">Intense, structuré, personnalité affirmée.</div>
+              <div class="gamme-card__format">Sachet 1kg</div>
+              <div class="gamme-card__price">Sur demande</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grain" style="cursor:pointer;"
+            data-name="Colonial" data-subtitle="Premium Robusta"
+            data-description="Audace et puissance. Le Brésil Santos Cerrado apporte caramel et noisette, l'Inde Parchment Washed (60%) intensité et persistance avec chocolat noir, épices et crème veloutée."
+            data-acidity="1" data-body="5" data-intensity="4"
+            data-notes="Caramel, Noisette, Chocolat noir, Épices chaudes"
+            data-origins="Brésil, Inde, Vietnam"
+            data-format="Sachet 1kg" data-price="19,00 € HT/kg"
+            data-image="../img/grain-coloniale-1kg.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/grain-coloniale-1kg.jpg" alt="La Genovese Colonial grain 1kg" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Colonial</div>
+              <div class="gamme-card__subtitle">Premium Robusta</div>
+              <div class="gamme-card__desc">Corsé, crème dense, espresso fort.</div>
+              <div class="gamme-card__format">Sachet 1kg</div>
+              <div class="gamme-card__price">19,00 € HT/kg</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grain bio" style="cursor:pointer;"
+            data-name="Juta Bio" data-subtitle="Pure Organic Blend"
+            data-description="Pureté, équilibre et durabilité. Le Honduras Finca Santa Teresa apporte un corps soyeux et une douceur miellée. Le Pérou San Ignacio enrichit avec chocolat noir, caramel et fruits secs."
+            data-acidity="4" data-body="3" data-intensity="3"
+            data-notes="Miel, Amande, Chocolat noir, Caramel"
+            data-origins="Honduras, Pérou"
+            data-certifications="Rainforest Alliance, CCPB" data-medals="2018, 2021, 2022, 2023"
+            data-format="Sachet 1kg" data-price="26,00 € HT/kg"
+            data-image="../img/grain-juta-bio-1kg.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/grain-juta-bio-1kg.jpg" alt="La Genovese Juta Bio grain 1kg" loading="lazy">
+              <span class="badge gamme-card__badge">Bio</span>
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Juta Bio</div>
+              <div class="gamme-card__subtitle">Pure Organic Blend</div>
+              <div class="gamme-card__desc">100% Arabica bio, certifié Rainforest Alliance.</div>
+              <div class="gamme-card__format">Sachet 1kg</div>
+              <div class="gamme-card__price">26,00 € HT/kg</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grain" style="cursor:pointer;"
+            data-name="Dek" data-subtitle="Premium Blend Décaféiné"
+            data-description="Toute la richesse d'un café premium sans la caféine. Base brésilienne douce et noisettée, Colombie et Honduras pour une touche fruitée, Inde pour le corps et la persistance."
+            data-acidity="3" data-body="4" data-intensity="4"
+            data-notes="Chocolat au lait, Noisette, Caramel, Épices chaudes"
+            data-origins="Brésil, Honduras, Colombie, Inde" data-caffeine="< 0,10%"
+            data-format="Sachet 1kg" data-price="Sur demande"
+            data-image="../img/grain-dek-1kg.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/grain-dek-1kg.jpg" alt="La Genovese Dek grain 1kg" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Dek</div>
+              <div class="gamme-card__subtitle">Décaféiné Premium</div>
+              <div class="gamme-card__desc">Chocolat, caramel, épices. Moins de 0,1% de caféine.</div>
+              <div class="gamme-card__format">Sachet 1kg</div>
+              <div class="gamme-card__price">Sur demande</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -222,80 +279,100 @@
     <!-- ================================================================
          Cafés moulus
          ================================================================ -->
-    <section class="gamme-section" id="moulus">
+    <section class="gamme-section" id="moulus" data-section-cat="moulu">
       <div class="container">
         <div class="gamme-section__intro animate-on-scroll">
           <h2>Cafés moulus</h2>
           <p>Prêts à l'emploi — idéal pour cafetières filtres et machines à piston.</p>
         </div>
-        <div class="table-wrapper animate-on-scroll">
-          <table class="pricing-table">
-            <thead>
-              <tr>
-                <th>Produit</th>
-                <th>Format</th>
-                <th>Prix HT</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/moulu-blue-gold-250g.jpg" alt="Blue Gold moulu" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Blue Gold</div>
-                      <div class="product-subtitle">Moka Style</div>
-                      <div class="product-desc">Assemblage classique — mouture universelle</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Sachet 250 g</td>
-                <td class="price">6,00 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/moulu-dek-250g.jpg" alt="Décaféiné moulu" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Dek</div>
-                      <div class="product-subtitle">Premium Blend</div>
-                      <div class="product-desc">Décaféiné — toute la saveur, sans la caféine</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Boîte 250 g</td>
-                <td class="price">7,50 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/moulu-juta-bio-250g.jpg" alt="Bio Décaféiné moulu" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Juta Bio Décaféiné <span class="badge" style="margin-left: 0.5rem;">Bio</span></div>
-                      <div class="product-subtitle">Pure Organic Blend</div>
-                      <div class="product-desc">100% Arabica bio, décaféiné</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Sachet 250 g</td>
-                <td class="price">8,20 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <img src="../img/moulu-juta-bio-250g.jpg" alt="Bio moulu" class="table-thumb" loading="lazy">
-                    <div>
-                      <div class="product-name">Juta Bio <span class="badge" style="margin-left: 0.5rem;">Bio</span></div>
-                      <div class="product-subtitle">Pure Organic Blend</div>
-                      <div class="product-desc">100% Arabica bio — mouture fine</div>
-                    </div>
-                  </div>
-                </td>
-                <td>Sachet 250 g</td>
-                <td class="price">8,00 €</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="gamme-cards">
+
+          <div class="gamme-card animate-on-scroll" data-categories="moulu" style="cursor:pointer;"
+            data-name="Blue Gold" data-subtitle="Moka Style"
+            data-description="Assemblage classique au goût riche et rond. Mouture universelle adaptée à toutes les cafetières."
+            data-notes="Corps rond, Notes classiques" data-format="Sachet 250g" data-price="6,00 € HT"
+            data-image="../img/moulu-blue-gold-250g.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/moulu-blue-gold-250g.jpg" alt="Blue Gold moulu 250g" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Blue Gold</div>
+              <div class="gamme-card__subtitle">Moka Style</div>
+              <div class="gamme-card__desc">Assemblage classique, mouture universelle.</div>
+              <div class="gamme-card__format">Sachet 250g</div>
+              <div class="gamme-card__price">6,00 € HT</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="moulu" style="cursor:pointer;"
+            data-name="Tradizione" data-subtitle="Moka Style"
+            data-description="Le goût traditionnel du café italien. Corps équilibré et arômes classiques pour un espresso de tous les jours."
+            data-notes="Corps équilibré, Arômes classiques" data-format="Sachet 250g" data-price="6,00 € HT"
+            data-image="../img/moulu-tradizione-250g.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/moulu-tradizione-250g.jpg" alt="Tradizione moulu 250g" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Tradizione</div>
+              <div class="gamme-card__subtitle">Moka Style</div>
+              <div class="gamme-card__desc">Tradition italienne, mouture pour moka.</div>
+              <div class="gamme-card__format">Sachet 250g</div>
+              <div class="gamme-card__price">6,00 € HT</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="moulu" style="cursor:pointer;"
+            data-name="Daily Moka" data-subtitle="Moka Style"
+            data-description="Votre café quotidien. Mouture fine pour cafetière italienne, saveur ronde et agréable."
+            data-notes="Rond, Agréable" data-format="Boîte 250g" data-price="6,00 € HT"
+            data-image="../img/moulu-daily-moka-250g.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/moulu-daily-moka-250g.jpg" alt="Daily Moka moulu 250g" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Daily Moka</div>
+              <div class="gamme-card__subtitle">Moka Style</div>
+              <div class="gamme-card__desc">Café quotidien, mouture fine pour moka.</div>
+              <div class="gamme-card__format">Boîte 250g</div>
+              <div class="gamme-card__price">6,00 € HT</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="moulu" style="cursor:pointer;"
+            data-name="Dek moulu" data-subtitle="Premium Blend"
+            data-description="Décaféiné — toute la saveur d'un café italien sans la caféine. Mouture fine, idéal en soirée."
+            data-notes="Doux, Rond" data-format="Boîte 250g" data-price="7,50 € HT"
+            data-image="../img/moulu-dek-250g.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/moulu-dek-250g.jpg" alt="Dek moulu 250g" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Dek</div>
+              <div class="gamme-card__subtitle">Décaféiné</div>
+              <div class="gamme-card__desc">Toute la saveur, sans la caféine.</div>
+              <div class="gamme-card__format">Boîte 250g</div>
+              <div class="gamme-card__price">7,50 € HT</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="moulu bio" style="cursor:pointer;"
+            data-name="Juta Bio moulu" data-subtitle="Pure Organic Blend"
+            data-description="100% Arabica bio, mouture fine. Certifié Rainforest Alliance."
+            data-notes="Miel, Amande, Chocolat" data-format="Sachet 250g" data-price="8,00 € HT"
+            data-image="../img/moulu-juta-bio-250g.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/moulu-juta-bio-250g.jpg" alt="Juta Bio moulu 250g" loading="lazy">
+              <span class="badge gamme-card__badge">Bio</span>
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Juta Bio</div>
+              <div class="gamme-card__subtitle">Pure Organic Blend</div>
+              <div class="gamme-card__desc">100% Arabica bio, mouture fine.</div>
+              <div class="gamme-card__format">Sachet 250g</div>
+              <div class="gamme-card__price">8,00 € HT</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -303,109 +380,284 @@
     <!-- ================================================================
          Dosettes / Pastilles ESE
          ================================================================ -->
-    <section class="gamme-section" id="dosettes">
+    <section class="gamme-section" id="dosettes" data-section-cat="dosettes">
       <div class="container">
         <div class="gamme-section__intro animate-on-scroll">
           <h2>Dosettes &amp; pastilles ESE</h2>
           <p>Pastilles compatibles machines ESE — prêtes à l'emploi, sans gaspillage.</p>
         </div>
-        <div class="table-wrapper animate-on-scroll">
-          <table class="pricing-table">
-            <thead>
-              <tr>
-                <th>Produit</th>
-                <th>Quantité</th>
-                <th>Prix HT (lot)</th>
-                <th>Prix HT (pièce)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background-color: var(--color-cream-warm); border-left: 3px solid var(--color-crema);">
-                <td>
-                  <div class="product-cell">
-                    <div>
-                      <div class="product-name">La Genovese Oro</div>
-                      <div class="product-desc">80% Arabica, 20% Robusta — équilibré</div>
-                    </div>
-                  </div>
-                </td>
-                <td>x 150</td>
-                <td class="price">67,50 €</td>
-                <td class="price">0,45 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <div>
-                      <div class="product-name">Vergnano Oro</div>
-                      <div class="product-desc">Assemblage italien — riche, crémeux</div>
-                    </div>
-                  </div>
-                </td>
-                <td>x 150</td>
-                <td class="price">67,50 €</td>
-                <td class="price">0,45 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <div>
-                      <div class="product-name">Musetti 100% Arabica</div>
-                      <div class="product-desc">Doux, aromatisé — 100% Arabica</div>
-                    </div>
-                  </div>
-                </td>
-                <td>x 150</td>
-                <td class="price">67,50 €</td>
-                <td class="price">0,45 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <div>
-                      <div class="product-name">Musetti Décaféiné</div>
-                      <div class="product-desc">Décaféiné — doux et rond</div>
-                    </div>
-                  </div>
-                </td>
-                <td>x 18</td>
-                <td class="price">8,10 €</td>
-                <td class="price">0,45 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <div>
-                      <div class="product-name">La Genovese Bio <span class="badge" style="margin-left: 0.5rem;">Bio</span></div>
-                      <div class="product-desc">100% Arabica bio</div>
-                    </div>
-                  </div>
-                </td>
-                <td>x 25</td>
-                <td class="price">12,50 €</td>
-                <td class="price">0,50 €</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product-cell">
-                    <div>
-                      <div class="product-name">La Genovese Décaféiné</div>
-                      <div class="product-desc">Décaféiné — saveur préservée</div>
-                    </div>
-                  </div>
-                </td>
-                <td>x 25</td>
-                <td class="price">11,25 €</td>
-                <td class="price">0,45 €</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="gamme-cards">
+
+          <div class="gamme-card animate-on-scroll" data-categories="dosettes" style="cursor:pointer;"
+            data-name="La Genovese Oro — dosettes" data-description="80% Arabica, 20% Robusta. Pastilles ESE équilibrées et crémeuses."
+            data-notes="Équilibré, Crémeux" data-format="x150 pastilles ESE" data-price="67,50 € HT (0,45 €/café)"
+            data-image="../img/capsule-oro.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/capsule-oro.jpg" alt="Dosettes La Genovese Oro" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">La Genovese Oro</div>
+              <div class="gamme-card__desc">80% Arabica, 20% Robusta — équilibré.</div>
+              <div class="gamme-card__format">x150 pastilles ESE</div>
+              <div class="gamme-card__price">67,50 € HT <span style="font-size:0.82rem;font-weight:400;">(0,45 €/café)</span></div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="dosettes" style="cursor:pointer;"
+            data-name="Vergnano Oro — dosettes" data-description="Assemblage italien riche et crémeux. Pastilles ESE."
+            data-notes="Riche, Crémeux" data-format="x150 pastilles ESE" data-price="67,50 € HT (0,45 €/café)"
+            data-image="">
+            <div class="gamme-card__image"><span style="font-style:italic;font-size:0.85rem;color:var(--color-text-light);">Vergnano</span></div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Vergnano Oro</div>
+              <div class="gamme-card__desc">Assemblage italien — riche, crémeux.</div>
+              <div class="gamme-card__format">x150 pastilles ESE</div>
+              <div class="gamme-card__price">67,50 € HT <span style="font-size:0.82rem;font-weight:400;">(0,45 €/café)</span></div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="dosettes" style="cursor:pointer;"
+            data-name="Musetti 100% Arabica — dosettes" data-description="100% Arabica doux et aromatisé. Pastilles ESE."
+            data-notes="Doux, Aromatisé" data-format="x150 pastilles ESE" data-price="67,50 € HT (0,45 €/café)"
+            data-image="">
+            <div class="gamme-card__image"><span style="font-style:italic;font-size:0.85rem;color:var(--color-text-light);">Musetti</span></div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Musetti 100% Arabica</div>
+              <div class="gamme-card__desc">Doux, aromatisé — 100% Arabica.</div>
+              <div class="gamme-card__format">x150 pastilles ESE</div>
+              <div class="gamme-card__price">67,50 € HT <span style="font-size:0.82rem;font-weight:400;">(0,45 €/café)</span></div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="dosettes bio" style="cursor:pointer;"
+            data-name="La Genovese Bio — dosettes" data-description="100% Arabica bio. Pastilles ESE certifiées."
+            data-notes="Bio, Aromatique" data-format="x25 pastilles ESE" data-price="12,50 € HT (0,50 €/café)"
+            data-image="../img/capsule-juta-bio.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/capsule-juta-bio.jpg" alt="Dosettes Bio La Genovese" loading="lazy">
+              <span class="badge gamme-card__badge">Bio</span>
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">La Genovese Bio</div>
+              <div class="gamme-card__desc">100% Arabica bio.</div>
+              <div class="gamme-card__format">x25 pastilles ESE</div>
+              <div class="gamme-card__price">12,50 € HT <span style="font-size:0.82rem;font-weight:400;">(0,50 €/café)</span></div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="dosettes" style="cursor:pointer;"
+            data-name="La Genovese Décaféiné — dosettes" data-description="Dosettes décaféinées. Saveur préservée, sans caféine."
+            data-notes="Doux, Rond" data-format="x25 pastilles ESE" data-price="11,25 € HT (0,45 €/café)"
+            data-image="../img/capsule-dek.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/capsule-dek.jpg" alt="Dosettes Décaféiné La Genovese" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">La Genovese Décaféiné</div>
+              <div class="gamme-card__desc">Décaféiné — saveur préservée.</div>
+              <div class="gamme-card__format">x25 pastilles ESE</div>
+              <div class="gamme-card__price">11,25 € HT <span style="font-size:0.82rem;font-weight:400;">(0,45 €/café)</span></div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
+    <!-- ================================================================
+         Grands Crus — Single Origins
+         ================================================================ -->
+    <section class="gamme-section" id="grands-crus" data-section-cat="grands-crus">
+      <div class="container">
+        <div class="gamme-section__intro animate-on-scroll">
+          <h2>Grands Crus — Single Origins</h2>
+          <p>Cafés d'origine unique, en grain 250g. Pour les amateurs de terroirs.</p>
+        </div>
+        <div class="gamme-cards">
 
+          <div class="gamme-card animate-on-scroll" data-categories="grands-crus" style="cursor:pointer;"
+            data-name="Brésil Santos Cerrado" data-description="Café brésilien doux et noisetté. Corps moyen, acidité faible, notes de caramel et de noisette."
+            data-notes="Caramel, Noisette, Doux" data-origins="Brésil" data-format="Sachet 250g" data-price="Sur demande"
+            data-image="../img/origin-bresil.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/origin-bresil.jpg" alt="Café Brésil Santos" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Brésil Santos Cerrado</div>
+              <div class="gamme-card__desc">Doux, noisetté, caramel.</div>
+              <div class="gamme-card__format">Grain 250g</div>
+              <div class="gamme-card__price">Sur demande</div>
+            </div>
+          </div>
 
+          <div class="gamme-card animate-on-scroll" data-categories="grands-crus" style="cursor:pointer;"
+            data-name="Colombie Supremo" data-description="Café colombien équilibré aux notes de fruits rouges, chocolat et miel. Corps moyen-plein, acidité vive."
+            data-notes="Fruits rouges, Chocolat, Miel" data-origins="Colombie" data-format="Sachet 250g" data-price="Sur demande"
+            data-image="../img/origin-colombie.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/origin-colombie.jpg" alt="Café Colombie Supremo" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Colombie Supremo</div>
+              <div class="gamme-card__desc">Fruits rouges, chocolat, miel.</div>
+              <div class="gamme-card__format">Grain 250g</div>
+              <div class="gamme-card__price">Sur demande</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grands-crus" style="cursor:pointer;"
+            data-name="Éthiopie Sidamo" data-description="Café éthiopien aux notes florales et citronnées. Acidité vive, corps léger, final délicat."
+            data-notes="Floral, Citron, Jasmin" data-origins="Éthiopie" data-format="Sachet 250g" data-price="Sur demande"
+            data-image="../img/origin-ethiopie.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/origin-ethiopie.jpg" alt="Café Éthiopie Sidamo" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Éthiopie Sidamo</div>
+              <div class="gamme-card__desc">Floral, citronné, jasmin. Fin et délicat.</div>
+              <div class="gamme-card__format">Grain 250g</div>
+              <div class="gamme-card__price">Sur demande</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grands-crus" style="cursor:pointer;"
+            data-name="Kenya AA" data-description="Café kenyan intense aux notes de cassis, agrumes et vin. Acidité brillante, corps plein."
+            data-notes="Cassis, Agrumes, Vineux" data-origins="Kenya" data-format="Sachet 250g" data-price="Sur demande"
+            data-image="../img/origin-kenya.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/origin-kenya.jpg" alt="Café Kenya AA" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Kenya AA</div>
+              <div class="gamme-card__desc">Cassis, agrumes, vineux. Intense.</div>
+              <div class="gamme-card__format">Grain 250g</div>
+              <div class="gamme-card__price">Sur demande</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grands-crus" style="cursor:pointer;"
+            data-name="Honduras SHG" data-description="Café hondurien aux notes de miel, fruits rouges et cacao. Corps moyen, douceur remarquable."
+            data-notes="Miel, Fruits rouges, Cacao" data-origins="Honduras" data-format="Sachet 250g" data-price="Sur demande"
+            data-image="../img/origin-honduras.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/origin-honduras.jpg" alt="Café Honduras SHG" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Honduras SHG</div>
+              <div class="gamme-card__desc">Miel, fruits rouges, cacao. Doux.</div>
+              <div class="gamme-card__format">Grain 250g</div>
+              <div class="gamme-card__price">Sur demande</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grands-crus bio" style="cursor:pointer;"
+            data-name="Pérou San Ignacio Bio" data-description="Café péruvien bio. Notes de chocolat noir, caramel et fruits secs. Certifié Rainforest Alliance."
+            data-notes="Chocolat noir, Caramel, Fruits secs" data-origins="Pérou" data-format="Sachet 250g" data-price="Sur demande"
+            data-certifications="Rainforest Alliance"
+            data-image="../img/origin-perou.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/origin-perou.jpg" alt="Café Pérou San Ignacio Bio" loading="lazy">
+              <span class="badge gamme-card__badge">Bio</span>
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Pérou San Ignacio</div>
+              <div class="gamme-card__desc">Chocolat noir, caramel, fruits secs. Bio.</div>
+              <div class="gamme-card__format">Grain 250g</div>
+              <div class="gamme-card__price">Sur demande</div>
+            </div>
+          </div>
+
+          <div class="gamme-card animate-on-scroll" data-categories="grands-crus bio" style="cursor:pointer;"
+            data-name="Mexique Altura Decaf Bio" data-description="Café mexicain décaféiné bio. Doux et aromatique, sans caféine."
+            data-notes="Doux, Aromatique" data-origins="Mexique" data-format="Sachet 250g" data-price="Sur demande"
+            data-caffeine="Décaféiné" data-certifications="Bio"
+            data-image="../img/origin-mexique-decaf.jpg">
+            <div class="gamme-card__image">
+              <img src="../img/origin-mexique-decaf.jpg" alt="Café Mexique Altura Decaf Bio" loading="lazy">
+              <span class="badge gamme-card__badge">Bio</span>
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Mexique Altura Decaf</div>
+              <div class="gamme-card__desc">Décaféiné bio, doux et aromatique.</div>
+              <div class="gamme-card__format">Grain 250g</div>
+              <div class="gamme-card__price">Sur demande</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         Pâtisseries
+         ================================================================ -->
+    <section class="gamme-section" id="patisseries" data-section-cat="patisseries">
+      <div class="container">
+        <div class="gamme-section__intro animate-on-scroll">
+          <h2>Pâtisseries italiennes</h2>
+          <p>Les gâteaux traditionnels La Genovese — commande saisonnière.</p>
+        </div>
+        <div class="gamme-cards">
+
+          <div class="gamme-card gamme-card--patisserie animate-on-scroll" data-categories="patisseries" style="cursor:pointer;"
+            data-name="Le Panettone"
+            data-description="Le gâteau traditionnel italien de Noël. Glacé aux amandes, de couleur marron noisette, il abrite en son sein la force suave des raisins secs et des écorces d'oranges confites. Selon la légende, il aurait été servi à la cour du duc de Milan au moment de Noël."
+            data-ingredients="Farine, sucre, beurre, jaune d'œuf, levure naturelle, monoglycérides, sel, arômes naturels, raisins secs, glaçage d'amandes, écorce d'orange, fruits confits"
+            data-ingredients-glaze="Sucre granulé, albumen, sucre glacé, farine de riz grillé, pâte de noisette, huile de graines, poudre de cacao"
+            data-weight="1 kg" data-packaging="Papier alimentaire personnalisé La Genovese"
+            data-order-period="Septembre — livraison en décembre"
+            data-image="../img/patisserie-panettone.jpg" data-price="">
+            <div class="gamme-card__image">
+              <img src="../img/patisserie-panettone.jpg" alt="Panettone La Genovese" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Le Panettone</div>
+              <div class="gamme-card__desc">Glacé aux amandes, raisins secs et écorces d'oranges confites.</div>
+              <div class="gamme-card__format">1 kg</div>
+              <div class="seasonal-note">Commande en septembre, livraison en décembre.</div>
+            </div>
+          </div>
+
+          <div class="gamme-card gamme-card--patisserie animate-on-scroll" data-categories="patisseries" style="cursor:pointer;"
+            data-name="Le Pandoro"
+            data-description="Grâce à un processus ancestral et totalement naturel de levage, le gâteau exprime une douceur incomparable. La croûte dorée accueille sa robe de sucre glace. L'intérieur immaculé est dépourvu de toute garniture, laissant s'épanouir la saveur douce et l'arôme intense si caractéristique."
+            data-ingredients="Farine, sucre, beurre, jaune d'œuf, levure naturelle, monoglycérides, sel, arômes naturels"
+            data-weight="1 kg" data-packaging="Papier alimentaire personnalisé La Genovese"
+            data-order-period="Septembre — livraison en décembre"
+            data-image="../img/patisserie-pandoro.jpg" data-price="">
+            <div class="gamme-card__image">
+              <img src="../img/patisserie-pandoro.jpg" alt="Pandoro La Genovese" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">Le Pandoro</div>
+              <div class="gamme-card__desc">Douceur incomparable, croûte dorée, robe de sucre glace.</div>
+              <div class="gamme-card__format">1 kg</div>
+              <div class="seasonal-note">Commande en septembre, livraison en décembre.</div>
+            </div>
+          </div>
+
+          <div class="gamme-card gamme-card--patisserie animate-on-scroll" data-categories="patisseries" style="cursor:pointer;"
+            data-name="La Colomba"
+            data-description="Identique au panettone dans sa composition, mais moulée en forme de colombe et parsemée de sucre perlé. Traditionnellement servie à Pâques. La légende veut qu'un pâtissier ait offert ce gâteau en signe de paix au roi lombard Alboïn en l'an 572."
+            data-ingredients="Farine, sucre, beurre, jaune d'œuf, levure naturelle, monoglycérides, sel, arômes naturels, raisins secs, glaçage d'amandes, écorce d'orange, fruits confits"
+            data-ingredients-glaze="Sucre granulé, albumen, sucre glacé, farine de riz grillé, pâte de noisette, huile de graines, poudre de cacao"
+            data-weight="750 g" data-packaging="Papier alimentaire personnalisé La Genovese"
+            data-order-period="Février — livraison en avril"
+            data-image="../img/patisserie-colomba.jpg" data-price="">
+            <div class="gamme-card__image">
+              <img src="../img/patisserie-colomba.jpg" alt="Colomba La Genovese" loading="lazy">
+            </div>
+            <div class="gamme-card__content">
+              <div class="gamme-card__name">La Colomba</div>
+              <div class="gamme-card__desc">Moulée en colombe, parsemée de sucre perlé. Pâques.</div>
+              <div class="gamme-card__format">750 g</div>
+              <div class="seasonal-note">Commande en février, livraison en avril.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
 
 
@@ -503,36 +755,8 @@
   <script src="../js/main.js"></script>
   <script src="../js/form.js"></script>
   <script src="../js/illustrations.js"></script>
-
-  <!-- Navigation par ancres — mise à jour du lien actif -->
-  <script>
-    (function () {
-      var navLinks = document.querySelectorAll('.gamme-nav__link');
-      var sections = document.querySelectorAll('.gamme-section');
-      if (!navLinks.length || !sections.length) return;
-
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var id = entry.target.getAttribute('id');
-            navLinks.forEach(function (link) {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === '#' + id) {
-                link.classList.add('active');
-              }
-            });
-          }
-        });
-      }, {
-        rootMargin: '-120px 0px -60% 0px',
-        threshold: 0
-      });
-
-      sections.forEach(function (section) {
-        observer.observe(section);
-      });
-    })();
-  </script>
+  <script src="../js/product-modal.js"></script>
+  <script src="../js/gamme-filters.js"></script>
 
 </body>
 </html>

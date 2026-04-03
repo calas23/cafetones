@@ -86,23 +86,29 @@
   display: none;
 }
 
-.gamme-nav__link {
+.gamme-nav__link,
+.gamme-nav__btn {
   padding: 10px 20px;
+  font-family: var(--font-body);
   font-size: 0.82rem;
   font-weight: 500;
   border-radius: 100px;
   white-space: nowrap;
   color: var(--color-text-muted);
   background-color: transparent;
+  border: none;
+  cursor: pointer;
   transition: background-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
 }
 
-.gamme-nav__link:hover {
+.gamme-nav__link:hover,
+.gamme-nav__btn:hover {
   background-color: var(--color-cream-dark);
   color: var(--color-espresso);
 }
 
-.gamme-nav__link.active {
+.gamme-nav__link.active,
+.gamme-nav__btn.active {
   background-color: var(--color-crema);
   color: var(--color-white);
   box-shadow: 0 2px 8px rgba(200, 149, 108, 0.25);
@@ -377,23 +383,282 @@
     padding-bottom: 5rem;
   }
 
-  .gamme-nav__link {
+  .gamme-nav__link,
+  .gamme-nav__btn {
     padding: 10px 24px;
   }
 }
 
-@media (max-width: 767px) {
-  .gamme-section .pricing-table th:nth-child(2),
-  .gamme-section .pricing-table td:nth-child(2) {
-    min-width: 220px;
-  }
+/* Card format line */
+.gamme-card__format {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  margin-top: 0.25rem;
+}
 
-  .pricing-table td .product-cell {
-    gap: 0.75rem;
-  }
+/* Card image — align bottom */
+.gamme-card__image {
+  height: 200px;
+  padding: 1rem 1.5rem 0;
+  background-color: var(--color-cream-warm);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
 
-  .table-thumb {
-    width: 44px;
-    height: 44px;
+.gamme-card__image img {
+  max-height: 180px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* Cards grid responsive */
+.gamme-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .gamme-cards {
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+@media (min-width: 900px) {
+  .gamme-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gamme-cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Card transition for filters */
+.gamme-card {
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base), opacity 0.2s ease;
+}
+
+/* ========================================================================
+   Product Modal
+   ======================================================================== */
+
+.pm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(44, 24, 16, 0.6);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.pm-overlay--visible {
+  opacity: 1;
+}
+
+.pm-overlay--visible .pm-card {
+  transform: scale(1);
+}
+
+.pm-card {
+  background: var(--color-white);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--border-radius-xl);
+  position: relative;
+  transform: scale(0.95);
+  transition: transform 0.25s ease;
+}
+
+.pm-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-cream-warm);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background-color var(--transition-fast);
+}
+
+.pm-close:hover {
+  background-color: var(--color-cream-dark);
+}
+
+.pm-image {
+  height: 280px;
+  background-color: var(--color-cream-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+}
+
+.pm-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.pm-body {
+  padding: 2rem;
+}
+
+.pm-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-espresso);
+}
+
+.pm-subtitle {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--color-crema-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+}
+
+.pm-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* Flavor profile dots */
+.pm-profile {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pm-profile__row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pm-profile__label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  min-width: 70px;
+}
+
+.pm-profile__dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.pm-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pm-dot--filled {
+  background-color: var(--color-crema);
+}
+
+.pm-dot--empty {
+  background-color: transparent;
+  border: 1.5px solid var(--color-border);
+}
+
+/* Notes pills */
+.pm-section {
+  margin-top: 1rem;
+}
+
+.pm-section__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.pm-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.pm-pill {
+  background-color: var(--color-cream-warm);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.pm-info-line {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.pm-info-line strong {
+  color: var(--color-espresso);
+  font-weight: 600;
+}
+
+.pm-badges {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pm-medals {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.pm-practicals {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.pm-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-crema-dark);
+  margin-top: 1.25rem;
+}
+
+.pm-cta {
+  margin-top: 1rem;
 }
