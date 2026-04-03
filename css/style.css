@@ -252,7 +252,7 @@ p {
 }
 
 .header__logo-img {
-  height: 40px;
+  height: 44px;
   width: auto;
   display: block;
   filter: brightness(0);
@@ -267,7 +267,7 @@ p {
 
 .header__nav {
   display: none;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .header__nav a {
@@ -302,11 +302,12 @@ p {
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .header__phone {
   display: none;
+  margin-left: 1rem;
   align-items: center;
   gap: 0.25rem;
   font-size: 0.9rem;
@@ -445,6 +446,24 @@ p {
 .btn--white:hover {
   background-color: var(--color-cream);
   transform: translateY(-1px);
+}
+
+.btn--white-outline {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.btn--white-outline:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.btn--sm {
+  padding: 10px 20px;
+  font-size: 0.85rem;
 }
 
 .btn--lg {
@@ -933,11 +952,11 @@ p {
 .home-product-card__image img,
 .chr-product-card__image img,
 .part-product-card__image img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
-  background-color: var(--color-cream-warm);
-  padding: 1rem;
+  object-position: bottom center;
 }
 
 .table-thumb {
@@ -967,6 +986,10 @@ p {
 @media (min-width: 768px) {
   .header__nav {
     display: flex;
+  }
+
+  .header__logo-img {
+    height: 56px;
   }
 
   .header__phone {

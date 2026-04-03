@@ -96,10 +96,20 @@
 
 .part-product-card__image {
   background-color: var(--color-cream-warm);
-  height: 160px;
+  height: 220px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  padding: 1rem 1.5rem 0;
+  overflow: hidden;
+}
+
+.part-product-card__image img {
+  max-height: 200px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom center;
 }
 
 .part-product-card__image span {
