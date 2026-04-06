@@ -42,8 +42,8 @@
 
       <nav class="header__nav" role="navigation" aria-label="Navigation principale">
         <a href="cafe-bureau-entreprise.html">Bureau & Entreprise</a>
-        <a href="restauration-chr.html">Restauration & CHR</a>
-        <a href="particuliers.html">Particuliers</a>
+        <a href="restauration-chr.html">CHR</a>
+        <a href="particuliers.html" class="nav-hidden">Particuliers</a>
         <a href="notre-gamme.html">Notre gamme</a>
         <a href="a-propos.html" class="active">À propos</a>
         <a href="contact.html">Contact</a>
@@ -69,8 +69,8 @@
        ================================================================ -->
   <div class="mobile-menu" role="navigation" aria-label="Menu mobile">
     <a href="cafe-bureau-entreprise.html">Bureau & Entreprise</a>
-    <a href="restauration-chr.html">Restauration & CHR</a>
-    <a href="particuliers.html">Particuliers</a>
+    <a href="restauration-chr.html">CHR</a>
+    <a href="particuliers.html" class="nav-hidden">Particuliers</a>
     <a href="notre-gamme.html">Notre gamme</a>
     <a href="a-propos.html" class="active">À propos</a>
     <a href="contact.html">Contact</a>
@@ -121,10 +121,10 @@
         <div class="about-story">
 
           <div class="about-story__text animate-on-scroll">
-            <h2>Qui sommes-nous</h2>
-            <p style="margin-top: 1.5rem;">TONES est né d'une passion simple : le vrai café italien. Pas celui des grandes surfaces, pas celui des capsules industrielles — celui que l'on déguste dans les bars de Rome ou de Naples, torréfié avec soin par des maisons centenaires.</p>
+            <h2>Qui sommes-nous ?</h2>
+            <p style="margin-top: 1.5rem;">TONES est né d'une passion simple : le vrai café italien. Celui que l'on déguste dans les bars d'Albenga et Milan, torréfié avec soin par des maisons familiales.</p>
             <p>Distributeur exclusif de La Genovese pour la France Nord et distributeur Musetti, nous avons fait le choix de travailler uniquement avec des torréfacteurs qui partagent notre exigence : des grains sélectionnés, une torréfaction artisanale, et un goût qui ne ment pas.</p>
-            <p>Notre métier va au-delà de la livraison de café. Nous conseillons nos clients sur le choix des mélanges, les accompagnons dans l'acquisition de leur machine, et assurons un service de proximité que les grands groupes ne peuvent pas offrir.</p>
+            <p>Notre métier va au-delà de la livraison de café. Nous conseillons nos clients sur le choix des mélanges, les accompagnons dans l'acquisition de leur machine, et assurons un service de proximité.</p>
           </div>
 
           <div class="about-story__visual animate-on-scroll delay-1">
@@ -147,7 +147,7 @@
 
         <div class="text-center animate-on-scroll" data-illustration="plant" data-illustration-position="right" data-illustration-size="lg" style="position: relative;">
           <h2>Nos torréfacteurs partenaires</h2>
-          <p class="text-muted" style="max-width: 560px; margin: 1rem auto 0;">Deux maisons italiennes centenaires, unies par la même passion de l'excellence.</p>
+          <p class="text-muted" style="max-width: 560px; margin: 1rem auto 0;">Deux maisons italiennes familiales, unies par la même passion de l'excellence.</p>
         </div>
 
         <div class="about-roasters">
@@ -164,8 +164,10 @@
               <div class="about-blend-list">
                 <div class="about-blend-item"><strong>Anniversario</strong> — 100% Arabica, notes chocolat et fruits exotiques</div>
                 <div class="about-blend-item"><strong>Oro</strong> — 80% Arabica, 20% Robusta, équilibré et crémeux</div>
-                <div class="about-blend-item"><strong>Colonial</strong> — Corsé, crème dense, espresso puissant</div>
+                <div class="about-blend-item"><strong>Colonial</strong> — 40% Arabica, 60% Robusta. Corsé, crème dense, espresso puissant</div>
                 <div class="about-blend-item"><strong>Bio</strong> — 100% Arabica biologique, certifié Rainforest Alliance</div>
+                <div class="about-blend-item"><strong>Dosette Oro</strong> — 80% Arabica, 20% Robusta en pastille ESE</div>
+                <div class="about-blend-item"><strong>Dosette Décaféinée</strong> — Saveur préservée, sans caféine</div>
               </div>
             </div>
           </div>
@@ -181,7 +183,7 @@
               <h4>Disponible en</h4>
               <div class="about-blend-list">
                 <div class="about-blend-item"><strong>Dosettes 100% Arabica</strong></div>
-                <div class="about-blend-item"><strong>Café en grain Grand Cru</strong> — Réserve Achille Musetti</div>
+
               </div>
             </div>
           </div>
@@ -196,59 +198,89 @@
     <section class="section">
       <div class="container">
 
-        <div class="text-center animate-on-scroll" data-illustration="grains" data-illustration-position="corner-br" data-illustration-size="sm">
-          <h2>Certifications et récompenses</h2>
-          <p class="text-muted" style="max-width: 560px; margin: 1rem auto 0;">La qualité de nos cafés est reconnue par les institutions les plus exigeantes.</p>
+        <div class="text-center animate-on-scroll">
+          <h2>Nos certifications</h2>
+          <p class="text-muted" style="max-width: 560px; margin: 1rem auto 0;">La qualité de nos cafés est garantie par des organismes indépendants.</p>
         </div>
 
         <div class="about-certs">
 
           <div class="about-cert-card animate-on-scroll">
             <div class="about-cert-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h4>UNI EN ISO 9001:2015</h4>
+            <p>Système Qualité certifié depuis 2004 pour le suivi complet des activités, de l'achat des matières premières à la commercialisation.</p>
+          </div>
+
+          <div class="about-cert-card animate-on-scroll delay-1">
+            <div class="about-cert-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h4>Certification Bio (CCPB)</h4>
+            <p>Café biologique certifié depuis 2013, cultivé sans pesticides ni engrais chimiques.</p>
+          </div>
+
+          <div class="about-cert-card animate-on-scroll delay-2">
+            <div class="about-cert-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h4>Rainforest Alliance</h4>
+            <p>Partenaire depuis 2017. Agriculture durable, respect de l'environnement et des communautés productrices.</p>
+          </div>
+
+          <div class="about-cert-card animate-on-scroll delay-3">
+            <div class="about-cert-card__icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <h4>Certifié Espresso Italiano</h4>
-            <p>Le mélange Anniversario est certifié par l'INEI (Institut National de l'Espresso Italien), la plus haute distinction pour un café espresso.</p>
+            <h4>Espresso Italiano (INEI)</h4>
+            <p>Les mélanges Anniversario, Royal et Oro certifiés depuis 2008 par l'Institut National de l'Espresso Italien.</p>
+          </div>
+
+          <div class="about-cert-card animate-on-scroll delay-4">
+            <div class="about-cert-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>HACCP</h4>
+            <p>Plan HACCP certifié pour la sécurité alimentaire, conforme aux normes européennes d'hygiène.</p>
+          </div>
+
+          <div class="about-cert-card animate-on-scroll delay-4">
+            <div class="about-cert-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h4>Traçabilité totale</h4>
+            <p>Chaque lot de café est entièrement traçable, du grain vert à la livraison finale.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream">
+      <div class="container">
+
+        <div class="text-center animate-on-scroll">
+          <h2>Nos récompenses</h2>
+          <p class="text-muted" style="max-width: 560px; margin: 1rem auto 0;">L'excellence de nos cafés reconnue à l'international.</p>
+        </div>
+
+        <div class="about-certs">
+
+          <div class="about-cert-card animate-on-scroll">
+            <div class="about-cert-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <h4>International Coffee Tasting</h4>
+            <p>Médailles d'or — Anniversario et Royal : 2012, 2016, 2018, 2020, 2021. Oro : 2008, 2010, 2012, 2014, 2016. Juta Bio : 2018, 2021, 2022, 2023.</p>
           </div>
 
           <div class="about-cert-card animate-on-scroll delay-1">
             <div class="about-cert-card__icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
             </div>
-            <h4>7 médailles d'or</h4>
-            <p>Médaillé d'or à l'International Coffee Tasting en 2010, 2012, 2014, 2016, 2018, 2020 et 2021 avec les mélanges Anniversario et Royal.</p>
-          </div>
-
-          <div class="about-cert-card animate-on-scroll delay-2">
-            <div class="about-cert-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-            </div>
             <h4>Grand Prix Isola 2014</h4>
-            <p>Récompense décernée pour l'excellence de la torréfaction et la qualité constante des mélanges.</p>
-          </div>
-
-          <div class="about-cert-card animate-on-scroll delay-3">
-            <div class="about-cert-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12z"/><path d="M9 12l2 2 4-4"/></svg>
-            </div>
-            <h4>Agriculture biologique</h4>
-            <p>Gamme bio certifiée par CCPB, conforme au règlement européen de l'agriculture biologique.</p>
-          </div>
-
-          <div class="about-cert-card animate-on-scroll delay-4">
-            <div class="about-cert-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <h4>Rainforest Alliance</h4>
-            <p>Certification garantissant des pratiques agricoles durables et le respect des écosystèmes.</p>
-          </div>
-
-          <div class="about-cert-card animate-on-scroll delay-4">
-            <div class="about-cert-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h4>Certification UTZ</h4>
-            <p>Programme mondial pour une agriculture durable, assurant la traçabilité de chaque grain de café.</p>
+            <p>Récompense pour l'excellence de la torréfaction et la qualité constante des mélanges.</p>
           </div>
 
         </div>
@@ -320,7 +352,7 @@
           <div class="footer__logo">
             <img src="../img/logo-tones.svg" alt="TONES — Café Italien" class="footer__logo-img">
           </div>
-          <p class="footer__desc">Distributeur exclusif La Genovese France Nord. Café italien premium livré en Paris et Île-de-France depuis plus de 25 ans.</p>
+          <p class="footer__desc">Distributeur exclusif La Genovese France Nord. Café italien premium livré à Paris et en Île-de-France depuis plus de 25 ans.</p>
         </div>
 
         <div>
@@ -328,8 +360,8 @@
           <div class="footer__links">
             <a href="/">Accueil</a>
             <a href="cafe-bureau-entreprise.html">Bureau & Entreprise</a>
-            <a href="restauration-chr.html">Restauration & CHR</a>
-            <a href="particuliers.html">Particuliers</a>
+            <a href="restauration-chr.html">CHR</a>
+            <a href="particuliers.html" class="nav-hidden">Particuliers</a>
             <a href="notre-gamme.html">Notre gamme</a>
             <a href="a-propos.html">À propos</a>
             <a href="contact.html">Contact</a>

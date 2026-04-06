@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notre Gamme — Cafés Italiens en Grain, Moulu, Dosettes | Prix Professionnels | TONES</title>
-  <meta name="description" content="Catalogue complet TONES : cafés italiens en grain et moulu, dosettes ESE. Prix HT professionnels. Livraison en Paris et Île-de-France.">
+  <meta name="description" content="Catalogue complet TONES : cafés italiens en grain et moulu, dosettes ESE. Prix HT professionnels. Livraison à Paris et en Île-de-France.">
   <link rel="canonical" href="https://cafetones.fr/pages/notre-gamme.html">
 
   <!-- Open Graph -->
@@ -42,8 +42,8 @@
 
       <nav class="header__nav" role="navigation" aria-label="Navigation principale">
         <a href="cafe-bureau-entreprise.html">Bureau & Entreprise</a>
-        <a href="restauration-chr.html">Restauration & CHR</a>
-        <a href="particuliers.html">Particuliers</a>
+        <a href="restauration-chr.html">CHR</a>
+        <a href="particuliers.html" class="nav-hidden">Particuliers</a>
         <a href="notre-gamme.html" class="active">Notre gamme</a>
         <a href="a-propos.html">À propos</a>
         <a href="contact.html">Contact</a>
@@ -69,8 +69,8 @@
        ================================================================ -->
   <div class="mobile-menu" role="navigation" aria-label="Menu mobile">
     <a href="cafe-bureau-entreprise.html">Bureau & Entreprise</a>
-    <a href="restauration-chr.html">Restauration & CHR</a>
-    <a href="particuliers.html">Particuliers</a>
+    <a href="restauration-chr.html">CHR</a>
+    <a href="particuliers.html" class="nav-hidden">Particuliers</a>
     <a href="notre-gamme.html" class="active">Notre gamme</a>
     <a href="a-propos.html">À propos</a>
     <a href="contact.html">Contact</a>
@@ -109,7 +109,7 @@
       <div class="container">
         <span class="badge badge--gold">Catalogue 2026</span>
         <h1 style="margin-top: 1rem;">Notre gamme complète</h1>
-        <p class="text-muted" style="margin-top: 0.75rem;">Tous nos produits avec les prix HT professionnels. Livraison en Paris et Île-de-France.</p>
+        <p class="text-muted" style="margin-top: 0.75rem;">Tous nos produits avec les prix HT professionnels. Livraison à Paris et en Île-de-France.</p>
       </div>
     </section>
 
@@ -121,7 +121,6 @@
         <button class="gamme-nav__btn active" data-filter="all">Tous</button>
         <button class="gamme-nav__btn" data-filter="grain">En grain</button>
         <button class="gamme-nav__btn" data-filter="moulu">Moulu</button>
-        <button class="gamme-nav__btn" data-filter="dosettes">Dosettes</button>
         <button class="gamme-nav__btn" data-filter="grands-crus">Grands Crus</button>
         <button class="gamme-nav__btn" data-filter="bio">Bio</button>
         <button class="gamme-nav__btn" data-filter="patisseries">Pâtisseries</button>
@@ -151,7 +150,7 @@
             data-notes="Chocolat au lait, Noisette torréfiée, Fruits rouges, Notes florales"
             data-origins="Brésil, Honduras, Colombie, Éthiopie"
             data-certifications="Espresso Italiano (INEI)" data-medals="2012, 2016, 2018, 2020, 2021"
-            data-format="Bonbonne 3kg / Sachet 1kg" data-price="25,00 € HT/kg"
+            data-format="Sachet 1kg" data-price="25,00 € HT/kg"
             data-image="../img/grain-anniversario-1kg.jpg">
             <div class="gamme-card__image">
               <img src="../img/grain-anniversario-1kg.jpg" alt="La Genovese Anniversario grain 1kg" loading="lazy">
@@ -161,29 +160,30 @@
               <div class="gamme-card__name">Anniversario</div>
               <div class="gamme-card__subtitle">Legendary Blend</div>
               <div class="gamme-card__desc">Chocolat, fruits exotiques, floral. Certifié Espresso Italiano.</div>
-              <div class="gamme-card__format">Bonbonne 3kg / Sachet 1kg</div>
+              <div class="gamme-card__format">Sachet 1kg</div>
               <div class="gamme-card__price">25,00 € HT/kg</div>
             </div>
           </div>
 
           <div class="gamme-card animate-on-scroll" data-product-modal data-categories="grain" style="cursor:pointer;"
-            data-name="Royal" data-subtitle="Luxury Blend"
-            data-description="Corps velouté et richesse aromatique. La base brésilienne apporte douceur et noisette, le Honduras et la Colombie une touche de fruits rouges et de miel. L'Inde Parchment Washed renforce le corps avec chocolat noir et épices chaudes."
-            data-acidity="3" data-body="4" data-intensity="4"
-            data-notes="Chocolat au lait, Noisette, Épices chaudes, Fruits rouges"
-            data-origins="Brésil, Honduras, Colombie, Inde"
-            data-certifications="Espresso Italiano" data-medals="2012, 2014"
-            data-format="Sachet 1kg" data-price="25,00 € HT/kg"
-            data-image="../img/grain-royal-1kg.jpg">
+            data-name="Anniversario" data-subtitle="Legendary Blend — Bonbonne"
+            data-description="Hommage à la tradition et à l'excellence. La base brésilienne offre un corps doux et noisetté, enrichi par la Colombie Supremo et le Honduras SHG qui apportent fruits rouges et douceur miellée. L'Éthiopie Sidamo élève l'expérience avec des notes florales et citronnées."
+            data-acidity="4" data-body="3" data-intensity="3" data-roast="Moyenne"
+            data-notes="Chocolat au lait, Noisette torréfiée, Fruits rouges, Notes florales"
+            data-origins="Brésil, Honduras, Colombie, Éthiopie"
+            data-certifications="Espresso Italiano (INEI)" data-medals="2012, 2016, 2018, 2020, 2021"
+            data-format="Bonbonne 3kg" data-price="25,00 € HT/kg"
+            data-image="../img/grain-anniversario-1kg.jpg">
+            <!-- TODO: remplacer par photo bonbonne 3kg -->
             <div class="gamme-card__image">
-              <img src="../img/grain-royal-1kg.jpg" alt="La Genovese Royal grain 1kg" loading="lazy">
+              <img src="../img/grain-anniversario-1kg.jpg" alt="La Genovese Anniversario bonbonne 3kg" loading="lazy">
               <span class="badge badge--gold gamme-card__badge">100% Arabica</span>
             </div>
             <div class="gamme-card__content">
-              <div class="gamme-card__name">Royal</div>
-              <div class="gamme-card__subtitle">Luxury Blend</div>
-              <div class="gamme-card__desc">Chocolat noir, noisette, muscade. Corps velouté.</div>
-              <div class="gamme-card__format">Sachet 1kg</div>
+              <div class="gamme-card__name">Anniversario</div>
+              <div class="gamme-card__subtitle">Legendary Blend — Bonbonne</div>
+              <div class="gamme-card__desc">Chocolat, fruits exotiques, floral. Format professionnel.</div>
+              <div class="gamme-card__format">Bonbonne 3kg</div>
               <div class="gamme-card__price">25,00 € HT/kg</div>
             </div>
           </div>
@@ -206,26 +206,6 @@
               <div class="gamme-card__desc">Caramel, noisette, chocolat. Équilibré et crémeux.</div>
               <div class="gamme-card__format">Sachet 1kg</div>
               <div class="gamme-card__price">23,00 € HT/kg</div>
-            </div>
-          </div>
-
-          <div class="gamme-card animate-on-scroll" data-product-modal data-categories="grain" style="cursor:pointer;"
-            data-name="Orientale" data-subtitle="Prestige Blend"
-            data-description="Intensité, structure et personnalité affirmée. La base brésilienne offre une douceur caramélisée, l'Inde Parchment Washed renforce le corps avec des notes de chocolat noir, épices chaudes et une touche fumée."
-            data-acidity="1" data-body="4" data-intensity="3"
-            data-notes="Caramel, Noisette, Chocolat noir, Épices chaudes"
-            data-origins="Brésil, Inde"
-            data-format="Sachet 1kg" data-price="Sur demande"
-            data-image="../img/grain-orientale-1kg.jpg">
-            <div class="gamme-card__image">
-              <img src="../img/grain-orientale-1kg.jpg" alt="La Genovese Orientale grain 1kg" loading="lazy">
-            </div>
-            <div class="gamme-card__content">
-              <div class="gamme-card__name">Orientale</div>
-              <div class="gamme-card__subtitle">Prestige Blend</div>
-              <div class="gamme-card__desc">Intense, structuré, personnalité affirmée.</div>
-              <div class="gamme-card__format">Sachet 1kg</div>
-              <div class="gamme-card__price">Sur demande</div>
             </div>
           </div>
 
@@ -268,26 +248,6 @@
               <div class="gamme-card__desc">100% Arabica bio, certifié Rainforest Alliance.</div>
               <div class="gamme-card__format">Sachet 1kg</div>
               <div class="gamme-card__price">26,00 € HT/kg</div>
-            </div>
-          </div>
-
-          <div class="gamme-card animate-on-scroll" data-product-modal data-categories="grain" style="cursor:pointer;"
-            data-name="Dek" data-subtitle="Premium Blend Décaféiné"
-            data-description="Toute la richesse d'un café premium sans la caféine. Base brésilienne douce et noisettée, Colombie et Honduras pour une touche fruitée, Inde pour le corps et la persistance."
-            data-acidity="3" data-body="4" data-intensity="4"
-            data-notes="Chocolat au lait, Noisette, Caramel, Épices chaudes"
-            data-origins="Brésil, Honduras, Colombie, Inde" data-caffeine="< 0,10%"
-            data-format="Sachet 1kg" data-price="Sur demande"
-            data-image="../img/grain-dek-1kg.jpg">
-            <div class="gamme-card__image">
-              <img src="../img/grain-dek-1kg.jpg" alt="La Genovese Dek grain 1kg" loading="lazy">
-            </div>
-            <div class="gamme-card__content">
-              <div class="gamme-card__name">Dek</div>
-              <div class="gamme-card__subtitle">Décaféiné Premium</div>
-              <div class="gamme-card__desc">Chocolat, caramel, épices. Moins de 0,1% de caféine.</div>
-              <div class="gamme-card__format">Sachet 1kg</div>
-              <div class="gamme-card__price">Sur demande</div>
             </div>
           </div>
 
@@ -359,16 +319,17 @@
 
           <div class="gamme-card animate-on-scroll" data-product-modal data-categories="moulu" style="cursor:pointer;"
             data-name="Dek moulu" data-subtitle="Premium Blend"
-            data-description="Décaféiné — toute la saveur d'un café italien sans la caféine. Mouture fine, idéal en soirée."
+            data-description="Décaféiné (moins de 0,1% de caféine) — toute la saveur d'un café italien sans la caféine. Mouture fine, idéal en soirée."
             data-notes="Doux, Rond" data-format="Boîte 250g" data-price="7,50 € HT"
             data-image="../img/moulu-dek-250g.jpg">
             <div class="gamme-card__image">
               <img src="../img/moulu-dek-250g.jpg" alt="Dek moulu 250g" loading="lazy">
+              <!-- TODO: vérifier/remplacer photo déca moulu -->
             </div>
             <div class="gamme-card__content">
               <div class="gamme-card__name">Dek</div>
               <div class="gamme-card__subtitle">Décaféiné</div>
-              <div class="gamme-card__desc">Toute la saveur, sans la caféine.</div>
+              <div class="gamme-card__desc">Toute la saveur, sans la caféine (moins de 0,1% de caféine).</div>
               <div class="gamme-card__format">Boîte 250g</div>
               <div class="gamme-card__price">7,50 € HT</div>
             </div>
@@ -396,101 +357,19 @@
       </div>
     </section>
 
-    <!-- ================================================================
-         Dosettes / Pastilles ESE
-         ================================================================ -->
-    <section class="gamme-section" id="dosettes" data-section-cat="dosettes">
-      <div class="container">
-        <div class="gamme-section__intro animate-on-scroll">
-          <h2>Dosettes &amp; pastilles ESE</h2>
-          <p>Pastilles compatibles machines ESE — prêtes à l'emploi, sans gaspillage.</p>
-        </div>
-        <div class="gamme-cards">
-
-          <div class="gamme-card animate-on-scroll" data-product-modal data-categories="dosettes" style="cursor:pointer;"
-            data-name="La Genovese Oro — dosettes" data-description="80% Arabica, 20% Robusta. Pastilles ESE équilibrées et crémeuses."
-            data-notes="Équilibré, Crémeux" data-format="x150 pastilles ESE" data-price="67,50 € HT (0,45 €/café)"
-            data-image="../img/capsule-oro.jpg">
-            <div class="gamme-card__image">
-              <img src="../img/capsule-oro.jpg" alt="Dosettes La Genovese Oro" loading="lazy">
-            </div>
-            <div class="gamme-card__content">
-              <div class="gamme-card__name">La Genovese Oro</div>
-              <div class="gamme-card__desc">80% Arabica, 20% Robusta — équilibré.</div>
-              <div class="gamme-card__format">x150 pastilles ESE</div>
-              <div class="gamme-card__price">67,50 € HT <span style="font-size:0.82rem;font-weight:400;">(0,45 €/café)</span></div>
-            </div>
-          </div>
-
-          <div class="gamme-card animate-on-scroll" data-product-modal data-categories="dosettes" style="cursor:pointer;"
-            data-name="Vergnano Oro — dosettes" data-description="Assemblage italien riche et crémeux. Pastilles ESE."
-            data-notes="Riche, Crémeux" data-format="x150 pastilles ESE" data-price="67,50 € HT (0,45 €/café)"
-            data-image="">
-            <div class="gamme-card__image"><span style="font-style:italic;font-size:0.85rem;color:var(--color-text-light);">Vergnano</span></div>
-            <div class="gamme-card__content">
-              <div class="gamme-card__name">Vergnano Oro</div>
-              <div class="gamme-card__desc">Assemblage italien — riche, crémeux.</div>
-              <div class="gamme-card__format">x150 pastilles ESE</div>
-              <div class="gamme-card__price">67,50 € HT <span style="font-size:0.82rem;font-weight:400;">(0,45 €/café)</span></div>
-            </div>
-          </div>
-
-          <div class="gamme-card animate-on-scroll" data-product-modal data-categories="dosettes" style="cursor:pointer;"
-            data-name="Musetti 100% Arabica — dosettes" data-description="100% Arabica doux et aromatisé. Pastilles ESE."
-            data-notes="Doux, Aromatisé" data-format="x150 pastilles ESE" data-price="67,50 € HT (0,45 €/café)"
-            data-image="">
-            <div class="gamme-card__image"><span style="font-style:italic;font-size:0.85rem;color:var(--color-text-light);">Musetti</span></div>
-            <div class="gamme-card__content">
-              <div class="gamme-card__name">Musetti 100% Arabica</div>
-              <div class="gamme-card__desc">Doux, aromatisé — 100% Arabica.</div>
-              <div class="gamme-card__format">x150 pastilles ESE</div>
-              <div class="gamme-card__price">67,50 € HT <span style="font-size:0.82rem;font-weight:400;">(0,45 €/café)</span></div>
-            </div>
-          </div>
-
-          <div class="gamme-card animate-on-scroll" data-product-modal data-categories="dosettes bio" style="cursor:pointer;"
-            data-name="La Genovese Bio — dosettes" data-description="100% Arabica bio. Pastilles ESE certifiées."
-            data-notes="Bio, Aromatique" data-format="x25 pastilles ESE" data-price="12,50 € HT (0,50 €/café)"
-            data-image="../img/capsule-juta-bio.jpg">
-            <div class="gamme-card__image">
-              <img src="../img/capsule-juta-bio.jpg" alt="Dosettes Bio La Genovese" loading="lazy">
-              <span class="badge gamme-card__badge">Bio</span>
-            </div>
-            <div class="gamme-card__content">
-              <div class="gamme-card__name">La Genovese Bio</div>
-              <div class="gamme-card__desc">100% Arabica bio.</div>
-              <div class="gamme-card__format">x25 pastilles ESE</div>
-              <div class="gamme-card__price">12,50 € HT <span style="font-size:0.82rem;font-weight:400;">(0,50 €/café)</span></div>
-            </div>
-          </div>
-
-          <div class="gamme-card animate-on-scroll" data-product-modal data-categories="dosettes" style="cursor:pointer;"
-            data-name="La Genovese Décaféiné — dosettes" data-description="Dosettes décaféinées. Saveur préservée, sans caféine."
-            data-notes="Doux, Rond" data-format="x25 pastilles ESE" data-price="11,25 € HT (0,45 €/café)"
-            data-image="../img/capsule-dek.jpg">
-            <div class="gamme-card__image">
-              <img src="../img/capsule-dek.jpg" alt="Dosettes Décaféiné La Genovese" loading="lazy">
-            </div>
-            <div class="gamme-card__content">
-              <div class="gamme-card__name">La Genovese Décaféiné</div>
-              <div class="gamme-card__desc">Décaféiné — saveur préservée.</div>
-              <div class="gamme-card__format">x25 pastilles ESE</div>
-              <div class="gamme-card__price">11,25 € HT <span style="font-size:0.82rem;font-weight:400;">(0,45 €/café)</span></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <!-- TODO: remplacer par photo carton pods Genovese Oro -->
+    <!-- TODO: remplacer par photo pods Genovese Décaféiné -->
+    <!-- TODO: ajouter photo dosette Musetti Evoluzione (à télécharger depuis le site Musetti) -->
+    <!-- TODO: ajouter photo dosette Vergnano ESE Oro (à télécharger depuis caffevergnano.fr) -->
 
     <!-- ================================================================
-         Grands Crus — Single Origins
+         Grands Crus
          ================================================================ -->
     <section class="gamme-section" id="grands-crus" data-section-cat="grands-crus">
       <div class="container">
         <div class="gamme-section__intro animate-on-scroll">
-          <h2>Grands Crus — Single Origins</h2>
-          <p>Cafés d'origine unique, en grain 250g. Pour les amateurs de terroirs.</p>
+          <h2>Grands Crus</h2>
+          <p>Cafés d'origine en grain ou en moulu 250g. Sur commande.</p>
         </div>
         <div class="gamme-cards">
 
@@ -656,7 +535,7 @@
           </div>
 
           <div class="gamme-card gamme-card--patisserie animate-on-scroll" data-product-modal data-categories="patisseries" style="cursor:pointer;"
-            data-name="La Colomba"
+            data-name="La Colombe"
             data-description="Identique au panettone dans sa composition, mais moulée en forme de colombe et parsemée de sucre perlé. Traditionnellement servie à Pâques. La légende veut qu'un pâtissier ait offert ce gâteau en signe de paix au roi lombard Alboïn en l'an 572."
             data-ingredients="Farine, sucre, beurre, jaune d'œuf, levure naturelle, monoglycérides, sel, arômes naturels, raisins secs, glaçage d'amandes, écorce d'orange, fruits confits"
             data-ingredients-glaze="Sucre granulé, albumen, sucre glacé, farine de riz grillé, pâte de noisette, huile de graines, poudre de cacao"
@@ -664,10 +543,10 @@
             data-order-period="Février — livraison en avril"
             data-image="../img/patisserie-colomba.jpg" data-price="">
             <div class="gamme-card__image">
-              <img src="../img/patisserie-colomba.jpg" alt="Colomba La Genovese" loading="lazy">
+              <img src="../img/patisserie-colomba.jpg" alt="Colombe La Genovese" loading="lazy">
             </div>
             <div class="gamme-card__content">
-              <div class="gamme-card__name">La Colomba</div>
+              <div class="gamme-card__name">La Colombe</div>
               <div class="gamme-card__desc">Moulée en colombe, parsemée de sucre perlé. Pâques.</div>
               <div class="gamme-card__format">750 g</div>
               <div class="seasonal-note">Commande en février, livraison en avril.</div>
@@ -712,7 +591,7 @@
           <div class="footer__logo">
             <img src="../img/logo-tones.svg" alt="TONES — Café Italien" class="footer__logo-img">
           </div>
-          <p class="footer__desc">Distributeur exclusif La Genovese France Nord. Café italien premium livré en Paris et Île-de-France depuis plus de 25 ans.</p>
+          <p class="footer__desc">Distributeur exclusif La Genovese France Nord. Café italien premium livré à Paris et en Île-de-France depuis plus de 25 ans.</p>
         </div>
 
         <div>
@@ -720,8 +599,8 @@
           <div class="footer__links">
             <a href="/">Accueil</a>
             <a href="cafe-bureau-entreprise.html">Bureau & Entreprise</a>
-            <a href="restauration-chr.html">Restauration & CHR</a>
-            <a href="particuliers.html">Particuliers</a>
+            <a href="restauration-chr.html">CHR</a>
+            <a href="particuliers.html" class="nav-hidden">Particuliers</a>
             <a href="notre-gamme.html">Notre gamme</a>
             <a href="a-propos.html">À propos</a>
             <a href="contact.html">Contact</a>

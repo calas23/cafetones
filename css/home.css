@@ -244,10 +244,61 @@
 
 @media (min-width: 1024px) {
   .home-universes {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .home-products {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* ========================================================================
+   Certifications accueil
+   ======================================================================== */
+
+.section--cream-warm {
+  background-color: var(--color-cream-warm);
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.certification-badge {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-lg);
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.certification-badge strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--color-espresso);
+  margin-bottom: 0.25rem;
+}
+
+.certification-badge span {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 640px) {
+  .certifications-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .certifications-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
