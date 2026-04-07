@@ -336,6 +336,14 @@
   margin-top: 0.75rem;
 }
 
+.price-detail {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
 /* Patisseries — warmer image background */
 .gamme-card--patisserie .gamme-card__image {
   background-color: #F5EDE0;
