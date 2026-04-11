@@ -48,6 +48,7 @@
     var ingredientsGlaze = d.ingredientsGlaze || '';
     var roast = d.roast || '';
     var caffeine = d.caffeine || '';
+    var machineInfo = d.machineInfo || '';
     var acidity = parseInt(d.acidity) || 0;
     var body = parseInt(d.body) || 0;
     var intensity = parseInt(d.intensity) || 0;
@@ -136,6 +137,11 @@
     // Price
     if (price) {
       html += '<div class="pm-price">' + price + '</div>';
+    }
+
+    // Machine info (DepanResto)
+    if (machineInfo) {
+      html += '<div class="modal-machine-info">' + machineInfo + '</div>';
     }
 
     // CTA

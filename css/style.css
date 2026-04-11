@@ -1315,6 +1315,37 @@ p {
    Card Hidden — masquage réversible
    ======================================================================== */
 
+/* ========================================================================
+   Card Medals — médailles ICT sous le prix des cards grain
+   ======================================================================== */
+
+.card-medals {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--color-crema-dark);
+  font-weight: 500;
+}
+.medal-icon {
+  font-size: 1rem;
+}
+
+/* ========================================================================
+   Modal Machine Info — encadré DepanResto dans la modale
+   ======================================================================== */
+
+.modal-machine-info {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: var(--color-cream-warm);
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
 .card-hidden {
   display: none !important;
 }
