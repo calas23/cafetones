@@ -252,7 +252,7 @@ p {
 }
 
 .header__logo-img {
-  height: 48px;
+  height: 56px;
   width: auto;
   display: block;
   filter: brightness(0);
@@ -1243,12 +1243,16 @@ p {
 }
 
 @media (min-width: 768px) {
+  :root {
+    --header-height: 88px;
+  }
+
   .header__nav {
     display: flex;
   }
 
   .header__logo-img {
-    height: 64px;
+    height: 80px;
   }
 
   .header__phone {
