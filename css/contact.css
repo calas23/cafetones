@@ -1,56 +1,37 @@
-/* ========================================================================
-   TONES — Page Contact
-   Complète style.css — ne le remplace pas
-   ======================================================================== */
+/* CSS de page scopé : ne s'applique que sous <main class="page-contact">.
+   Reproduit le chargement par page de l'ancien site (voir git history
+   pour la version originale commentée). */
 
-/* ========================================================================
-   Layout 2 colonnes
-   ======================================================================== */
-
-.contact-layout {
+main.page-contact .contact-layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
   align-items: start;
 }
-
-/* ========================================================================
-   Formulaire card
-   ======================================================================== */
-
-.contact-form-card {
+main.page-contact .contact-form-card {
   background-color: var(--color-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--border-radius-xl);
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
 }
-
-.contact-form-card h2 {
+main.page-contact .contact-form-card h2 {
   margin-bottom: 0.25rem;
 }
-
-.contact-form-card > p {
+main.page-contact .contact-form-card > p {
   font-size: 0.92rem;
   color: var(--color-text-muted);
   margin-bottom: 2rem;
 }
-
-/* ========================================================================
-   Colonne informations
-   ======================================================================== */
-
-.contact-info h3 {
+main.page-contact .contact-info h3 {
   font-size: 1.1rem;
   margin-bottom: 0.75rem;
   margin-top: 2rem;
 }
-
-.contact-info h3:first-child {
+main.page-contact .contact-info h3:first-child {
   margin-top: 0;
 }
-
-.contact-info-line {
+main.page-contact .contact-info-line {
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -58,53 +39,41 @@
   font-size: 0.92rem;
   color: var(--color-text);
 }
-
-.contact-info-line svg {
+main.page-contact .contact-info-line svg {
   width: 18px;
   height: 18px;
   color: var(--color-crema-dark);
   flex-shrink: 0;
 }
-
-.contact-info-line a {
+main.page-contact .contact-info-line a {
   color: var(--color-text);
   transition: color var(--transition-fast);
 }
-
-.contact-info-line a:hover {
+main.page-contact .contact-info-line a:hover {
   color: var(--color-crema-dark);
 }
-
-.contact-info p {
+main.page-contact .contact-info p {
   font-size: 0.92rem;
   color: var(--color-text-muted);
   line-height: 1.6;
 }
-
-.contact-map {
+main.page-contact .contact-map {
   width: 100%;
   height: 280px;
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--color-border-light);
   margin-top: 1rem;
 }
-
-/* ========================================================================
-   FAQ Accordéon
-   ======================================================================== */
-
-.faq {
+main.page-contact .faq {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
 }
-
-.faq-item {
+main.page-contact .faq-item {
   border-bottom: 1px solid var(--color-border-light);
 }
-
-.faq-question {
+main.page-contact .faq-question {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -120,43 +89,34 @@
   text-align: left;
   gap: 1rem;
 }
-
-.faq-question svg {
+main.page-contact .faq-question svg {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
   color: var(--color-text-light);
   transition: transform 0.3s ease, color 0.3s ease;
 }
-
-.faq-item.active .faq-question {
+main.page-contact .faq-item.active .faq-question {
   color: var(--color-crema-dark);
 }
-
-.faq-item.active .faq-question svg {
+main.page-contact .faq-item.active .faq-question svg {
   transform: rotate(180deg);
   color: var(--color-crema-dark);
 }
-
-.faq-answer {
+main.page-contact .faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-
-.faq-answer__inner {
+main.page-contact .faq-answer__inner {
   padding: 0 0 1.25rem 0;
   font-size: 0.92rem;
   color: var(--color-text-muted);
   line-height: 1.6;
 }
 
-/* ========================================================================
-   Media Queries
-   ======================================================================== */
-
 @media (min-width: 900px) {
-  .contact-layout {
+main.page-contact .contact-layout {
     grid-template-columns: 3fr 2fr;
   }
 }

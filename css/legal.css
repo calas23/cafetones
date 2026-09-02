@@ -1,0 +1,32 @@
+/* Styles de la page Mentions légales — repris du bloc <style> inline
+   de l'ancienne pages/mentions-legales.html. Scopés par .legal-content. */
+
+.legal-content h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.legal-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.legal-content p {
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+}
+.legal-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.legal-content ul li {
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+.legal-content a {
+  color: var(--color-crema-dark);
+  text-decoration: underline;
+}

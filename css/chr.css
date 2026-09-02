@@ -1,13 +1,8 @@
-/* ========================================================================
-   TONES — Page Restauration & CHR
-   Complète style.css — ne le remplace pas
-   ======================================================================== */
+/* CSS de page scopé : ne s'applique que sous <main class="page-chr">.
+   Reproduit le chargement par page de l'ancien site (voir git history
+   pour la version originale commentée). */
 
-/* ========================================================================
-   Hero CHR
-   ======================================================================== */
-
-.chr-hero {
+main.page-chr .chr-hero {
   position: relative;
   min-height: 85vh;
   display: flex;
@@ -18,8 +13,7 @@
   background-size: cover;
   background-position: center;
 }
-
-.chr-hero::after {
+main.page-chr .chr-hero::after {
   content: '';
   position: absolute;
   top: 0;
@@ -29,8 +23,7 @@
   background-color: rgba(44, 24, 16, 0.65);
   z-index: 1;
 }
-
-.chr-hero__content {
+main.page-chr .chr-hero__content {
   position: relative;
   z-index: 2;
   text-align: center;
@@ -38,62 +31,49 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-.chr-hero__content h1 {
+main.page-chr .chr-hero__content h1 {
   color: var(--color-cream);
 }
-
-.chr-hero__badge {
+main.page-chr .chr-hero__badge {
   margin-bottom: 1.5rem;
   animation: fadeInUp 0.6s ease both;
 }
-
-.chr-hero__title {
+main.page-chr .chr-hero__title {
   margin-bottom: 1.5rem;
   animation: fadeInUp 0.6s ease 0.1s both;
 }
-
-.chr-hero__subtitle {
+main.page-chr .chr-hero__subtitle {
   color: var(--color-cream-dark);
   font-size: clamp(1rem, 2vw, 1.15rem);
   line-height: 1.7;
   margin-bottom: 2rem;
   animation: fadeInUp 0.6s ease 0.2s both;
 }
-
-.chr-hero__actions {
+main.page-chr .chr-hero__actions {
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
   animation: fadeInUp 0.6s ease 0.3s both;
 }
-
-/* ========================================================================
-   Cards produits CHR
-   ======================================================================== */
-
-.chr-products {
+main.page-chr .chr-products {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 3rem;
 }
-
-.chr-product-card {
+main.page-chr .chr-product-card {
   background-color: var(--color-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
-
-.chr-product-card:hover {
+main.page-chr .chr-product-card:hover {
   border-color: var(--color-crema);
   box-shadow: var(--shadow-sm);
 }
-
-.chr-product-card__image {
+main.page-chr .chr-product-card__image {
   background-color: var(--color-cream-warm);
   height: 240px;
   display: flex;
@@ -103,158 +83,126 @@
   position: relative;
   overflow: hidden;
 }
-
-.chr-product-card__image img {
+main.page-chr .chr-product-card__image img {
   max-height: 220px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
   object-position: bottom center;
 }
-
-.chr-product-card__image .badge {
+main.page-chr .chr-product-card__image .badge {
   position: absolute;
   bottom: 0.75rem;
   left: 0.75rem;
   z-index: 2;
 }
-
-.chr-product-card__content {
+main.page-chr .chr-product-card__content {
   padding: 1.25rem 1.5rem 1.5rem;
 }
-
-.chr-product-card__content .badge {
+main.page-chr .chr-product-card__content .badge {
   margin-bottom: 0.5rem;
   margin-right: 0.25rem;
 }
-
-.chr-product-card__name {
+main.page-chr .chr-product-card__name {
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 600;
   color: var(--color-espresso);
   margin-top: 0.25rem;
 }
-
-.chr-product-card__desc {
+main.page-chr .chr-product-card__desc {
   font-size: 0.82rem;
   color: var(--color-text-muted);
   line-height: 1.5;
   margin-top: 0.25rem;
 }
-
-.chr-product-card__price {
+main.page-chr .chr-product-card__price {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-crema-dark);
   margin-top: 0.75rem;
 }
-
-.chr-product-card__format {
+main.page-chr .chr-product-card__format {
   font-size: 0.82rem;
   color: var(--color-text-muted);
   margin-top: 0.25rem;
 }
-
-/* ========================================================================
-   Blocs compléments
-   ======================================================================== */
-
-.chr-extras {
+main.page-chr .chr-extras {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 3rem;
 }
-
-.chr-extra-card {
+main.page-chr .chr-extra-card {
   background-color: var(--color-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
 }
-
-.chr-extra-card__image {
+main.page-chr .chr-extra-card__image {
   height: 180px;
   background-color: var(--color-cream-warm);
   overflow: hidden;
   border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
-
-.chr-extra-card__image img {
+main.page-chr .chr-extra-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-.chr-extra-card__body {
+main.page-chr .chr-extra-card__body {
   padding: 2rem;
 }
-
-.chr-extra-card h3 {
+main.page-chr .chr-extra-card h3 {
   margin-bottom: 0.75rem;
 }
-
-.chr-extra-card p {
+main.page-chr .chr-extra-card p {
   font-size: 0.92rem;
   color: var(--color-text-muted);
   line-height: 1.6;
 }
-
-.chr-extra-card__note {
+main.page-chr .chr-extra-card__note {
   font-size: 0.82rem;
   color: var(--color-text-light);
   margin-top: 0.75rem;
   font-style: italic;
 }
-
-.chr-extra-card .btn--sm {
+main.page-chr .chr-extra-card .btn--sm {
   margin-top: 1rem;
 }
-
-/* ========================================================================
-   Formulaire phone callout
-   ======================================================================== */
-
-.chr-phone-callout {
+main.page-chr .chr-phone-callout {
   text-align: center;
   padding: 1.5rem;
   background-color: var(--color-cream-warm);
   border-radius: var(--border-radius-lg);
   margin-bottom: 2rem;
 }
-
-.chr-phone-callout p {
+main.page-chr .chr-phone-callout p {
   font-size: 0.92rem;
   color: var(--color-text-muted);
   margin-bottom: 0.5rem;
 }
-
-.chr-phone-callout a {
+main.page-chr .chr-phone-callout a {
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--color-crema-dark);
 }
 
-/* ========================================================================
-   Media Queries
-   ======================================================================== */
-
 @media (min-width: 640px) {
-  .chr-products {
+main.page-chr .chr-products {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 768px) {
-  .chr-extras {
+main.page-chr .chr-extras {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 1024px) {
-  .chr-products {
+main.page-chr .chr-products {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }

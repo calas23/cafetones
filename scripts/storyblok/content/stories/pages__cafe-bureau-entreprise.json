@@ -1,0 +1,352 @@
+{
+  "name": "Bureau & Entreprise",
+  "slug": "cafe-bureau-entreprise",
+  "full_slug": "pages/cafe-bureau-entreprise",
+  "content": {
+    "_uid": "6dac7b99-2629-461b-fd7f-6a8a668dd906",
+    "component": "page",
+    "seo_title": "Café Italien pour Bureaux & Entreprises à Paris et Île-de-France | TONES",
+    "seo_description": "Café italien premium livré gratuitement dans vos bureaux à Paris et Île-de-France. Dégustation gratuite sur site. Torréfaction artisanale La Genovese depuis 1936. Grain, moulu, dosettes.",
+    "og_title": "Café Italien pour vos Bureaux | TONES",
+    "og_description": "Dégustation gratuite sur site. Torréfaction italienne médaillée.",
+    "breadcrumb_label": "Bureau & Entreprise",
+    "breadcrumb_path": "/pages/cafe-bureau-entreprise",
+    "style_scopes": [
+      "landing"
+    ],
+    "jsonld": "{\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"LocalBusiness\",\n    \"name\": \"TONES - Distributeur Café Italien\",\n    \"description\": \"Distributeur exclusif café La Genovese en France Nord. Café italien premium livré à Paris et Île-de-France pour les bureaux et entreprises.\",\n    \"url\": \"https://cafetones.fr\",\n    \"telephone\": \"+33662119748\",\n    \"email\": \"cafetones@free.fr\",\n    \"address\": {\n      \"@type\": \"PostalAddress\",\n      \"streetAddress\": \"83 rue de Reuilly\",\n      \"addressLocality\": \"Paris\",\n      \"postalCode\": \"75012\",\n      \"addressCountry\": \"FR\"\n    },\n    \"areaServed\": {\n      \"@type\": \"GeoCircle\",\n      \"geoMidpoint\": {\n        \"@type\": \"GeoCoordinates\",\n        \"latitude\": 48.8566,\n        \"longitude\": 2.3522\n      },\n      \"geoRadius\": \"60000\"\n    },\n    \"openingHours\": \"Mo-Fr 08:00-18:00\",\n    \"priceRange\": \"€€\"\n  }",
+    "body": [
+      {
+        "_uid": "41a15b51-35a8-10cb-f68d-aa8006936b9c",
+        "component": "landing_hero",
+        "badge_text": "Torréfaction italienne depuis 1936",
+        "title": "Un *vrai café italien*\npour vos équipes",
+        "subtitle": "Faites-leur découvrir nos cafés au cours d'une dégustation gratuite et sans engagement, dans vos locaux.",
+        "buttons": [
+          {
+            "_uid": "194a31a6-4189-3546-c712-65bb38f66611",
+            "component": "button",
+            "label": "Appelez-nous",
+            "link": "tel:+33662119748",
+            "style": "primary",
+            "size": "lg",
+            "icon": "phone",
+            "location": "hero",
+            "phone_svg": false
+          },
+          {
+            "_uid": "88a49546-7039-1054-daba-96a18c9f2926",
+            "component": "button",
+            "label": "Réservez votre dégustation gratuite",
+            "link": "#degustation",
+            "style": "secondary",
+            "size": "lg",
+            "icon": "bell",
+            "location": "",
+            "phone_svg": false
+          }
+        ],
+        "trust_items": [
+          {
+            "_uid": "0c62feea-3835-6121-226d-c04acd62e53b",
+            "component": "trust_item",
+            "text": "Médaillé international"
+          },
+          {
+            "_uid": "cef6af71-68e2-2f94-4c3d-2f669d32a529",
+            "component": "trust_item",
+            "text": "+ de 25 ans d'expérience"
+          }
+        ],
+        "image": {
+          "filename": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+          "alt": "Café italien servi dans un bureau"
+        },
+        "image_width": "800",
+        "image_height": "600"
+      },
+      {
+        "_uid": "64f89f83-6c6d-8771-fa59-5b4681fa666e",
+        "component": "reassurance_section",
+        "items": [
+          {
+            "_uid": "45e62311-355b-4377-0420-48451f029274",
+            "component": "reassurance_item",
+            "icon": "coffee",
+            "title": "Dégustation sur site",
+            "text": "Nous nous déplaçons dans vos locaux — c'est gratuit",
+            "delay": "1"
+          },
+          {
+            "_uid": "06b2dcc2-3b2c-4cba-5f84-38fd6d2bc5bf",
+            "component": "reassurance_item",
+            "icon": "medal",
+            "title": "Médaillé international",
+            "text": "Certifié Espresso Italiano — INEI",
+            "delay": "2"
+          },
+          {
+            "_uid": "b72600e6-abc0-46f0-039c-779c8d045925",
+            "component": "reassurance_item",
+            "icon": "shield",
+            "title": "Gamme bio certifiée",
+            "text": "Bio EU, Rainforest Alliance, UTZ",
+            "delay": "3"
+          }
+        ]
+      },
+      {
+        "_uid": "b4305bb9-df87-52b4-9499-f73614df42a5",
+        "component": "steps_section",
+        "anchor_id": "comment-ca-marche",
+        "badge": "Simple et rapide",
+        "title": "Comment ça marche",
+        "subtitle": "Du premier contact à votre première livraison, tout se fait en quelques jours.",
+        "illustration": "moka",
+        "illustration_position": "right",
+        "illustration_size": "md",
+        "steps": [
+          {
+            "_uid": "7f05f203-c3d6-9661-7ad0-8bfcb07d255c",
+            "component": "step_item",
+            "title": "Nous venons chez vous",
+            "text": "Notre gérante se déplace dans vos locaux avec une sélection de cafés à déguster. C'est gratuit et sans engagement.",
+            "delay": ""
+          },
+          {
+            "_uid": "e0522468-03ae-2317-c10b-97d1cc63fb23",
+            "component": "step_item",
+            "title": "Vous choisissez",
+            "text": "Ensemble, nous identifions les mélanges qui plairont à vos équipes. Grain, moulu ou dosettes : nous nous adaptons à votre machine.",
+            "delay": "1"
+          },
+          {
+            "_uid": "a4a98250-266d-4658-f38f-9bd08ac095b2",
+            "component": "step_item",
+            "title": "Nous vous livrons",
+            "text": "Chaque mois ou au rythme souhaité, nous livrons dans vos bureaux à Paris et en Île-de-France. Vous ne manquerez jamais de café.",
+            "delay": "2"
+          }
+        ]
+      },
+      {
+        "_uid": "ebc065d8-5f98-d098-433a-53c45e576c4b",
+        "component": "pricing_section",
+        "anchor_id": "tarifs",
+        "badge": "Tarifs HT — Professionnels",
+        "title": "Nos cafés pour le bureau",
+        "subtitle": "Des cafés italiens médaillés, à des prix accessibles. Devis personnalisé sur demande.",
+        "illustration": "tasse",
+        "illustration_position": "right",
+        "illustration_size": "sm",
+        "products": [
+          {
+            "_uid": "892729a2-a2a1-544d-4b5a-28a894eb6fde",
+            "component": "product_card",
+            "name": "Anniversario",
+            "subtitle": "Legendary Blend",
+            "description": "Hommage à la tradition et à l'excellence. La base brésilienne offre un corps doux et noisetté, enrichi par la Colombie Supremo et le Honduras SHG qui apportent fruits rouges et douceur miellée. L'Éthiopie Sidamo élève l'expérience avec des notes florales et citronnées.",
+            "acidity": "4",
+            "body": "3",
+            "intensity": "3",
+            "roast": "Moyenne",
+            "notes": "Chocolat au lait, Noisette torréfiée, Fruits rouges, Notes florales",
+            "origins": "Brésil, Honduras, Colombie, Éthiopie",
+            "certifications": "Espresso Italiano (INEI)",
+            "medals": "2012, 2016, 2018, 2020, 2021, 2022, 2023",
+            "format": "Bonbonne 3kg / Sachet 1kg",
+            "price": "25,20 € HT/kg",
+            "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+            "image": {
+              "filename": "/img/grain-anniversario-1kg.jpg",
+              "alt": ""
+            },
+            "display_name": "La Genovese Anniversario",
+            "table_desc": "100% Arabica — notes chocolat, fruits exotiques",
+            "table_format": "Grain — 1 kg",
+            "table_price": "25,20 €",
+            "table_unit": "—",
+            "card_badge_label": "100% Arabica",
+            "card_badge_style": "gold",
+            "card_desc": "Grain — notes chocolat, fruits exotiques",
+            "card_amount": "25,20 €",
+            "card_unit": "HT/kg",
+            "medals_label": "7 médailles ICT"
+          },
+          {
+            "_uid": "3275b85a-8329-c1b1-dcb6-8dcd6ab23e3a",
+            "component": "product_card",
+            "name": "Oro",
+            "subtitle": "Supreme Blend",
+            "description": "Profondeur, richesse et velouté en bouche. Caramel, noisette torréfiée, chocolat au lait sur la base brésilienne. Colombie et Honduras apportent luminosité, l'Inde renforce le corps avec chocolat noir et épices.",
+            "acidity": "2",
+            "body": "4",
+            "intensity": "3",
+            "notes": "Caramel, Noisette, Chocolat noir, Épices chaudes",
+            "origins": "Brésil, Honduras, Colombie, Inde",
+            "certifications": "Espresso Italiano",
+            "medals": "2008, 2010, 2012, 2014, 2016",
+            "format": "Sachet 1kg",
+            "price": "23,20 € HT/kg",
+            "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+            "image": {
+              "filename": "/img/grain-oro-1kg.jpg",
+              "alt": ""
+            },
+            "display_name": "La Genovese Oro",
+            "table_desc": "80% Arabica, 20% Robusta — équilibré, crémeux",
+            "table_format": "Grain — 1 kg",
+            "table_price": "23,20 €",
+            "table_unit": "—",
+            "card_desc": "Grain — équilibré, crémeux, passe-partout",
+            "card_amount": "23,20 €",
+            "card_unit": "HT/kg",
+            "medals_label": "5 médailles ICT"
+          },
+          {
+            "_uid": "e7880e42-019f-1f95-9d10-39ed44aa67eb",
+            "component": "product_card",
+            "name": "Colonial",
+            "subtitle": "Premium Robusta",
+            "description": "Audace et puissance. Le Brésil Santos Cerrado apporte caramel et noisette, l'Inde Parchment Washed intensité et persistance avec chocolat noir, épices et crème veloutée.",
+            "acidity": "1",
+            "body": "5",
+            "intensity": "4",
+            "notes": "Caramel, Noisette, Chocolat noir, Épices chaudes",
+            "origins": "Brésil, Inde, Vietnam",
+            "format": "Sachet 1kg",
+            "price": "19,20 € HT/kg",
+            "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+            "image": {
+              "filename": "/img/grain-coloniale-1kg.jpg",
+              "alt": ""
+            },
+            "display_name": "La Genovese Colonial",
+            "table_desc": "Arabica/Robusta — corsé, crème dense",
+            "table_format": "Grain — 1 kg",
+            "table_price": "19,20 €",
+            "table_unit": "—",
+            "card_desc": "Grain — corsé, crème dense, espresso fort",
+            "card_amount": "19,20 €",
+            "card_unit": "HT/kg",
+            "medals_label": ""
+          },
+          {
+            "_uid": "807c2497-43ba-c869-096e-1bda53b1f1b0",
+            "component": "product_card",
+            "name": "Juta Bio",
+            "subtitle": "Pure Organic Blend",
+            "description": "Pureté, équilibre et durabilité. Le Honduras Finca Santa Teresa apporte un corps soyeux et une douceur miellée. Le Pérou San Ignacio enrichit avec chocolat noir, caramel et fruits secs.",
+            "acidity": "4",
+            "body": "3",
+            "intensity": "3",
+            "notes": "Miel, Amande, Chocolat noir, Caramel",
+            "origins": "Honduras, Pérou",
+            "certifications": "Rainforest Alliance, CCPB",
+            "medals": "2018, 2021, 2022, 2023",
+            "format": "Sachet 1kg",
+            "price": "26,20 € HT/kg",
+            "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+            "image": {
+              "filename": "/img/grain-juta-bio-1kg.jpg",
+              "alt": ""
+            },
+            "display_name": "La Genovese Bio",
+            "table_badge_label": "Bio",
+            "table_badge_style": "simple",
+            "table_desc": "100% Arabica bio — certifié Rainforest Alliance",
+            "table_format": "Grain — 1 kg",
+            "table_price": "26,20 €",
+            "table_unit": "—",
+            "card_badge_label": "Bio",
+            "card_badge_style": "simple",
+            "card_desc": "Grain — 100% Arabica, Rainforest Alliance",
+            "card_amount": "26,20 €",
+            "card_unit": "HT/kg",
+            "medals_label": "4 médailles ICT"
+          }
+        ],
+        "note": "Gamme complète et devis personnalisé sur demande.",
+        "cta_label": "Voir toute la gamme et les prix",
+        "cta_link": "/pages/notre-gamme"
+      },
+      {
+        "_uid": "850ac1eb-a183-cbac-1fd2-5468dfba651b",
+        "component": "b2b_section",
+        "background": "cream",
+        "badge": "Pensé pour les entreprises",
+        "title": "Pourquoi les bureaux nous font confiance",
+        "grid_margin_top": false,
+        "cards": [
+          {
+            "_uid": "f5a5ba03-9b1e-2466-3b51-aa879abc74ea",
+            "component": "b2b_card",
+            "icon": "file-invoice",
+            "title": "Facturation entreprise",
+            "text": "Factures professionnelles, suivi de commande simple, un interlocuteur dédié qui connaît vos habitudes.",
+            "delay": "1"
+          },
+          {
+            "_uid": "4dc9bb4b-9013-5f60-e828-133ab1b3a00a",
+            "component": "b2b_card",
+            "icon": "coffee",
+            "title": "Dégustation gratuite sur site",
+            "text": "Nous nous déplaçons chez vous avec nos mélanges. Vos équipes goûtent et choisissent — sans engagement ni obligation d'achat.",
+            "delay": "2"
+          },
+          {
+            "_uid": "e3982909-28f3-994e-6851-bcd3b0b97ef7",
+            "component": "b2b_card",
+            "icon": "users",
+            "title": "Un interlocuteur unique",
+            "text": "Pas de call center, pas de plateforme impersonnelle. Vous échangez directement avec notre gérante qui connaît vos goûts.",
+            "delay": "3"
+          },
+          {
+            "_uid": "dbe3e954-f931-1b2f-b023-67852de90e27",
+            "component": "b2b_card",
+            "icon": "shield",
+            "title": "Gamme bio et responsable",
+            "text": "Café bio certifié, emballages durables, dosettes compostables. De quoi satisfaire votre politique RSE.",
+            "delay": "4"
+          },
+          {
+            "_uid": "5f7d3d9c-56d0-5f19-cea3-4459db98f91c",
+            "component": "b2b_card",
+            "icon": "medal",
+            "title": "+ de 25 ans d'expérience",
+            "text": "Distributeur exclusif La Genovese France Nord. Café torréfié en Italie, médaillé internationalement.",
+            "delay": "4"
+          }
+        ]
+      },
+      {
+        "_uid": "f5e122ad-e6e3-1450-f811-61328bc1551f",
+        "component": "quote_form_section",
+        "style_variant": "plain",
+        "variant": "degustation_bureau",
+        "anchor_id": "degustation",
+        "form_name": "degustation-bureau",
+        "title": "Réservez votre dégustation gratuite",
+        "subtitle": "Nous nous déplaçons dans vos locaux avec nos meilleurs mélanges. Sans engagement, sans obligation d'achat.",
+        "phone_label": "Appelez-nous directement",
+        "phone": "06 62 11 97 48",
+        "phone_location": "degustation-bureau-form",
+        "phone_hours": "Du lundi au vendredi, 8h — 18h",
+        "separator": "Ou laissez-nous vos coordonnées",
+        "submit_label": "Demander ma dégustation gratuite",
+        "note": "En soumettant ce formulaire, vous acceptez d'être recontacté par TONES. Aucune donnée n'est cédée à des tiers.",
+        "success_title": "Demande envoyée !",
+        "success_text": "Nous vous recontactons sous 24h pour planifier votre dégustation gratuite. À très bientôt dans vos locaux !"
+      },
+      {
+        "_uid": "fadf7e6e-01b8-afad-eda7-8f0f76537fee",
+        "component": "sticky_cta",
+        "call_label": "Appeler",
+        "call_link": "tel:+33662119748",
+        "contact_label": "Dégustation gratuite",
+        "contact_link": "#degustation"
+      }
+    ]
+  }
+}
