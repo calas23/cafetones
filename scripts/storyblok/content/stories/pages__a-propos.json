@@ -1,0 +1,262 @@
+{
+  "name": "À propos",
+  "slug": "a-propos",
+  "full_slug": "pages/a-propos",
+  "content": {
+    "_uid": "934e4550-550d-2dc6-e28f-05abd00fa3e8",
+    "component": "page",
+    "seo_title": "À Propos de TONES — Distributeur Café Italien depuis plus de 25 ans | Île-de-France",
+    "seo_description": "TONES, distributeur exclusif La Genovese en France Nord. Plus de 25 ans d'expérience, torréfaction italienne artisanale, café médaillé internationalement.",
+    "og_title": "À Propos de TONES — Distributeur Café Italien | Paris et Île-de-France",
+    "og_description": "Plus de 25 ans d'expérience, torréfaction italienne artisanale, café médaillé internationalement.",
+    "breadcrumb_label": "À propos",
+    "breadcrumb_path": "/pages/a-propos",
+    "style_scopes": [
+      "about"
+    ],
+    "jsonld": "",
+    "body": [
+      {
+        "_uid": "f138b463-8232-16df-b3ca-d5d6ec628383",
+        "component": "page_hero",
+        "badge": "Notre histoire",
+        "title": "Plus qu'un distributeur, un passionné de café",
+        "text": "Depuis plus de 25 ans, TONES fait le lien entre l'excellence des torréfacteurs italiens et les professionnels de Paris et Île-de-France."
+      },
+      {
+        "_uid": "19eeb485-a6a0-5e73-6360-0c2eff900259",
+        "component": "about_story_section",
+        "title": "Qui sommes-nous ?",
+        "text": "TONES est né d'une passion simple : le vrai café italien. Celui que l'on déguste dans les bars d'Albenga et Milan, torréfié avec soin par des maisons familiales.\n\nDistributeur exclusif de La Genovese pour la France Nord et distributeur Musetti, nous avons fait le choix de travailler uniquement avec des torréfacteurs qui partagent notre exigence : des grains sélectionnés, une torréfaction artisanale, et un goût qui ne ment pas.\n\nNotre métier va au-delà de la livraison de café. Nous conseillons nos clients sur le choix des mélanges, les accompagnons dans l'acquisition de leur machine, et assurons un service de proximité.",
+        "image": {
+          "filename": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80",
+          "alt": "Grains de café torréfiés"
+        },
+        "image_width": "600",
+        "image_height": "400",
+        "quote": "\"Le vrai goût du café, c'est notre priorité.\"",
+        "quote_author": "— L'équipe TONES"
+      },
+      {
+        "_uid": "cbf364e9-dcf1-4e58-4499-0a546d42e191",
+        "component": "roasters_section",
+        "title": "Nos torréfacteurs partenaires",
+        "subtitle": "Deux maisons italiennes familiales, unies par la même passion de l'excellence.",
+        "illustration": "plant",
+        "illustration_position": "right",
+        "illustration_size": "lg",
+        "roasters": [
+          {
+            "_uid": "c464abf0-30fe-d175-8271-147d2485340d",
+            "component": "roaster_card",
+            "name": "La Genovese",
+            "since": "Depuis 1936",
+            "text": "Fondée en 1936 en Italie, La Genovese est l'une des plus anciennes maisons de torréfaction du pays. Son procédé de torréfaction à Air Pur préserve les arômes originels du café tout en réduisant l'impact environnemental.\n\nTONES est le distributeur exclusif de La Genovese pour la France Nord — un partenariat de confiance construit sur des années de collaboration.",
+            "blends_title": "Mélanges phares",
+            "blends": [
+              {
+                "_uid": "dc8354f4-6ca3-35f1-1b90-8a9c029b27b8",
+                "component": "blend_item",
+                "name": "Anniversario",
+                "text": "100% Arabica, notes chocolat et fruits exotiques"
+              },
+              {
+                "_uid": "f9846254-160a-5aa1-2be9-b004097d854b",
+                "component": "blend_item",
+                "name": "Oro",
+                "text": "80% Arabica, 20% Robusta, équilibré et crémeux"
+              },
+              {
+                "_uid": "c6348e93-94ee-dc9d-9124-ec04b259485f",
+                "component": "blend_item",
+                "name": "Colonial",
+                "text": "40% Arabica, 60% Robusta. Corsé, crème dense, espresso puissant"
+              },
+              {
+                "_uid": "f59575b5-feb1-5872-ac7e-c7373f64ab06",
+                "component": "blend_item",
+                "name": "Bio",
+                "text": "100% Arabica biologique, certifié Rainforest Alliance"
+              },
+              {
+                "_uid": "42e51139-c234-cfb7-0091-a34ecbab9772",
+                "component": "blend_item",
+                "name": "Dosette Oro",
+                "text": "80% Arabica, 20% Robusta en pastille ESE"
+              },
+              {
+                "_uid": "bc2c5550-a08a-da64-5867-d8720a616571",
+                "component": "blend_item",
+                "name": "Dosette Décaféinée",
+                "text": "Saveur préservée, sans caféine"
+              }
+            ],
+            "delay": ""
+          },
+          {
+            "_uid": "60c71621-6b1d-aacd-49ef-85ca5670a3d0",
+            "component": "roaster_card",
+            "name": "Musetti",
+            "since": "Depuis 1934",
+            "text": "Fondée en 1934, Musetti est une référence de la torréfaction italienne. Ses mélanges se distinguent par leur richesse aromatique et leur constance.\n\nEn complément de l'offre La Genovese, TONES distribue les cafés Musetti pour offrir à ses clients une palette de saveurs encore plus large.",
+            "blends_title": "Disponible en",
+            "blends": [
+              {
+                "_uid": "194bd92e-6265-b200-ad3e-cf918275b27d",
+                "component": "blend_item",
+                "name": "Dosettes 100% Arabica",
+                "text": ""
+              }
+            ],
+            "delay": "1"
+          }
+        ]
+      },
+      {
+        "_uid": "e11e46b5-b4c1-f8eb-782c-42a465f43a17",
+        "component": "cert_cards_section",
+        "background": "default",
+        "title": "Nos certifications",
+        "subtitle": "La qualité de nos cafés est garantie par des organismes indépendants.",
+        "cards": [
+          {
+            "_uid": "b8369361-eb4f-f9bf-e78b-0982693fe5f5",
+            "component": "cert_card",
+            "icon": "check-circle",
+            "title": "UNI EN ISO 9001:2015",
+            "text": "Système Qualité certifié depuis 2004 pour le suivi complet des activités, de l'achat des matières premières à la commercialisation.",
+            "delay": ""
+          },
+          {
+            "_uid": "7eecd1a7-a5c7-d5e1-2a35-62f3beb0e780",
+            "component": "cert_card",
+            "icon": "pin-check",
+            "title": "Certification Bio (CCPB)",
+            "text": "Café biologique certifié depuis 2013, cultivé sans pesticides ni engrais chimiques.",
+            "delay": "1"
+          },
+          {
+            "_uid": "f7ac0a5b-bb7a-3bb2-cbe5-21b58500bc17",
+            "component": "cert_card",
+            "icon": "globe",
+            "title": "Rainforest Alliance",
+            "text": "Partenaire depuis 2017. Agriculture durable, respect de l'environnement et des communautés productrices.",
+            "delay": "2"
+          },
+          {
+            "_uid": "32be598d-2099-f8b6-a15a-f71e4dd4cab7",
+            "component": "cert_card",
+            "icon": "star",
+            "title": "Espresso Italiano (INEI)",
+            "text": "Les mélanges Anniversario, Royal et Oro certifiés depuis 2008 par l'Institut National de l'Espresso Italien.",
+            "delay": "3"
+          },
+          {
+            "_uid": "ddae7769-181b-df57-97d5-a30639b23d79",
+            "component": "cert_card",
+            "icon": "shield",
+            "title": "HACCP",
+            "text": "Plan HACCP certifié pour la sécurité alimentaire, conforme aux normes européennes d'hygiène.",
+            "delay": "4"
+          },
+          {
+            "_uid": "18937345-8f2f-03ca-9ae7-e7e5fb5bde5a",
+            "component": "cert_card",
+            "icon": "file-text",
+            "title": "Traçabilité totale",
+            "text": "Chaque lot de café est entièrement traçable, du grain vert à la livraison finale.",
+            "delay": "4"
+          }
+        ]
+      },
+      {
+        "_uid": "0d57d6a0-eabe-5e82-61db-c2e510301ec1",
+        "component": "cert_cards_section",
+        "background": "cream",
+        "title": "Nos récompenses",
+        "subtitle": "L'excellence de nos cafés reconnue à l'international.",
+        "cards": [
+          {
+            "_uid": "fbcf1d1f-b62a-7851-f649-16ca90eb142c",
+            "component": "cert_card",
+            "icon": "medal",
+            "title": "International Coffee Tasting",
+            "text": "Médailles d'or — Anniversario et Royal : 2012, 2016, 2018, 2020, 2021. Oro : 2008, 2010, 2012, 2014, 2016. Juta Bio : 2018, 2021, 2022, 2023.",
+            "delay": ""
+          },
+          {
+            "_uid": "e908f73c-3baa-0913-f8bb-2dd81aeb8c8e",
+            "component": "cert_card",
+            "icon": "medal",
+            "title": "Grand Prix Isola 2014",
+            "text": "Récompense pour l'excellence de la torréfaction et la qualité constante des mélanges.",
+            "delay": "1"
+          }
+        ]
+      },
+      {
+        "_uid": "afca2077-103b-be24-7262-1123b611125c",
+        "component": "airpur_section",
+        "title": "La torréfaction à Air Pur",
+        "text": "Le procédé de torréfaction à Air Pur, utilisé par La Genovese, est une technique artisanale qui permet de torréfier les grains de café en préservant l'intégralité de leurs arômes naturels.\n\nContrairement aux méthodes industrielles, cette approche douce respecte le grain et réduit significativement les émissions liées au processus de torréfaction.\n\nLe résultat : un café au goût plus authentique, plus rond, sans l'amertume excessive que l'on retrouve dans les torréfactions rapides.",
+        "traits": [
+          {
+            "_uid": "29625927-b3ec-3c75-6687-37fa05bff98d",
+            "component": "trait_item",
+            "label": "Crème",
+            "desc": "Couleur marron noisette, dense et épaisse"
+          },
+          {
+            "_uid": "f25c273d-0745-bdeb-565b-7eb6267fc1ab",
+            "component": "trait_item",
+            "label": "Durée",
+            "desc": "La crème tient entre 3 et 4 minutes"
+          },
+          {
+            "_uid": "dfaab3e7-0d74-7fc5-4985-db5a81cb4bd5",
+            "component": "trait_item",
+            "label": "Corps",
+            "desc": "Juste, plein et dense en bouche"
+          },
+          {
+            "_uid": "09914f9a-f99d-7641-cc0d-8a84c897ef83",
+            "component": "trait_item",
+            "label": "Persistance",
+            "desc": "Arômes perceptibles jusqu'à 30 minutes"
+          }
+        ]
+      },
+      {
+        "_uid": "d7e436dc-ca79-6451-6977-ef303ca3daba",
+        "component": "cta_section",
+        "theme": "cream",
+        "title": "Envie de goûter la différence ?",
+        "text": "Réservez votre dégustation gratuite — nous nous déplaçons dans vos locaux avec nos meilleurs mélanges.",
+        "buttons": [
+          {
+            "_uid": "deb879ff-db07-ffac-2437-c7a5dc865f02",
+            "component": "button",
+            "label": "Appelez-nous",
+            "link": "tel:+33662119748",
+            "style": "primary",
+            "size": "lg",
+            "icon": "phone",
+            "location": "about-cta",
+            "phone_svg": false
+          },
+          {
+            "_uid": "bbba7e48-7b85-18ca-689b-580aac4ca4ff",
+            "component": "button",
+            "label": "Réserver ma dégustation",
+            "link": "/pages/cafe-bureau-entreprise#degustation",
+            "style": "secondary",
+            "size": "lg",
+            "icon": "none",
+            "location": "",
+            "phone_svg": false
+          }
+        ]
+      }
+    ]
+  }
+}

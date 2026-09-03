@@ -1,23 +1,16 @@
-/* ========================================================================
-   TONES — Page Catalogue / Gamme
-   Complète style.css — ne le remplace pas
-   ======================================================================== */
+/* CSS de page scopé : ne s'applique que sous <main class="page-gamme">.
+   Reproduit le chargement par page de l'ancien site (voir git history
+   pour la version originale commentée). */
 
-/* ========================================================================
-   Hero bandeau
-   ======================================================================== */
-
-.page-hero {
+main.page-gamme .page-hero {
   padding-top: calc(var(--header-height) + 4rem);
   padding-bottom: 3rem;
 }
-
-.page-hero h1 {
+main.page-gamme .page-hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
 }
-
-.pricing-global-note {
+main.page-gamme .pricing-global-note {
   display: inline-block;
   text-align: center;
   font-size: 0.78rem;
@@ -29,22 +22,17 @@
   margin: 1.5rem auto 0;
   width: auto;
 }
-
-/* Center the badge wrapper */
-.page-hero + .gamme-nav + .pricing-global-note,
-.gamme-nav + .pricing-global-note {
+main.page-gamme .page-hero + .gamme-nav + .pricing-global-note,
+main.page-gamme .gamme-nav + .pricing-global-note {
   display: block;
   text-align: center;
 }
-
-.pricing-global-note {
+main.page-gamme .pricing-global-note {
   text-align: center;
   padding: 1rem 0;
   margin-bottom: 0;
 }
-
-/* The actual badge inside */
-.pricing-note-badge {
+main.page-gamme .pricing-note-badge {
   display: inline-block;
   font-size: 0.78rem;
   color: var(--color-text-muted);
@@ -53,12 +41,7 @@
   border-radius: 100px;
   padding: 0.4rem 1.2rem;
 }
-
-/* ========================================================================
-   Navigation sticky par ancres
-   ======================================================================== */
-
-.gamme-nav {
+main.page-gamme .gamme-nav {
   position: sticky;
   top: var(--header-height);
   z-index: 100;
@@ -68,8 +51,7 @@
   border-bottom: 1px solid var(--color-border-light);
   padding: 0.75rem 0;
 }
-
-.gamme-nav__inner {
+main.page-gamme .gamme-nav__inner {
   display: flex;
   gap: 8px;
   overflow-x: auto;
@@ -81,13 +63,11 @@
   padding-right: 1.5rem;
   scrollbar-width: none;
 }
-
-.gamme-nav__inner::-webkit-scrollbar {
+main.page-gamme .gamme-nav__inner::-webkit-scrollbar {
   display: none;
 }
-
-.gamme-nav__link,
-.gamme-nav__btn {
+main.page-gamme .gamme-nav__link,
+main.page-gamme .gamme-nav__btn {
   padding: 10px 20px;
   font-family: var(--font-body);
   font-size: 0.82rem;
@@ -100,44 +80,33 @@
   cursor: pointer;
   transition: background-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
 }
-
-.gamme-nav__link:hover,
-.gamme-nav__btn:hover {
+main.page-gamme .gamme-nav__link:hover,
+main.page-gamme .gamme-nav__btn:hover {
   background-color: var(--color-cream-dark);
   color: var(--color-espresso);
 }
-
-.gamme-nav__link.active,
-.gamme-nav__btn.active {
+main.page-gamme .gamme-nav__link.active,
+main.page-gamme .gamme-nav__btn.active {
   background-color: var(--color-crema);
   color: var(--color-white);
   box-shadow: 0 2px 8px rgba(200, 149, 108, 0.25);
 }
-
-/* ========================================================================
-   Sections catalogue
-   ======================================================================== */
-
-.gamme-section {
+main.page-gamme .gamme-section {
   padding-top: 3rem;
   padding-bottom: 4rem;
   margin-bottom: 0;
   scroll-margin-top: 130px;
 }
-
-.gamme-section + .gamme-section {
+main.page-gamme .gamme-section + .gamme-section {
   border-top: 1px solid var(--color-border-light);
 }
-
-.gamme-section:nth-child(even) {
+main.page-gamme .gamme-section:nth-child(even) {
   background-color: var(--color-cream-warm);
 }
-
-.gamme-section__intro {
+main.page-gamme .gamme-section__intro {
   margin-bottom: 2rem;
 }
-
-.gamme-section__intro h2 {
+main.page-gamme .gamme-section__intro h2 {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   font-weight: 700;
@@ -146,71 +115,48 @@
   padding-left: 1rem;
   margin-bottom: 0.5rem;
 }
-
-.gamme-section__intro p {
+main.page-gamme .gamme-section__intro p {
   font-size: 0.92rem;
   font-style: italic;
   color: var(--color-text-muted);
   margin-bottom: 2rem;
   padding-left: 1rem;
 }
-
-/* ========================================================================
-   Tables responsives
-   ======================================================================== */
-
-.table-wrapper {
+main.page-gamme .table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border-radius: var(--border-radius-lg);
 }
-
-.table-wrapper .pricing-table {
+main.page-gamme .table-wrapper .pricing-table {
   min-width: 600px;
 }
-
-/* ========================================================================
-   Pricing table — premium overrides for gamme page
-   ======================================================================== */
-
-.gamme-section .pricing-table thead th {
+main.page-gamme .gamme-section .pricing-table thead th {
   padding: 16px 20px;
 }
-
-.gamme-section .pricing-table td {
+main.page-gamme .gamme-section .pricing-table td {
   padding: 18px 20px;
   vertical-align: middle;
 }
-
-/* Product column wider */
-.gamme-section .pricing-table th:nth-child(2),
-.gamme-section .pricing-table td:nth-child(2) {
+main.page-gamme .gamme-section .pricing-table th:nth-child(2),
+main.page-gamme .gamme-section .pricing-table td:nth-child(2) {
   min-width: 280px;
 }
-
-/* For dosettes table (no thumb column, product is first) */
-.gamme-section .pricing-table th:first-child:not([class]),
-.gamme-section .pricing-table td:first-child:not([class]) {
-  /* Let layout decide */
+main.page-gamme .gamme-section .pricing-table th:first-child:not([class]),
+main.page-gamme .gamme-section .pricing-table td:first-child:not([class]) {
+  
 }
-
-/* Product cell flex layout */
-.pricing-table td .product-cell {
+main.page-gamme .pricing-table td .product-cell {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-
-/* Product name */
-.pricing-table .product-name {
+main.page-gamme .pricing-table .product-name {
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--color-espresso);
 }
-
-/* Product subtitle — blend style */
-.pricing-table .product-subtitle,
-.product-subtitle {
+main.page-gamme .pricing-table .product-subtitle,
+main.page-gamme .product-subtitle {
   font-style: italic;
   font-size: 0.78rem;
   color: var(--color-crema-dark);
@@ -218,35 +164,25 @@
   letter-spacing: 0.03em;
   margin-top: 2px;
 }
-
-/* Product description */
-.pricing-table .product-desc {
+main.page-gamme .pricing-table .product-desc {
   font-size: 0.82rem;
   color: var(--color-text-muted);
   margin-top: 2px;
   line-height: 1.4;
 }
-
-/* Best-seller rows (highlighted) */
-.gamme-section .pricing-table tbody tr.best-seller,
-.gamme-section .pricing-table tbody tr[style*="cream-warm"] {
+main.page-gamme .gamme-section .pricing-table tbody tr.best-seller,
+main.page-gamme .gamme-section .pricing-table tbody tr[style*="cream-warm"] {
   background-color: var(--color-cream-warm);
   border-left: 3px solid var(--color-crema);
 }
-
-/* Subtle alternating rows for non-highlighted */
-.gamme-section .pricing-table tbody tr:nth-child(even):not([style]) {
+main.page-gamme .gamme-section .pricing-table tbody tr:nth-child(even):not([style]) {
   background-color: rgba(0, 0, 0, 0.015);
 }
-
-/* Hover on rows */
-.gamme-section .pricing-table tbody tr:hover {
+main.page-gamme .gamme-section .pricing-table tbody tr:hover {
   background-color: var(--color-cream-warm);
 }
-
-/* Table thumbnails */
-.gamme-section .table-thumb,
-.table-thumb {
+main.page-gamme .gamme-section .table-thumb,
+main.page-gamme .table-thumb {
   width: 56px;
   height: 56px;
   object-fit: contain;
@@ -255,32 +191,24 @@
   padding: 6px;
   flex-shrink: 0;
 }
-
-/* ========================================================================
-   Cards produits (capsules, grands crus, patisseries)
-   ======================================================================== */
-
-.gamme-cards {
+main.page-gamme .gamme-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
-
-.gamme-card {
+main.page-gamme .gamme-card {
   background: var(--color-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--border-radius-xl);
   overflow: hidden;
   transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
 }
-
-.gamme-card:hover {
+main.page-gamme .gamme-card:hover {
   border-color: var(--color-crema);
   box-shadow: var(--shadow-sm);
   transform: translateY(-2px);
 }
-
-.gamme-card__image {
+main.page-gamme .gamme-card__image {
   height: 200px;
   padding: 1.5rem;
   background-color: var(--color-cream-warm);
@@ -289,31 +217,26 @@
   justify-content: center;
   position: relative;
 }
-
-.gamme-card__image img {
+main.page-gamme .gamme-card__image img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
-
-.gamme-card__badge {
+main.page-gamme .gamme-card__badge {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
 }
-
-.gamme-card__content {
+main.page-gamme .gamme-card__content {
   padding: 1.5rem;
 }
-
-.gamme-card__name {
+main.page-gamme .gamme-card__name {
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--color-espresso);
 }
-
-.gamme-card__subtitle {
+main.page-gamme .gamme-card__subtitle {
   font-style: italic;
   font-size: 0.78rem;
   color: var(--color-crema-dark);
@@ -321,35 +244,29 @@
   letter-spacing: 0.03em;
   margin-top: 2px;
 }
-
-.gamme-card__desc {
+main.page-gamme .gamme-card__desc {
   font-size: 0.85rem;
   color: var(--color-text-muted);
   line-height: 1.5;
   margin-top: 0.5rem;
 }
-
-.gamme-card__price {
+main.page-gamme .gamme-card__price {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-crema-dark);
   margin-top: 0.75rem;
 }
-
-.price-detail {
+main.page-gamme .price-detail {
   font-size: 0.78rem;
   color: var(--color-text-muted);
   font-weight: 400;
   font-style: italic;
   margin-top: 0.15rem;
 }
-
-/* Patisseries — warmer image background */
-.gamme-card--patisserie .gamme-card__image {
+main.page-gamme .gamme-card--patisserie .gamme-card__image {
   background-color: #F5EDE0;
 }
-
-.gamme-card--patisserie .seasonal-note {
+main.page-gamme .gamme-card--patisserie .seasonal-note {
   font-style: italic;
   font-size: 0.8rem;
   color: var(--color-text-muted);
@@ -360,52 +277,36 @@
   margin-top: 0.75rem;
   line-height: 1.4;
 }
-
-/* ========================================================================
-   CTA bas de page
-   ======================================================================== */
-
-.section--espresso.gamme-cta,
-.gamme-section + .section--espresso {
+main.page-gamme .section--espresso.gamme-cta,
+main.page-gamme .gamme-section + .section--espresso {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
-
-.gamme-cta h2,
-.section--espresso h2 {
+main.page-gamme .gamme-cta h2,
+main.page-gamme .section--espresso h2 {
   font-size: clamp(1.8rem, 3.5vw, 2.4rem);
 }
-
-.gamme-cta .cta-buttons,
-.section--espresso .cta-buttons {
+main.page-gamme .gamme-cta .cta-buttons,
+main.page-gamme .section--espresso .cta-buttons {
   gap: 1.5rem;
 }
 
-/* ========================================================================
-   Media Queries
-   ======================================================================== */
-
 @media (min-width: 768px) {
-  .gamme-section {
+main.page-gamme .gamme-section {
     padding-top: 4rem;
     padding-bottom: 5rem;
   }
-
-  .gamme-nav__link,
-  .gamme-nav__btn {
+main.page-gamme .gamme-nav__link,
+main.page-gamme .gamme-nav__btn {
     padding: 10px 24px;
   }
 }
-
-/* Card format line */
-.gamme-card__format {
+main.page-gamme .gamme-card__format {
   font-size: 0.78rem;
   color: var(--color-text-light);
   margin-top: 0.25rem;
 }
-
-/* Card image — align bottom */
-.gamme-card__image {
+main.page-gamme .gamme-card__image {
   height: 200px;
   padding: 1rem 1.5rem 0;
   background-color: var(--color-cream-warm);
@@ -415,50 +316,40 @@
   position: relative;
   overflow: hidden;
 }
-
-.gamme-card__image img {
+main.page-gamme .gamme-card__image img {
   max-height: 180px;
   max-width: 100%;
   width: auto;
   object-fit: contain;
   object-position: bottom center;
 }
-
-/* Cards grid responsive */
-.gamme-cards {
+main.page-gamme .gamme-cards {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
 @media (min-width: 640px) {
-  .gamme-cards {
+main.page-gamme .gamme-cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 900px) {
-  .gamme-cards {
+main.page-gamme .gamme-cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media (min-width: 1200px) {
-  .gamme-cards {
+main.page-gamme .gamme-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-
-/* Card transition for filters */
-.gamme-card {
+main.page-gamme .gamme-card {
   transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base), opacity 0.2s ease;
 }
-
-/* ========================================================================
-   Placeholder images produits (en attente de photos)
-   ======================================================================== */
-
-.product-image-placeholder {
+main.page-gamme .product-image-placeholder {
   width: 100%;
   height: 200px;
   display: flex;
@@ -473,4 +364,3 @@
   padding: 1rem;
 }
 
-/* Product Modal styles moved to style.css (shared across all pages) */

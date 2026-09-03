@@ -1,0 +1,105 @@
+{
+  "name": "Contact",
+  "slug": "contact",
+  "full_slug": "pages/contact",
+  "content": {
+    "_uid": "52112878-9e69-4f79-3392-a2a3a186793e",
+    "component": "page",
+    "seo_title": "Contactez TONES — Devis, Dégustation Gratuite, Renseignements | Café Italien IDF",
+    "seo_description": "Contactez TONES pour un devis café personnalisé, une dégustation gratuite dans vos locaux ou toute question. Réponse sous 24h. 83 rue de Reuilly, Paris 12.",
+    "og_title": "Contactez TONES — Devis & Dégustation Gratuite",
+    "og_description": "Devis café personnalisé, dégustation gratuite dans vos locaux. Réponse sous 24h.",
+    "breadcrumb_label": "Contact",
+    "breadcrumb_path": "/pages/contact",
+    "style_scopes": [
+      "contact"
+    ],
+    "jsonld": "",
+    "body": [
+      {
+        "_uid": "dd91ca7a-e1dd-5c7a-6719-28e8d03825da",
+        "component": "page_hero",
+        "badge": "Parlons café",
+        "title": "Contactez-nous",
+        "text": "Une question, un besoin en café pour vos locaux ? Nous vous répondons sous 24h."
+      },
+      {
+        "_uid": "7d31f8ce-3aec-3785-a210-192679115242",
+        "component": "contact_section",
+        "form_title": "Envoyez-nous un message",
+        "form_intro": "Remplissez le formulaire ci-dessous, nous vous recontactons rapidement.",
+        "submit_label": "Envoyer ma demande",
+        "note": "En soumettant ce formulaire, vous acceptez d'être recontacté par TONES. Aucune donnée n'est cédée à des tiers.",
+        "success_title": "Message envoyé !",
+        "success_text": "Nous avons bien reçu votre demande. Un membre de notre équipe vous recontacte sous 24h.",
+        "info_title": "Nos coordonnées",
+        "address": "83 rue de Reuilly, 75012 Paris",
+        "phone": "06 62 11 97 48",
+        "phone_location": "contact-page",
+        "email": "cafetones@free.fr",
+        "hours": "Lundi — Vendredi : 8h — 18h",
+        "zone_title": "Zone de livraison",
+        "zone_text": "Nous livrons exclusivement en Île-de-France (Paris et tous les départements 77, 78, 91, 92, 93, 94). Livraison du lundi au vendredi.",
+        "degust_title": "Dégustation gratuite",
+        "degust_text": "Vous souhaitez goûter nos cafés avant de commander ? Notre gérante se déplace dans vos locaux avec une sélection de mélanges. C'est gratuit et sans engagement.",
+        "degust_button_label": "Réserver une dégustation",
+        "degust_button_link": "/pages/cafe-bureau-entreprise#degustation",
+        "map_heading": "Nous trouver",
+        "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.0!2d2.387!3d48.845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUwJzQyLjAiTiAywrAyMycxMy4yIkU!5e0!3m2!1sfr!2sfr!4v1",
+        "map_title": "Localisation TONES — 83 rue de Reuilly, Paris 12"
+      },
+      {
+        "_uid": "59365dd0-87fb-55ca-f61e-5e38d55ba316",
+        "component": "faq_section",
+        "title": "Questions fréquentes",
+        "illustration": "tasse",
+        "illustration_position": "right",
+        "illustration_size": "sm",
+        "items": [
+          {
+            "_uid": "e5ca9297-4b16-a451-f0bf-1aaf336477df",
+            "component": "faq_item",
+            "question": "Quelle est votre zone de livraison ?",
+            "answer": "Nous livrons exclusivement en Île-de-France : Paris et tous les départements limitrophes (77, 78, 91, 92, 93, 94). Livraison du lundi au vendredi.",
+            "delay": ""
+          },
+          {
+            "_uid": "0c8052c0-684b-f025-c91f-7602d3ec4b58",
+            "component": "faq_item",
+            "question": "Y a-t-il un minimum de commande ?",
+            "answer": "Contactez-nous pour discuter de vos besoins — nous nous adaptons à toutes les tailles d'entreprise, de la startup de 5 personnes à la PME de 200 collaborateurs.",
+            "delay": "1"
+          },
+          {
+            "_uid": "2d4ad0ef-5353-3a3b-84fb-0cb22812cfc1",
+            "component": "faq_item",
+            "question": "Comment fonctionne la dégustation gratuite ?",
+            "answer": "C'est simple : vous prenez rendez-vous, notre gérante se déplace dans vos locaux avec une sélection de cafés. Vos équipes goûtent, vous choisissez. C'est gratuit et sans aucune obligation d'achat.",
+            "delay": "1"
+          },
+          {
+            "_uid": "74ae16dd-f6b2-b299-1539-971812c1112a",
+            "component": "faq_item",
+            "question": "Proposez-vous des machines à café ?",
+            "answer": "Si besoin, notre prestataire (06 98 37 00 67) assure la vente, l'installation et la maintenance de votre machine à café professionnelle. Nous vous expliquons tout lors de la dégustation.",
+            "delay": "2"
+          },
+          {
+            "_uid": "b637ae4e-55ed-cb8c-19b5-b09eeaee5a7b",
+            "component": "faq_item",
+            "question": "Quels types de café proposez-vous ?",
+            "answer": "Nous proposons des cafés en grain, du café moulu, des dosettes ESE, des capsules et une sélection de grands crus, ainsi qu'une gamme bio certifiée.",
+            "delay": "2"
+          },
+          {
+            "_uid": "a65d0318-e441-9a0c-3c0a-e9d4ee67f2b9",
+            "component": "faq_item",
+            "question": "Comment passer commande ?",
+            "answer": "Par téléphone ou via ce formulaire. Pas de commande en ligne — nous privilégions le contact direct pour bien comprendre vos besoins et vous livrer exactement ce qu'il vous faut.",
+            "delay": "3"
+          }
+        ]
+      }
+    ]
+  }
+}

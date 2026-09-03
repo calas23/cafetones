@@ -1,0 +1,374 @@
+{
+  "name": "Accueil",
+  "slug": "home",
+  "full_slug": "home",
+  "content": {
+    "_uid": "9509cee6-a915-b9d5-7a9e-9d434b53dbfa",
+    "component": "page",
+    "seo_title": "TONES — Café Italien Premium livré en Île-de-France | Bureau & Restauration",
+    "seo_description": "Distributeur exclusif café La Genovese et Musetti à Paris et en Île-de-France. Dégustation sur site. Café en grain, moulu, dosettes pour bureaux et restaurateurs.",
+    "og_title": "TONES — Café Italien Premium livré en Île-de-France",
+    "og_description": "Distributeur exclusif café La Genovese et Musetti. Livraison à Paris et en IDF, dégustation sur site.",
+    "breadcrumb_label": "",
+    "breadcrumb_path": "",
+    "style_scopes": [
+      "home"
+    ],
+    "jsonld": "{\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"LocalBusiness\",\n    \"name\": \"TONES - Distributeur Café Italien\",\n    \"description\": \"Distributeur exclusif café La Genovese en France Nord. Café italien premium livré gratuitement en Île-de-France pour les bureaux et entreprises.\",\n    \"url\": \"https://cafetones.fr\",\n    \"telephone\": \"+33662119748\",\n    \"email\": \"cafetones@free.fr\",\n    \"address\": {\n      \"@type\": \"PostalAddress\",\n      \"streetAddress\": \"83 rue de Reuilly\",\n      \"addressLocality\": \"Paris\",\n      \"postalCode\": \"75012\",\n      \"addressCountry\": \"FR\"\n    },\n    \"areaServed\": {\n      \"@type\": \"GeoCircle\",\n      \"geoMidpoint\": {\n        \"@type\": \"GeoCoordinates\",\n        \"latitude\": 48.8566,\n        \"longitude\": 2.3522\n      },\n      \"geoRadius\": \"60000\"\n    },\n    \"openingHours\": \"Mo-Fr 08:00-18:00\",\n    \"priceRange\": \"€€\"\n  }",
+    "body": [
+      {
+        "_uid": "9243acff-4ae7-555f-e427-624b9c436eb1",
+        "component": "hero_home",
+        "badge_logo": {
+          "filename": "/img/logo-tones.svg",
+          "alt": "TONES"
+        },
+        "badge_text": "Depuis plus de 25 ans",
+        "title": "Le goût authentique du café italien, livré dans vos locaux",
+        "subtitle": "Depuis plus de 25 ans, TONES sélectionne les meilleurs cafés torréfiés en Italie et les livre à Paris et en Île-de-France. Bureaux, restaurants, hôtels — chaque tasse est un voyage.",
+        "buttons": [
+          {
+            "_uid": "2f35fcf8-3656-5f49-5acf-9077561a4f3a",
+            "component": "button",
+            "label": "Appelez-nous",
+            "link": "tel:+33662119748",
+            "style": "primary",
+            "size": "lg",
+            "icon": "phone",
+            "location": "hero",
+            "phone_svg": false
+          },
+          {
+            "_uid": "85fd9266-3d8e-b0cb-df3f-4bb45648c8ce",
+            "component": "button",
+            "label": "Offre Bureau & Entreprise",
+            "link": "/pages/cafe-bureau-entreprise",
+            "style": "white-outline",
+            "size": "lg",
+            "icon": "none",
+            "location": "",
+            "phone_svg": false
+          },
+          {
+            "_uid": "8338b3f9-eb63-8ba2-8d47-02805b6c396c",
+            "component": "button",
+            "label": "Offre CHR",
+            "link": "/pages/restauration-chr",
+            "style": "white-outline",
+            "size": "lg",
+            "icon": "none",
+            "location": "",
+            "phone_svg": false
+          }
+        ]
+      },
+      {
+        "_uid": "b0955f20-7abc-7664-5feb-b10e36475832",
+        "component": "stats_section",
+        "illustration": "grains",
+        "illustration_position": "corner-br",
+        "illustration_size": "sm",
+        "items": [
+          {
+            "_uid": "cb42b3b5-6416-7dc8-cdef-54f46cdd8684",
+            "component": "stat_item",
+            "number": "1936",
+            "label": "Torréfaction La Genovese",
+            "delay": ""
+          },
+          {
+            "_uid": "68766901-dbde-b143-7db7-5bac05cc62e1",
+            "component": "stat_item",
+            "number": "25+",
+            "label": "Années d'expérience",
+            "delay": "1"
+          },
+          {
+            "_uid": "d18ef8ab-4c2b-1d27-201e-e119a4599615",
+            "component": "stat_item",
+            "number": "100%",
+            "label": "Café torréfié en Italie",
+            "delay": "2"
+          },
+          {
+            "_uid": "fd494b3d-45a1-8f91-6c75-1b29bdd0e00b",
+            "component": "stat_item",
+            "number": "90+",
+            "label": "Ans de torréfaction La Genovese",
+            "delay": "3"
+          }
+        ]
+      },
+      {
+        "_uid": "3700be56-25b6-8b98-2af6-59cf22fa898c",
+        "component": "universes_section",
+        "title": "À chacun son café",
+        "subtitle": "Que vous soyez une entreprise, un restaurateur ou un particulier, nous avons l'offre qu'il vous faut.",
+        "cards": [
+          {
+            "_uid": "b33486f4-f75e-9a30-c2ac-0d22ce32876a",
+            "component": "universe_card",
+            "image": {
+              "filename": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
+              "alt": "Espace café en bureau moderne"
+            },
+            "image_width": "600",
+            "image_height": "338",
+            "badge": "Cible prioritaire",
+            "title": "Bureau & Entreprise",
+            "text": "Offrez un vrai café italien à vos équipes. Dégustation gratuite dans vos locaux, livraison régulière à Paris et en Île-de-France.",
+            "button_label": "Découvrir l'offre bureau",
+            "button_link": "/pages/cafe-bureau-entreprise",
+            "button_style": "primary",
+            "hidden": false,
+            "delay": ""
+          },
+          {
+            "_uid": "0eb582ea-c7e6-a6bd-5b68-6449a888c7c7",
+            "component": "universe_card",
+            "image": {
+              "filename": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80",
+              "alt": "Café servi en restaurant"
+            },
+            "image_width": "600",
+            "image_height": "338",
+            "badge": "",
+            "title": "CHR",
+            "text": "Restaurants, hôtels, bars, brasseries — proposez un espresso d'exception. Accompagnement complet : café premium, conseil sur les machines, prestataire technique dédié.",
+            "button_label": "Découvrir l'offre CHR",
+            "button_link": "/pages/restauration-chr",
+            "button_style": "secondary",
+            "hidden": false,
+            "delay": "1"
+          },
+          {
+            "_uid": "5f280dbe-d3d5-a281-b0a1-a9f9dd08f160",
+            "component": "universe_card",
+            "image": {
+              "filename": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80",
+              "alt": "Préparation d'un café à la maison"
+            },
+            "image_width": "600",
+            "image_height": "338",
+            "badge": "",
+            "title": "Particuliers",
+            "text": "Amateurs de bon café, faites-vous plaisir à la maison. Grain, moulu ou dosettes — le même café italien premium que dans les meilleurs bars, directement chez vous.",
+            "button_label": "Découvrir l'offre particuliers",
+            "button_link": "/pages/particuliers",
+            "button_style": "secondary",
+            "hidden": true,
+            "delay": "2"
+          }
+        ]
+      },
+      {
+        "_uid": "6801a8b1-b017-621f-d7a5-da3d45f6b203",
+        "component": "products_home_section",
+        "badge": "Nos best-sellers",
+        "title": "Les cafés préférés de nos clients",
+        "subtitle": "Torréfiés en Italie par des maisons familiales, médaillés internationalement.",
+        "illustration": "tasse",
+        "illustration_position": "right",
+        "illustration_size": "md",
+        "products": [
+          {
+            "_uid": "3ed4dc05-b640-6881-cf40-7fb78038a138",
+            "component": "product_card",
+            "name": "Anniversario",
+            "subtitle": "Legendary Blend",
+            "description": "Hommage à la tradition et à l'excellence. La base brésilienne offre un corps doux et noisetté, enrichi par la Colombie Supremo et le Honduras SHG qui apportent fruits rouges et douceur miellée. L'Éthiopie Sidamo élève l'expérience avec des notes florales et citronnées.",
+            "acidity": "4",
+            "body": "3",
+            "intensity": "3",
+            "roast": "Moyenne",
+            "notes": "Chocolat au lait, Noisette torréfiée, Fruits rouges, Notes florales",
+            "origins": "Brésil, Honduras, Colombie, Éthiopie",
+            "certifications": "Espresso Italiano (INEI)",
+            "medals": "2012, 2016, 2018, 2020, 2021, 2022, 2023",
+            "format": "Bonbonne 3kg / Sachet 1kg",
+            "price": "25,20 € HT/kg",
+            "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+            "image": {
+              "filename": "/img/grain-anniversario-1kg.jpg",
+              "alt": "Café en grain La Genovese Anniversario 1kg"
+            },
+            "image_width": "1000",
+            "image_height": "1414",
+            "delay": "",
+            "badge_label": "100% Arabica",
+            "badge_style": "gold",
+            "display_name": "La Genovese Anniversario",
+            "display_desc": "Notes chocolat, fruits exotiques. Un café d'exception.",
+            "display_price": "25,20 € HT/kg",
+            "medals_label": "7 médailles ICT"
+          },
+          {
+            "_uid": "8d544897-976c-8ba5-1b2d-f03bd33e249f",
+            "component": "product_card",
+            "name": "Oro",
+            "subtitle": "Supreme Blend",
+            "description": "Profondeur, richesse et velouté en bouche. Caramel, noisette torréfiée, chocolat au lait sur la base brésilienne. Colombie et Honduras apportent luminosité, l'Inde renforce le corps avec chocolat noir et épices.",
+            "acidity": "2",
+            "body": "4",
+            "intensity": "3",
+            "notes": "Caramel, Noisette, Chocolat noir, Épices chaudes",
+            "origins": "Brésil, Honduras, Colombie, Inde",
+            "certifications": "Espresso Italiano",
+            "medals": "2008, 2010, 2012, 2014, 2016",
+            "format": "Sachet 1kg",
+            "price": "23,20 € HT/kg",
+            "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+            "image": {
+              "filename": "/img/grain-oro-1kg.jpg",
+              "alt": "Café en grain La Genovese Oro 1kg"
+            },
+            "image_width": "1000",
+            "image_height": "1414",
+            "delay": "1",
+            "display_name": "La Genovese Oro",
+            "display_desc": "Équilibré, crémeux. Le passe-partout.",
+            "display_price": "23,20 € HT/kg",
+            "medals_label": "5 médailles ICT"
+          },
+          {
+            "_uid": "2991ae07-5b72-dcce-d253-ce5647392de6",
+            "component": "product_card",
+            "name": "Juta Bio",
+            "subtitle": "Pure Organic Blend",
+            "description": "Pureté, équilibre et durabilité. Le Honduras Finca Santa Teresa apporte un corps soyeux et une douceur miellée. Le Pérou San Ignacio enrichit avec chocolat noir, caramel et fruits secs.",
+            "acidity": "4",
+            "body": "3",
+            "intensity": "3",
+            "notes": "Miel, Amande, Chocolat noir, Caramel",
+            "origins": "Honduras, Pérou",
+            "certifications": "Rainforest Alliance, CCPB",
+            "medals": "2018, 2021, 2022, 2023",
+            "format": "Sachet 1kg",
+            "price": "26,20 € HT/kg",
+            "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+            "image": {
+              "filename": "/img/grain-juta-bio-1kg.jpg",
+              "alt": "Café en grain La Genovese Juta Bio 1kg"
+            },
+            "image_width": "1000",
+            "image_height": "1414",
+            "delay": "2",
+            "badge_label": "Bio",
+            "badge_style": "simple",
+            "display_name": "La Genovese Bio",
+            "display_desc": "100% Arabica bio, certifié Rainforest Alliance.",
+            "display_price": "26,20 € HT/kg",
+            "medals_label": "4 médailles ICT"
+          },
+          {
+            "_uid": "1de60056-d11d-c93f-eacc-474144a08ee7",
+            "component": "product_card",
+            "name": "La Genovese Oro — dosettes",
+            "description": "80% Arabica, 20% Robusta. Pastilles ESE équilibrées et crémeuses.",
+            "notes": "Équilibré, Crémeux",
+            "format": "x150 pastilles ESE",
+            "price": "67,50 € HT (0,45 €/café)",
+            "image": {
+              "filename": "/img/capsule-oro.jpg",
+              "alt": "Capsules et dosettes café La Genovese Oro"
+            },
+            "image_width": "500",
+            "image_height": "707",
+            "delay": "3",
+            "display_name": "Dosettes Oro x150",
+            "display_desc": "Pastilles ESE — prêtes à l'emploi.",
+            "display_price": "0,45 € HT/café",
+            "medals_label": ""
+          }
+        ],
+        "cta_label": "Voir toute la gamme et les prix",
+        "cta_link": "/pages/notre-gamme"
+      },
+      {
+        "_uid": "4070ea02-4cc3-0b5f-1f31-be62777cc6d4",
+        "component": "espresso_text_section",
+        "badge": "Pourquoi nous choisir",
+        "title": "Plus qu'un distributeur, un partenaire café",
+        "text": "Chez TONES, le café n'est pas un simple produit — c'est un savoir-faire italien que nous partageons avec passion depuis plus de 25 ans.\n\nNous avons sélectionné les torréfacteurs La Genovese et Musetti pour une raison simple : ils allient tradition centenaire et qualité constante, récompensée par de multiples médailles internationales.\n\nNotre différence ? Un service de proximité. Pas de plateforme anonyme, pas de call center. Un interlocuteur unique qui connaît vos goûts, vous livre en main propre et vous conseille.",
+        "buttons": [
+          {
+            "_uid": "3b37ddf9-9f6c-43bf-a242-33bd6534be73",
+            "component": "button",
+            "label": "En savoir plus sur TONES",
+            "link": "/pages/a-propos",
+            "style": "white",
+            "size": "",
+            "icon": "none",
+            "location": "",
+            "phone_svg": false,
+            "extra_style": "margin-top: 2rem"
+          }
+        ]
+      },
+      {
+        "_uid": "3aa37af8-b480-f960-7747-5e6abcaefbd2",
+        "component": "quote_form_section",
+        "style_variant": "cream_home",
+        "variant": "contact_rapide",
+        "anchor_id": "contact-rapide",
+        "form_name": "contact-rapide",
+        "title": "Parlons café",
+        "subtitle": "Une question, un besoin ? Contactez-nous et nous vous répondons sous 24h.",
+        "phone_label": "Appelez-nous directement",
+        "phone": "06 62 11 97 48",
+        "phone_location": "contact-rapide-form",
+        "phone_hours": "Du lundi au vendredi, 8h — 18h",
+        "separator": "Ou laissez-nous vos coordonnées",
+        "submit_label": "Envoyer mon message",
+        "note": "En soumettant ce formulaire, vous acceptez d'être recontacté par TONES. Aucune donnée n'est cédée à des tiers.",
+        "success_title": "Message envoyé !",
+        "success_text": "Nous vous recontactons sous 24h. À très bientôt !"
+      },
+      {
+        "_uid": "f53662c7-3d8c-e55a-a3d0-f31827f6578e",
+        "component": "certifications_section",
+        "title": "Nos certifications",
+        "items": [
+          {
+            "_uid": "3e4bb6a1-5e50-e69f-152b-b18e5d02d4dc",
+            "component": "certification_badge",
+            "name": "ISO 9001:2015",
+            "caption": "Système Qualité certifié"
+          },
+          {
+            "_uid": "8527c783-da0d-10ba-bcf6-f17db6109da5",
+            "component": "certification_badge",
+            "name": "Bio CCPB",
+            "caption": "Café biologique certifié"
+          },
+          {
+            "_uid": "0fbe949e-05f4-b598-a4db-e537137a079b",
+            "component": "certification_badge",
+            "name": "Rainforest Alliance",
+            "caption": "Agriculture durable"
+          },
+          {
+            "_uid": "45719b8b-c0e8-5b32-bc69-4674057ac212",
+            "component": "certification_badge",
+            "name": "Espresso Italiano",
+            "caption": "Certifié INEI"
+          },
+          {
+            "_uid": "60a028fb-69ef-a439-32a7-9f7d799b49bb",
+            "component": "certification_badge",
+            "name": "HACCP",
+            "caption": "Sécurité alimentaire"
+          }
+        ]
+      },
+      {
+        "_uid": "a5d3e7e4-f4df-ce81-9d53-496288c17cff",
+        "component": "sticky_cta",
+        "call_label": "Appeler",
+        "call_link": "tel:+33662119748",
+        "contact_label": "Nous contacter",
+        "contact_link": "#contact-rapide"
+      }
+    ]
+  }
+}

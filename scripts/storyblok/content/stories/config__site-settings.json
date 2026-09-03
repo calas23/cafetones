@@ -1,0 +1,148 @@
+{
+  "name": "Réglages du site",
+  "slug": "site-settings",
+  "full_slug": "config/site-settings",
+  "content": {
+    "_uid": "33d371e3-f786-c2fb-6ee0-765a9d22a821",
+    "component": "site_settings",
+    "logo": {
+      "filename": "/img/logo-tones.svg",
+      "alt": "TONES — Café Italien"
+    },
+    "phone": "06 62 11 97 48",
+    "cta_label": "Demander un devis",
+    "cta_link": "/pages/contact",
+    "nav_links": [
+      {
+        "_uid": "b2b7dd73-859e-a429-52fe-d100de5e4aac",
+        "component": "nav_link",
+        "label": "Bureau & Entreprise",
+        "link": "/pages/cafe-bureau-entreprise",
+        "hidden": false
+      },
+      {
+        "_uid": "dde75855-aa49-7926-ce6a-39082262fa16",
+        "component": "nav_link",
+        "label": "CHR",
+        "link": "/pages/restauration-chr",
+        "hidden": false
+      },
+      {
+        "_uid": "1d1505e5-4b8c-5cbb-c70d-3b681938e7cf",
+        "component": "nav_link",
+        "label": "Particuliers",
+        "link": "/pages/particuliers",
+        "hidden": true
+      },
+      {
+        "_uid": "238690d5-0dfc-e17a-e1c7-adc260fd0e6a",
+        "component": "nav_link",
+        "label": "Notre gamme",
+        "link": "/pages/notre-gamme",
+        "hidden": false
+      },
+      {
+        "_uid": "3a99d839-2c1f-9281-69a9-827bf535abcc",
+        "component": "nav_link",
+        "label": "À propos",
+        "link": "/pages/a-propos",
+        "hidden": false
+      },
+      {
+        "_uid": "a136ef5f-968d-d101-10d5-71a252541be2",
+        "component": "nav_link",
+        "label": "Contact",
+        "link": "/pages/contact",
+        "hidden": false
+      }
+    ],
+    "mobile_menu_cta_label": "Demander un devis",
+    "mobile_menu_cta_link": "/pages/contact",
+    "footer_desc": "Distributeur exclusif La Genovese France Nord. Café italien premium livré à Paris et en Île-de-France depuis plus de 25 ans.",
+    "footer_nav_heading": "Navigation",
+    "footer_nav_links": [
+      {
+        "_uid": "704374db-3fa7-9abb-29de-58af6e9f5784",
+        "component": "nav_link",
+        "label": "Accueil",
+        "link": "/",
+        "hidden": false
+      },
+      {
+        "_uid": "0c3d5da5-20a1-a19a-ec3d-68c7c8e8479c",
+        "component": "nav_link",
+        "label": "Bureau & Entreprise",
+        "link": "/pages/cafe-bureau-entreprise",
+        "hidden": false
+      },
+      {
+        "_uid": "ae5454fe-7c1a-b5f0-c835-79053503c05f",
+        "component": "nav_link",
+        "label": "CHR",
+        "link": "/pages/restauration-chr",
+        "hidden": false
+      },
+      {
+        "_uid": "d3107694-0b5d-0d70-c53b-e5a491712345",
+        "component": "nav_link",
+        "label": "Particuliers",
+        "link": "/pages/particuliers",
+        "hidden": true
+      },
+      {
+        "_uid": "842c7e35-ae02-aa4e-ac58-80e75169e221",
+        "component": "nav_link",
+        "label": "Notre gamme",
+        "link": "/pages/notre-gamme",
+        "hidden": false
+      },
+      {
+        "_uid": "a756948d-8c8d-d6c7-2357-f3bf5e4ed039",
+        "component": "nav_link",
+        "label": "À propos",
+        "link": "/pages/a-propos",
+        "hidden": false
+      },
+      {
+        "_uid": "50f67cc8-4483-fde6-ef58-9026b720659f",
+        "component": "nav_link",
+        "label": "Contact",
+        "link": "/pages/contact",
+        "hidden": false
+      }
+    ],
+    "footer_cafes_heading": "Nos cafés",
+    "footer_cafes_links": [
+      {
+        "_uid": "960ce01c-d2ab-bb44-3ad5-0eecce320dac",
+        "component": "nav_link",
+        "label": "Grains",
+        "link": "/pages/notre-gamme#grains",
+        "hidden": false
+      },
+      {
+        "_uid": "6cd84764-25cd-2217-adc2-12311a85f320",
+        "component": "nav_link",
+        "label": "Moulus",
+        "link": "/pages/notre-gamme#moulus",
+        "hidden": false
+      },
+      {
+        "_uid": "c0c747d4-c76b-c92e-5c98-4e2a6f7099a7",
+        "component": "nav_link",
+        "label": "Pods",
+        "link": "/pages/notre-gamme#pods",
+        "hidden": false
+      }
+    ],
+    "footer_contact_heading": "Contact",
+    "address": "83 rue de Reuilly, 75012 Paris",
+    "email": "cafetones@free.fr",
+    "hours": "Lun — Ven : 8h — 18h",
+    "copyright": "© 2026 TONES SAS — Distributeur exclusif café La Genovese France Nord",
+    "legal_label": "Mentions légales",
+    "legal_link": "/pages/mentions-legales",
+    "privacy_label": "Politique de confidentialité",
+    "privacy_link": "/pages/mentions-legales#rgpd"
+  }
+}
