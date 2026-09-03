@@ -23,8 +23,11 @@ Sur https://github.com/calas23/cafetones → **Settings → Secrets and variable
 
 1. Ouvrez https://github.com/calas23/cafetones → onglet **Actions**.
 2. Menu de gauche : **Storyblok Bootstrap** → bouton **Run workflow** (à droite) →
-   laissez « Simulation » décoché → **Run workflow** vert.
+   choisissez la branche (`main` après le merge) → **Run workflow** vert.
 3. Attendez ~2 minutes que la coche verte apparaisse (cliquez sur le run pour suivre les logs).
+
+*(Le workflow n'apparaît dans l'onglet Actions que depuis qu'il existe sur la
+branche `main` ; le premier lancement a été déclenché via l'API.)*
 
 Le bootstrap crée/actualise dans votre space : les **52 composants** (blocs),
 les **33 images** du site (uploadées comme assets), les dossiers `pages/` et
