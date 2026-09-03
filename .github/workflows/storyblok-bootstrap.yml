@@ -1,0 +1,32 @@
+# Initialise / met à jour le space Storyblok en un clic :
+# GitHub → onglet Actions → "Storyblok Bootstrap" → Run workflow.
+# Nécessite les secrets du dépôt : STORYBLOK_PAT et STORYBLOK_SPACE_ID
+# (Settings → Secrets and variables → Actions).
+
+name: Storyblok Bootstrap
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Simulation (n'écrit rien dans Storyblok)"
+        type: boolean
+        default: false
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Bootstrap Storyblok
+        env:
+          STORYBLOK_PAT: ${{ secrets.STORYBLOK_PAT }}
+          STORYBLOK_SPACE_ID: ${{ secrets.STORYBLOK_SPACE_ID }}
+          STORYBLOK_WEBHOOK_SECRET: ${{ secrets.STORYBLOK_WEBHOOK_SECRET }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: node scripts/storyblok/bootstrap.mjs
