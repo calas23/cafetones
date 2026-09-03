@@ -20,6 +20,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlobalBehaviors } from "@/components/behaviors/GlobalBehaviors";
 import { StoryblokClientInit } from "@/components/StoryblokClientInit";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cafetones.fr"),
@@ -37,9 +38,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <script dangerouslySetInnerHTML={{ __html: "window.dataLayer = window.dataLayer || [];" }} />
         <StoryblokClientInit />
         <GlobalBehaviors />
-        <Header settings={settings} />
-        {children}
-        <Footer settings={settings} />
+        <SiteChrome header={<Header settings={settings} />} footer={<Footer settings={settings} />}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );

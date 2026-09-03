@@ -2,10 +2,10 @@ import type { NextConfig } from "next";
 
 // En-têtes de sécurité repris de l'ancien vercel.json.
 // X-Frame-Options: DENY est remplacé par une CSP frame-ancestors qui
-// n'autorise que l'éditeur visuel Storyblok à afficher le site en iframe.
+// n'autorise que les éditeurs visuels (Storyblok, Plasmic) à afficher le site en iframe.
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "Content-Security-Policy", value: "frame-ancestors 'self' https://app.storyblok.com" },
+  { key: "Content-Security-Policy", value: "frame-ancestors 'self' https://app.storyblok.com https://studio.plasmic.app" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
 ];
 
