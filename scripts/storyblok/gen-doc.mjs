@@ -13,6 +13,7 @@ const TYPE_FR = {
   asset: "Image",
   richtext: "Texte riche",
   boolean: "Case à cocher",
+  number: "Nombre",
   option: "Choix",
   options: "Choix multiples",
   bloks: "Liste de blocs",

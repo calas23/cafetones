@@ -8,6 +8,7 @@ import { Buttons } from "./shared";
 
 type HeroHomeBlok = SbBlok & {
   badge_logo?: SbAsset;
+  badge_logo_height?: string | number; // hauteur en px saisie dans Storyblok (vide = 30)
   badge_text?: string;
   title?: string;
   subtitle?: string;
@@ -16,8 +17,16 @@ type HeroHomeBlok = SbBlok & {
   theme?: string; // dark (photo sombre, texte clair) | light (illustration claire, texte foncé)
 };
 
+// Nombre saisi dans Storyblok (chaîne ou nombre) borné entre min et max ; vide ou invalide = valeur par défaut.
+function pxOr(value: string | number | undefined, fallback: number, min: number, max: number): number {
+  const n = typeof value === "number" ? value : parseFloat(String(value ?? "").replace(",", "."));
+  if (!Number.isFinite(n)) return fallback;
+  return Math.min(max, Math.max(min, Math.round(n)));
+}
+
 export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
   const light = blok.theme === "light";
+  const logoHeight = pxOr(blok.badge_logo_height, 30, 12, 120);
   const bg = assetUrl(blok.background_image);
   return (
     <section
@@ -33,7 +42,7 @@ export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
               <img
                 src={assetUrl(blok.badge_logo)}
                 alt={blok.badge_logo?.alt || "TONES"}
-                style={{ height: "30px", width: "auto", filter: light ? "brightness(0)" : "brightness(0) invert(1)" }}
+                style={{ height: `${logoHeight}px`, width: "auto", filter: light ? "brightness(0)" : "brightness(0) invert(1)" }}
               />
             ) : null}
             {blok.badge_text ? <span className="badge badge--dark">{blok.badge_text}</span> : null}

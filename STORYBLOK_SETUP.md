@@ -109,6 +109,9 @@ certificat auto-signé dans le navigateur.
 - **Changer l'image de fond de l'accueil** : Content → Accueil → cliquer le
   grand bandeau du haut → champ **Image de fond** → Upload → si l'image est
   claire, **Thème du texte** = « illustration claire » → Save → Publish.
+- **Agrandir / réduire le petit logo de l'accueil** (celui à côté du badge
+  « Depuis plus de 25 ans ») : même bloc → champ **Hauteur du petit logo (px)**
+  → saisir un nombre (ex. 45 ; vide = 30, la taille d'origine) → Save → Publish.
 - **Ne pas toucher** : l'onglet « Avancé » des pages et le champ JSON-LD
   (réglages techniques remplis automatiquement).
 
@@ -130,7 +133,8 @@ certificat auto-signé dans le navigateur.
   désactivé dans le code). Les demandes ne sont donc pas transmises par email.
 - **Fond du héros de l'accueil** : bloc « Héros — Accueil » → *Image de fond*
   (vide = photo par défaut du site) + *Thème du texte* : choisir « illustration
-  claire » pour une image claire (le texte passe en foncé).
+  claire » pour une image claire (le texte passe en foncé). *Hauteur du petit
+  logo (px)* : nombre borné entre 12 et 120 côté code, vide = 30.
 - **Non éditable via Storyblok** (dans le code) : les libellés des champs de
   formulaire, les icônes SVG (choisies par liste), le numéro dans le bouton
   « Commander » de la fiche produit.
@@ -194,6 +198,7 @@ certificat auto-signé dans le navigateur.
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `badge_logo` | Image | Petit logo au-dessus du titre |
+| `badge_logo_height` | Nombre | Hauteur du petit logo (px) |
 | `background_image` | Image | Image de fond (vide = photo par défaut du site) |
 | `theme` | Choix — valeurs : dark · light | Thème du texte |
 | `badge_text` | Texte | Badge |
