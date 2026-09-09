@@ -432,6 +432,11 @@ export const COMPONENTS = [
     group: "Sections",
     schema: {
       badge_logo: asset("Petit logo au-dessus du titre"),
+      background_image: asset("Image de fond (vide = photo par défaut du site)"),
+      theme: option("Thème du texte", [
+        ["dark", "Texte clair sur photo sombre (défaut)"],
+        ["light", "Texte foncé sur illustration claire"],
+      ]),
       badge_text: text("Badge"),
       title: text("Titre", { description: MINI_FORMAT }),
       subtitle: textarea("Sous-titre"),

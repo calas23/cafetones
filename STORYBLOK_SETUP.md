@@ -37,6 +37,9 @@ besoin (il met à jour sans dupliquer).
 
 > ⚠️ Le bootstrap **écrase le contenu des stories** avec celui du site d'origine.
 > Ne le relancez pas après que la cliente a commencé à éditer, sauf pour repartir de zéro.
+>
+> Pour mettre à jour **seulement les blocs** (nouveaux champs) sans toucher au
+> contenu : Run workflow → cochez **« Composants uniquement »**. Sûr à tout moment.
 
 ### Étape C — Vérifier les variables Vercel *(déjà fait normalement)*
 
@@ -103,6 +106,9 @@ certificat auto-signé dans le navigateur.
 - **Astérisques dans certains titres** : `*mots*` = mots en italique décoratif
   (ex. « Un *vrai café italien* »). Un retour à la ligne dans le champ =
   retour à la ligne à l'écran.
+- **Changer l'image de fond de l'accueil** : Content → Accueil → cliquer le
+  grand bandeau du haut → champ **Image de fond** → Upload → si l'image est
+  claire, **Thème du texte** = « illustration claire » → Save → Publish.
 - **Ne pas toucher** : l'onglet « Avancé » des pages et le champ JSON-LD
   (réglages techniques remplis automatiquement).
 
@@ -122,10 +128,12 @@ certificat auto-signé dans le navigateur.
 - **Formulaires** : comportement identique à l'ancien site — validation +
   événement GTM `form_submission`, **aucun envoi serveur** (GTM est d'ailleurs
   désactivé dans le code). Les demandes ne sont donc pas transmises par email.
-- **Non éditable via Storyblok** (dans le code) : l'image de fond du héros de
-  l'accueil (`css/home.css`), les libellés des champs de formulaire, les icônes
-  SVG (choisies par liste), le numéro dans le bouton « Commander » de la fiche
-  produit.
+- **Fond du héros de l'accueil** : bloc « Héros — Accueil » → *Image de fond*
+  (vide = photo par défaut du site) + *Thème du texte* : choisir « illustration
+  claire » pour une image claire (le texte passe en foncé).
+- **Non éditable via Storyblok** (dans le code) : les libellés des champs de
+  formulaire, les icônes SVG (choisies par liste), le numéro dans le bouton
+  « Commander » de la fiche produit.
 - Contenu de secours local : `scripts/storyblok/content/` (extraction du site
   d'origine, utilisée par le bootstrap et le mode `STORYBLOK_LOCAL_CONTENT=1`).
 
@@ -186,6 +194,8 @@ certificat auto-signé dans le navigateur.
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `badge_logo` | Image | Petit logo au-dessus du titre |
+| `background_image` | Image | Image de fond (vide = photo par défaut du site) |
+| `theme` | Choix — valeurs : dark · light | Thème du texte |
 | `badge_text` | Texte | Badge |
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |

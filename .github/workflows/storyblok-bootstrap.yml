@@ -12,6 +12,10 @@ on:
         description: "Simulation (n'écrit rien dans Storyblok)"
         type: boolean
         default: false
+      components_only:
+        description: "Composants uniquement (met à jour les blocs sans toucher au contenu)"
+        type: boolean
+        default: false
 
 jobs:
   bootstrap:
@@ -29,4 +33,5 @@ jobs:
           STORYBLOK_SPACE_ID: ${{ secrets.STORYBLOK_SPACE_ID }}
           STORYBLOK_WEBHOOK_SECRET: ${{ secrets.STORYBLOK_WEBHOOK_SECRET }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          BOOTSTRAP_ONLY: ${{ inputs.components_only && 'components' || '' }}
         run: node scripts/storyblok/bootstrap.mjs

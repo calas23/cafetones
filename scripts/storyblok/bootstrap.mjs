@@ -12,6 +12,8 @@
 //   STORYBLOK_WEBHOOK_SECRET  active la création du webhook
 //   SITE_URL                  défaut https://cafetones.fr
 //   DRY_RUN=1                 affiche le plan sans rien écrire
+//   BOOTSTRAP_ONLY=components ne met à jour QUE les schémas de blocs (aucune
+//                             story touchée — sûr après que la cliente a édité)
 //
 // Idempotent : réexécutable sans danger (upsert partout).
 
@@ -24,6 +26,7 @@ const SPACE_ID = process.env.STORYBLOK_SPACE_ID;
 const SITE_URL = (process.env.SITE_URL || "https://cafetones.fr").replace(/\/$/, "");
 const WEBHOOK_SECRET = process.env.STORYBLOK_WEBHOOK_SECRET || "";
 const DRY = process.env.DRY_RUN === "1" || process.argv.includes("--dry-run");
+const ONLY_COMPONENTS = process.env.BOOTSTRAP_ONLY === "components" || process.argv.includes("--components-only");
 
 const CONTENT_DIR = join(process.cwd(), "scripts/storyblok/content/stories");
 const IMG_DIR = join(process.cwd(), "public/img");
@@ -294,8 +297,12 @@ async function main() {
 
   await detectHost();
 
-  console.log("\n[1/5] Composants…");
+  console.log(ONLY_COMPONENTS ? "\n[1/1] Composants (mode composants uniquement)…" : "\n[1/5] Composants…");
   await upsertComponents();
+  if (ONLY_COMPONENTS) {
+    console.log("\n✅ Schémas de blocs mis à jour. Aucune story ni image modifiée.");
+    return;
+  }
 
   console.log("\n[2/5] Images…");
   const assetMap = await ensureAssets([...needed]);

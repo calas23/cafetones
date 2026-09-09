@@ -241,3 +241,39 @@ main.page-home .certifications-grid {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+/* Variante « illustration claire » du héros d'accueil (image de fond et
+   thème éditables dans Storyblok) : texte foncé, voile crème léger. */
+main.page-home .home-hero--light::after {
+  background-color: rgba(250, 248, 245, 0.18);
+}
+main.page-home .home-hero--light .home-hero__content h1 {
+  color: var(--color-espresso);
+}
+main.page-home .home-hero--light .home-hero__subtitle {
+  color: var(--color-text-muted);
+}
+main.page-home .home-hero--light .btn--white-outline {
+  background-color: rgba(250, 248, 245, 0.7);
+  color: var(--color-espresso);
+  border-color: rgba(44, 24, 16, 0.35);
+}
+main.page-home .home-hero--light .btn--white-outline:hover {
+  background-color: rgba(250, 248, 245, 0.95);
+  border-color: var(--color-espresso);
+}
+@media (max-width: 900px) {
+  main.page-home .home-hero--light .home-hero__content {
+    background-color: rgba(250, 248, 245, 0.86);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border-radius: var(--border-radius-xl);
+    padding: 2rem 1.25rem;
+  }
+}
+@media (min-width: 901px) {
+  main.page-home .home-hero--light .home-hero__content {
+    max-width: 780px;
+    padding: 2.5rem 2.5rem;
+    background: radial-gradient(ellipse at center, rgba(250, 248, 245, 0.92) 0%, rgba(250, 248, 245, 0.75) 45%, rgba(250, 248, 245, 0) 72%);
+  }
+}
