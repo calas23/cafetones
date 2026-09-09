@@ -1,6 +1,7 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { Icon } from "@/components/Icon";
 import { fmt, fmtTel } from "@/lib/text";
+import { pxOr } from "@/lib/num";
 import { assetUrl, type SbAsset, type SbBlok } from "@/lib/types";
 import { Buttons } from "./shared";
 
@@ -16,13 +17,6 @@ type HeroHomeBlok = SbBlok & {
   background_image?: SbAsset;
   theme?: string; // dark (photo sombre, texte clair) | light (illustration claire, texte foncé)
 };
-
-// Nombre saisi dans Storyblok (chaîne ou nombre) borné entre min et max ; vide ou invalide = valeur par défaut.
-function pxOr(value: string | number | undefined, fallback: number, min: number, max: number): number {
-  const n = typeof value === "number" ? value : parseFloat(String(value ?? "").replace(",", "."));
-  if (!Number.isFinite(n)) return fallback;
-  return Math.min(max, Math.max(min, Math.round(n)));
-}
 
 export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
   const light = blok.theme === "light";
