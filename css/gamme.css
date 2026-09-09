@@ -45,7 +45,7 @@ main.page-gamme .gamme-nav {
   position: sticky;
   top: var(--header-height);
   z-index: 100;
-  background-color: rgba(250, 248, 245, 0.95);
+  background-color: rgba(var(--rgb-cream), 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border-light);
@@ -89,7 +89,7 @@ main.page-gamme .gamme-nav__link.active,
 main.page-gamme .gamme-nav__btn.active {
   background-color: var(--color-crema);
   color: var(--color-white);
-  box-shadow: 0 2px 8px rgba(200, 149, 108, 0.25);
+  box-shadow: 0 2px 8px rgba(var(--rgb-crema), 0.25);
 }
 main.page-gamme .gamme-section {
   padding-top: 3rem;
@@ -264,7 +264,7 @@ main.page-gamme .price-detail {
   margin-top: 0.15rem;
 }
 main.page-gamme .gamme-card--patisserie .gamme-card__image {
-  background-color: #F5EDE0;
+  background-color: var(--color-cream-dark);
 }
 main.page-gamme .gamme-card--patisserie .seasonal-note {
   font-style: italic;
