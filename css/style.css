@@ -6,30 +6,33 @@
    ======================================================================== */
 
 :root {
-  /* Couleurs — palette bleu marine / rouge bistro.
+  /* Couleurs — palette « Sicilia » (affiche naïve : cobalt, tomate, soleil, feuille).
      Les noms historiques (espresso, crema, cream) sont conservés : ils désignent
      les rôles (fond foncé, accent, fond clair), utilisés partout dans les CSS.
      Ancienne palette café : espresso #2C1810, crema #C8956C, cream #FAF8F5. */
-  --color-espresso: #1C3559;        /* bleu marine : sections sombres, titres, pied de page */
-  --color-espresso-light: #27477A;  /* bleu marine plus clair */
-  --color-crema: #C23B2E;           /* rouge bistro : boutons, badges, liens, accents */
-  --color-crema-light: #E4867D;     /* rouge clair : accents sur fond foncé */
-  --color-crema-dark: #9E2B21;      /* rouge foncé : prix, survols, texte accentué */
-  --color-cream: #FAF9F7;           /* fond clair des pages */
-  --color-cream-warm: #F0F3F8;      /* fond des sections alternées (bleu-gris très clair) */
-  --color-cream-dark: #E1E7F0;
-  --color-text: #15203A;
-  --color-text-muted: #4E5A73;
-  --color-text-light: #7E8AA4;
+  --color-espresso: #2453B5;        /* bleu cobalt : sections sombres, titres, pied de page */
+  --color-espresso-light: #3565CC;  /* cobalt plus clair (survols) */
+  --color-crema: #D63324;           /* rouge tomate : boutons, badges, liens, accents */
+  --color-crema-light: #F6C543;     /* jaune soleil : accents sur fond cobalt */
+  --color-crema-dark: #B42D1F;      /* rouge foncé : prix, survols, texte accentué */
+  --color-cream: #FFFDF8;           /* blanc papier : fond des pages */
+  --color-cream-warm: #EAF3FF;      /* bleu ciel très pâle : sections alternées */
+  --color-cream-dark: #E4EDF9;      /* texte clair sur fond cobalt, survols */
+  --color-text: #1B2A4E;
+  --color-text-muted: #4A5578;
+  --color-text-light: #7C86A6;
   --color-white: #FFFFFF;
-  --color-border: #D6DDE8;
-  --color-border-light: #E5EAF1;
-  --color-success: #5A7A3A;
-  --color-error: #C44B3F;
+  --color-border: #CFDCF0;
+  --color-border-light: #E3ECFA;
+  --color-success: #2E8B57;
+  --color-error: #D63324;
+  --color-sun: #F6C543;             /* touches : badges, chiffres */
+  --color-leaf: #2E8B57;
+  --color-orange: #F28C28;
   /* Composantes RVB des couleurs de base, pour les transparences (ombres, voiles). */
-  --rgb-espresso: 28, 53, 89;
-  --rgb-crema: 194, 59, 46;
-  --rgb-cream: 250, 249, 247;
+  --rgb-espresso: 36, 83, 181;
+  --rgb-crema: 214, 51, 36;
+  --rgb-cream: 255, 253, 248;
 
   /* Typographie */
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -1355,4 +1358,25 @@ p {
 
 .card-hidden {
   display: none !important;
+}
+/* ========================================================================
+   Touches « Sicilia » : coins plus ronds, boutons en pilule, badges soleil
+   ======================================================================== */
+:root {
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 28px;
+}
+
+.btn {
+  border-radius: 999px;
+}
+
+.badge {
+  border-radius: 999px;
+}
+
+.badge--gold {
+  background-color: var(--color-sun);
+  color: var(--color-text);
 }

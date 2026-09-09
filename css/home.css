@@ -277,3 +277,9 @@ main.page-home .home-hero--light .btn--white-outline:hover {
     background: radial-gradient(ellipse at center, rgba(var(--rgb-cream), 0.92) 0%, rgba(var(--rgb-cream), 0.75) 45%, rgba(var(--rgb-cream), 0) 72%);
   }
 }
+
+/* Chiffres clés : une couleur de l'affiche par chiffre */
+main.page-home .home-stats > *:nth-child(1) .home-stats__number { color: var(--color-espresso); }
+main.page-home .home-stats > *:nth-child(2) .home-stats__number { color: var(--color-crema); }
+main.page-home .home-stats > *:nth-child(3) .home-stats__number { color: var(--color-leaf); }
+main.page-home .home-stats > *:nth-child(4) .home-stats__number { color: var(--color-orange); }
