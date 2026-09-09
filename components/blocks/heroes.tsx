@@ -12,11 +12,19 @@ type HeroHomeBlok = SbBlok & {
   title?: string;
   subtitle?: string;
   buttons?: SbBlok[];
+  background_image?: SbAsset;
+  theme?: string; // dark (photo sombre, texte clair) | light (illustration claire, texte foncé)
 };
 
 export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
+  const light = blok.theme === "light";
+  const bg = assetUrl(blok.background_image);
   return (
-    <section className="home-hero" {...storyblokEditable(blok)}>
+    <section
+      className={light ? "home-hero home-hero--light" : "home-hero"}
+      style={bg ? { backgroundImage: `url("${bg}")` } : undefined}
+      {...storyblokEditable(blok)}
+    >
       <div className="container">
         <div className="home-hero__content">
           <div className="home-hero__badge-logo" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
@@ -25,7 +33,7 @@ export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
               <img
                 src={assetUrl(blok.badge_logo)}
                 alt={blok.badge_logo?.alt || "TONES"}
-                style={{ height: "30px", width: "auto", filter: "brightness(0) invert(1)" }}
+                style={{ height: "30px", width: "auto", filter: light ? "brightness(0)" : "brightness(0) invert(1)" }}
               />
             ) : null}
             {blok.badge_text ? <span className="badge badge--dark">{blok.badge_text}</span> : null}
