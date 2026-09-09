@@ -5,6 +5,7 @@
 const text = (display_name, extra = {}) => ({ type: "text", display_name, ...extra });
 const textarea = (display_name, extra = {}) => ({ type: "textarea", display_name, ...extra });
 const boolean = (display_name, extra = {}) => ({ type: "boolean", display_name, ...extra });
+const number = (display_name, extra = {}) => ({ type: "number", display_name, ...extra });
 const asset = (display_name, extra = {}) => ({ type: "asset", filetypes: ["images"], display_name, ...extra });
 const richtext = (display_name, extra = {}) => ({ type: "richtext", display_name, ...extra });
 const bloks = (display_name, whitelist, extra = {}) => ({
@@ -432,6 +433,9 @@ export const COMPONENTS = [
     group: "Sections",
     schema: {
       badge_logo: asset("Petit logo au-dessus du titre"),
+      badge_logo_height: number("Hauteur du petit logo (px)", {
+        description: "Vide = 30 (taille d'origine). Valeur acceptée entre 12 et 120.",
+      }),
       background_image: asset("Image de fond (vide = photo par défaut du site)"),
       theme: option("Thème du texte", [
         ["dark", "Texte clair sur photo sombre (défaut)"],
