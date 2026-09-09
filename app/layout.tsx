@@ -16,6 +16,7 @@ import "@/css/illustrations.css";
 
 import "@/lib/storyblok";
 import { getSettings } from "@/lib/content";
+import { headerSizeVars } from "@/lib/header-size";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlobalBehaviors } from "@/components/behaviors/GlobalBehaviors";
@@ -30,7 +31,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const settings = await getSettings(draft).catch(() => null);
 
   return (
-    <html lang="fr">
+    <html lang="fr" style={headerSizeVars(settings)}>
       <body>
         {/* Google Tag Manager : snippet désactivé sur l'ancien site (GTM-XXXXXX).
             Seul le stub dataLayer est actif, comme avant. */}

@@ -158,6 +158,9 @@ export const COMPONENTS = [
     group: "Pages",
     schema: {
       logo: asset("Logo"),
+      logo_height: number("Hauteur du logo du menu (px)", {
+        description: "Vide = 64 sur ordinateur et 48 sur mobile (tailles d'origine). Valeur entre 24 et 160 ; la barre de menu s'agrandit automatiquement si besoin.",
+      }),
       phone: text("Numéro de téléphone principal"),
       cta_label: text("Bouton d'en-tête — texte"),
       cta_link: text("Bouton d'en-tête — lien"),

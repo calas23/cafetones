@@ -252,7 +252,7 @@ p {
 }
 
 .header__logo-img {
-  height: 48px;
+  height: var(--logo-height-mobile, 48px);
   width: auto;
   display: block;
   filter: brightness(0);
@@ -1248,7 +1248,7 @@ p {
   }
 
   .header__logo-img {
-    height: 64px;
+    height: var(--logo-height, 64px);
   }
 
   .header__phone {

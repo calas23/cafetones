@@ -112,6 +112,10 @@ certificat auto-signé dans le navigateur.
 - **Agrandir / réduire le petit logo de l'accueil** (celui à côté du badge
   « Depuis plus de 25 ans ») : même bloc → champ **Hauteur du petit logo (px)**
   → saisir un nombre (ex. 45 ; vide = 30, la taille d'origine) → Save → Publish.
+- **Agrandir / réduire le logo du menu** (en haut à gauche) : Content → dossier
+  **Configuration** → **Réglages du site** → champ **Hauteur du logo du menu (px)**
+  → saisir un nombre (ex. 80 ; vide = 64 sur ordinateur et 48 sur mobile) → Save
+  → Publish. La barre de menu s'agrandit toute seule si le logo dépasse.
 - **Ne pas toucher** : l'onglet « Avancé » des pages et le champ JSON-LD
   (réglages techniques remplis automatiquement).
 
@@ -135,6 +139,10 @@ certificat auto-signé dans le navigateur.
   (vide = photo par défaut du site) + *Thème du texte* : choisir « illustration
   claire » pour une image claire (le texte passe en foncé). *Hauteur du petit
   logo (px)* : nombre borné entre 12 et 120 côté code, vide = 30.
+- **Logo du menu** : *Hauteur du logo du menu (px)* dans « Réglages du site »,
+  borné entre 24 et 160 côté code ; mobile = 75 % de la valeur (proportion
+  d'origine 48/64) ; la variable CSS `--header-height` suit (72 px minimum),
+  donc les décalages de pages et le menu mobile restent alignés.
 - **Non éditable via Storyblok** (dans le code) : les libellés des champs de
   formulaire, les icônes SVG (choisies par liste), le numéro dans le bouton
   « Commander » de la fiche produit.
@@ -170,6 +178,7 @@ certificat auto-signé dans le navigateur.
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `logo` | Image | Logo |
+| `logo_height` | Nombre | Hauteur du logo du menu (px) |
 | `phone` | Texte | Numéro de téléphone principal |
 | `cta_label` | Texte | Bouton d'en-tête — texte |
 | `cta_link` | Texte | Bouton d'en-tête — lien |

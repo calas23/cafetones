@@ -26,6 +26,7 @@ export interface SbStory {
 
 export interface SiteSettings extends SbBlok {
   logo?: SbAsset;
+  logo_height?: string | number; // hauteur du logo du menu en px (vide = 64 desktop / 48 mobile)
   phone?: string;
   cta_label?: string;
   cta_link?: string;
