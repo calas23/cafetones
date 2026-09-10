@@ -1,5 +1,7 @@
 import { StoryblokServerComponent, storyblokEditable } from "@storyblok/react/rsc";
+import type { CSSProperties } from "react";
 import type { SbBlok } from "@/lib/types";
+import { normalizeHex } from "@/lib/palette";
 
 // Type de contenu racine : fil d'Ariane (hors <main>, comme l'original)
 // puis les sections de la page.
@@ -82,9 +84,18 @@ export default function Page({ blok }: { blok: PageBlok }) {
         </>
       ) : null}
       <main className={mainClassName(blok)} {...storyblokEditable(blok)}>
-        {(blok.body ?? []).map((nested) => (
-          <StoryblokServerComponent blok={nested} key={nested._uid} />
-        ))}
+        {(blok.body ?? []).map((nested) => {
+          // Champ « Couleur de fond » d'une section : la section est enveloppée et sa couleur
+          // de fond remplacée (css/style.css, .sb-bg). Vide ou invalide = rendu d'origine.
+          const background = normalizeHex(nested.background);
+          return background ? (
+            <div className="sb-bg" style={{ "--sb-bg": background } as CSSProperties} key={nested._uid}>
+              <StoryblokServerComponent blok={nested} />
+            </div>
+          ) : (
+            <StoryblokServerComponent blok={nested} key={nested._uid} />
+          );
+        })}
       </main>
     </>
   );
