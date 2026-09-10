@@ -137,6 +137,24 @@ const DISPLAY_FONT_OPTIONS = [
   ["caveat", "Caveat — manuscrite"],
 ];
 
+// Polices Google Fonts proposées pour le texte (clés = lib/fonts.ts BODY_FONTS).
+const BODY_FONT_OPTIONS = [
+  ["dm-sans", "DM Sans — sans-serif (par défaut)"],
+  ["inter", "Inter — sans-serif neutre"],
+  ["nunito", "Nunito — ronde et douce"],
+  ["poppins", "Poppins — sans-serif ronde"],
+  ["work-sans", "Work Sans — sans-serif sobre"],
+  ["source-sans", "Source Sans 3 — sans-serif lisible"],
+  ["lato", "Lato — sans-serif classique"],
+  ["raleway", "Raleway — sans-serif fine"],
+  ["lora", "Lora — serif douce"],
+  ["merriweather", "Merriweather — serif classique"],
+];
+// Toutes les polices, sans doublon (clés = lib/fonts.ts ALL_FONTS).
+const ALL_FONT_OPTIONS = [...BODY_FONT_OPTIONS, ...DISPLAY_FONT_OPTIONS].filter(
+  ([key], i, arr) => arr.findIndex(([k]) => k === key) === i,
+);
+
 export const COMPONENTS = [
   {
     name: "page",
@@ -225,18 +243,7 @@ export const COMPONENTS = [
         default_value: "playfair",
         description: "Police des titres (h1, h2, h3, chiffres clés). Polices Google Fonts, chargées automatiquement.",
       }),
-      font_body: option("Police du texte", [
-        ["dm-sans", "DM Sans — sans-serif (par défaut)"],
-        ["inter", "Inter — sans-serif neutre"],
-        ["nunito", "Nunito — ronde et douce"],
-        ["poppins", "Poppins — sans-serif ronde"],
-        ["work-sans", "Work Sans — sans-serif sobre"],
-        ["source-sans", "Source Sans 3 — sans-serif lisible"],
-        ["lato", "Lato — sans-serif classique"],
-        ["raleway", "Raleway — sans-serif fine"],
-        ["lora", "Lora — serif douce"],
-        ["merriweather", "Merriweather — serif classique"],
-      ], {
+      font_body: option("Police du texte", BODY_FONT_OPTIONS, {
         default_value: "dm-sans",
         description: "Police des paragraphes, menus, boutons et formulaires.",
       }),
@@ -335,6 +342,12 @@ export const COMPONENTS = [
       }),
       name_size: number("Nom — taille (%)", {
         description: "100 = taille actuelle. Ex. 130 pour un nom plus grand. Entre 50 et 300.",
+      }),
+      text_font: option("Texte — police", [["", "Police du texte du site (défaut)"], ...ALL_FONT_OPTIONS], {
+        description: "Police du reste du texte de cette fiche (sous-titre, description, format, prix). Vide = police du texte du site.",
+      }),
+      text_size: number("Texte — taille (%)", {
+        description: "100 = taille actuelle. Entre 50 et 300.",
       }),
       display_subtitle: text("Sous-titre affiché"),
       display_desc: textarea("Description courte affichée"),

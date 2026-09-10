@@ -141,7 +141,9 @@ certificat auto-signé dans le navigateur.
 - **Police et taille du nom d'un produit** (cartes des best-sellers, de la
   gamme, CHR, particuliers) : cliquer le produit → **Nom — police** (même
   liste que l'onglet Polices, vide = police des titres) et **Nom — taille (%)**
-  (100 = actuel) → Save → Publish. Ne touche que ce produit.
+  (100 = actuel), et de même **Texte — police** / **Texte — taille (%)** pour le
+  reste de la fiche (sous-titre, description, format, prix) → Save → Publish.
+  Ne touche que ce produit.
 - **Changer la couleur de fond d'une section** : dans la page, cliquer la
   section → champ **Couleur de fond** (tout en bas de ses champs) → un code
   hexadécimal comme `#FFF1E3` → Save → Publish. Ne touche que cette section.
@@ -197,6 +199,8 @@ certificat auto-signé dans le navigateur.
   bloc `product_card` → `inlineTextStyle()` (`lib/fonts.ts`) donne le style
   inline (font-family + zoom) et `FontLink` (`components/FontLink.tsx`) fait
   remonter la feuille Google Fonts dans `<head>` (hoisting React 19, dédupliqué).
+  Idem `text_font` / `text_size` (toutes polices, `ALL_FONTS`) sur les autres
+  textes de la carte.
 - **Fond par section** : champ `background` (hex) ajouté à toutes les sections
   par `components.mjs` ; `Page.tsx` enveloppe la section dans `.sb-bg` avec
   `--sb-bg`, et `style.css` force `background-color` sur l'enfant direct.
@@ -711,6 +715,8 @@ certificat auto-signé dans le navigateur.
 | `display_name` | Texte | Nom affiché |
 | `name_font` | Choix — valeurs : playfair · lora · merriweather · dm-serif · fraunces · abril · poppins · montserrat · raleway · fredoka · nunito · baloo-2 · bebas · caveat | Nom — police |
 | `name_size` | Nombre | Nom — taille (%) |
+| `text_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Texte — police |
+| `text_size` | Nombre | Texte — taille (%) |
 | `display_subtitle` | Texte | Sous-titre affiché |
 | `display_desc` | Texte long | Description courte affichée |
 | `display_format` | Texte | Format affiché |

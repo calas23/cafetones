@@ -105,11 +105,18 @@ export function fontSettings(settings: SiteSettings | null | undefined): FontSet
 // Police et taille d'un texte précis (ex. nom d'un produit) choisies dans un bloc :
 // `font` = clé de DISPLAY_FONTS (vide = police des titres du site), `sizePct` en % (100 = taille
 // actuelle, appliqué par zoom pour rester relatif à la taille définie en CSS).
-export function inlineTextStyle(font: unknown, sizePct: unknown): { style?: CSSProperties; href?: string } {
+// Toutes les polices proposées (texte + titres), pour les champs « police » des blocs.
+export const ALL_FONTS: Record<string, FontDef> = { ...BODY_FONTS, ...DISPLAY_FONTS };
+
+export function inlineTextStyle(
+  font: unknown,
+  sizePct: unknown,
+  table: Record<string, FontDef> = DISPLAY_FONTS,
+): { style?: CSSProperties; href?: string } {
   const style: CSSProperties = {};
   let href: string | undefined;
-  if (typeof font === "string" && font in DISPLAY_FONTS) {
-    const f = DISPLAY_FONTS[font];
+  if (typeof font === "string" && font in table) {
+    const f = table[font];
     style.fontFamily = `'${f.family}', ${f.fallback}`;
     href = `${GOOGLE_CSS2}family=${f.query}&display=swap`;
   }
