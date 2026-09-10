@@ -135,6 +135,9 @@ certificat auto-signé dans le navigateur.
   → la police → Get font → Get embed code → l'adresse qui commence par
   https://fonts.googleapis.com/css2?) dans le champ URL. Ce champ libre passe
   avant la liste ; le vider ramène à la liste.
+- **Changer la taille des textes** : même onglet **Polices** → **Taille du
+  texte (%)** (tout le site, 100 = actuel, ex. 110 pour agrandir un peu) et
+  **Taille des titres (%)** (titres seulement, en plus) → Save → Publish.
 - **Changer la couleur de fond d'une section** : dans la page, cliquer la
   section → champ **Couleur de fond** (tout en bas de ses champs) → un code
   hexadécimal comme `#FFF1E3` → Save → Publish. Ne touche que cette section.
@@ -183,6 +186,9 @@ certificat auto-signé dans le navigateur.
   la liste déroulante elle-même : ajouter l'entrée dans `lib/fonts.ts` et dans
   l'option correspondante de `scripts/storyblok/components.mjs`, puis bootstrap
   « composants uniquement ».
+- **Tailles** : `lib/text-scale.ts` pose `--scale-text` (multiplie la taille
+  de base `html`, 16 px ; tout est en rem) et `--scale-headings` (`zoom` sur
+  h1-h4, `style.css`). 100 %, vide ou invalide = rien de posé.
 - **Fond par section** : champ `background` (hex) ajouté à toutes les sections
   par `components.mjs` ; `Page.tsx` enveloppe la section dans `.sb-bg` avec
   `--sb-bg`, et `style.css` force `background-color` sur l'enfant direct.
@@ -254,6 +260,8 @@ certificat auto-signé dans le navigateur.
 | `font_display_custom_url` | Texte | Titres — URL Google Fonts (facultatif) |
 | `font_body_custom_name` | Texte | Texte — autre police Google Fonts (nom exact) |
 | `font_body_custom_url` | Texte | Texte — URL Google Fonts (facultatif) |
+| `text_scale` | Nombre | Taille du texte (%) |
+| `heading_scale` | Nombre | Taille des titres (%) |
 
 ## Groupe « Sections » (32)
 

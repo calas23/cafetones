@@ -104,7 +104,7 @@ ol {
 }
 
 html {
-  font-size: 16px;
+  font-size: calc(16px * var(--scale-text, 1)); /* --scale-text : « Taille du texte » (Réglages du site) */
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1385,4 +1385,12 @@ p {
    voir components/blocks/Page.tsx). Remplace le fond propre de la section. */
 .sb-bg > * {
   background-color: var(--sb-bg) !important;
+}
+
+/* « Taille des titres » (Réglages du site, onglet Polices) : zoom sur les titres seuls. */
+h1,
+h2,
+h3,
+h4 {
+  zoom: var(--scale-headings, 1);
 }
