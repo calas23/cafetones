@@ -6,6 +6,8 @@ const text = (display_name, extra = {}) => ({ type: "text", display_name, ...ext
 const textarea = (display_name, extra = {}) => ({ type: "textarea", display_name, ...extra });
 const boolean = (display_name, extra = {}) => ({ type: "boolean", display_name, ...extra });
 const number = (display_name, extra = {}) => ({ type: "number", display_name, ...extra });
+const HEX_RE = "^#[0-9A-Fa-f]{6}$";
+const HEX_HELP = "Code couleur hexadécimal à 6 caractères, ex. #8E1B1B. Vide = couleur de la palette choisie.";
 const asset = (display_name, extra = {}) => ({ type: "asset", filetypes: ["images"], display_name, ...extra });
 const richtext = (display_name, extra = {}) => ({ type: "richtext", display_name, ...extra });
 const bloks = (display_name, whitelist, extra = {}) => ({
@@ -182,6 +184,22 @@ export const COMPONENTS = [
       legal_link: text("Lien mentions légales — URL"),
       privacy_label: text("Lien confidentialité — texte"),
       privacy_link: text("Lien confidentialité — URL"),
+      "tab-couleurs": { type: "tab", display_name: "Couleurs", keys: ["palette", "color_dark", "color_accent", "color_bg", "color_bg_alt", "color_text"] },
+      palette: option("Palette", [
+        ["rouge-creme", "Rouge & crème (par défaut)"],
+        ["cafe", "Café d'origine (brun & caramel)"],
+        ["sicilia", "Sicilia (bleu cobalt & rouge tomate)"],
+        ["orange", "Tout orange (terre cuite)"],
+        ["marine", "Bleu marine & rouge bistro"],
+      ], {
+        default_value: "rouge-creme",
+        description: "Palette prête à l'emploi. Les 5 codes ci-dessous, s'ils sont remplis, remplacent la couleur correspondante ; tout le reste (nuances, bordures, ombres) est calculé automatiquement.",
+      }),
+      color_dark: text("Couleur foncée (sections sombres, titres, pied de page)", { regex: HEX_RE, description: HEX_HELP }),
+      color_accent: text("Couleur d'accent (boutons, badges, liens)", { regex: HEX_RE, description: HEX_HELP }),
+      color_bg: text("Fond des pages", { regex: HEX_RE, description: HEX_HELP }),
+      color_bg_alt: text("Fond des sections alternées", { regex: HEX_RE, description: HEX_HELP }),
+      color_text: text("Couleur du texte", { regex: HEX_RE, description: HEX_HELP }),
     },
   },
 

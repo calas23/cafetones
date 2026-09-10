@@ -27,6 +27,12 @@ export interface SbStory {
 export interface SiteSettings extends SbBlok {
   logo?: SbAsset;
   logo_height?: string | number; // hauteur du logo du menu en px (vide = 64 desktop / 48 mobile)
+  palette?: string; // onglet Couleurs : palette prête (rouge-creme | cafe | sicilia | orange | marine)
+  color_dark?: string; // codes hex optionnels remplaçant une couleur de base de la palette
+  color_accent?: string;
+  color_bg?: string;
+  color_bg_alt?: string;
+  color_text?: string;
   phone?: string;
   cta_label?: string;
   cta_link?: string;
