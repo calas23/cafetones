@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import type { SiteSettings } from "./types";
+import { pxOr } from "./num";
 
 // Onglet « Polices » des Réglages du site : police des titres et police du texte,
 // choisies dans une liste de polices Google Fonts. Par défaut (Playfair Display /
@@ -99,4 +100,22 @@ export function fontSettings(settings: SiteSettings | null | undefined): FontSet
   }
   if (!hrefs.length) return {};
   return { vars: vars as CSSProperties, hrefs };
+}
+
+// Police et taille d'un texte précis (ex. nom d'un produit) choisies dans un bloc :
+// `font` = clé de DISPLAY_FONTS (vide = police des titres du site), `sizePct` en % (100 = taille
+// actuelle, appliqué par zoom pour rester relatif à la taille définie en CSS).
+export function inlineTextStyle(font: unknown, sizePct: unknown): { style?: CSSProperties; href?: string } {
+  const style: CSSProperties = {};
+  let href: string | undefined;
+  if (typeof font === "string" && font in DISPLAY_FONTS) {
+    const f = DISPLAY_FONTS[font];
+    style.fontFamily = `'${f.family}', ${f.fallback}`;
+    href = `${GOOGLE_CSS2}family=${f.query}&display=swap`;
+  }
+  if (sizePct !== undefined && sizePct !== null && String(sizePct).trim() !== "") {
+    const pct = pxOr(sizePct as string | number, 100, 50, 300);
+    if (pct !== 100) style.zoom = pct / 100;
+  }
+  return { style: Object.keys(style).length ? style : undefined, href };
 }

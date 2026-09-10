@@ -119,6 +119,24 @@ const SECTION_WHITELIST = [
 
 export const GROUPS = ["Pages", "Sections", "Éléments"];
 
+// Polices Google Fonts proposées pour les titres (clés = lib/fonts.ts DISPLAY_FONTS).
+const DISPLAY_FONT_OPTIONS = [
+  ["playfair", "Playfair Display — serif élégante (par défaut)"],
+  ["lora", "Lora — serif douce"],
+  ["merriweather", "Merriweather — serif classique"],
+  ["dm-serif", "DM Serif Display — serif d'affiche"],
+  ["fraunces", "Fraunces — serif chaleureuse"],
+  ["abril", "Abril Fatface — gros titres d'affiche"],
+  ["poppins", "Poppins — sans-serif ronde"],
+  ["montserrat", "Montserrat — sans-serif moderne"],
+  ["raleway", "Raleway — sans-serif fine"],
+  ["fredoka", "Fredoka — ronde et ludique"],
+  ["nunito", "Nunito — ronde et douce"],
+  ["baloo-2", "Baloo 2 — ronde et joyeuse"],
+  ["bebas", "Bebas Neue — capitales d'affiche"],
+  ["caveat", "Caveat — manuscrite"],
+];
+
 export const COMPONENTS = [
   {
     name: "page",
@@ -203,22 +221,7 @@ export const COMPONENTS = [
       color_bg_alt: text("Fond des sections alternées", { regex: HEX_RE, description: HEX_HELP }),
       color_text: text("Couleur du texte", { regex: HEX_RE, description: HEX_HELP }),
       "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "font_display_custom_name", "font_display_custom_url", "font_body_custom_name", "font_body_custom_url", "text_scale", "heading_scale"] },
-      font_display: option("Police des titres", [
-        ["playfair", "Playfair Display — serif élégante (par défaut)"],
-        ["lora", "Lora — serif douce"],
-        ["merriweather", "Merriweather — serif classique"],
-        ["dm-serif", "DM Serif Display — serif d'affiche"],
-        ["fraunces", "Fraunces — serif chaleureuse"],
-        ["abril", "Abril Fatface — gros titres d'affiche"],
-        ["poppins", "Poppins — sans-serif ronde"],
-        ["montserrat", "Montserrat — sans-serif moderne"],
-        ["raleway", "Raleway — sans-serif fine"],
-        ["fredoka", "Fredoka — ronde et ludique"],
-        ["nunito", "Nunito — ronde et douce"],
-        ["baloo-2", "Baloo 2 — ronde et joyeuse"],
-        ["bebas", "Bebas Neue — capitales d'affiche"],
-        ["caveat", "Caveat — manuscrite"],
-      ], {
+      font_display: option("Police des titres", DISPLAY_FONT_OPTIONS, {
         default_value: "playfair",
         description: "Police des titres (h1, h2, h3, chiffres clés). Polices Google Fonts, chargées automatiquement.",
       }),
@@ -327,6 +330,12 @@ export const COMPONENTS = [
     group: "Éléments",
     schema: {
       display_name: text("Nom affiché"),
+      name_font: option("Nom — police", [["", "Police des titres du site (défaut)"], ...DISPLAY_FONT_OPTIONS], {
+        description: "Police du nom de ce produit seulement. Vide = police des titres du site.",
+      }),
+      name_size: number("Nom — taille (%)", {
+        description: "100 = taille actuelle. Ex. 130 pour un nom plus grand. Entre 50 et 300.",
+      }),
       display_subtitle: text("Sous-titre affiché"),
       display_desc: textarea("Description courte affichée"),
       display_format: text("Format affiché"),

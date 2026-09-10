@@ -138,6 +138,10 @@ certificat auto-signé dans le navigateur.
 - **Changer la taille des textes** : même onglet **Polices** → **Taille du
   texte (%)** (tout le site, 100 = actuel, ex. 110 pour agrandir un peu) et
   **Taille des titres (%)** (titres seulement, en plus) → Save → Publish.
+- **Police et taille du nom d'un produit** (cartes des best-sellers, de la
+  gamme, CHR, particuliers) : cliquer le produit → **Nom — police** (même
+  liste que l'onglet Polices, vide = police des titres) et **Nom — taille (%)**
+  (100 = actuel) → Save → Publish. Ne touche que ce produit.
 - **Changer la couleur de fond d'une section** : dans la page, cliquer la
   section → champ **Couleur de fond** (tout en bas de ses champs) → un code
   hexadécimal comme `#FFF1E3` → Save → Publish. Ne touche que cette section.
@@ -189,6 +193,10 @@ certificat auto-signé dans le navigateur.
 - **Tailles** : `lib/text-scale.ts` pose `--scale-text` (multiplie la taille
   de base `html`, 16 px ; tout est en rem) et `--scale-headings` (`zoom` sur
   h1-h4, `style.css`). 100 %, vide ou invalide = rien de posé.
+- **Police/taille d'un texte précis** : champs `name_font` / `name_size` du
+  bloc `product_card` → `inlineTextStyle()` (`lib/fonts.ts`) donne le style
+  inline (font-family + zoom) et `FontLink` (`components/FontLink.tsx`) fait
+  remonter la feuille Google Fonts dans `<head>` (hoisting React 19, dédupliqué).
 - **Fond par section** : champ `background` (hex) ajouté à toutes les sections
   par `components.mjs` ; `Page.tsx` enveloppe la section dans `.sb-bg` avec
   `--sb-bg`, et `style.css` force `background-color` sur l'enfant direct.
@@ -701,6 +709,8 @@ certificat auto-signé dans le navigateur.
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `display_name` | Texte | Nom affiché |
+| `name_font` | Choix — valeurs : playfair · lora · merriweather · dm-serif · fraunces · abril · poppins · montserrat · raleway · fredoka · nunito · baloo-2 · bebas · caveat | Nom — police |
+| `name_size` | Nombre | Nom — taille (%) |
 | `display_subtitle` | Texte | Sous-titre affiché |
 | `display_desc` | Texte long | Description courte affichée |
 | `display_format` | Texte | Format affiché |
