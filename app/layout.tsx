@@ -38,12 +38,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="fr" style={Object.keys(rootStyle).length ? rootStyle : undefined}>
-      {fonts.href ? (
+      {fonts.hrefs?.length ? (
         // Polices Google Fonts choisies dans Storyblok (autres que celles du @import de style.css).
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link rel="stylesheet" href={fonts.href} />
+          {fonts.hrefs.map((href) => (
+            <link key={href} rel="stylesheet" href={href} />
+          ))}
         </head>
       ) : null}
       <body>
