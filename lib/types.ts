@@ -33,6 +33,8 @@ export interface SiteSettings extends SbBlok {
   color_bg?: string;
   color_bg_alt?: string;
   color_text?: string;
+  font_display?: string; // onglet Polices : clé de lib/fonts.ts (vide = playfair)
+  font_body?: string; // vide = dm-sans
   phone?: string;
   cta_label?: string;
   cta_link?: string;
