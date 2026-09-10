@@ -35,6 +35,10 @@ export interface SiteSettings extends SbBlok {
   color_text?: string;
   font_display?: string; // onglet Polices : clé de lib/fonts.ts (vide = playfair)
   font_body?: string; // vide = dm-sans
+  font_display_custom_name?: string; // autre police Google Fonts (nom exact), prioritaire sur la liste
+  font_display_custom_url?: string; // URL « embed » Google Fonts facultative
+  font_body_custom_name?: string;
+  font_body_custom_url?: string;
   phone?: string;
   cta_label?: string;
   cta_link?: string;

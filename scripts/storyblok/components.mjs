@@ -8,6 +8,8 @@ const boolean = (display_name, extra = {}) => ({ type: "boolean", display_name, 
 const number = (display_name, extra = {}) => ({ type: "number", display_name, ...extra });
 const HEX_RE = "^#[0-9A-Fa-f]{6}$";
 const HEX_HELP = "Code couleur hexadécimal à 6 caractères, ex. #8E1B1B. Vide = couleur de la palette choisie.";
+const GFONTS_RE = "^https://fonts\\.googleapis\\.com/css2\\?.*";
+const GFONTS_HELP = "Sur fonts.google.com : ouvrir la police → « Get font » → « Get embed code » → copier l'adresse qui commence par https://fonts.googleapis.com/css2?… Sans cette adresse, seule la graisse normale est chargée (gras et italique simulés).";
 const asset = (display_name, extra = {}) => ({ type: "asset", filetypes: ["images"], display_name, ...extra });
 const richtext = (display_name, extra = {}) => ({ type: "richtext", display_name, ...extra });
 const bloks = (display_name, whitelist, extra = {}) => ({
@@ -200,7 +202,7 @@ export const COMPONENTS = [
       color_bg: text("Fond des pages", { regex: HEX_RE, description: HEX_HELP }),
       color_bg_alt: text("Fond des sections alternées", { regex: HEX_RE, description: HEX_HELP }),
       color_text: text("Couleur du texte", { regex: HEX_RE, description: HEX_HELP }),
-      "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body"] },
+      "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "font_display_custom_name", "font_display_custom_url", "font_body_custom_name", "font_body_custom_url"] },
       font_display: option("Police des titres", [
         ["playfair", "Playfair Display — serif élégante (par défaut)"],
         ["lora", "Lora — serif douce"],
@@ -234,6 +236,20 @@ export const COMPONENTS = [
       ], {
         default_value: "dm-sans",
         description: "Police des paragraphes, menus, boutons et formulaires.",
+      }),
+      font_display_custom_name: text("Titres — autre police Google Fonts (nom exact)", {
+        description: "Pour une police absente de la liste : le nom exact tel qu'affiché sur fonts.google.com, ex. « Lobster ». Prioritaire sur la liste. Vide = liste.",
+      }),
+      font_display_custom_url: text("Titres — URL Google Fonts (facultatif)", {
+        regex: GFONTS_RE,
+        description: GFONTS_HELP,
+      }),
+      font_body_custom_name: text("Texte — autre police Google Fonts (nom exact)", {
+        description: "Idem pour le texte courant, ex. « Quicksand ». Prioritaire sur la liste. Vide = liste.",
+      }),
+      font_body_custom_url: text("Texte — URL Google Fonts (facultatif)", {
+        regex: GFONTS_RE,
+        description: GFONTS_HELP,
       }),
     },
   },

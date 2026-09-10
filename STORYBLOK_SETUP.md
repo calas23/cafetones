@@ -128,6 +128,13 @@ certificat auto-signé dans le navigateur.
   onglet **Polices** → **Police des titres** (14 choix, de la serif élégante à
   la manuscrite) et **Police du texte** (10 choix) → Save → Publish. Les
   polices viennent de Google Fonts et se chargent toutes seules.
+- **Utiliser une police absente de la liste** : même onglet → « Titres — autre
+  police Google Fonts » ou « Texte — autre police Google Fonts » → taper le nom
+  exact vu sur fonts.google.com (ex. « Lobster »). Pour avoir le vrai gras et le
+  vrai italique, coller aussi l'adresse « embed » de la police (fonts.google.com
+  → la police → Get font → Get embed code → l'adresse qui commence par
+  https://fonts.googleapis.com/css2?) dans le champ URL. Ce champ libre passe
+  avant la liste ; le vider ramène à la liste.
 - **Ne pas toucher** : l'onglet « Avancé » des pages et le champ JSON-LD
   (réglages techniques remplis automatiquement).
 
@@ -165,6 +172,12 @@ certificat auto-signé dans le navigateur.
   rien d'ajouté (le `@import` de `style.css` charge déjà Playfair Display et
   DM Sans) ; sinon `<link>` Google Fonts dans `<head>` et variables
   `--font-display` / `--font-body` sur `<html>`. Valeur inconnue = défaut.
+  Champs « autre police » : nom exact Google Fonts (prioritaire sur la liste) +
+  URL css2 facultative ; sans URL, feuille `css2?family=Nom` (graisse normale
+  seule). URL hors `https://fonts.googleapis.com/css2?` ignorée. Pour enrichir
+  la liste déroulante elle-même : ajouter l'entrée dans `lib/fonts.ts` et dans
+  l'option correspondante de `scripts/storyblok/components.mjs`, puis bootstrap
+  « composants uniquement ».
 - **Non éditable via Storyblok** (dans le code) : les libellés des champs de
   formulaire, les icônes SVG (choisies par liste), le numéro dans le bouton
   « Commander » de la fiche produit.
@@ -229,6 +242,10 @@ certificat auto-signé dans le navigateur.
 | `color_text` | Texte | Couleur du texte |
 | `font_display` | Choix — valeurs : playfair · lora · merriweather · dm-serif · fraunces · abril · poppins · montserrat · raleway · fredoka · nunito · baloo-2 · bebas · caveat | Police des titres |
 | `font_body` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather | Police du texte |
+| `font_display_custom_name` | Texte | Titres — autre police Google Fonts (nom exact) |
+| `font_display_custom_url` | Texte | Titres — URL Google Fonts (facultatif) |
+| `font_body_custom_name` | Texte | Texte — autre police Google Fonts (nom exact) |
+| `font_body_custom_url` | Texte | Texte — URL Google Fonts (facultatif) |
 
 ## Groupe « Sections » (32)
 

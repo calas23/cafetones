@@ -45,7 +45,24 @@ export const BODY_FONTS: Record<string, FontDef> = {
   merriweather: { family: "Merriweather", query: "Merriweather:ital,wght@0,400;0,700;1,400", fallback: SERIF },
 };
 
-export type FontSettings = { vars?: CSSProperties; href?: string };
+export type FontSettings = { vars?: CSSProperties; hrefs?: string[] };
+
+const GOOGLE_CSS2 = "https://fonts.googleapis.com/css2?";
+
+// Police « autre » saisie à la main : nom exact Google Fonts + URL « embed » facultative.
+// Sans URL, seule la graisse normale est chargée (le navigateur simule gras et italique).
+// Une URL qui n'est pas une feuille Google Fonts css2 est ignorée.
+function customFont(name: unknown, url: unknown): { family: string; href: string } | undefined {
+  if (typeof name !== "string") return undefined;
+  const family = name.trim().replace(/['"]/g, "");
+  if (!family) return undefined;
+  const cleanUrl = typeof url === "string" ? url.trim() : "";
+  const href =
+    cleanUrl.startsWith(GOOGLE_CSS2) && !/[<>"']/.test(cleanUrl)
+      ? cleanUrl
+      : `${GOOGLE_CSS2}family=${encodeURIComponent(family).replace(/%20/g, "+")}&display=swap`;
+  return { family, href };
+}
 
 function pick(table: Record<string, FontDef>, value: unknown, fallbackKey: string): string {
   return typeof value === "string" && value in table ? value : fallbackKey;
@@ -54,21 +71,32 @@ function pick(table: Record<string, FontDef>, value: unknown, fallbackKey: strin
 export function fontSettings(settings: SiteSettings | null | undefined): FontSettings {
   const displayKey = pick(DISPLAY_FONTS, settings?.font_display, DEFAULT_DISPLAY_FONT);
   const bodyKey = pick(BODY_FONTS, settings?.font_body, DEFAULT_BODY_FONT);
+  const customDisplay = customFont(settings?.font_display_custom_name, settings?.font_display_custom_url);
+  const customBody = customFont(settings?.font_body_custom_name, settings?.font_body_custom_url);
   const vars: Record<string, string> = {};
-  const families: string[] = [];
-  if (displayKey !== DEFAULT_DISPLAY_FONT) {
+  const families: string[] = []; // requêtes css2 des polices de la liste
+  const hrefs: string[] = []; // feuilles complètes des polices personnalisées
+
+  // Titres : la police personnalisée, si renseignée, passe avant la liste.
+  if (customDisplay) {
+    vars["--font-display"] = `'${customDisplay.family}', ${SERIF}`;
+    hrefs.push(customDisplay.href);
+  } else if (displayKey !== DEFAULT_DISPLAY_FONT) {
     const f = DISPLAY_FONTS[displayKey];
     vars["--font-display"] = `'${f.family}', ${f.fallback}`;
     families.push(f.query);
   }
-  if (bodyKey !== DEFAULT_BODY_FONT) {
+  if (customBody) {
+    vars["--font-body"] = `'${customBody.family}', ${SANS}`;
+    if (!hrefs.includes(customBody.href)) hrefs.push(customBody.href);
+  } else if (bodyKey !== DEFAULT_BODY_FONT) {
     const f = BODY_FONTS[bodyKey];
     vars["--font-body"] = `'${f.family}', ${f.fallback}`;
     if (!families.includes(f.query)) families.push(f.query);
   }
-  if (!families.length) return {};
-  return {
-    vars: vars as CSSProperties,
-    href: `https://fonts.googleapis.com/css2?${families.map((q) => `family=${q}`).join("&")}&display=swap`,
-  };
+  if (families.length) {
+    hrefs.unshift(`${GOOGLE_CSS2}${families.map((q) => `family=${q}`).join("&")}&display=swap`);
+  }
+  if (!hrefs.length) return {};
+  return { vars: vars as CSSProperties, hrefs };
 }
