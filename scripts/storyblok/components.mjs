@@ -202,7 +202,7 @@ export const COMPONENTS = [
       color_bg: text("Fond des pages", { regex: HEX_RE, description: HEX_HELP }),
       color_bg_alt: text("Fond des sections alternées", { regex: HEX_RE, description: HEX_HELP }),
       color_text: text("Couleur du texte", { regex: HEX_RE, description: HEX_HELP }),
-      "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "font_display_custom_name", "font_display_custom_url", "font_body_custom_name", "font_body_custom_url"] },
+      "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "font_display_custom_name", "font_display_custom_url", "font_body_custom_name", "font_body_custom_url", "text_scale", "heading_scale"] },
       font_display: option("Police des titres", [
         ["playfair", "Playfair Display — serif élégante (par défaut)"],
         ["lora", "Lora — serif douce"],
@@ -250,6 +250,12 @@ export const COMPONENTS = [
       font_body_custom_url: text("Texte — URL Google Fonts (facultatif)", {
         regex: GFONTS_RE,
         description: GFONTS_HELP,
+      }),
+      text_scale: number("Taille du texte (%)", {
+        description: "100 = taille actuelle. Ex. 90 = un peu plus petit, 115 = un peu plus grand. Agit sur tout le site, titres et espacements compris. Entre 70 et 150.",
+      }),
+      heading_scale: number("Taille des titres (%)", {
+        description: "100 = taille actuelle. Agit sur les titres seulement, en plus de la taille du texte. Entre 70 et 200.",
       }),
     },
   },

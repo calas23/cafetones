@@ -39,6 +39,8 @@ export interface SiteSettings extends SbBlok {
   font_display_custom_url?: string; // URL « embed » Google Fonts facultative
   font_body_custom_name?: string;
   font_body_custom_url?: string;
+  text_scale?: string | number; // % (100 = origine), tout le site
+  heading_scale?: string | number; // % (100 = origine), titres seuls
   phone?: string;
   cta_label?: string;
   cta_link?: string;

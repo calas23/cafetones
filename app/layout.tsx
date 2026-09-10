@@ -19,6 +19,7 @@ import { getSettings } from "@/lib/content";
 import { headerSizeVars } from "@/lib/header-size";
 import { paletteVars } from "@/lib/palette";
 import { fontSettings } from "@/lib/fonts";
+import { textScaleVars } from "@/lib/text-scale";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlobalBehaviors } from "@/components/behaviors/GlobalBehaviors";
@@ -34,7 +35,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // Variables CSS sur <html> : taille du logo du menu, palette de couleurs et polices
   // (Réglages du site). Rien de renseigné → pas d'attribut style, rendu d'origine.
   const fonts = fontSettings(settings);
-  const rootStyle = { ...headerSizeVars(settings), ...paletteVars(settings), ...fonts.vars };
+  const rootStyle = { ...headerSizeVars(settings), ...paletteVars(settings), ...fonts.vars, ...textScaleVars(settings) };
 
   return (
     <html lang="fr" style={Object.keys(rootStyle).length ? rootStyle : undefined}>
