@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
+import { FontLink } from "@/components/FontLink";
+import { inlineTextStyle } from "@/lib/fonts";
 import { PricingToggle } from "./PricingToggle";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { fmt } from "@/lib/text";
@@ -10,6 +12,8 @@ import { aos } from "./common-sections";
 // section) + sections produits. Les data-attributes alimentent la modale.
 
 export type ProductCardBlok = SbBlok & {
+  name_font?: string; // police du nom (clé de lib/fonts.ts, vide = défaut)
+  name_size?: string | number; // taille du nom en % (vide = 100)
   // Affichage carte
   display_name?: string;
   display_subtitle?: string;
@@ -124,6 +128,17 @@ function CardImg({ p, lazy = true }: { p: ProductCardBlok; lazy?: boolean }) {
 
 /* ---------------- Accueil : best-sellers ---------------- */
 
+// Nom d'un produit avec police et taille choisies dans Storyblok (champs « Nom — police / taille »).
+function NameLine({ p, className }: { p: ProductCardBlok; className: string }) {
+  const t = inlineTextStyle(p.name_font, p.name_size);
+  return (
+    <>
+      <FontLink href={t.href} />
+      <div className={className} style={t.style}>{p.display_name}</div>
+    </>
+  );
+}
+
 export function HomeProductCard({ p }: { p: ProductCardBlok }) {
   return (
     <div className={`home-product-card ${aos(p.delay)}`} {...modalDataAttrs(p)} {...storyblokEditable(p)}>
@@ -132,7 +147,7 @@ export function HomeProductCard({ p }: { p: ProductCardBlok }) {
       </div>
       <div className="home-product-card__content">
         <Badge label={p.badge_label} style={p.badge_style} />
-        <div className="home-product-card__name">{p.display_name}</div>
+        <NameLine p={p} className="home-product-card__name" />
         <div className="home-product-card__desc">{p.display_desc}</div>
         <div className="home-product-card__price">{p.display_price}</div>
         <Medals label={p.medals_label} />
@@ -196,7 +211,7 @@ export function ChrProductCard({ p }: { p: ProductCardBlok }) {
         <Badge label={p.badge_label} style={p.badge_style} />
       </div>
       <div className="chr-product-card__content">
-        <div className="chr-product-card__name">{p.display_name}</div>
+        <NameLine p={p} className="chr-product-card__name" />
         <div className="chr-product-card__desc">{p.display_desc}</div>
         <div className="chr-product-card__price">{p.display_price}</div>
         <div className="chr-product-card__format">{p.display_format}</div>
@@ -252,7 +267,7 @@ export function GammeCard({ p }: { p: ProductCardBlok }) {
         <Badge label={p.badge_label} style={p.badge_style} extraClass="gamme-card__badge" />
       </div>
       <div className="gamme-card__content">
-        <div className="gamme-card__name">{p.display_name}</div>
+        <NameLine p={p} className="gamme-card__name" />
         {p.display_subtitle ? <div className="gamme-card__subtitle">{p.display_subtitle}</div> : null}
         <div className="gamme-card__desc">{p.display_desc}</div>
         <div className="gamme-card__format">{p.display_format}</div>
@@ -434,7 +449,7 @@ export function PartProductCard({ p }: { p: ProductCardBlok }) {
       </div>
       <div className="part-product-card__content">
         <Badge label={p.badge_label} style={p.badge_style} />
-        <div className="part-product-card__name">{p.display_name}</div>
+        <NameLine p={p} className="part-product-card__name" />
         <div className="part-product-card__desc">{p.display_desc}</div>
         <div className="part-product-card__price">{p.display_price}</div>
       </div>
