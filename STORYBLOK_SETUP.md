@@ -116,6 +116,14 @@ certificat auto-signé dans le navigateur.
   **Configuration** → **Réglages du site** → champ **Hauteur du logo du menu (px)**
   → saisir un nombre (ex. 80 ; vide = 64 sur ordinateur et 48 sur mobile) → Save
   → Publish. La barre de menu s'agrandit toute seule si le logo dépasse.
+- **Changer les couleurs du site** : Content → dossier **Configuration** →
+  **Réglages du site** → onglet **Couleurs** → choisir une **Palette** prête
+  (Rouge & crème, Café d'origine, Sicilia, Tout orange, Bleu marine) → Save →
+  Publish. Pour une couleur sur mesure, remplir un des 5 codes (foncée, accent,
+  fond des pages, fond des sections alternées, texte) avec un code hexadécimal
+  comme `#8E1B1B` (un sélecteur de couleur en ligne, par ex. htmlcolorcodes.com,
+  donne ce code) : il remplace la couleur correspondante de la palette, tout le
+  reste s'adapte. Vider le code = retour à la palette.
 - **Ne pas toucher** : l'onglet « Avancé » des pages et le champ JSON-LD
   (réglages techniques remplis automatiquement).
 
@@ -143,6 +151,11 @@ certificat auto-signé dans le navigateur.
   borné entre 24 et 160 côté code ; mobile = 75 % de la valeur (proportion
   d'origine 48/64) ; la variable CSS `--header-height` suit (72 px minimum),
   donc les décalages de pages et le menu mobile restent alignés.
+- **Couleurs** : onglet *Couleurs* des Réglages du site → `lib/palette.ts`
+  dérive les 19 variables de couleur et les 3 triplets RVB de `css/style.css` à
+  partir de 5 couleurs de base (palette prête + codes hex optionnels) et les pose
+  sur `<html>`. Palette par défaut sans code = aucun attribut style, CSS d'origine.
+  Codes invalides ignorés. Les palettes prêtes sont définies dans `PRESETS`.
 - **Non éditable via Storyblok** (dans le code) : les libellés des champs de
   formulaire, les icônes SVG (choisies par liste), le numéro dans le bouton
   « Commander » de la fiche produit.
@@ -199,6 +212,12 @@ certificat auto-signé dans le navigateur.
 | `legal_link` | Texte | Lien mentions légales — URL |
 | `privacy_label` | Texte | Lien confidentialité — texte |
 | `privacy_link` | Texte | Lien confidentialité — URL |
+| `palette` | Choix — valeurs : rouge-creme · cafe · sicilia · orange · marine | Palette |
+| `color_dark` | Texte | Couleur foncée (sections sombres, titres, pied de page) |
+| `color_accent` | Texte | Couleur d'accent (boutons, badges, liens) |
+| `color_bg` | Texte | Fond des pages |
+| `color_bg_alt` | Texte | Fond des sections alternées |
+| `color_text` | Texte | Couleur du texte |
 
 ## Groupe « Sections » (32)
 

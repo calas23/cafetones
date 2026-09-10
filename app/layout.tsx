@@ -17,6 +17,7 @@ import "@/css/illustrations.css";
 import "@/lib/storyblok";
 import { getSettings } from "@/lib/content";
 import { headerSizeVars } from "@/lib/header-size";
+import { paletteVars } from "@/lib/palette";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlobalBehaviors } from "@/components/behaviors/GlobalBehaviors";
@@ -29,9 +30,12 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled: draft } = await draftMode();
   const settings = await getSettings(draft).catch(() => null);
+  // Variables CSS sur <html> : taille du logo du menu et palette de couleurs (Réglages du site).
+  // Rien de renseigné → pas d'attribut style, rendu d'origine.
+  const rootStyle = { ...headerSizeVars(settings), ...paletteVars(settings) };
 
   return (
-    <html lang="fr" style={headerSizeVars(settings)}>
+    <html lang="fr" style={Object.keys(rootStyle).length ? rootStyle : undefined}>
       <body>
         {/* Google Tag Manager : snippet désactivé sur l'ancien site (GTM-XXXXXX).
             Seul le stub dataLayer est actif, comme avant. */}
