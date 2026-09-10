@@ -114,7 +114,7 @@ main.page-about .about-cert-card__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(200, 149, 108, 0.1);
+  background-color: rgba(var(--rgb-crema), 0.1);
   border-radius: 50%;
   color: var(--color-crema-dark);
 }

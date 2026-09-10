@@ -6,23 +6,33 @@
    ======================================================================== */
 
 :root {
-  /* Couleurs */
-  --color-espresso: #2C1810;
-  --color-espresso-light: #3D2920;
-  --color-crema: #C8956C;
-  --color-crema-light: #D4A87E;
-  --color-crema-dark: #A87A55;
-  --color-cream: #FAF8F5;
-  --color-cream-warm: #F5F0E8;
-  --color-cream-dark: #EDE6DA;
-  --color-text: #1A1412;
-  --color-text-muted: #6B5D52;
-  --color-text-light: #9A8B7F;
+  /* Couleurs — palette « Rouge & crème » (bordeaux, tomate, fonds crème presque blancs).
+     Les noms historiques (espresso, crema, cream) sont conservés : ils désignent
+     les rôles (fond foncé, accent, fond clair), utilisés partout dans les CSS.
+     Ancienne palette café : espresso #2C1810, crema #C8956C, cream #FAF8F5. */
+  --color-espresso: #8E1B1B;        /* fond foncé : sections sombres, titres, pied de page */
+  --color-espresso-light: #A62828;  /* fond foncé plus clair (survols) */
+  --color-crema: #D63324;           /* accent : boutons, badges, liens */
+  --color-crema-light: #F6A79A;     /* accent clair : sur fond foncé */
+  --color-crema-dark: #A8261B;      /* accent foncé : prix, survols, texte accentué */
+  --color-cream: #FDFBF7;           /* fond des pages */
+  --color-cream-warm: #F6F1EA;      /* sections alternées */
+  --color-cream-dark: #EFE8DE;      /* texte clair sur fond foncé, survols */
+  --color-text: #2B1A1A;
+  --color-text-muted: #6A5A55;
+  --color-text-light: #9C8C86;
   --color-white: #FFFFFF;
-  --color-border: #E2D9CE;
-  --color-border-light: #EDE6DA;
-  --color-success: #5A7A3A;
-  --color-error: #C44B3F;
+  --color-border: #E8DFD3;
+  --color-border-light: #F0EAE1;
+  --color-success: #2E8B57;
+  --color-error: #D63324;
+  --color-sun: #F6B0A5;             /* touches : badges, chiffres */
+  --color-leaf: #7A1F1F;
+  --color-orange: #E8735A;
+  /* Composantes RVB des couleurs de base, pour les transparences (ombres, voiles). */
+  --rgb-espresso: 142, 27, 27;
+  --rgb-crema: 214, 51, 36;
+  --rgb-cream: 253, 251, 247;
 
   /* Typographie */
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -53,10 +63,10 @@
   --transition-slow: 400ms ease;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(44, 24, 16, 0.06);
-  --shadow-md: 0 4px 12px rgba(44, 24, 16, 0.08);
-  --shadow-lg: 0 8px 30px rgba(44, 24, 16, 0.10);
-  --shadow-xl: 0 16px 50px rgba(44, 24, 16, 0.12);
+  --shadow-sm: 0 1px 3px rgba(var(--rgb-espresso), 0.06);
+  --shadow-md: 0 4px 12px rgba(var(--rgb-espresso), 0.08);
+  --shadow-lg: 0 8px 30px rgba(var(--rgb-espresso), 0.10);
+  --shadow-xl: 0 16px 50px rgba(var(--rgb-espresso), 0.12);
 }
 
 /* ========================================================================
@@ -215,7 +225,7 @@ p {
   right: 0;
   z-index: 1000;
   height: var(--header-height);
-  background-color: rgba(250, 248, 245, 0.92);
+  background-color: rgba(var(--rgb-cream), 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border-light);
@@ -223,7 +233,7 @@ p {
 }
 
 .header--scrolled {
-  background-color: rgba(250, 248, 245, 0.98);
+  background-color: rgba(var(--rgb-cream), 0.98);
   box-shadow: var(--shadow-sm);
 }
 
@@ -418,12 +428,12 @@ p {
 .btn--primary {
   background-color: var(--color-crema);
   color: var(--color-white);
-  box-shadow: 0 2px 8px rgba(200, 149, 108, 0.3);
+  box-shadow: 0 2px 8px rgba(var(--rgb-crema), 0.3);
 }
 
 .btn--primary:hover {
   background-color: var(--color-crema-dark);
-  box-shadow: 0 4px 16px rgba(200, 149, 108, 0.4);
+  box-shadow: 0 4px 16px rgba(var(--rgb-crema), 0.4);
   transform: translateY(-1px);
 }
 
@@ -524,7 +534,7 @@ p {
 .form-textarea:focus {
   outline: none;
   border-color: var(--color-crema);
-  box-shadow: 0 0 0 3px rgba(200, 149, 108, 0.15);
+  box-shadow: 0 0 0 3px rgba(var(--rgb-crema), 0.15);
 }
 
 .form-input::placeholder,
@@ -600,7 +610,7 @@ p {
 }
 
 .badge--gold {
-  background-color: rgba(200, 149, 108, 0.12);
+  background-color: rgba(var(--rgb-crema), 0.12);
   color: var(--color-crema-dark);
 }
 
@@ -634,7 +644,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(200, 149, 108, 0.1);
+  background-color: rgba(var(--rgb-crema), 0.1);
   border-radius: 50%;
   color: var(--color-crema-dark);
 }
@@ -732,7 +742,7 @@ p {
 }
 
 .footer__bottom {
-  border-top: 1px solid rgba(250, 248, 245, 0.08);
+  border-top: 1px solid rgba(var(--rgb-cream), 0.08);
   padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -882,12 +892,12 @@ p {
   left: 0;
   right: 0;
   z-index: 998;
-  background-color: rgba(250, 248, 245, 0.95);
+  background-color: rgba(var(--rgb-cream), 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 1rem 1.5rem;
   border-top: 1px solid var(--color-border-light);
-  box-shadow: 0 -4px 20px rgba(44, 24, 16, 0.08);
+  box-shadow: 0 -4px 20px rgba(var(--rgb-espresso), 0.08);
   transform: translateY(100%);
   transition: transform var(--transition-base);
 }
@@ -1013,7 +1023,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(44, 24, 16, 0.6);
+  background-color: rgba(var(--rgb-espresso), 0.6);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -1348,4 +1358,25 @@ p {
 
 .card-hidden {
   display: none !important;
+}
+/* ========================================================================
+   Touches « Sicilia » : coins plus ronds, boutons en pilule, badges soleil
+   ======================================================================== */
+:root {
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 28px;
+}
+
+.btn {
+  border-radius: 999px;
+}
+
+.badge {
+  border-radius: 999px;
+}
+
+.badge--gold {
+  background-color: var(--color-sun);
+  color: var(--color-text);
 }

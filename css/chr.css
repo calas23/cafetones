@@ -20,7 +20,7 @@ main.page-chr .chr-hero::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(44, 24, 16, 0.65);
+  background-color: rgba(var(--rgb-espresso), 0.65);
   z-index: 1;
 }
 main.page-chr .chr-hero__content {
