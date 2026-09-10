@@ -124,6 +124,10 @@ certificat auto-signé dans le navigateur.
   comme `#8E1B1B` (un sélecteur de couleur en ligne, par ex. htmlcolorcodes.com,
   donne ce code) : il remplace la couleur correspondante de la palette, tout le
   reste s'adapte. Vider le code = retour à la palette.
+- **Changer les polices** : Content → **Configuration** → **Réglages du site** →
+  onglet **Polices** → **Police des titres** (14 choix, de la serif élégante à
+  la manuscrite) et **Police du texte** (10 choix) → Save → Publish. Les
+  polices viennent de Google Fonts et se chargent toutes seules.
 - **Ne pas toucher** : l'onglet « Avancé » des pages et le champ JSON-LD
   (réglages techniques remplis automatiquement).
 
@@ -156,6 +160,11 @@ certificat auto-signé dans le navigateur.
   partir de 5 couleurs de base (palette prête + codes hex optionnels) et les pose
   sur `<html>`. Palette par défaut sans code = aucun attribut style, CSS d'origine.
   Codes invalides ignorés. Les palettes prêtes sont définies dans `PRESETS`.
+- **Polices** : onglet *Polices* → `lib/fonts.ts` (listes `DISPLAY_FONTS` et
+  `BODY_FONTS` : famille, requête Google Fonts css2, repli). Choix par défaut =
+  rien d'ajouté (le `@import` de `style.css` charge déjà Playfair Display et
+  DM Sans) ; sinon `<link>` Google Fonts dans `<head>` et variables
+  `--font-display` / `--font-body` sur `<html>`. Valeur inconnue = défaut.
 - **Non éditable via Storyblok** (dans le code) : les libellés des champs de
   formulaire, les icônes SVG (choisies par liste), le numéro dans le bouton
   « Commander » de la fiche produit.
@@ -218,6 +227,8 @@ certificat auto-signé dans le navigateur.
 | `color_bg` | Texte | Fond des pages |
 | `color_bg_alt` | Texte | Fond des sections alternées |
 | `color_text` | Texte | Couleur du texte |
+| `font_display` | Choix — valeurs : playfair · lora · merriweather · dm-serif · fraunces · abril · poppins · montserrat · raleway · fredoka · nunito · baloo-2 · bebas · caveat | Police des titres |
+| `font_body` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather | Police du texte |
 
 ## Groupe « Sections » (32)
 

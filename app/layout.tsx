@@ -18,6 +18,7 @@ import "@/lib/storyblok";
 import { getSettings } from "@/lib/content";
 import { headerSizeVars } from "@/lib/header-size";
 import { paletteVars } from "@/lib/palette";
+import { fontSettings } from "@/lib/fonts";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlobalBehaviors } from "@/components/behaviors/GlobalBehaviors";
@@ -30,12 +31,21 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled: draft } = await draftMode();
   const settings = await getSettings(draft).catch(() => null);
-  // Variables CSS sur <html> : taille du logo du menu et palette de couleurs (Réglages du site).
-  // Rien de renseigné → pas d'attribut style, rendu d'origine.
-  const rootStyle = { ...headerSizeVars(settings), ...paletteVars(settings) };
+  // Variables CSS sur <html> : taille du logo du menu, palette de couleurs et polices
+  // (Réglages du site). Rien de renseigné → pas d'attribut style, rendu d'origine.
+  const fonts = fontSettings(settings);
+  const rootStyle = { ...headerSizeVars(settings), ...paletteVars(settings), ...fonts.vars };
 
   return (
     <html lang="fr" style={Object.keys(rootStyle).length ? rootStyle : undefined}>
+      {fonts.href ? (
+        // Polices Google Fonts choisies dans Storyblok (autres que celles du @import de style.css).
+        <head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link rel="stylesheet" href={fonts.href} />
+        </head>
+      ) : null}
       <body>
         {/* Google Tag Manager : snippet désactivé sur l'ancien site (GTM-XXXXXX).
             Seul le stub dataLayer est actif, comme avant. */}
