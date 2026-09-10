@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { FontLink } from "@/components/FontLink";
-import { inlineTextStyle } from "@/lib/fonts";
+import { ALL_FONTS, inlineTextStyle } from "@/lib/fonts";
 import { PricingToggle } from "./PricingToggle";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { fmt } from "@/lib/text";
@@ -14,6 +14,8 @@ import { aos } from "./common-sections";
 export type ProductCardBlok = SbBlok & {
   name_font?: string; // police du nom (clé de lib/fonts.ts, vide = défaut)
   name_size?: string | number; // taille du nom en % (vide = 100)
+  text_font?: string; // police du reste du texte de la carte (clé de lib/fonts.ts ALL_FONTS)
+  text_size?: string | number; // taille du reste du texte en % (vide = 100)
   // Affichage carte
   display_name?: string;
   display_subtitle?: string;
@@ -140,6 +142,8 @@ function NameLine({ p, className }: { p: ProductCardBlok; className: string }) {
 }
 
 export function HomeProductCard({ p }: { p: ProductCardBlok }) {
+  // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
+  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
   return (
     <div className={`home-product-card ${aos(p.delay)}`} {...modalDataAttrs(p)} {...storyblokEditable(p)}>
       <div className="home-product-card__image">
@@ -147,9 +151,10 @@ export function HomeProductCard({ p }: { p: ProductCardBlok }) {
       </div>
       <div className="home-product-card__content">
         <Badge label={p.badge_label} style={p.badge_style} />
+        <FontLink href={tx.href} />
         <NameLine p={p} className="home-product-card__name" />
-        <div className="home-product-card__desc">{p.display_desc}</div>
-        <div className="home-product-card__price">{p.display_price}</div>
+        <div className="home-product-card__desc" style={tx.style}>{p.display_desc}</div>
+        <div className="home-product-card__price" style={tx.style}>{p.display_price}</div>
         <Medals label={p.medals_label} />
       </div>
     </div>
@@ -204,6 +209,8 @@ export function ProductsHomeSection({ blok }: { blok: ProductsSectionBlok }) {
 /* ---------------- CHR : mélanges restauration ---------------- */
 
 export function ChrProductCard({ p }: { p: ProductCardBlok }) {
+  // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
+  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
   return (
     <div className={`chr-product-card ${aos(p.delay)}`} {...modalDataAttrs(p)} {...storyblokEditable(p)}>
       <div className="chr-product-card__image">
@@ -211,10 +218,11 @@ export function ChrProductCard({ p }: { p: ProductCardBlok }) {
         <Badge label={p.badge_label} style={p.badge_style} />
       </div>
       <div className="chr-product-card__content">
+        <FontLink href={tx.href} />
         <NameLine p={p} className="chr-product-card__name" />
-        <div className="chr-product-card__desc">{p.display_desc}</div>
-        <div className="chr-product-card__price">{p.display_price}</div>
-        <div className="chr-product-card__format">{p.display_format}</div>
+        <div className="chr-product-card__desc" style={tx.style}>{p.display_desc}</div>
+        <div className="chr-product-card__price" style={tx.style}>{p.display_price}</div>
+        <div className="chr-product-card__format" style={tx.style}>{p.display_format}</div>
         <Medals label={p.medals_label} />
       </div>
     </div>
@@ -259,6 +267,8 @@ export function ChrProductsSection({ blok }: { blok: ProductsSectionBlok }) {
 /* ---------------- Gamme ---------------- */
 
 export function GammeCard({ p }: { p: ProductCardBlok }) {
+  // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
+  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
   const cls = ["gamme-card", p.patisserie_style ? "gamme-card--patisserie" : "", aos(p.delay)].filter(Boolean).join(" ");
   return (
     <div className={cls} style={{ cursor: "pointer" }} {...modalDataAttrs(p)} {...storyblokEditable(p)}>
@@ -267,12 +277,13 @@ export function GammeCard({ p }: { p: ProductCardBlok }) {
         <Badge label={p.badge_label} style={p.badge_style} extraClass="gamme-card__badge" />
       </div>
       <div className="gamme-card__content">
+        <FontLink href={tx.href} />
         <NameLine p={p} className="gamme-card__name" />
-        {p.display_subtitle ? <div className="gamme-card__subtitle">{p.display_subtitle}</div> : null}
-        <div className="gamme-card__desc">{p.display_desc}</div>
-        <div className="gamme-card__format">{p.display_format}</div>
+        {p.display_subtitle ? <div className="gamme-card__subtitle" style={tx.style}>{p.display_subtitle}</div> : null}
+        <div className="gamme-card__desc" style={tx.style}>{p.display_desc}</div>
+        <div className="gamme-card__format" style={tx.style}>{p.display_format}</div>
         {p.display_price ? (
-          <div className="gamme-card__price">
+          <div className="gamme-card__price" style={tx.style}>
             {p.display_price}
             {p.price_small ? (
               <>
@@ -282,9 +293,9 @@ export function GammeCard({ p }: { p: ProductCardBlok }) {
             ) : null}
           </div>
         ) : null}
-        {p.price_detail ? <div className="price-detail">{p.price_detail}</div> : null}
+        {p.price_detail ? <div className="price-detail" style={tx.style}>{p.price_detail}</div> : null}
         <Medals label={p.medals_label} />
-        {p.seasonal_note ? <div className="seasonal-note">{p.seasonal_note}</div> : null}
+        {p.seasonal_note ? <div className="seasonal-note" style={tx.style}>{p.seasonal_note}</div> : null}
       </div>
     </div>
   );
@@ -442,6 +453,8 @@ export function PricingSection({ blok }: { blok: PricingSectionBlok }) {
 /* ---------------- Particuliers ---------------- */
 
 export function PartProductCard({ p }: { p: ProductCardBlok }) {
+  // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
+  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
   return (
     <div className="part-product-card" {...modalDataAttrs(p)} {...storyblokEditable(p)}>
       <div className="part-product-card__image">
@@ -449,9 +462,10 @@ export function PartProductCard({ p }: { p: ProductCardBlok }) {
       </div>
       <div className="part-product-card__content">
         <Badge label={p.badge_label} style={p.badge_style} />
+        <FontLink href={tx.href} />
         <NameLine p={p} className="part-product-card__name" />
-        <div className="part-product-card__desc">{p.display_desc}</div>
-        <div className="part-product-card__price">{p.display_price}</div>
+        <div className="part-product-card__desc" style={tx.style}>{p.display_desc}</div>
+        <div className="part-product-card__price" style={tx.style}>{p.display_price}</div>
       </div>
     </div>
   );
