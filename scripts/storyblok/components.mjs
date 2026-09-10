@@ -917,3 +917,13 @@ export const COMPONENTS = [
     },
   },
 ];
+
+// Champ « Couleur de fond » sur toutes les sections de page (sauf le bouton flottant).
+for (const c of COMPONENTS) {
+  if (SECTION_WHITELIST.includes(c.name) && c.name !== "sticky_cta" && !c.schema.background) {
+    c.schema.background = text("Couleur de fond (code hex, vide = fond par défaut)", {
+      regex: HEX_RE,
+      description: "Ex. #F6F1EA. Remplace le fond de cette section seulement. Pour une section à texte clair (fond foncé), choisir une couleur foncée. Vide = fond d'origine.",
+    });
+  }
+}

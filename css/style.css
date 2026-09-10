@@ -1380,3 +1380,9 @@ p {
   background-color: var(--color-sun);
   color: var(--color-text);
 }
+
+/* Couleur de fond d'une section choisie dans Storyblok (champ « Couleur de fond »,
+   voir components/blocks/Page.tsx). Remplace le fond propre de la section. */
+.sb-bg > * {
+  background-color: var(--sb-bg) !important;
+}

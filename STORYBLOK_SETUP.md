@@ -135,6 +135,11 @@ certificat auto-signé dans le navigateur.
   → la police → Get font → Get embed code → l'adresse qui commence par
   https://fonts.googleapis.com/css2?) dans le champ URL. Ce champ libre passe
   avant la liste ; le vider ramène à la liste.
+- **Changer la couleur de fond d'une section** : dans la page, cliquer la
+  section → champ **Couleur de fond** (tout en bas de ses champs) → un code
+  hexadécimal comme `#FFF1E3` → Save → Publish. Ne touche que cette section.
+  Sur une section à texte clair (fond foncé), choisir une couleur foncée pour
+  rester lisible. Vider le champ = fond d'origine.
 - **Ne pas toucher** : l'onglet « Avancé » des pages et le champ JSON-LD
   (réglages techniques remplis automatiquement).
 
@@ -178,6 +183,9 @@ certificat auto-signé dans le navigateur.
   la liste déroulante elle-même : ajouter l'entrée dans `lib/fonts.ts` et dans
   l'option correspondante de `scripts/storyblok/components.mjs`, puis bootstrap
   « composants uniquement ».
+- **Fond par section** : champ `background` (hex) ajouté à toutes les sections
+  par `components.mjs` ; `Page.tsx` enveloppe la section dans `.sb-bg` avec
+  `--sb-bg`, et `style.css` force `background-color` sur l'enfant direct.
 - **Non éditable via Storyblok** (dans le code) : les libellés des champs de
   formulaire, les icônes SVG (choisies par liste), le numéro dans le bouton
   « Commander » de la fiche produit.
@@ -261,6 +269,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `page_hero` — Héros — Bandeau simple *(bloc imbriquable, groupe Sections)*
 
@@ -269,6 +278,7 @@ certificat auto-signé dans le navigateur.
 | `badge` | Texte | Badge |
 | `title` | Texte | Titre |
 | `text` | Texte long | Texte |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `landing_hero` — Héros — Bureau & Entreprise *(bloc imbriquable, groupe Sections)*
 
@@ -282,6 +292,7 @@ certificat auto-signé dans le navigateur.
 | `image` | Image | Image |
 | `image_width` | Texte | Largeur HTML de l'image (px) |
 | `image_height` | Texte | Hauteur HTML de l'image (px) |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `part_hero` — Héros — Particuliers *(bloc imbriquable, groupe Sections)*
 
@@ -294,6 +305,7 @@ certificat auto-signé dans le navigateur.
 | `image` | Image | Image |
 | `image_width` | Texte | Largeur HTML de l'image (px) |
 | `image_height` | Texte | Hauteur HTML de l'image (px) |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `chr_hero` — Héros — CHR *(bloc imbriquable, groupe Sections)*
 
@@ -303,6 +315,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre (les numéros de téléphone deviennent des liens) |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `stats_section` — Bandeau chiffres clés *(bloc imbriquable, groupe Sections)*
 
@@ -312,6 +325,7 @@ certificat auto-signé dans le navigateur.
 | `illustration` | Choix — valeurs : moka · grains · tasse · plant · croissant | Illustration décorative |
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `universes_section` — Section univers (accueil) *(bloc imbriquable, groupe Sections)*
 
@@ -320,6 +334,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `cards` | Liste de blocs (universe_card) | Cartes |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `products_home_section` — Section produits — Accueil *(bloc imbriquable, groupe Sections)*
 
@@ -334,6 +349,7 @@ certificat auto-signé dans le navigateur.
 | `products` | Liste de blocs (product_card) | Produits |
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `espresso_text_section` — Section texte fond espresso *(bloc imbriquable, groupe Sections)*
 
@@ -343,6 +359,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Paragraphes (séparés par une ligne vide) |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `certifications_section` — Bandeau certifications (accueil) *(bloc imbriquable, groupe Sections)*
 
@@ -350,12 +367,14 @@ certificat auto-signé dans le navigateur.
 |---|---|---|
 | `title` | Texte | Titre |
 | `items` | Liste de blocs (certification_badge) | Certifications |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `reassurance_section` — Bandeau réassurance *(bloc imbriquable, groupe Sections)*
 
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `items` | Liste de blocs (reassurance_item) | Éléments |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `steps_section` — Section étapes (Comment ça marche) *(bloc imbriquable, groupe Sections)*
 
@@ -369,6 +388,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `steps` | Liste de blocs (step_item) | Étapes |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `pricing_section` — Section tarifs (tableau, page Bureau) *(bloc imbriquable, groupe Sections)*
 
@@ -385,6 +405,7 @@ certificat auto-signé dans le navigateur.
 | `note` | Texte | Note sous le tableau |
 | `cta_label` | Texte | Bouton — texte |
 | `cta_link` | Texte | Bouton — lien |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `b2b_section` — Section arguments (Pourquoi nous) *(bloc imbriquable, groupe Sections)*
 
@@ -404,6 +425,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Texte |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `quote_form_section` — Section formulaire (devis / dégustation) *(bloc imbriquable, groupe Sections)*
 
@@ -424,6 +446,7 @@ certificat auto-signé dans le navigateur.
 | `note` | Texte long | Note de consentement |
 | `success_title` | Texte | Message de succès — titre |
 | `success_text` | Texte long | Message de succès — texte |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `chr_products_section` — Section produits — CHR *(bloc imbriquable, groupe Sections)*
 
@@ -438,6 +461,7 @@ certificat auto-signé dans le navigateur.
 | `products` | Liste de blocs (product_card) | Produits |
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `chr_extras_section` — Section compléments (CHR) *(bloc imbriquable, groupe Sections)*
 
@@ -446,18 +470,21 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `cards` | Liste de blocs (extra_card) | Cartes |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `gamme_filters` — Filtres de la gamme *(bloc imbriquable, groupe Sections)*
 
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `items` | Liste de blocs (filter_item) | Filtres |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `pricing_note` — Note de prix (bandeau) *(bloc imbriquable, groupe Sections)*
 
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `text` | Texte | Texte |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `gamme_section` — Section de gamme (catalogue) *(bloc imbriquable, groupe Sections)*
 
@@ -468,6 +495,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `intro` | Texte long | Introduction |
 | `products` | Liste de blocs (product_card) | Produits |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `part_products_section` — Section produits — Particuliers *(bloc imbriquable, groupe Sections)*
 
@@ -477,6 +505,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `groups` | Liste de blocs (product_group) | Groupes de produits |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `pastries_section` — Section pâtisseries (particuliers) *(bloc imbriquable, groupe Sections)*
 
@@ -488,6 +517,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `cards` | Liste de blocs (product_card) | Pâtisseries |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `part_contact_section` — Section contact — Particuliers *(bloc imbriquable, groupe Sections)*
 
@@ -506,6 +536,7 @@ certificat auto-signé dans le navigateur.
 | `note` | Texte long | Note de consentement |
 | `success_title` | Texte | Succès — titre |
 | `success_text` | Texte long | Succès — texte |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `contact_section` — Section contact (formulaire + infos) *(bloc imbriquable, groupe Sections)*
 
@@ -532,6 +563,7 @@ certificat auto-signé dans le navigateur.
 | `map_heading` | Texte | Titre carte |
 | `map_url` | Texte long | URL d'intégration Google Maps |
 | `map_title` | Texte | Titre accessible de la carte |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `faq_section` — Section FAQ *(bloc imbriquable, groupe Sections)*
 
@@ -542,6 +574,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `items` | Liste de blocs (faq_item) | Questions |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `about_story_section` — Section histoire (à propos) *(bloc imbriquable, groupe Sections)*
 
@@ -554,6 +587,7 @@ certificat auto-signé dans le navigateur.
 | `image_height` | Texte | Hauteur HTML de l'image (px) |
 | `quote` | Texte | Citation |
 | `quote_author` | Texte | Auteur de la citation |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `roasters_section` — Section torréfacteurs *(bloc imbriquable, groupe Sections)*
 
@@ -565,6 +599,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `roasters` | Liste de blocs (roaster_card) | Torréfacteurs |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `cert_cards_section` — Section certifications / récompenses *(bloc imbriquable, groupe Sections)*
 
@@ -582,6 +617,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Paragraphes (séparés par une ligne vide) |
 | `traits` | Liste de blocs (trait_item) | Caractéristiques |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `legal_section` — Contenu mentions légales *(bloc imbriquable, groupe Sections)*
 
@@ -594,6 +630,7 @@ certificat auto-signé dans le navigateur.
 | `back_label` | Texte | Lien retour — texte |
 | `back_link` | Texte | Lien retour — URL |
 | `phone` | Texte | Numéro affiché en image anti-spam |
+| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `sticky_cta` — Barre d'action mobile (bas d'écran) *(bloc imbriquable, groupe Sections)*
 
