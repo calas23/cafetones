@@ -15,8 +15,10 @@ import { aos } from "./common-sections";
 export type ProductCardBlok = SbBlok & {
   name_font?: string; // police du nom (clé de lib/fonts.ts, vide = défaut)
   name_size?: string | number; // taille du nom en % (vide = 100)
+  name_color?: string; // couleur du nom (hex)
   text_font?: string; // police du reste du texte de la carte (clé de lib/fonts.ts ALL_FONTS)
   text_size?: string | number; // taille du reste du texte en % (vide = 100)
+  text_color?: string; // couleur du reste du texte (hex)
   // Affichage carte
   display_name?: string;
   display_subtitle?: string;
@@ -132,7 +134,7 @@ function CardImg({ p, lazy = true }: { p: ProductCardBlok; lazy?: boolean }) {
 
 // Nom d'un produit avec police et taille choisies dans Storyblok (champs « Nom — police / taille »).
 function NameLine({ p, className }: { p: ProductCardBlok; className: string }) {
-  const t = inlineTextStyle(p.name_font, p.name_size);
+  const t = inlineTextStyle(p.name_font, p.name_size, undefined, p.name_color);
   return (
     <>
       <FontLink href={t.href} />
@@ -143,7 +145,7 @@ function NameLine({ p, className }: { p: ProductCardBlok; className: string }) {
 
 export function HomeProductCard({ p }: { p: ProductCardBlok }) {
   // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
-  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
+  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS, p.text_color);
   const bd = badgeStyle(p); // « Badge — police, tailles, couleurs »
   const md = blockTextStyle(p, "medals"); // « Ligne médailles — police / taille »
   return (
@@ -227,7 +229,7 @@ export function ProductsHomeSection({ blok }: { blok: ProductsSectionBlok }) {
 
 export function ChrProductCard({ p }: { p: ProductCardBlok }) {
   // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
-  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
+  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS, p.text_color);
   const bd = badgeStyle(p); // « Badge — police, tailles, couleurs »
   const md = blockTextStyle(p, "medals"); // « Ligne médailles — police / taille »
   return (
@@ -289,7 +291,7 @@ export function ChrProductsSection({ blok }: { blok: ProductsSectionBlok }) {
 
 export function GammeCard({ p }: { p: ProductCardBlok }) {
   // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
-  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
+  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS, p.text_color);
   const bd = badgeStyle(p); // « Badge — police, tailles, couleurs »
   const md = blockTextStyle(p, "medals"); // « Ligne médailles — police / taille »
   const cls = ["gamme-card", p.patisserie_style ? "gamme-card--patisserie" : "", aos(p.delay)].filter(Boolean).join(" ");
@@ -479,7 +481,7 @@ export function PricingSection({ blok }: { blok: PricingSectionBlok }) {
 
 export function PartProductCard({ p }: { p: ProductCardBlok }) {
   // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
-  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
+  const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS, p.text_color);
   const bd = badgeStyle(p); // « Badge — police, tailles, couleurs »
   const md = blockTextStyle(p, "medals"); // « Ligne médailles — police / taille »
   return (

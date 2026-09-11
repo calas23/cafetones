@@ -185,6 +185,7 @@ const BADGE_KEYS = (prefix = "badge") => [`${prefix}_font`, `${prefix}_text_size
 const typo = (prefix, label) => ({
   [`${prefix}_font`]: fontOption(`${label} — police`),
   [`${prefix}_size`]: number(`${label} — taille (%)`, { description: "100 = taille actuelle. Entre 50 et 300." }),
+  [`${prefix}_color`]: text(`${label} — couleur`, { regex: HEX_RE, description: "Code hex, ex. #1C3559. Vide = couleur d'origine." }),
 });
 
 export const COMPONENTS = [
@@ -196,6 +197,11 @@ export const COMPONENTS = [
     group: "Pages",
     schema: {
       body: bloks("Sections de la page", SECTION_WHITELIST),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["font_display", "font_body", "heading_scale", "page_zoom"] },
+      font_display: fontOption("Police des titres de cette page", { description: "Vide = police des titres du site. " + FONT_HELP_ADD }),
+      font_body: fontOption("Police du texte de cette page", { description: "Vide = police du texte du site. " + FONT_HELP_ADD }),
+      heading_scale: number("Taille des titres de cette page (%)", { description: "100 = actuelle. Entre 50 et 250." }),
+      page_zoom: number("Taille de toute la page (%)", { description: "Réduit ou agrandit tout le contenu de la page (hors en-tête et pied de page). 100 = actuelle. Entre 50 et 150." }),
       "tab-seo": { type: "tab", display_name: "SEO", keys: ["seo_title", "seo_description", "og_title", "og_description", "breadcrumb_label", "breadcrumb_path", "jsonld"] },
       seo_title: text("Titre SEO (onglet navigateur / Google)"),
       seo_description: textarea("Description SEO"),
@@ -624,6 +630,10 @@ export const COMPONENTS = [
       trust_items: bloks("Éléments de confiance", ["trust_item"]),
       image: asset("Image"),
       ...IMAGE_DIMS,
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
+      ...badgeFields(),
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
     },
   },
   {
@@ -1017,6 +1027,24 @@ export const COMPONENTS = [
     },
   },
 ];
+
+// Toute paire « police / taille » d'un onglet Typographie reçoit aussi une couleur (hex).
+for (const c of COMPONENTS) {
+  const tab = c.schema["tab-typo"];
+  if (!tab) continue;
+  for (const key of [...tab.keys]) {
+    if (!key.endsWith("_font")) continue;
+    const prefix = key.slice(0, -5);
+    if (!c.schema[`${prefix}_color`]) {
+      const label = (c.schema[key].display_name || prefix).replace(/ — police$/, "");
+      c.schema[`${prefix}_color`] = text(`${label} — couleur`, { regex: HEX_RE, description: "Code hex, ex. #1C3559. Vide = couleur d'origine." });
+    }
+    if (!tab.keys.includes(`${prefix}_color`)) {
+      const at = tab.keys.indexOf(`${prefix}_size`);
+      tab.keys.splice(at >= 0 ? at + 1 : tab.keys.length, 0, `${prefix}_color`);
+    }
+  }
+}
 
 // Champ « Couleur de fond » sur toutes les sections de page (sauf le bouton flottant).
 for (const c of COMPONENTS) {

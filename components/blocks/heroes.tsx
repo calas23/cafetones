@@ -100,17 +100,24 @@ type LandingHeroBlok = SbBlok & {
 };
 
 export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
+  // Onglet « Typographie » : badge, titre, sous-titre.
+  const badge = badgeStyle(blok);
+  const title = blockTextStyle(blok, "title");
+  const subtitle = blockTextStyle(blok, "subtitle");
   return (
     <section className="hero" {...storyblokEditable(blok)}>
+      <FontLink href={badge.href} />
+      <FontLink href={title.href} />
+      <FontLink href={subtitle.href} />
       <div className="container hero__inner">
         <div className="hero__content">
-          <span className="badge badge--gold hero__badge">
+          <span className="badge badge--gold hero__badge" style={badge.style}>
             <Icon name="star" size={14} stroke={2} /> {blok.badge_text}
           </span>
 
-          <h1 className="hero__title">{fmt(blok.title)}</h1>
+          <h1 className="hero__title" style={title.style}>{fmt(blok.title)}</h1>
 
-          <p className="hero__subtitle">{fmt(blok.subtitle)}</p>
+          <p className="hero__subtitle" style={subtitle.style}>{fmt(blok.subtitle)}</p>
 
           <div className="hero__actions">
             <Buttons buttons={blok.buttons} />

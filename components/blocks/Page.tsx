@@ -3,6 +3,8 @@ import type { CSSProperties } from "react";
 import type { SbBlok } from "@/lib/types";
 import { normalizeHex } from "@/lib/palette";
 import { pxOr } from "@/lib/num";
+import { resolveFont } from "@/lib/fonts";
+import { FontLink } from "@/components/FontLink";
 
 // Type de contenu racine : fil d'Ariane (hors <main>, comme l'original)
 // puis les sections de la page.
@@ -41,6 +43,10 @@ const SCOPE_BY_BLOCK: Record<string, string> = {
 
 type PageBlok = SbBlok & {
   body?: SbBlok[];
+  font_display?: string; // onglet Typographie de la page (vide = polices du site)
+  font_body?: string;
+  heading_scale?: string | number; // % (100 = origine), titres de la page
+  page_zoom?: string | number; // % (100 = origine), toute la page
   breadcrumb_label?: string;
   breadcrumb_path?: string;
   style_scopes?: string[];
@@ -59,6 +65,19 @@ function mainClassName(blok: PageBlok): string | undefined {
 
 export default function Page({ blok }: { blok: PageBlok }) {
   const label = blok.breadcrumb_label;
+  // Onglet « Typographie » de la page : polices, taille des titres et taille de la page, posées
+  // sur <main> ; elles priment sur les Réglages du site pour cette page seulement.
+  const pct = (raw: unknown, min: number, max: number) =>
+    raw === undefined || raw === null || String(raw).trim() === "" ? 100 : pxOr(raw as string | number, 100, min, max);
+  const display = resolveFont(blok.font_display);
+  const body = resolveFont(blok.font_body);
+  const headingScale = pct(blok.heading_scale, 50, 250);
+  const pageZoom = pct(blok.page_zoom, 50, 150);
+  const mainStyle: Record<string, string | number> = {};
+  if (display) mainStyle["--font-display"] = `'${display.family}', ${display.fallback}`;
+  if (body) mainStyle["--font-body"] = `'${body.family}', ${body.fallback}`;
+  if (headingScale !== 100) mainStyle["--scale-headings"] = headingScale / 100;
+  if (pageZoom !== 100) mainStyle.zoom = pageZoom / 100;
   return (
     <>
       {label ? (
@@ -84,7 +103,9 @@ export default function Page({ blok }: { blok: PageBlok }) {
           />
         </>
       ) : null}
-      <main className={mainClassName(blok)} {...storyblokEditable(blok)}>
+      <FontLink href={display?.href} />
+      <FontLink href={body?.href} />
+      <main className={mainClassName(blok)} style={Object.keys(mainStyle).length ? (mainStyle as CSSProperties) : undefined} {...storyblokEditable(blok)}>
         {(blok.body ?? []).map((nested) => {
           // Champs « Couleur de fond » et « Espacement haut/bas » d'une section : la section est
           // enveloppée ; .sb-bg remplace sa couleur de fond, --sb-space multiplie son padding
