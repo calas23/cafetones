@@ -980,6 +980,11 @@ for (const c of COMPONENTS) {
       description: "Ex. #F6F1EA. Remplace le fond de cette section seulement. Pour une section à texte clair (fond foncé), choisir une couleur foncée. Vide = fond d'origine.",
     });
   }
+  if (SECTION_WHITELIST.includes(c.name) && c.name !== "sticky_cta" && !c.schema.section_zoom) {
+    c.schema.section_zoom = number("Taille de la section (%)", {
+      description: "Réduit ou agrandit toute la section d'un coup : textes, espaces, boutons, images. 100 = actuelle, 50 = deux fois plus petite. Entre 30 et 150. Vide = taille d'origine.",
+    });
+  }
   if (SECTION_WHITELIST.includes(c.name) && c.name !== "sticky_cta" && !c.schema.section_spacing) {
     c.schema.section_spacing = number("Espacement haut/bas de la section (%)", {
       description: "100 = actuel. 50 = deux fois moins d'espace au-dessus et en dessous du contenu. Entre 25 et 200. Vide = espacement d'origine.",
