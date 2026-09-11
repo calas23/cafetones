@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { PhoneText } from "@/components/PhoneText";
 import { telHref } from "@/lib/phone";
+import { pxOr } from "@/lib/num";
 import { assetUrl, type SbBlok, type SiteSettings } from "@/lib/types";
 
 // Header + menu mobile — markup et comportements identiques à l'ancien
@@ -48,9 +49,19 @@ export function Header({ settings }: { settings: SiteSettings | null }) {
       );
     });
 
+  // Réglages du site : disposition de l'en-tête (wide = toute la largeur, défaut) et espacements.
+  const wide = settings?.header_layout !== "site";
+  const px = (raw: unknown, min: number, max: number) =>
+    raw === undefined || raw === null || String(raw).trim() === "" ? 0 : pxOr(raw as string | number, 0, min, max);
+  const navGap = px(settings?.header_nav_gap, 8, 120);
+  const actionsGap = px(settings?.header_actions_gap, 8, 120);
+  const headerStyle: Record<string, string> = {};
+  if (navGap) headerStyle["--header-nav-gap"] = `${navGap}px`;
+  if (actionsGap) headerStyle["--header-actions-gap"] = `${actionsGap}px`;
+  const headerClass = ["header", scrolled ? "header--scrolled" : "", wide ? "header--wide" : ""].filter(Boolean).join(" ");
   return (
     <>
-      <header className={scrolled ? "header header--scrolled" : "header"} role="banner">
+      <header className={headerClass} role="banner" style={Object.keys(headerStyle).length ? (headerStyle as CSSProperties) : undefined}>
         <div className="header__inner">
           <a href="/" className="header__logo" aria-label="TONES — Accueil">
             {/* eslint-disable-next-line @next/next/no-img-element */}

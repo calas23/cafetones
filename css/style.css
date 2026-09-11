@@ -284,11 +284,14 @@ p {
   display: none;
   flex: 1;
   justify-content: center;
-  gap: 1.5rem;
+  /* --header-nav-gap / --header-actions-gap : « Espace entre les liens du menu » et
+     « Espace autour du téléphone et du bouton » (Réglages du site) */
+  gap: var(--header-nav-gap, 1.5rem);
 }
 
 .header__nav a {
   position: relative;
+  white-space: nowrap;
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--color-text-muted);
@@ -319,7 +322,7 @@ p {
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--header-actions-gap, 1rem);
   flex-shrink: 0;
 }
 
@@ -1260,6 +1263,13 @@ p {
     display: flex;
   }
 
+  /* Disposition « wide » de l'en-tête (défaut, Réglages du site) : toute la largeur de l'écran. */
+  .header--wide .header__inner {
+    max-width: none;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   .header__logo-img {
     height: var(--logo-height, 64px);
   }
@@ -1337,7 +1347,7 @@ p {
   }
 
   .header__nav {
-    gap: 2rem;
+    gap: var(--header-nav-gap, 2rem);
   }
 }
 

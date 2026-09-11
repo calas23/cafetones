@@ -233,6 +233,16 @@ export const COMPONENTS = [
       logo_height: number("Hauteur du logo du menu (px)", {
         description: "Vide = 64 sur ordinateur et 48 sur mobile (tailles d'origine). Valeur entre 24 et 160 ; la barre de menu s'agrandit automatiquement si besoin.",
       }),
+      header_layout: option("Disposition de l'en-tête", [
+        ["wide", "Toute la largeur de l'écran (défaut)"],
+        ["site", "Alignée sur la largeur du site (1 200 px)"],
+      ], { default_value: "wide" }),
+      header_nav_gap: number("Espace entre les liens du menu (px)", {
+        description: "Vide = 24 (32 sur grand écran). Entre 8 et 120.",
+      }),
+      header_actions_gap: number("Espace autour du téléphone et du bouton (px)", {
+        description: "Vide = 16. Entre 8 et 120.",
+      }),
       phone: text("Numéro de téléphone principal"),
       cta_label: text("Bouton d'en-tête — texte"),
       cta_link: text("Bouton d'en-tête — lien"),
