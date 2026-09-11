@@ -117,6 +117,12 @@ body {
   color: var(--color-text);
   background-color: var(--color-cream);
 }
+/* Le contenu de page relit --font-body : l'onglet Typographie d'une page peut ainsi changer
+   la police du texte pour cette page seulement (même valeur qu'au-dessus par défaut). */
+main {
+  font-family: var(--font-body);
+}
+
 
 /* ========================================================================
    Typographie
@@ -1254,7 +1260,14 @@ p {
   }
 
   .reassurance {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 3rem;
+  }
+
+  .reassurance__item {
+    flex: 0 1 300px;
   }
 }
 
@@ -1352,8 +1365,16 @@ p {
 }
 
 @media (min-width: 1024px) {
+  /* Points d'assurance centrés quel que soit leur nombre (3 ou 4). */
   .reassurance {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 4rem;
+  }
+
+  .reassurance__item {
+    flex: 0 1 300px;
   }
 
   .cta-form {

@@ -112,9 +112,12 @@ export function inlineTextStyle(
   font: unknown,
   sizePct: unknown,
   table: Record<string, FontDef> = DISPLAY_FONTS,
+  color?: unknown,
 ): { style?: CSSProperties; href?: string } {
   const style: CSSProperties = {};
   let href: string | undefined;
+  const hex = normalizeHex(color);
+  if (hex) style.color = hex;
   const f = resolveFont(font, table);
   if (f) {
     style.fontFamily = `'${f.family}', ${f.fallback}`;
@@ -130,7 +133,7 @@ export function inlineTextStyle(
 // Police et taille d'un texte d'un bloc via ses champs `<key>_font` et `<key>_size`
 // (ex. blockTextStyle(blok, "title") lit title_font / title_size).
 export function blockTextStyle(blok: Record<string, unknown>, key: string): { style?: CSSProperties; href?: string } {
-  return inlineTextStyle(blok[`${key}_font`], blok[`${key}_size`], ALL_FONTS);
+  return inlineTextStyle(blok[`${key}_font`], blok[`${key}_size`], ALL_FONTS, blok[`${key}_color`]);
 }
 
 // Pourcentage saisi (chaîne ou nombre) → multiplicateur, ou undefined si vide / 100 / invalide.

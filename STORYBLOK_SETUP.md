@@ -162,6 +162,15 @@ certificat auto-signé dans le navigateur.
 - **Typographie du héros d'accueil** (grand bandeau du haut) : cliquer le
   bandeau → onglet **Typographie** → police et taille du titre, du sous-titre,
   et réglages du badge → Save → Publish.
+- **Typographie d'une page entière** (ex. Bureau & Entreprise) : ouvrir la
+  page → onglet **Typographie** de la page (colonne de droite, en haut) →
+  police des titres, police du texte, taille des titres, taille de toute la
+  page. Ne touche que cette page ; vide = Réglages du site.
+- **Couleur d'un texte** : chaque paire police / taille des onglets Typographie
+  a aussi un champ **couleur** (code hex). Ex. page Bureau & Entreprise →
+  bandeau du haut → onglet Typographie → **Titre — couleur**.
+- **Points d'assurance** (3 icônes sous le bandeau des pages Bureau, CHR…) :
+  centrés automatiquement, quel que soit leur nombre.
 - **Titres « Parlons café » et « Nos certifications »** : cliquer la section →
   onglet **Typographie** → police et taille du titre (et du sous-titre pour le
   formulaire) → Save → Publish.
@@ -280,6 +289,10 @@ certificat auto-signé dans le navigateur.
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `body` | Liste de blocs (hero_home, page_hero, landing_hero, part_hero, chr_hero, stats_section, universes_section, products_home_section, espresso_text_section, certifications_section, reassurance_section, steps_section, pricing_section, b2b_section, cta_section, quote_form_section, chr_products_section, chr_extras_section, gamme_filters, pricing_note, gamme_section, part_products_section, pastries_section, part_contact_section, contact_section, faq_section, about_story_section, roasters_section, cert_cards_section, airpur_section, legal_section, sticky_cta) | Sections de la page |
+| `font_display` | Choix — liste Datasource « polices » | Police des titres de cette page |
+| `font_body` | Choix — liste Datasource « polices » | Police du texte de cette page |
+| `heading_scale` | Nombre | Taille des titres de cette page (%) |
+| `page_zoom` | Nombre | Taille de toute la page (%) |
 | `seo_title` | Texte | Titre SEO (onglet navigateur / Google) |
 | `seo_description` | Texte long | Description SEO |
 | `og_title` | Texte | Titre de partage (réseaux sociaux) |
@@ -353,8 +366,10 @@ certificat auto-signé dans le navigateur.
 | `content_width` | Nombre | Largeur du bloc de texte (px) |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
 | `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
 | `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
@@ -387,6 +402,17 @@ certificat auto-signé dans le navigateur.
 | `image` | Image | Image |
 | `image_width` | Texte | Largeur HTML de l'image (px) |
 | `image_height` | Texte | Hauteur HTML de l'image (px) |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -462,10 +488,13 @@ certificat auto-signé dans le navigateur.
 | `badge_color` | Texte | Badge — couleur du texte |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
 | `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
 | `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `cta_font` | Choix — liste Datasource « polices » | Bouton bas — police |
 | `cta_size` | Nombre | Bouton bas — taille (%) |
+| `cta_color` | Texte | Bouton bas — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -485,8 +514,10 @@ certificat auto-signé dans le navigateur.
 | `badge_color` | Texte | Badge — couleur du texte |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
 | `text_font` | Choix — liste Datasource « polices » | Paragraphes — police |
 | `text_size` | Nombre | Paragraphes — taille (%) |
+| `text_color` | Texte | Paragraphes — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -499,6 +530,7 @@ certificat auto-signé dans le navigateur.
 | `items` | Liste de blocs (certification_badge) | Certifications |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -592,8 +624,10 @@ certificat auto-signé dans le navigateur.
 | `success_text` | Texte long | Message de succès — texte |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
 | `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
 | `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -892,6 +926,7 @@ certificat auto-signé dans le navigateur.
 | `badge_color` | Texte | Badge — couleur du texte |
 | `medals_font` | Choix — liste Datasource « polices » | Ligne médailles — police |
 | `medals_size` | Nombre | Ligne médailles — taille (%) |
+| `medals_color` | Texte | Ligne médailles — couleur |
 | `seasonal_note` | Texte | Note saisonnière (pâtisseries) |
 | `image` | Image | Photo |
 | `image_width` | Texte | Largeur HTML de l'image (px) |
@@ -930,6 +965,8 @@ certificat auto-signé dans le navigateur.
 | `card_unit` | Texte | Carte mobile — unité |
 | `card_badge_label` | Texte | Carte mobile — badge |
 | `card_badge_style` | Choix — valeurs : gold · simple | Carte mobile — style badge |
+| `name_color` | Texte | Nom — couleur |
+| `text_color` | Texte | Texte — couleur |
 
 ### `product_group` — Groupe de produits (particuliers) *(bloc imbriquable, groupe Éléments)*
 
