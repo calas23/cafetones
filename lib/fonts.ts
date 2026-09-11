@@ -4,7 +4,7 @@ import { pxOr } from "./num";
 import { normalizeHex } from "./palette";
 
 // Onglet « Polices » des Réglages du site : police des titres et police du texte,
-// choisies dans une liste de polices Google Fonts. Par défaut (Playfair Display /
+// choisies dans la datasource « polices » (clés du code ci-dessous ou polices ajoutées par la cliente). Par défaut (Playfair Display /
 // DM Sans), rien n'est ajouté : le @import de css/style.css charge déjà ces deux
 // polices. Sinon, la feuille Google Fonts correspondante est ajoutée dans <head>
 // et les variables --font-display / --font-body sont posées sur <html>.
@@ -76,46 +76,22 @@ export function resolveFont(value: unknown, table: Record<string, FontDef> = ALL
 
 const GOOGLE_CSS2 = "https://fonts.googleapis.com/css2?";
 
-// Police « autre » saisie à la main : nom exact Google Fonts + URL « embed » facultative.
-// Sans URL, seule la graisse normale est chargée (le navigateur simule gras et italique).
-// Une URL qui n'est pas une feuille Google Fonts css2 est ignorée.
-function customFont(name: unknown, url: unknown): { family: string; href: string } | undefined {
-  if (typeof name !== "string") return undefined;
-  const family = name.trim().replace(/['"]/g, "");
-  if (!family) return undefined;
-  const cleanUrl = typeof url === "string" ? url.trim() : "";
-  const href =
-    cleanUrl.startsWith(GOOGLE_CSS2) && !/[<>"']/.test(cleanUrl)
-      ? cleanUrl
-      : `${GOOGLE_CSS2}family=${encodeURIComponent(family).replace(/%20/g, "+")}&display=swap`;
-  return { family, href };
-}
-
 export function fontSettings(settings: SiteSettings | null | undefined): FontSettings {
-  const customDisplay = customFont(settings?.font_display_custom_name, settings?.font_display_custom_url);
-  const customBody = customFont(settings?.font_body_custom_name, settings?.font_body_custom_url);
   const vars: Record<string, string> = {};
   const hrefs: string[] = [];
   const add = (href: string) => {
     if (!hrefs.includes(href)) hrefs.push(href);
   };
 
-  // Titres : la police « autre » saisie à la main passe avant la liste ; la liste (datasource)
-  // accepte les clés du code et les polices ajoutées par la cliente.
-  if (customDisplay) {
-    vars["--font-display"] = `'${customDisplay.family}', ${SERIF}`;
-    add(customDisplay.href);
-  } else if (settings?.font_display && settings.font_display !== DEFAULT_DISPLAY_FONT) {
+  // Les listes (datasource « polices ») acceptent les clés du code et les polices ajoutées par la cliente.
+  if (settings?.font_display && settings.font_display !== DEFAULT_DISPLAY_FONT) {
     const f = resolveFont(settings.font_display);
     if (f) {
       vars["--font-display"] = `'${f.family}', ${f.fallback}`;
       add(f.href);
     }
   }
-  if (customBody) {
-    vars["--font-body"] = `'${customBody.family}', ${SANS}`;
-    add(customBody.href);
-  } else if (settings?.font_body && settings.font_body !== DEFAULT_BODY_FONT) {
+  if (settings?.font_body && settings.font_body !== DEFAULT_BODY_FONT) {
     const f = resolveFont(settings.font_body);
     if (f) {
       vars["--font-body"] = `'${f.family}', ${f.fallback}`;

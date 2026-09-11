@@ -25,7 +25,6 @@ export type ProductCardBlok = SbBlok & {
   price_small?: string;
   price_detail?: string;
   badge_label?: string;
-  badge_style?: string; // gold | simple
   medals_label?: string;
   seasonal_note?: string;
   categories?: string;
@@ -152,7 +151,7 @@ export function HomeProductCard({ p }: { p: ProductCardBlok }) {
         <CardImg p={p} />
       </div>
       <div className="home-product-card__content">
-        <Badge label={p.badge_label} style={p.badge_style} inlineStyle={bd.style} />
+        <Badge label={p.badge_label} style="gold" inlineStyle={bd.style} />
         <FontLink href={tx.href} />
         <FontLink href={bd.href} />
         <FontLink href={md.href} />
@@ -230,7 +229,7 @@ export function ChrProductCard({ p }: { p: ProductCardBlok }) {
     <div className={`chr-product-card ${aos(p.delay)}`} {...modalDataAttrs(p)} {...storyblokEditable(p)}>
       <div className="chr-product-card__image">
         <CardImg p={p} />
-        <Badge label={p.badge_label} style={p.badge_style} inlineStyle={bd.style} />
+        <Badge label={p.badge_label} style="gold" inlineStyle={bd.style} />
       </div>
       <div className="chr-product-card__content">
         <FontLink href={tx.href} />
@@ -293,7 +292,7 @@ export function GammeCard({ p }: { p: ProductCardBlok }) {
     <div className={cls} style={{ cursor: "pointer" }} {...modalDataAttrs(p)} {...storyblokEditable(p)}>
       <div className="gamme-card__image">
         <CardImg p={p} />
-        <Badge label={p.badge_label} style={p.badge_style} inlineStyle={bd.style} extraClass="gamme-card__badge" />
+        <Badge label={p.badge_label} style="gold" inlineStyle={bd.style} extraClass="gamme-card__badge" />
       </div>
       <div className="gamme-card__content">
         <FontLink href={tx.href} />
@@ -484,7 +483,7 @@ export function PartProductCard({ p }: { p: ProductCardBlok }) {
         <CardImg p={p} />
       </div>
       <div className="part-product-card__content">
-        <Badge label={p.badge_label} style={p.badge_style} inlineStyle={bd.style} />
+        <Badge label={p.badge_label} style="gold" inlineStyle={bd.style} />
         <FontLink href={tx.href} />
         <FontLink href={bd.href} />
         <FontLink href={md.href} />

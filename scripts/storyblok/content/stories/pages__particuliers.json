@@ -121,7 +121,6 @@
                 "image_height": "707",
                 "delay": "",
                 "badge_label": "100% Arabica",
-                "badge_style": "gold",
                 "display_name": "Anniversario — Legendary Blend",
                 "display_desc": "Chocolat, fruits exotiques, floral. Un café d'exception.",
                 "display_price": "25,20 €/kg"
@@ -148,7 +147,6 @@
                 "image_height": "707",
                 "delay": "",
                 "badge_label": "100% Arabica",
-                "badge_style": "gold",
                 "display_name": "Royal — Luxury Blend",
                 "display_desc": "Chocolat noir, noisette, muscade. Corps velouté.",
                 "display_price": "25,20 €/kg"
@@ -200,7 +198,6 @@
                 "image_height": "707",
                 "delay": "",
                 "badge_label": "Bio",
-                "badge_style": "simple",
                 "display_name": "Juta Bio — Pure Organic",
                 "display_desc": "Miel, amande, chocolat noir. 100% Arabica bio certifié.",
                 "display_price": "26,20 €/kg"
@@ -280,7 +277,6 @@
                 "image_height": "1414",
                 "delay": "",
                 "badge_label": "100% Arabica",
-                "badge_style": "gold",
                 "display_name": "Blue Gold — 250g",
                 "display_desc": "Arôme plein et intense, pour les palais exigeants.",
                 "display_price": "6,00 €"
@@ -302,7 +298,6 @@
                 "image_height": "707",
                 "delay": "",
                 "badge_label": "100% Arabica",
-                "badge_style": "gold",
                 "display_name": "Daily Moka — 250g",
                 "display_desc": "Chocolat noir, noisette, muscade. Parfait pour la moka.",
                 "display_price": "Sur demande"
@@ -344,7 +339,6 @@
                 "image_height": "707",
                 "delay": "",
                 "badge_label": "Bio",
-                "badge_style": "simple",
                 "display_name": "Juta Bio moulu — 250g",
                 "display_desc": "Miel, amande, chocolat. 100% Arabica bio.",
                 "display_price": "8,00 €"
@@ -385,7 +379,6 @@
                 "image_height": "707",
                 "delay": "",
                 "badge_label": "Bio",
-                "badge_style": "simple",
                 "display_name": "Bio Décaféiné moulu — 250g",
                 "display_desc": "Bio et décaféiné — le meilleur des deux mondes.",
                 "display_price": "8,20 €"
