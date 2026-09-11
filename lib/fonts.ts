@@ -126,3 +126,9 @@ export function inlineTextStyle(
   }
   return { style: Object.keys(style).length ? style : undefined, href };
 }
+
+// Police et taille d'un texte d'un bloc via ses champs `<key>_font` et `<key>_size`
+// (ex. blockTextStyle(blok, "title") lit title_font / title_size).
+export function blockTextStyle(blok: Record<string, unknown>, key: string): { style?: CSSProperties; href?: string } {
+  return inlineTextStyle(blok[`${key}_font`], blok[`${key}_size`], ALL_FONTS);
+}
