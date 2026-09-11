@@ -679,8 +679,9 @@ p {
 
 /* --footer-text-scale : « Taille des textes du pied de page » (Réglages du site), 1 = origine */
 .footer {
-  background-color: var(--color-espresso);
-  color: var(--color-cream-dark);
+  /* --footer-bg / --footer-text / --footer-heading : couleurs du pied de page (Réglages du site) */
+  background-color: var(--footer-bg, var(--color-espresso));
+  color: var(--footer-text, var(--color-cream-dark));
   padding: 6rem 0 2rem;
 }
 
@@ -713,7 +714,7 @@ p {
 
 .footer__desc {
   font-size: calc(0.88rem * var(--footer-text-scale, 1));
-  color: var(--color-text-light);
+  color: var(--footer-text, var(--color-text-light));
   line-height: 1.6;
   max-width: 320px;
 }
@@ -724,14 +725,14 @@ p {
   font-size: calc(0.82rem * var(--footer-text-scale, 1));
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-crema);
+  color: var(--footer-heading, var(--color-crema));
   margin-bottom: 1rem;
 }
 
 .footer__links a {
   display: block;
   font-size: calc(0.88rem * var(--footer-text-scale, 1));
-  color: var(--color-cream-dark);
+  color: var(--footer-text, var(--color-cream-dark));
   padding: 0.25rem 0;
   transition: color var(--transition-fast);
 }
@@ -745,7 +746,7 @@ p {
   align-items: center;
   gap: 0.5rem;
   font-size: calc(0.88rem * var(--footer-text-scale, 1));
-  color: var(--color-cream-dark);
+  color: var(--footer-text, var(--color-cream-dark));
   margin-bottom: 0.5rem;
 }
 

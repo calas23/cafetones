@@ -162,8 +162,10 @@ certificat auto-signé dans le navigateur.
   du site (ancienne disposition). La ligne du bas garde la largeur du site.
 - **Pied de page** : Réglages du site → onglet **Pied de page** → **Hauteur du
   logo du pied de page (px)** (vide = 36), **Taille du pied de page (%)**
-  (100 = actuelle, agit sur tout le pied de page) et **Taille des textes du
-  pied de page (%)** (textes seuls) → Save → Publish.
+  (100 = actuelle, agit sur tout le pied de page), **Taille des textes du
+  pied de page (%)** (textes seuls), et les couleurs en codes hex : **titres de
+  colonnes** (Navigation, Nos cafés, Contact), **textes** et **fond** du pied
+  de page (vides = palette du site) → Save → Publish.
 - **Photos des best-sellers** : cliquer la section → champ **Taille des
   photos (%)** (100 = actuelle, 150 = une fois et demie plus grandes) → Save →
   Publish.
@@ -308,6 +310,9 @@ certificat auto-signé dans le navigateur.
 | `footer_logo_height` | Nombre | Hauteur du logo du pied de page (px) |
 | `footer_zoom` | Nombre | Taille du pied de page (%) |
 | `footer_text_size` | Nombre | Taille des textes du pied de page (%) |
+| `footer_heading_color` | Texte | Couleur des titres de colonnes (Navigation, Nos cafés, Contact) |
+| `footer_text_color` | Texte | Couleur des textes du pied de page |
+| `footer_bg` | Texte | Couleur de fond du pied de page |
 | `palette` | Choix — valeurs : rouge-creme · cafe · sicilia · orange · marine | Palette |
 | `color_dark` | Texte | Couleur foncée (sections sombres, titres, pied de page) |
 | `color_accent` | Texte | Couleur d'accent (boutons, badges, liens) |

@@ -239,7 +239,7 @@ export const COMPONENTS = [
       nav_links: bloks("Liens du menu", ["nav_link"]),
       mobile_menu_cta_label: text("Menu mobile — bouton texte"),
       mobile_menu_cta_link: text("Menu mobile — bouton lien"),
-      "tab-footer": { type: "tab", display_name: "Pied de page", keys: ["footer_desc", "footer_nav_heading", "footer_nav_links", "footer_cafes_heading", "footer_cafes_links", "footer_contact_heading", "address", "email", "hours", "copyright", "legal_label", "legal_link", "privacy_label", "privacy_link", "footer_layout", "footer_logo_height", "footer_zoom", "footer_text_size"] },
+      "tab-footer": { type: "tab", display_name: "Pied de page", keys: ["footer_desc", "footer_nav_heading", "footer_nav_links", "footer_cafes_heading", "footer_cafes_links", "footer_contact_heading", "address", "email", "hours", "copyright", "legal_label", "legal_link", "privacy_label", "privacy_link", "footer_layout", "footer_logo_height", "footer_zoom", "footer_text_size", "footer_heading_color", "footer_text_color", "footer_bg"] },
       footer_desc: textarea("Texte de présentation"),
       footer_nav_heading: text("Titre colonne navigation"),
       footer_nav_links: bloks("Liens colonne navigation", ["nav_link"]),
@@ -266,6 +266,18 @@ export const COMPONENTS = [
       }),
       footer_text_size: number("Taille des textes du pied de page (%)", {
         description: "Textes seuls (présentation, titres de colonnes, liens, coordonnées, ligne du bas). 100 = actuelle. Entre 50 et 200.",
+      }),
+      footer_heading_color: text("Couleur des titres de colonnes (Navigation, Nos cafés, Contact)", {
+        regex: HEX_RE,
+        description: "Code hex, ex. #F6C543. Vide = couleur de la palette.",
+      }),
+      footer_text_color: text("Couleur des textes du pied de page", {
+        regex: HEX_RE,
+        description: "Présentation, liens, coordonnées, ligne du bas. Code hex, ex. #FFFFFF. Vide = couleur de la palette.",
+      }),
+      footer_bg: text("Couleur de fond du pied de page", {
+        regex: HEX_RE,
+        description: "Code hex, ex. #1C3559. Vide = couleur foncée de la palette.",
       }),
       "tab-couleurs": { type: "tab", display_name: "Couleurs", keys: ["palette", "color_dark", "color_accent", "color_bg", "color_bg_alt", "color_text"] },
       palette: option("Palette", [
