@@ -90,17 +90,18 @@ export default function Page({ blok }: { blok: PageBlok }) {
           // enveloppée ; .sb-bg remplace sa couleur de fond, --sb-space multiplie son padding
           // (css/style.css). Vide ou invalide = rendu d'origine, sans enveloppe.
           const background = normalizeHex(nested.background);
-          const rawSpacing = nested.section_spacing;
-          const spacing =
-            rawSpacing === undefined || rawSpacing === null || String(rawSpacing).trim() === ""
-              ? 100
-              : pxOr(rawSpacing as string | number, 100, 25, 200);
-          if (!background && spacing === 100) {
+          const pct = (raw: unknown, min: number, max: number) =>
+            raw === undefined || raw === null || String(raw).trim() === "" ? 100 : pxOr(raw as string | number, 100, min, max);
+          const spacing = pct(nested.section_spacing, 25, 200);
+          // « Taille de la section (%) » : zoom CSS sur toute la section (textes, espaces, images).
+          const zoom = pct(nested.section_zoom, 30, 150);
+          if (!background && spacing === 100 && zoom === 100) {
             return <StoryblokServerComponent blok={nested} key={nested._uid} />;
           }
-          const style: Record<string, string> = {};
+          const style: Record<string, string | number> = {};
           if (background) style["--sb-bg"] = background;
           if (spacing !== 100) style["--sb-space"] = String(spacing / 100);
+          if (zoom !== 100) style.zoom = zoom / 100;
           return (
             <div className={background ? "sb-bg" : undefined} style={style as CSSProperties} key={nested._uid}>
               <StoryblokServerComponent blok={nested} />
