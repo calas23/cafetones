@@ -410,6 +410,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 0.5rem;
   padding: 14px 28px;
   font-family: var(--font-body);
@@ -599,6 +600,8 @@ p {
 .badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 0.25rem;
   /* --badge-pad-scale / --badge-text-scale : « Badge — taille du fond / du texte » (Storyblok) */
   padding: calc(6px * var(--badge-pad-scale, 1)) calc(14px * var(--badge-pad-scale, 1));
