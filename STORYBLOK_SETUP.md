@@ -211,7 +211,8 @@ certificat auto-signé dans le navigateur.
 - **Bandeau du haut d'une page moins haut** (héros de l'accueil, Bureau, CHR,
   Particuliers, bandeaux simples) : cliquer le bandeau → **Espacement haut/bas
   de la section (%)** : 50 = bandeau deux fois moins haut, textes et images
-  inchangés (vide = 100) → Save → Publish.
+  inchangés (vide = 100) → Save → Publish. Sur les pages Bureau & Entreprise et
+  CHR, le contenu reste centré : même espace au-dessus et en dessous.
 - **Ne pas toucher** : l'onglet « Avancé » des pages et le champ JSON-LD
   (réglages techniques remplis automatiquement).
 
