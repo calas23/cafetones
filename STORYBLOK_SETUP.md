@@ -153,6 +153,12 @@ certificat auto-signé dans le navigateur.
 - **Typographie du héros d'accueil** (grand bandeau du haut) : cliquer le
   bandeau → onglet **Typographie** → police et taille du titre, du sous-titre,
   et réglages du badge → Save → Publish.
+- **Titres « Parlons café » et « Nos certifications »** : cliquer la section →
+  onglet **Typographie** → police et taille du titre (et du sous-titre pour le
+  formulaire) → Save → Publish.
+- **Pied de page** : Réglages du site → onglet **Pied de page** → **Hauteur du
+  logo du pied de page (px)** (vide = 36) et **Taille du pied de page (%)**
+  (100 = actuelle, agit sur tout le pied de page) → Save → Publish.
 - **Badges** (héros d'accueil, section best-sellers et fiches produit, onglet Typographie) :
   police, **taille du texte (%)**, **taille du fond (%)** (épaisseur du badge
   autour du texte), **couleur de fond** et **couleur du texte** en codes hex.
@@ -290,6 +296,8 @@ certificat auto-signé dans le navigateur.
 | `legal_link` | Texte | Lien mentions légales — URL |
 | `privacy_label` | Texte | Lien confidentialité — texte |
 | `privacy_link` | Texte | Lien confidentialité — URL |
+| `footer_logo_height` | Nombre | Hauteur du logo du pied de page (px) |
+| `footer_zoom` | Nombre | Taille du pied de page (%) |
 | `palette` | Choix — valeurs : rouge-creme · cafe · sicilia · orange · marine | Palette |
 | `color_dark` | Texte | Couleur foncée (sections sombres, titres, pied de page) |
 | `color_accent` | Texte | Couleur d'accent (boutons, badges, liens) |
@@ -460,6 +468,8 @@ certificat auto-signé dans le navigateur.
 |---|---|---|
 | `title` | Texte | Titre |
 | `items` | Liste de blocs (certification_badge) | Certifications |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -551,6 +561,10 @@ certificat auto-signé dans le navigateur.
 | `note` | Texte long | Note de consentement |
 | `success_title` | Texte | Message de succès — titre |
 | `success_text` | Texte long | Message de succès — texte |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
