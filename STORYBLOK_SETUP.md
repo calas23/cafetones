@@ -148,7 +148,10 @@ certificat auto-signé dans le navigateur.
 - **Typographie de la section best-sellers** : cliquer la section → onglet
   **Typographie** → police et taille du badge, du titre, du sous-titre et du
   bouton du bas (vide = polices du site) → Save → Publish.
-- **Badges** (section best-sellers et fiches produit, onglet Typographie) :
+- **Typographie du héros d'accueil** (grand bandeau du haut) : cliquer le
+  bandeau → onglet **Typographie** → police et taille du titre, du sous-titre,
+  et réglages du badge → Save → Publish.
+- **Badges** (héros d'accueil, section best-sellers et fiches produit, onglet Typographie) :
   police, **taille du texte (%)**, **taille du fond (%)** (épaisseur du badge
   autour du texte), **couleur de fond** et **couleur du texte** en codes hex.
   Vide = style d'origine.
@@ -303,6 +306,15 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `title_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `subtitle_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `badge_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Badge — police |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `page_hero` — Héros — Bandeau simple *(bloc imbriquable, groupe Sections)*

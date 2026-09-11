@@ -2,6 +2,8 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 import { Icon } from "@/components/Icon";
 import { fmt, fmtTel } from "@/lib/text";
 import { pxOr } from "@/lib/num";
+import { badgeStyle, blockTextStyle } from "@/lib/fonts";
+import { FontLink } from "@/components/FontLink";
 import { assetUrl, type SbAsset, type SbBlok } from "@/lib/types";
 import { Buttons } from "./shared";
 
@@ -22,12 +24,19 @@ export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
   const light = blok.theme === "light";
   const logoHeight = pxOr(blok.badge_logo_height, 30, 12, 120);
   const bg = assetUrl(blok.background_image);
+  // Onglet « Typographie » du bloc : police / taille du titre et du sous-titre, style du badge.
+  const title = blockTextStyle(blok, "title");
+  const subtitle = blockTextStyle(blok, "subtitle");
+  const badge = badgeStyle(blok);
   return (
     <section
       className={light ? "home-hero home-hero--light" : "home-hero"}
       style={bg ? { backgroundImage: `url("${bg}")` } : undefined}
       {...storyblokEditable(blok)}
     >
+      <FontLink href={title.href} />
+      <FontLink href={subtitle.href} />
+      <FontLink href={badge.href} />
       <div className="container">
         <div className="home-hero__content">
           <div className="home-hero__badge-logo" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
@@ -39,12 +48,12 @@ export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
                 style={{ height: `${logoHeight}px`, width: "auto", filter: light ? "brightness(0)" : "brightness(0) invert(1)" }}
               />
             ) : null}
-            {blok.badge_text ? <span className="badge badge--dark">{blok.badge_text}</span> : null}
+            {blok.badge_text ? <span className="badge badge--dark" style={badge.style}>{blok.badge_text}</span> : null}
           </div>
 
-          <h1 className="home-hero__title">{fmt(blok.title)}</h1>
+          <h1 className="home-hero__title" style={title.style}>{fmt(blok.title)}</h1>
 
-          <p className="home-hero__subtitle">{fmt(blok.subtitle)}</p>
+          <p className="home-hero__subtitle" style={subtitle.style}>{fmt(blok.subtitle)}</p>
 
           <div className="home-hero__actions">
             <Buttons buttons={blok.buttons} />
