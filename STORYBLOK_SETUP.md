@@ -142,8 +142,12 @@ certificat auto-signé dans le navigateur.
   gamme, CHR, particuliers) : cliquer le produit → **Nom — police** (même
   liste que l'onglet Polices, vide = police des titres) et **Nom — taille (%)**
   (100 = actuel), et de même **Texte — police** / **Texte — taille (%)** pour le
-  reste de la fiche (sous-titre, description, format, prix) → Save → Publish.
-  Ne touche que ce produit.
+  reste de la fiche (sous-titre, description, format, prix), et onglet
+  **Typographie** de la fiche pour le badge et la ligne médailles → Save →
+  Publish. Ne touche que ce produit.
+- **Typographie de la section best-sellers** : cliquer la section → onglet
+  **Typographie** → police et taille du badge, du titre, du sous-titre et du
+  bouton du bas (vide = polices du site) → Save → Publish.
 - **Changer la couleur de fond d'une section** : dans la page, cliquer la
   section → champ **Couleur de fond** (tout en bas de ses champs) → un code
   hexadécimal comme `#FFF1E3` → Save → Publish. Ne touche que cette section.
@@ -201,6 +205,9 @@ certificat auto-signé dans le navigateur.
   remonter la feuille Google Fonts dans `<head>` (hoisting React 19, dédupliqué).
   Idem `text_font` / `text_size` (toutes polices, `ALL_FONTS`) sur les autres
   textes de la carte.
+  Généralisé par `blockTextStyle(blok, "clé")` (champs `clé_font` / `clé_size`,
+  helper `typo()` de `components.mjs`) : badge, titre, sous-titre et bouton de
+  la section best-sellers ; badge et ligne médailles des fiches produit.
 - **Fond par section** : champ `background` (hex) ajouté à toutes les sections
   par `components.mjs` ; `Page.tsx` enveloppe la section dans `.sb-bg` avec
   `--sb-bg`, et `style.css` force `background-color` sur l'enfant direct.
@@ -369,6 +376,14 @@ certificat auto-signé dans le navigateur.
 | `products` | Liste de blocs (product_card) | Produits |
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
+| `badge_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Badge — police |
+| `badge_size` | Nombre | Badge — taille (%) |
+| `title_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `subtitle_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `cta_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Bouton bas — police |
+| `cta_size` | Nombre | Bouton bas — taille (%) |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
 ### `espresso_text_section` — Section texte fond espresso *(bloc imbriquable, groupe Sections)*
@@ -726,6 +741,10 @@ certificat auto-signé dans le navigateur.
 | `badge_label` | Texte | Badge — texte |
 | `badge_style` | Choix — valeurs : gold · simple | Badge — style |
 | `medals_label` | Texte | Ligne médailles (ex. 7 médailles ICT) |
+| `badge_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Badge — police |
+| `badge_size` | Nombre | Badge — taille (%) |
+| `medals_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Ligne médailles — police |
+| `medals_size` | Nombre | Ligne médailles — taille (%) |
 | `seasonal_note` | Texte | Note saisonnière (pâtisseries) |
 | `image` | Image | Photo |
 | `image_width` | Texte | Largeur HTML de l'image (px) |

@@ -154,6 +154,11 @@ const BODY_FONT_OPTIONS = [
 const ALL_FONT_OPTIONS = [...BODY_FONT_OPTIONS, ...DISPLAY_FONT_OPTIONS].filter(
   ([key], i, arr) => arr.findIndex(([k]) => k === key) === i,
 );
+// Paire de champs « police / taille » d'un texte d'un bloc (lib/fonts.ts blockTextStyle(blok, prefix)).
+const typo = (prefix, label) => ({
+  [`${prefix}_font`]: option(`${label} — police`, [["", "Police par défaut"], ...ALL_FONT_OPTIONS]),
+  [`${prefix}_size`]: number(`${label} — taille (%)`, { description: "100 = taille actuelle. Entre 50 et 300." }),
+});
 
 export const COMPONENTS = [
   {
@@ -361,6 +366,9 @@ export const COMPONENTS = [
         ["simple", "Simple"],
       ]),
       medals_label: text("Ligne médailles (ex. 7 médailles ICT)"),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["name_font", "name_size", "text_font", "text_size", "badge_font", "badge_size", "medals_font", "medals_size"] },
+      ...typo("badge", "Badge"),
+      ...typo("medals", "Ligne médailles"),
       seasonal_note: text("Note saisonnière (pâtisseries)"),
       image: asset("Photo"),
       ...IMAGE_DIMS,
@@ -626,6 +634,11 @@ export const COMPONENTS = [
       products: bloks("Produits", ["product_card"]),
       cta_label: text("Bouton bas — texte"),
       cta_link: text("Bouton bas — lien"),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["badge_font", "badge_size", "title_font", "title_size", "subtitle_font", "subtitle_size", "cta_font", "cta_size"] },
+      ...typo("badge", "Badge"),
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
+      ...typo("cta", "Bouton bas"),
     },
   },
   {
