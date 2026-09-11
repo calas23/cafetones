@@ -126,11 +126,13 @@ type CertificationBadge = SbBlok & { name?: string; caption?: string };
 type CertificationsBlok = SbBlok & { title?: string; items?: CertificationBadge[] };
 
 export function CertificationsSection({ blok }: { blok: CertificationsBlok }) {
+  const title = blockTextStyle(blok, "title"); // onglet « Typographie »
   return (
     <section className="section section--cream-warm certifications-home" {...storyblokEditable(blok)}>
+      <FontLink href={title.href} />
       <div className="container">
         <div className="text-center animate-on-scroll">
-          <h2>{fmt(blok.title)}</h2>
+          <h2 style={title.style}>{fmt(blok.title)}</h2>
         </div>
         <div className="certifications-grid animate-on-scroll delay-1">
           {(blok.items ?? []).map((item) => (

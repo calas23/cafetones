@@ -239,7 +239,7 @@ export const COMPONENTS = [
       nav_links: bloks("Liens du menu", ["nav_link"]),
       mobile_menu_cta_label: text("Menu mobile — bouton texte"),
       mobile_menu_cta_link: text("Menu mobile — bouton lien"),
-      "tab-footer": { type: "tab", display_name: "Pied de page", keys: ["footer_desc", "footer_nav_heading", "footer_nav_links", "footer_cafes_heading", "footer_cafes_links", "footer_contact_heading", "address", "email", "hours", "copyright", "legal_label", "legal_link", "privacy_label", "privacy_link"] },
+      "tab-footer": { type: "tab", display_name: "Pied de page", keys: ["footer_desc", "footer_nav_heading", "footer_nav_links", "footer_cafes_heading", "footer_cafes_links", "footer_contact_heading", "address", "email", "hours", "copyright", "legal_label", "legal_link", "privacy_label", "privacy_link", "footer_logo_height", "footer_zoom"] },
       footer_desc: textarea("Texte de présentation"),
       footer_nav_heading: text("Titre colonne navigation"),
       footer_nav_links: bloks("Liens colonne navigation", ["nav_link"]),
@@ -254,6 +254,12 @@ export const COMPONENTS = [
       legal_link: text("Lien mentions légales — URL"),
       privacy_label: text("Lien confidentialité — texte"),
       privacy_link: text("Lien confidentialité — URL"),
+      footer_logo_height: number("Hauteur du logo du pied de page (px)", {
+        description: "Vide = 36 (taille d'origine). Entre 12 et 160.",
+      }),
+      footer_zoom: number("Taille du pied de page (%)", {
+        description: "Réduit ou agrandit tout le pied de page : logo, textes, espaces. 100 = actuelle. Entre 50 et 150.",
+      }),
       "tab-couleurs": { type: "tab", display_name: "Couleurs", keys: ["palette", "color_dark", "color_accent", "color_bg", "color_bg_alt", "color_text"] },
       palette: option("Palette", [
         ["rouge-creme", "Rouge & crème (par défaut)"],
@@ -672,6 +678,8 @@ export const COMPONENTS = [
     schema: {
       title: text("Titre"),
       items: bloks("Certifications", ["certification_badge"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size"] },
+      ...typo("title", "Titre"),
     },
   },
   {
@@ -766,6 +774,9 @@ export const COMPONENTS = [
       note: textarea("Note de consentement"),
       success_title: text("Message de succès — titre"),
       success_text: textarea("Message de succès — texte"),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "subtitle_font", "subtitle_size"] },
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
     },
   },
   {

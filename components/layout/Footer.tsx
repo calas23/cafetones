@@ -1,6 +1,7 @@
 import { Icon } from "@/components/Icon";
 import { PhoneText } from "@/components/PhoneText";
 import { telHref } from "@/lib/phone";
+import { pxOr } from "@/lib/num";
 import { assetUrl, type SbBlok, type SiteSettings } from "@/lib/types";
 
 type NavLink = SbBlok & { label?: string; link?: string; hidden?: boolean };
@@ -18,15 +19,20 @@ function FooterLinks({ links }: { links?: SbBlok[] }) {
 }
 
 export function Footer({ settings }: { settings: SiteSettings | null }) {
+  // Réglages du site → Pied de page : hauteur du logo (px, vide = 36) et taille de l'ensemble (%).
+  const rawLogo = settings?.footer_logo_height;
+  const logoHeight = rawLogo === undefined || rawLogo === null || String(rawLogo).trim() === "" ? 36 : pxOr(rawLogo, 36, 12, 160);
+  const rawZoom = settings?.footer_zoom;
+  const footerZoom = rawZoom === undefined || rawZoom === null || String(rawZoom).trim() === "" ? 100 : pxOr(rawZoom, 100, 50, 150);
   const phone = settings?.phone || "06 62 11 97 48";
   return (
-    <footer className="footer" role="contentinfo">
+    <footer className="footer" role="contentinfo" style={footerZoom !== 100 ? { zoom: footerZoom / 100 } : undefined}>
       <div className="container">
         <div className="footer__grid">
           <div>
             <div className="footer__logo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={assetUrl(settings?.logo) || "/img/logo-tones.svg"} alt={settings?.logo?.alt || "TONES — Café Italien"} className="footer__logo-img" />
+              <img src={assetUrl(settings?.logo) || "/img/logo-tones.svg"} alt={settings?.logo?.alt || "TONES — Café Italien"} className="footer__logo-img" style={logoHeight !== 36 ? { height: `${logoHeight}px` } : undefined} />
             </div>
             <p className="footer__desc">{settings?.footer_desc}</p>
           </div>

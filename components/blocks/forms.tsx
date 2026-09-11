@@ -4,6 +4,8 @@ import { useState, type CSSProperties, type FormEvent, type ReactNode } from "re
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { Icon } from "@/components/Icon";
 import { PhoneText } from "@/components/PhoneText";
+import { FontLink } from "@/components/FontLink";
+import { blockTextStyle } from "@/lib/fonts";
 import { telHref } from "@/lib/phone";
 import type { SbBlok } from "@/lib/types";
 
@@ -243,6 +245,9 @@ const SECTION_CLASSES: Record<string, string> = {
 };
 
 export function QuoteFormSection({ blok }: { blok: QuoteFormBlok }) {
+  // Onglet « Typographie » : police / taille du titre et du sous-titre.
+  const titleStyle = blockTextStyle(blok, "title");
+  const subtitleStyle = blockTextStyle(blok, "subtitle");
   const formName = blok.form_name || "contact";
   const { errors, submitted, handlers, onSubmit } = useSiteForm(formName);
   const phone = blok.phone || "06 62 11 97 48";
@@ -257,8 +262,10 @@ export function QuoteFormSection({ blok }: { blok: QuoteFormBlok }) {
       <div className="container">
         <form className="cta-form animate-on-scroll" data-form={formName} noValidate onSubmit={onSubmit}>
           <div className="form-content" style={submitted ? { display: "none" } : undefined}>
-            <h2 className="cta-form__title">{blok.title}</h2>
-            <p className="cta-form__subtitle">{blok.subtitle}</p>
+            <FontLink href={titleStyle.href} />
+            <FontLink href={subtitleStyle.href} />
+            <h2 className="cta-form__title" style={titleStyle.style}>{blok.title}</h2>
+            <p className="cta-form__subtitle" style={subtitleStyle.style}>{blok.subtitle}</p>
 
             <div className="phone-cta-block">
               <div className="phone-cta-block__label">{blok.phone_label}</div>
