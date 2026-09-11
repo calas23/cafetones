@@ -150,6 +150,10 @@ certificat auto-signé dans le navigateur.
 - **Typographie de la section best-sellers** : cliquer la section → onglet
   **Typographie** → police et taille du badge, du titre, du sous-titre et du
   bouton du bas (vide = polices du site) → Save → Publish.
+- **Largeur du titre du héros d'accueil** : cliquer le bandeau → champ
+  **Largeur du bloc de texte (px)** (vide = 700, ou 780 avec le thème clair) →
+  augmenter, ex. 1000, pour que le titre tienne sur deux lignes au lieu de trois
+  → Save → Publish.
 - **Typographie du héros d'accueil** (grand bandeau du haut) : cliquer le
   bandeau → onglet **Typographie** → police et taille du titre, du sous-titre,
   et réglages du badge → Save → Publish.
@@ -338,6 +342,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `content_width` | Nombre | Largeur du bloc de texte (px) |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
 | `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |

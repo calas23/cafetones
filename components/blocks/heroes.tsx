@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { Icon } from "@/components/Icon";
 import { fmt, fmtTel } from "@/lib/text";
@@ -18,6 +19,7 @@ type HeroHomeBlok = SbBlok & {
   buttons?: SbBlok[];
   background_image?: SbAsset;
   theme?: string; // dark (photo sombre, texte clair) | light (illustration claire, texte foncé)
+  content_width?: string | number; // largeur max du bloc de texte en px (vide = 700 / 780 thème clair)
 };
 
 export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
@@ -28,10 +30,16 @@ export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
   const title = blockTextStyle(blok, "title");
   const subtitle = blockTextStyle(blok, "subtitle");
   const badge = badgeStyle(blok);
+  // « Largeur du bloc de texte (px) » : largeur max du titre, du sous-titre et des boutons.
+  const rawWidth = blok.content_width;
+  const contentWidth = rawWidth === undefined || rawWidth === null || String(rawWidth).trim() === "" ? 0 : pxOr(rawWidth, 0, 400, 1400);
+  const sectionStyle: Record<string, string> = {};
+  if (bg) sectionStyle.backgroundImage = `url("${bg}")`;
+  if (contentWidth) sectionStyle["--hero-content-width"] = `${contentWidth}px`;
   return (
     <section
       className={light ? "home-hero home-hero--light" : "home-hero"}
-      style={bg ? { backgroundImage: `url("${bg}")` } : undefined}
+      style={Object.keys(sectionStyle).length ? (sectionStyle as CSSProperties) : undefined}
       {...storyblokEditable(blok)}
     >
       <FontLink href={title.href} />
