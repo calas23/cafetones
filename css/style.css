@@ -823,10 +823,12 @@ p {
    Hero bandeau de page (partagé entre pages)
    ======================================================================== */
 
+/* --sb-space : « Espacement haut/bas de la section » (Storyblok), 1 (absente) = marges d'origine.
+   Le décalage du header fixe (--header-height) n'est jamais réduit. */
 .page-hero {
   background-color: var(--color-cream-warm);
-  padding-top: calc(var(--header-height) + 3rem);
-  padding-bottom: 3rem;
+  padding-top: calc(var(--header-height) + 3rem * var(--sb-space, 1));
+  padding-bottom: calc(3rem * var(--sb-space, 1));
   text-align: center;
 }
 

@@ -208,6 +208,10 @@ certificat auto-signé dans le navigateur.
   textes, espaces et boutons ensemble) → Save → Publish. Pour ne jouer que sur
   l'espace au-dessus et en dessous du contenu : **Espacement haut/bas de la
   section (%)**. Pour ne réduire que les textes : onglet **Typographie**.
+- **Bandeau du haut d'une page moins haut** (héros de l'accueil, Bureau, CHR,
+  Particuliers, bandeaux simples) : cliquer le bandeau → **Espacement haut/bas
+  de la section (%)** : 50 = bandeau deux fois moins haut, textes et images
+  inchangés (vide = 100) → Save → Publish.
 - **Ne pas toucher** : l'onglet « Avancé » des pages et le champ JSON-LD
   (réglages techniques remplis automatiquement).
 
