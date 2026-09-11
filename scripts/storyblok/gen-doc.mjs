@@ -25,6 +25,7 @@ function fieldLine(key, field) {
   if (field.type === "option" || field.type === "options") {
     const values = (field.options || []).map((o) => o.value).filter(Boolean).join(" · ");
     if (values) type += ` — valeurs : ${values}`;
+    if (field.datasource_slug) type += ` — liste Datasource « ${field.datasource_slug} »`;
   }
   return `| \`${key}\` | ${type} | ${field.display_name || ""} |`;
 }

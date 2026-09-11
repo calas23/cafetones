@@ -154,10 +154,30 @@ const BODY_FONT_OPTIONS = [
 const ALL_FONT_OPTIONS = [...BODY_FONT_OPTIONS, ...DISPLAY_FONT_OPTIONS].filter(
   ([key], i, arr) => arr.findIndex(([k]) => k === key) === i,
 );
+// Datasource « Polices » : alimente toutes les listes déroulantes « police » du space.
+// Le bootstrap la crée et y ajoute les polices du code ; la cliente peut y ajouter les siennes
+// (Name = libellé, Value = nom exact Google Fonts ou adresse « embed » css2).
+export const FONT_DATASOURCE = {
+  slug: "polices",
+  name: "Polices (listes de typographie)",
+  entries: ALL_FONT_OPTIONS.map(([value, name]) => ({ name: name.replace(" (par défaut)", ""), value })),
+};
+const FONT_HELP_ADD = "Pour ajouter des polices à cette liste : Content → Datasources → Polices.";
+const FONT_HELP = "Vide = police par défaut. " + FONT_HELP_ADD;
+// Liste déroulante de polices alimentée par la datasource.
+const fontOption = (display_name, extra = {}) => ({
+  type: "option",
+  display_name,
+  source: "internal",
+  datasource_slug: FONT_DATASOURCE.slug,
+  description: FONT_HELP,
+  ...extra,
+});
+
 // Paire de champs « police / taille » d'un texte d'un bloc (lib/fonts.ts blockTextStyle(blok, prefix)).
 // Champs d'un badge : police, taille du texte, taille du fond, couleurs (lib/fonts.ts badgeStyle()).
 const badgeFields = (prefix = "badge", label = "Badge") => ({
-  [`${prefix}_font`]: option(`${label} — police`, [["", "Police par défaut"], ...ALL_FONT_OPTIONS]),
+  [`${prefix}_font`]: fontOption(`${label} — police`),
   [`${prefix}_text_size`]: number(`${label} — taille du texte (%)`, { description: "100 = taille actuelle. Entre 50 et 300." }),
   [`${prefix}_size`]: number(`${label} — taille du fond (%)`, { description: "Épaisseur du badge autour du texte. 100 = actuelle. Entre 50 et 300." }),
   [`${prefix}_bg`]: text(`${label} — couleur de fond`, { regex: HEX_RE, description: "Code hex, ex. #1C3559. Vide = couleur du style choisi." }),
@@ -165,7 +185,7 @@ const badgeFields = (prefix = "badge", label = "Badge") => ({
 });
 const BADGE_KEYS = (prefix = "badge") => [`${prefix}_font`, `${prefix}_text_size`, `${prefix}_size`, `${prefix}_bg`, `${prefix}_color`];
 const typo = (prefix, label) => ({
-  [`${prefix}_font`]: option(`${label} — police`, [["", "Police par défaut"], ...ALL_FONT_OPTIONS]),
+  [`${prefix}_font`]: fontOption(`${label} — police`),
   [`${prefix}_size`]: number(`${label} — taille (%)`, { description: "100 = taille actuelle. Entre 50 et 300." }),
 });
 
@@ -253,13 +273,13 @@ export const COMPONENTS = [
       color_bg_alt: text("Fond des sections alternées", { regex: HEX_RE, description: HEX_HELP }),
       color_text: text("Couleur du texte", { regex: HEX_RE, description: HEX_HELP }),
       "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "font_display_custom_name", "font_display_custom_url", "font_body_custom_name", "font_body_custom_url", "text_scale", "heading_scale"] },
-      font_display: option("Police des titres", DISPLAY_FONT_OPTIONS, {
+      font_display: fontOption("Police des titres", {
         default_value: "playfair",
-        description: "Police des titres (h1, h2, h3, chiffres clés). Polices Google Fonts, chargées automatiquement.",
+        description: "Police des titres (h1, h2, h3, chiffres clés). Vide = Playfair Display. " + FONT_HELP_ADD,
       }),
-      font_body: option("Police du texte", BODY_FONT_OPTIONS, {
+      font_body: fontOption("Police du texte", {
         default_value: "dm-sans",
-        description: "Police des paragraphes, menus, boutons et formulaires.",
+        description: "Police des paragraphes, menus, boutons et formulaires. Vide = DM Sans. " + FONT_HELP_ADD,
       }),
       font_display_custom_name: text("Titres — autre police Google Fonts (nom exact)", {
         description: "Pour une police absente de la liste : le nom exact tel qu'affiché sur fonts.google.com, ex. « Lobster ». Prioritaire sur la liste. Vide = liste.",
@@ -351,15 +371,11 @@ export const COMPONENTS = [
     group: "Éléments",
     schema: {
       display_name: text("Nom affiché"),
-      name_font: option("Nom — police", [["", "Police des titres du site (défaut)"], ...DISPLAY_FONT_OPTIONS], {
-        description: "Police du nom de ce produit seulement. Vide = police des titres du site.",
-      }),
+      name_font: fontOption("Nom — police", { description: "Police du nom de ce produit seulement. " + FONT_HELP }),
       name_size: number("Nom — taille (%)", {
         description: "100 = taille actuelle. Ex. 130 pour un nom plus grand. Entre 50 et 300.",
       }),
-      text_font: option("Texte — police", [["", "Police du texte du site (défaut)"], ...ALL_FONT_OPTIONS], {
-        description: "Police du reste du texte de cette fiche (sous-titre, description, format, prix). Vide = police du texte du site.",
-      }),
+      text_font: fontOption("Texte — police", { description: "Police du reste du texte de cette fiche (sous-titre, description, format, prix). " + FONT_HELP }),
       text_size: number("Texte — taille (%)", {
         description: "100 = taille actuelle. Entre 50 et 300.",
       }),

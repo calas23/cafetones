@@ -19,7 +19,7 @@
 
 import { readdirSync, readFileSync } from "node:fs";
 import { join, basename } from "node:path";
-import { COMPONENTS, GROUPS } from "./components.mjs";
+import { COMPONENTS, GROUPS, FONT_DATASOURCE } from "./components.mjs";
 
 const PAT = process.env.STORYBLOK_PAT;
 const SPACE_ID = process.env.STORYBLOK_SPACE_ID;
@@ -124,6 +124,36 @@ async function upsertComponents() {
       console.log(`  + composant ${def.name}`);
     }
   }
+}
+
+/* ---------------- datasources ---------------- */
+
+// Datasource idempotente : créée si absente, entrées du code ajoutées ou mises à jour
+// (par nom), entrées ajoutées à la main par la cliente jamais touchées.
+async function ensureDatasource({ slug, name, entries }) {
+  const list = await api("GET", "/datasources");
+  let ds = (list.datasources || []).find((d) => d.slug === slug);
+  if (!ds) {
+    ds = (await api("POST", "/datasources", { datasource: { name, slug } })).datasource;
+    console.log(`  + datasource "${slug}"`);
+  }
+  const existing = await api("GET", `/datasource_entries?datasource_id=${ds.id}&per_page=1000`);
+  const current = existing.datasource_entries || [];
+  const byName = new Map(current.map((e) => [e.name, e]));
+  let added = 0;
+  let updated = 0;
+  for (const entry of entries) {
+    const cur = byName.get(entry.name);
+    if (!cur) {
+      await api("POST", "/datasource_entries", { datasource_entry: { name: entry.name, value: entry.value, datasource_id: ds.id } });
+      added++;
+    } else if (cur.value !== entry.value) {
+      await api("PUT", `/datasource_entries/${cur.id}`, { datasource_entry: { name: entry.name, value: entry.value } });
+      updated++;
+    }
+  }
+  const custom = current.filter((e) => !entries.some((x) => x.name === e.name)).length;
+  console.log(`  ~ datasource "${slug}" : ${entries.length} entrées du code (${added} ajoutées, ${updated} mises à jour), ${custom} entrée(s) personnalisée(s) conservée(s)`);
 }
 
 /* ---------------- assets ---------------- */
@@ -284,6 +314,7 @@ async function main() {
   if (DRY) {
     console.log("\n-- DRY RUN --");
     console.log("Composants :", COMPONENTS.map((c) => c.name).join(", "));
+    console.log(`Datasource "${FONT_DATASOURCE.slug}" :`, FONT_DATASOURCE.entries.map((e) => e.value).join(", "));
     console.log("Images :", [...needed].join(", "));
     console.log("Stories :", stories.map((s) => s.full_slug).join(", "));
     console.log(`Éditeur visuel : ${SITE_URL}/api/draft?slug=`);
@@ -297,17 +328,20 @@ async function main() {
 
   await detectHost();
 
-  console.log(ONLY_COMPONENTS ? "\n[1/1] Composants (mode composants uniquement)…" : "\n[1/5] Composants…");
+  console.log(ONLY_COMPONENTS ? "\n[1/2] Datasource des polices (mode composants uniquement)…" : "\n[1/6] Datasource des polices…");
+  await ensureDatasource(FONT_DATASOURCE);
+
+  console.log(ONLY_COMPONENTS ? "\n[2/2] Composants…" : "\n[2/6] Composants…");
   await upsertComponents();
   if (ONLY_COMPONENTS) {
     console.log("\n✅ Schémas de blocs mis à jour. Aucune story ni image modifiée.");
     return;
   }
 
-  console.log("\n[2/5] Images…");
+  console.log("\n[3/6] Images…");
   const assetMap = await ensureAssets([...needed]);
 
-  console.log("\n[3/5] Stories…");
+  console.log("\n[4/6] Stories…");
   const pagesFolderId = await ensureFolder("pages", "Pages");
   const configFolderId = await ensureFolder("config", "Configuration");
   for (const story of stories) {
@@ -319,10 +353,10 @@ async function main() {
     await upsertStory(story, parentId, assetMap);
   }
 
-  console.log("\n[4/5] Éditeur visuel…");
+  console.log("\n[5/6] Éditeur visuel…");
   await configureSpace();
 
-  console.log("\n[5/5] Webhook…");
+  console.log("\n[6/6] Webhook…");
   await configureWebhook();
 
   console.log("\n✅ Bootstrap terminé. Ouvrez app.storyblok.com : le contenu du site est là, publié.");
