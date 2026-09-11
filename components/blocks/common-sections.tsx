@@ -1,4 +1,6 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
+import { badgeStyle, blockTextStyle } from "@/lib/fonts";
+import { FontLink } from "@/components/FontLink";
 import { Icon } from "@/components/Icon";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { fmt, fmtTel, paragraphs } from "@/lib/text";
@@ -95,14 +97,21 @@ type EspressoTextBlok = SbBlok & { badge?: string; title?: string; text?: string
 
 export function EspressoTextSection({ blok }: { blok: EspressoTextBlok }) {
   const paras = paragraphs(blok.text);
+  // Onglet « Typographie » : badge, titre, paragraphes.
+  const badge = badgeStyle(blok);
+  const title = blockTextStyle(blok, "title");
+  const text = blockTextStyle(blok, "text");
   return (
     <section className="section section--espresso" {...storyblokEditable(blok)}>
+      <FontLink href={badge.href} />
+      <FontLink href={title.href} />
+      <FontLink href={text.href} />
       <div className="container">
         <div className="text-center animate-on-scroll" style={{ maxWidth: "700px", margin: "0 auto" }}>
-          {blok.badge ? <span className="badge badge--dark">{blok.badge}</span> : null}
-          <h2 style={{ marginTop: "1rem" }}>{fmt(blok.title)}</h2>
+          {blok.badge ? <span className="badge badge--dark" style={badge.style}>{blok.badge}</span> : null}
+          <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
           {paras.map((p, i) => (
-            <p key={i} style={i === 0 ? { color: "var(--color-cream-dark)", marginTop: "1.5rem" } : { color: "var(--color-cream-dark)" }}>
+            <p key={i} style={{ color: "var(--color-cream-dark)", ...(i === 0 ? { marginTop: "1.5rem" } : {}), ...text.style }}>
               {fmt(p)}
             </p>
           ))}

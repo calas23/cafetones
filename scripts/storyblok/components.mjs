@@ -659,6 +659,10 @@ export const COMPONENTS = [
       title: text("Titre"),
       text: textarea("Paragraphes (séparés par une ligne vide)"),
       buttons: bloks("Boutons", ["button"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "text_font", "text_size"] },
+      ...badgeFields(),
+      ...typo("title", "Titre"),
+      ...typo("text", "Paragraphes"),
     },
   },
   {
@@ -974,6 +978,11 @@ for (const c of COMPONENTS) {
     c.schema.background = text("Couleur de fond (code hex, vide = fond par défaut)", {
       regex: HEX_RE,
       description: "Ex. #F6F1EA. Remplace le fond de cette section seulement. Pour une section à texte clair (fond foncé), choisir une couleur foncée. Vide = fond d'origine.",
+    });
+  }
+  if (SECTION_WHITELIST.includes(c.name) && c.name !== "sticky_cta" && !c.schema.section_spacing) {
+    c.schema.section_spacing = number("Espacement haut/bas de la section (%)", {
+      description: "100 = actuel. 50 = deux fois moins d'espace au-dessus et en dessous du contenu. Entre 25 et 200. Vide = espacement d'origine.",
     });
   }
 }

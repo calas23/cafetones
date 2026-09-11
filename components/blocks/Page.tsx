@@ -2,6 +2,7 @@ import { StoryblokServerComponent, storyblokEditable } from "@storyblok/react/rs
 import type { CSSProperties } from "react";
 import type { SbBlok } from "@/lib/types";
 import { normalizeHex } from "@/lib/palette";
+import { pxOr } from "@/lib/num";
 
 // Type de contenu racine : fil d'Ariane (hors <main>, comme l'original)
 // puis les sections de la page.
@@ -85,15 +86,25 @@ export default function Page({ blok }: { blok: PageBlok }) {
       ) : null}
       <main className={mainClassName(blok)} {...storyblokEditable(blok)}>
         {(blok.body ?? []).map((nested) => {
-          // Champ « Couleur de fond » d'une section : la section est enveloppée et sa couleur
-          // de fond remplacée (css/style.css, .sb-bg). Vide ou invalide = rendu d'origine.
+          // Champs « Couleur de fond » et « Espacement haut/bas » d'une section : la section est
+          // enveloppée ; .sb-bg remplace sa couleur de fond, --sb-space multiplie son padding
+          // (css/style.css). Vide ou invalide = rendu d'origine, sans enveloppe.
           const background = normalizeHex(nested.background);
-          return background ? (
-            <div className="sb-bg" style={{ "--sb-bg": background } as CSSProperties} key={nested._uid}>
+          const rawSpacing = nested.section_spacing;
+          const spacing =
+            rawSpacing === undefined || rawSpacing === null || String(rawSpacing).trim() === ""
+              ? 100
+              : pxOr(rawSpacing as string | number, 100, 25, 200);
+          if (!background && spacing === 100) {
+            return <StoryblokServerComponent blok={nested} key={nested._uid} />;
+          }
+          const style: Record<string, string> = {};
+          if (background) style["--sb-bg"] = background;
+          if (spacing !== 100) style["--sb-space"] = String(spacing / 100);
+          return (
+            <div className={background ? "sb-bg" : undefined} style={style as CSSProperties} key={nested._uid}>
               <StoryblokServerComponent blok={nested} />
             </div>
-          ) : (
-            <StoryblokServerComponent blok={nested} key={nested._uid} />
           );
         })}
       </main>
