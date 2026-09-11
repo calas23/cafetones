@@ -763,7 +763,7 @@ p {
   flex-direction: column;
   gap: 0.5rem;
   font-size: calc(0.78rem * var(--footer-text-scale, 1));
-  color: var(--color-text-light);
+  color: var(--footer-text, var(--color-text-light));
 }
 
 .footer__bottom a:hover {
