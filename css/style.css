@@ -189,14 +189,15 @@ p {
   max-width: var(--max-width-narrow);
 }
 
+/* --sb-space : « Espacement haut/bas de la section » (Storyblok, voir Page.tsx), 1 = origine */
 .section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: calc(6rem * var(--sb-space, 1));
+  padding-bottom: calc(6rem * var(--sb-space, 1));
 }
 
 .section--sm {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: calc(3rem * var(--sb-space, 1));
+  padding-bottom: calc(3rem * var(--sb-space, 1));
 }
 
 .section--espresso {
