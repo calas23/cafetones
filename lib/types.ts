@@ -41,6 +41,9 @@ export interface SiteSettings extends SbBlok {
   footer_zoom?: string | number; // % (100 = origine), tout le pied de page
   footer_text_size?: string | number; // % (100 = origine), textes du pied de page seuls
   footer_layout?: string; // wide (défaut) | site
+  footer_bg?: string; // codes hex, vides = palette du site
+  footer_text_color?: string;
+  footer_heading_color?: string;
   phone?: string;
   cta_label?: string;
   cta_link?: string;

@@ -3,6 +3,7 @@ import { Icon } from "@/components/Icon";
 import { PhoneText } from "@/components/PhoneText";
 import { telHref } from "@/lib/phone";
 import { pxOr } from "@/lib/num";
+import { normalizeHex } from "@/lib/palette";
 import { assetUrl, type SbBlok, type SiteSettings } from "@/lib/types";
 
 type NavLink = SbBlok & { label?: string; link?: string; hidden?: boolean };
@@ -30,6 +31,13 @@ export function Footer({ settings }: { settings: SiteSettings | null }) {
   const footerStyle: Record<string, string | number> = {};
   if (footerZoom !== 100) footerStyle.zoom = footerZoom / 100;
   if (textScale !== 100) footerStyle["--footer-text-scale"] = textScale / 100;
+  // Couleurs du pied de page (codes hex, vides = palette du site).
+  const footerBg = normalizeHex(settings?.footer_bg);
+  const footerText = normalizeHex(settings?.footer_text_color);
+  const footerHeading = normalizeHex(settings?.footer_heading_color);
+  if (footerBg) footerStyle["--footer-bg"] = footerBg;
+  if (footerText) footerStyle["--footer-text"] = footerText;
+  if (footerHeading) footerStyle["--footer-heading"] = footerHeading;
   const phone = settings?.phone || "06 62 11 97 48";
   // « Disposition du pied de page » : wide (défaut) = logo à gauche, colonnes à droite, toute la
   // largeur ; site = colonnes réparties sur la largeur du site (ancienne disposition).
