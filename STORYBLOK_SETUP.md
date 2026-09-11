@@ -168,7 +168,10 @@ certificat auto-signé dans le navigateur.
   page. Ne touche que cette page ; vide = Réglages du site.
 - **Couleur d'un texte** : chaque paire police / taille des onglets Typographie
   a aussi un champ **couleur** (code hex). Ex. page Bureau & Entreprise →
-  bandeau du haut → onglet Typographie → **Titre — couleur**.
+  bandeau du haut → onglet Typographie → **Titre — couleur**. Les mots entre
+  astérisques du titre (italique, couleur d'accent par défaut) prennent la
+  même couleur ; pour retirer l'italique, enlever les astérisques dans le
+  champ Titre.
 - **Points d'assurance** (3 icônes sous le bandeau des pages Bureau, CHR…) :
   centrés automatiquement, quel que soit leur nombre.
 - **Titres « Parlons café » et « Nos certifications »** : cliquer la section →

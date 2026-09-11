@@ -43,7 +43,9 @@ main.page-landing .hero__title {
 }
 main.page-landing .hero__title em {
   font-style: italic;
-  color: var(--color-crema-dark);
+  /* --em-color : posée avec « Titre — couleur » (Storyblok) pour que les mots en italique
+     suivent la couleur choisie ; sinon couleur d'accent d'origine. */
+  color: var(--em-color, var(--color-crema-dark));
 }
 main.page-landing .hero__subtitle {
   font-size: clamp(1rem, 2vw, 1.15rem);

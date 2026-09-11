@@ -117,7 +117,11 @@ export function inlineTextStyle(
   const style: CSSProperties = {};
   let href: string | undefined;
   const hex = normalizeHex(color);
-  if (hex) style.color = hex;
+  if (hex) {
+    style.color = hex;
+    // Les mots en italique (*mots*) des titres reprennent la même couleur.
+    (style as Record<string, string>)["--em-color"] = hex;
+  }
   const f = resolveFont(font, table);
   if (f) {
     style.fontFamily = `'${f.family}', ${f.fallback}`;
