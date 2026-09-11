@@ -148,6 +148,10 @@ certificat auto-signé dans le navigateur.
 - **Typographie de la section best-sellers** : cliquer la section → onglet
   **Typographie** → police et taille du badge, du titre, du sous-titre et du
   bouton du bas (vide = polices du site) → Save → Publish.
+- **Badges** (section best-sellers et fiches produit, onglet Typographie) :
+  police, **taille du texte (%)**, **taille du fond (%)** (épaisseur du badge
+  autour du texte), **couleur de fond** et **couleur du texte** en codes hex.
+  Vide = style d'origine.
 - **Changer la couleur de fond d'une section** : dans la page, cliquer la
   section → champ **Couleur de fond** (tout en bas de ses champs) → un code
   hexadécimal comme `#FFF1E3` → Save → Publish. Ne touche que cette section.
@@ -208,6 +212,9 @@ certificat auto-signé dans le navigateur.
   Généralisé par `blockTextStyle(blok, "clé")` (champs `clé_font` / `clé_size`,
   helper `typo()` de `components.mjs`) : badge, titre, sous-titre et bouton de
   la section best-sellers ; badge et ligne médailles des fiches produit.
+  Badges : `badgeStyle()` (`lib/fonts.ts`, helper `badgeFields()` de
+  `components.mjs`) → `--badge-text-scale` / `--badge-pad-scale` lus par
+  `.badge` (`style.css`), `background-color` et `color` inline.
 - **Fond par section** : champ `background` (hex) ajouté à toutes les sections
   par `components.mjs` ; `Page.tsx` enveloppe la section dans `.sb-bg` avec
   `--sb-bg`, et `style.css` force `background-color` sur l'enfant direct.
@@ -377,7 +384,10 @@ certificat auto-signé dans le navigateur.
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
 | `badge_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Badge — police |
-| `badge_size` | Nombre | Badge — taille (%) |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
 | `title_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
 | `subtitle_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Sous-titre — police |
@@ -742,7 +752,10 @@ certificat auto-signé dans le navigateur.
 | `badge_style` | Choix — valeurs : gold · simple | Badge — style |
 | `medals_label` | Texte | Ligne médailles (ex. 7 médailles ICT) |
 | `badge_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Badge — police |
-| `badge_size` | Nombre | Badge — taille (%) |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
 | `medals_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Ligne médailles — police |
 | `medals_size` | Nombre | Ligne médailles — taille (%) |
 | `seasonal_note` | Texte | Note saisonnière (pâtisseries) |
