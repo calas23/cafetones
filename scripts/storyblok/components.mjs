@@ -239,7 +239,7 @@ export const COMPONENTS = [
       nav_links: bloks("Liens du menu", ["nav_link"]),
       mobile_menu_cta_label: text("Menu mobile — bouton texte"),
       mobile_menu_cta_link: text("Menu mobile — bouton lien"),
-      "tab-footer": { type: "tab", display_name: "Pied de page", keys: ["footer_desc", "footer_nav_heading", "footer_nav_links", "footer_cafes_heading", "footer_cafes_links", "footer_contact_heading", "address", "email", "hours", "copyright", "legal_label", "legal_link", "privacy_label", "privacy_link", "footer_logo_height", "footer_zoom", "footer_text_size"] },
+      "tab-footer": { type: "tab", display_name: "Pied de page", keys: ["footer_desc", "footer_nav_heading", "footer_nav_links", "footer_cafes_heading", "footer_cafes_links", "footer_contact_heading", "address", "email", "hours", "copyright", "legal_label", "legal_link", "privacy_label", "privacy_link", "footer_layout", "footer_logo_height", "footer_zoom", "footer_text_size"] },
       footer_desc: textarea("Texte de présentation"),
       footer_nav_heading: text("Titre colonne navigation"),
       footer_nav_links: bloks("Liens colonne navigation", ["nav_link"]),
@@ -254,6 +254,10 @@ export const COMPONENTS = [
       legal_link: text("Lien mentions légales — URL"),
       privacy_label: text("Lien confidentialité — texte"),
       privacy_link: text("Lien confidentialité — URL"),
+      footer_layout: option("Disposition du pied de page", [
+        ["wide", "Logo et présentation à gauche, colonnes à droite, toute la largeur (défaut)"],
+        ["site", "Colonnes réparties sur la largeur du site (ancienne disposition)"],
+      ], { default_value: "wide" }),
       footer_logo_height: number("Hauteur du logo du pied de page (px)", {
         description: "Vide = 36 (taille d'origine). Entre 12 et 160.",
       }),
