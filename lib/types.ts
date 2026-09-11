@@ -27,6 +27,9 @@ export interface SbStory {
 export interface SiteSettings extends SbBlok {
   logo?: SbAsset;
   logo_height?: string | number; // hauteur du logo du menu en px (vide = 64 desktop / 48 mobile)
+  header_layout?: string; // wide (défaut) | site
+  header_nav_gap?: string | number; // px, vide = 24 (32 sur grand écran)
+  header_actions_gap?: string | number; // px, vide = 16
   palette?: string; // onglet Couleurs : palette prête (rouge-creme | cafe | sicilia | orange | marine)
   color_dark?: string; // codes hex optionnels remplaçant une couleur de base de la palette
   color_accent?: string;

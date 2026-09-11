@@ -116,6 +116,11 @@ certificat auto-signé dans le navigateur.
   **Configuration** → **Réglages du site** → champ **Hauteur du logo du menu (px)**
   → saisir un nombre (ex. 80 ; vide = 64 sur ordinateur et 48 sur mobile) → Save
   → Publish. La barre de menu s'agrandit toute seule si le logo dépasse.
+- **En-tête (barre de menu)** : Réglages du site → **Disposition de l'en-tête**
+  (toute la largeur de l'écran par défaut, ou alignée sur la largeur du site),
+  **Espace entre les liens du menu (px)** et **Espace autour du téléphone et
+  du bouton (px)** → Save → Publish. Les liens du menu ne passent plus à la
+  ligne : si la place manque, élargir l'en-tête ou réduire les tailles.
 - **Changer les couleurs du site** : Content → dossier **Configuration** →
   **Réglages du site** → onglet **Couleurs** → choisir une **Palette** prête
   (Rouge & crème, Café d'origine, Sicilia, Tout orange, Bleu marine) → Save →
@@ -290,6 +295,9 @@ certificat auto-signé dans le navigateur.
 |---|---|---|
 | `logo` | Image | Logo |
 | `logo_height` | Nombre | Hauteur du logo du menu (px) |
+| `header_layout` | Choix — valeurs : wide · site | Disposition de l'en-tête |
+| `header_nav_gap` | Nombre | Espace entre les liens du menu (px) |
+| `header_actions_gap` | Nombre | Espace autour du téléphone et du bouton (px) |
 | `phone` | Texte | Numéro de téléphone principal |
 | `cta_label` | Texte | Bouton d'en-tête — texte |
 | `cta_link` | Texte | Bouton d'en-tête — lien |
