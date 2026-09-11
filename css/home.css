@@ -2,13 +2,16 @@
    Reproduit le chargement par page de l'ancien site (voir git history
    pour la version originale commentée). */
 
+/* --sb-space : « Espacement haut/bas de la section » (Storyblok, voir Page.tsx) ; 1 (absente) =
+   hauteur minimale et marges d'origine, 0.5 = bandeau deux fois moins haut. Le décalage
+   du header fixe (--header-height) n'est jamais réduit. */
 main.page-home .home-hero {
   position: relative;
-  min-height: 85vh;
+  min-height: calc(85vh * var(--sb-space, 1));
   display: flex;
   align-items: center;
-  padding-top: calc(var(--header-height) + 3rem);
-  padding-bottom: 4rem;
+  padding-top: calc(var(--header-height) + 3rem * var(--sb-space, 1));
+  padding-bottom: calc(4rem * var(--sb-space, 1));
   background-image: url('/img/hero-accueil.jpg');
   background-size: cover;
   background-position: center;
