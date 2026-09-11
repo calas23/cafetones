@@ -31,11 +31,14 @@ export function Footer({ settings }: { settings: SiteSettings | null }) {
   if (footerZoom !== 100) footerStyle.zoom = footerZoom / 100;
   if (textScale !== 100) footerStyle["--footer-text-scale"] = textScale / 100;
   const phone = settings?.phone || "06 62 11 97 48";
+  // « Disposition du pied de page » : wide (défaut) = logo à gauche, colonnes à droite, toute la
+  // largeur ; site = colonnes réparties sur la largeur du site (ancienne disposition).
+  const wide = settings?.footer_layout !== "site";
   return (
-    <footer className="footer" role="contentinfo" style={Object.keys(footerStyle).length ? (footerStyle as CSSProperties) : undefined}>
+    <footer className={wide ? "footer footer--wide" : "footer"} role="contentinfo" style={Object.keys(footerStyle).length ? (footerStyle as CSSProperties) : undefined}>
       <div className="container">
         <div className="footer__grid">
-          <div>
+          <div className="footer__brand">
             <div className="footer__logo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={assetUrl(settings?.logo) || "/img/logo-tones.svg"} alt={settings?.logo?.alt || "TONES — Café Italien"} className="footer__logo-img" style={logoHeight !== 36 ? { height: `${logoHeight}px` } : undefined} />
@@ -43,6 +46,7 @@ export function Footer({ settings }: { settings: SiteSettings | null }) {
             <p className="footer__desc">{settings?.footer_desc}</p>
           </div>
 
+          <div className="footer__cols">
           <div>
             <div className="footer__heading">{settings?.footer_nav_heading || "Navigation"}</div>
             <FooterLinks links={settings?.footer_nav_links} />
@@ -71,6 +75,7 @@ export function Footer({ settings }: { settings: SiteSettings | null }) {
               <Icon name="clock" size={16} stroke={1.8} />
               {settings?.hours}
             </div>
+          </div>
           </div>
         </div>
 

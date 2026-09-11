@@ -691,6 +691,14 @@ p {
   margin-bottom: 3rem;
 }
 
+/* Les trois colonnes de liens sont groupées (footer__cols) : empilées sur mobile,
+   côte à côte sur ordinateur. */
+.footer__cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
 .footer__logo {
   font-family: var(--font-display);
   font-size: 1.3rem;
@@ -1269,7 +1277,42 @@ p {
   }
 
   .footer__grid {
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 3.5fr;
+  }
+
+  .footer__cols {
+    grid-template-columns: 1fr 1fr 1.5fr;
+  }
+
+  /* Disposition « wide » (défaut, Réglages du site → Disposition du pied de page) :
+     logo et présentation à gauche, colonnes groupées à droite, sur toute la largeur de
+     l'écran ; la ligne du bas garde la largeur du site. */
+  .footer--wide .container {
+    max-width: none;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .footer--wide .footer__grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .footer--wide .footer__brand {
+    max-width: 380px;
+  }
+
+  .footer--wide .footer__cols {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .footer--wide .footer__bottom {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer__bottom {

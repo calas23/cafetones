@@ -156,6 +156,10 @@ certificat auto-signé dans le navigateur.
 - **Titres « Parlons café » et « Nos certifications »** : cliquer la section →
   onglet **Typographie** → police et taille du titre (et du sous-titre pour le
   formulaire) → Save → Publish.
+- **Disposition du pied de page** : Réglages du site → onglet **Pied de page**
+  → **Disposition du pied de page** : logo et présentation à gauche, colonnes à
+  droite sur toute la largeur (défaut), ou colonnes réparties sur la largeur
+  du site (ancienne disposition). La ligne du bas garde la largeur du site.
 - **Pied de page** : Réglages du site → onglet **Pied de page** → **Hauteur du
   logo du pied de page (px)** (vide = 36), **Taille du pied de page (%)**
   (100 = actuelle, agit sur tout le pied de page) et **Taille des textes du
@@ -300,6 +304,7 @@ certificat auto-signé dans le navigateur.
 | `legal_link` | Texte | Lien mentions légales — URL |
 | `privacy_label` | Texte | Lien confidentialité — texte |
 | `privacy_link` | Texte | Lien confidentialité — URL |
+| `footer_layout` | Choix — valeurs : wide · site | Disposition du pied de page |
 | `footer_logo_height` | Nombre | Hauteur du logo du pied de page (px) |
 | `footer_zoom` | Nombre | Taille du pied de page (%) |
 | `footer_text_size` | Nombre | Taille des textes du pied de page (%) |
