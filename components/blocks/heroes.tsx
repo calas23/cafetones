@@ -97,6 +97,7 @@ type LandingHeroBlok = SbBlok & {
   image?: SbAsset;
   image_width?: string;
   image_height?: string;
+  content_spacing?: string | number; // espacement vertical entre les éléments en % (vide = 100)
 };
 
 export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
@@ -104,13 +105,18 @@ export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
   const badge = badgeStyle(blok);
   const title = blockTextStyle(blok, "title");
   const subtitle = blockTextStyle(blok, "subtitle");
+  // « Espacement entre les éléments (%) » : marges verticales entre badge, titre, texte,
+  // boutons et points de confiance (variable --hero-gap, voir landing.css). Vide = inchangé.
+  const rawSpacing = blok.content_spacing;
+  const spacing = rawSpacing === undefined || rawSpacing === null || String(rawSpacing).trim() === "" ? 0 : pxOr(rawSpacing, 0, 25, 200);
+  const contentStyle = spacing ? ({ "--hero-gap": String(spacing / 100) } as CSSProperties) : undefined;
   return (
     <section className="hero" {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
       <FontLink href={title.href} />
       <FontLink href={subtitle.href} />
       <div className="container hero__inner">
-        <div className="hero__content">
+        <div className="hero__content" style={contentStyle}>
           <span className="badge badge--gold hero__badge" style={badge.style}>
             <Icon name="star" size={14} stroke={2} /> {blok.badge_text}
           </span>

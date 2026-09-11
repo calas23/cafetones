@@ -628,6 +628,9 @@ export const COMPONENTS = [
       subtitle: textarea("Sous-titre"),
       buttons: bloks("Boutons", ["button"]),
       trust_items: bloks("Éléments de confiance", ["trust_item"]),
+      content_spacing: number("Espacement entre les éléments (%)", {
+        description: "Espace vertical entre le badge, le titre, le texte, les boutons et les points de confiance. 100 = actuel, 50 = deux fois moins d'espace. Entre 25 et 200.",
+      }),
       image: asset("Image"),
       ...IMAGE_DIMS,
       "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
