@@ -562,6 +562,10 @@ export const COMPONENTS = [
       title: text("Titre", { description: MINI_FORMAT }),
       subtitle: textarea("Sous-titre"),
       buttons: bloks("Boutons", ["button"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "subtitle_font", "subtitle_size", ...BADGE_KEYS()] },
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
+      ...badgeFields(),
     },
   },
   {
