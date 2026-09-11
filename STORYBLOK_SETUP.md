@@ -174,6 +174,10 @@ certificat auto-signé dans le navigateur.
   champ Titre.
 - **Points d'assurance** (3 icônes sous le bandeau des pages Bureau, CHR…) :
   centrés automatiquement, quel que soit leur nombre.
+- **Espacement du bandeau des pages Bureau, CHR…** : cliquer le bandeau du haut →
+  **Espacement entre les éléments (%)** : 100 = actuel, 50 = deux fois moins
+  d'espace entre badge, titre, texte, boutons et points d'assurance (vide = 100)
+  → Save → Publish.
 - **Titres « Parlons café » et « Nos certifications »** : cliquer la section →
   onglet **Typographie** → police et taille du titre (et du sous-titre pour le
   formulaire) → Save → Publish.
@@ -402,6 +406,7 @@ certificat auto-signé dans le navigateur.
 | `subtitle` | Texte long | Sous-titre |
 | `buttons` | Liste de blocs (button) | Boutons |
 | `trust_items` | Liste de blocs (trust_item) | Éléments de confiance |
+| `content_spacing` | Nombre | Espacement entre les éléments (%) |
 | `image` | Image | Image |
 | `image_width` | Texte | Largeur HTML de l'image (px) |
 | `image_height` | Texte | Hauteur HTML de l'image (px) |
