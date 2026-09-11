@@ -583,6 +583,9 @@ export const COMPONENTS = [
       title: text("Titre", { description: MINI_FORMAT }),
       subtitle: textarea("Sous-titre"),
       buttons: bloks("Boutons", ["button"]),
+      content_width: number("Largeur du bloc de texte (px)", {
+        description: "Largeur maximale du titre, du sous-titre et des boutons. Vide = 700 (780 avec le thème clair). Augmenter, ex. 1000, pour que le titre tienne sur moins de lignes. Entre 400 et 1400.",
+      }),
       "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "subtitle_font", "subtitle_size", ...BADGE_KEYS()] },
       ...typo("title", "Titre"),
       ...typo("subtitle", "Sous-titre"),
