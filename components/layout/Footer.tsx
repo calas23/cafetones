@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Icon } from "@/components/Icon";
 import { PhoneText } from "@/components/PhoneText";
 import { telHref } from "@/lib/phone";
@@ -24,9 +25,14 @@ export function Footer({ settings }: { settings: SiteSettings | null }) {
   const logoHeight = rawLogo === undefined || rawLogo === null || String(rawLogo).trim() === "" ? 36 : pxOr(rawLogo, 36, 12, 160);
   const rawZoom = settings?.footer_zoom;
   const footerZoom = rawZoom === undefined || rawZoom === null || String(rawZoom).trim() === "" ? 100 : pxOr(rawZoom, 100, 50, 150);
+  const rawText = settings?.footer_text_size;
+  const textScale = rawText === undefined || rawText === null || String(rawText).trim() === "" ? 100 : pxOr(rawText, 100, 50, 200);
+  const footerStyle: Record<string, string | number> = {};
+  if (footerZoom !== 100) footerStyle.zoom = footerZoom / 100;
+  if (textScale !== 100) footerStyle["--footer-text-scale"] = textScale / 100;
   const phone = settings?.phone || "06 62 11 97 48";
   return (
-    <footer className="footer" role="contentinfo" style={footerZoom !== 100 ? { zoom: footerZoom / 100 } : undefined}>
+    <footer className="footer" role="contentinfo" style={Object.keys(footerStyle).length ? (footerStyle as CSSProperties) : undefined}>
       <div className="container">
         <div className="footer__grid">
           <div>

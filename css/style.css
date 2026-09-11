@@ -677,6 +677,7 @@ p {
    Footer
    ======================================================================== */
 
+/* --footer-text-scale : « Taille des textes du pied de page » (Réglages du site), 1 = origine */
 .footer {
   background-color: var(--color-espresso);
   color: var(--color-cream-dark);
@@ -703,7 +704,7 @@ p {
 }
 
 .footer__desc {
-  font-size: 0.88rem;
+  font-size: calc(0.88rem * var(--footer-text-scale, 1));
   color: var(--color-text-light);
   line-height: 1.6;
   max-width: 320px;
@@ -712,7 +713,7 @@ p {
 .footer__heading {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.82rem;
+  font-size: calc(0.82rem * var(--footer-text-scale, 1));
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-crema);
@@ -721,7 +722,7 @@ p {
 
 .footer__links a {
   display: block;
-  font-size: 0.88rem;
+  font-size: calc(0.88rem * var(--footer-text-scale, 1));
   color: var(--color-cream-dark);
   padding: 0.25rem 0;
   transition: color var(--transition-fast);
@@ -735,7 +736,7 @@ p {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.88rem;
+  font-size: calc(0.88rem * var(--footer-text-scale, 1));
   color: var(--color-cream-dark);
   margin-bottom: 0.5rem;
 }
@@ -752,7 +753,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: 0.78rem;
+  font-size: calc(0.78rem * var(--footer-text-scale, 1));
   color: var(--color-text-light);
 }
 

@@ -39,6 +39,7 @@ export interface SiteSettings extends SbBlok {
   heading_scale?: string | number; // % (100 = origine), titres seuls
   footer_logo_height?: string | number; // px, vide = 36
   footer_zoom?: string | number; // % (100 = origine), tout le pied de page
+  footer_text_size?: string | number; // % (100 = origine), textes du pied de page seuls
   phone?: string;
   cta_label?: string;
   cta_link?: string;
