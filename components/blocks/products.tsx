@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { FontLink } from "@/components/FontLink";
-import { ALL_FONTS, blockTextStyle, inlineTextStyle } from "@/lib/fonts";
+import { ALL_FONTS, badgeStyle, blockTextStyle, inlineTextStyle } from "@/lib/fonts";
 import { PricingToggle } from "./PricingToggle";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { fmt } from "@/lib/text";
@@ -144,7 +144,7 @@ function NameLine({ p, className }: { p: ProductCardBlok; className: string }) {
 export function HomeProductCard({ p }: { p: ProductCardBlok }) {
   // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
   const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
-  const bd = blockTextStyle(p, "badge"); // « Badge — police / taille »
+  const bd = badgeStyle(p); // « Badge — police, tailles, couleurs »
   const md = blockTextStyle(p, "medals"); // « Ligne médailles — police / taille »
   return (
     <div className={`home-product-card ${aos(p.delay)}`} {...modalDataAttrs(p)} {...storyblokEditable(p)}>
@@ -177,7 +177,7 @@ type ProductsSectionBlok = SbBlok &
 
 export function ProductsHomeSection({ blok }: { blok: ProductsSectionBlok }) {
   // Onglet « Typographie » de la section : police / taille du badge, du titre, du sous-titre, du bouton.
-  const badge = blockTextStyle(blok, "badge");
+  const badge = badgeStyle(blok);
   const title = blockTextStyle(blok, "title");
   const subtitle = blockTextStyle(blok, "subtitle");
   const cta = blockTextStyle(blok, "cta");
@@ -224,7 +224,7 @@ export function ProductsHomeSection({ blok }: { blok: ProductsSectionBlok }) {
 export function ChrProductCard({ p }: { p: ProductCardBlok }) {
   // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
   const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
-  const bd = blockTextStyle(p, "badge"); // « Badge — police / taille »
+  const bd = badgeStyle(p); // « Badge — police, tailles, couleurs »
   const md = blockTextStyle(p, "medals"); // « Ligne médailles — police / taille »
   return (
     <div className={`chr-product-card ${aos(p.delay)}`} {...modalDataAttrs(p)} {...storyblokEditable(p)}>
@@ -286,7 +286,7 @@ export function ChrProductsSection({ blok }: { blok: ProductsSectionBlok }) {
 export function GammeCard({ p }: { p: ProductCardBlok }) {
   // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
   const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
-  const bd = blockTextStyle(p, "badge"); // « Badge — police / taille »
+  const bd = badgeStyle(p); // « Badge — police, tailles, couleurs »
   const md = blockTextStyle(p, "medals"); // « Ligne médailles — police / taille »
   const cls = ["gamme-card", p.patisserie_style ? "gamme-card--patisserie" : "", aos(p.delay)].filter(Boolean).join(" ");
   return (
@@ -476,7 +476,7 @@ export function PricingSection({ blok }: { blok: PricingSectionBlok }) {
 export function PartProductCard({ p }: { p: ProductCardBlok }) {
   // Police / taille du texte de la carte (champs « Texte — police / taille »), hors nom.
   const tx = inlineTextStyle(p.text_font, p.text_size, ALL_FONTS);
-  const bd = blockTextStyle(p, "badge"); // « Badge — police / taille »
+  const bd = badgeStyle(p); // « Badge — police, tailles, couleurs »
   const md = blockTextStyle(p, "medals"); // « Ligne médailles — police / taille »
   return (
     <div className="part-product-card" {...modalDataAttrs(p)} {...storyblokEditable(p)}>

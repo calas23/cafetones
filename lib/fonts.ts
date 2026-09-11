@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import type { SiteSettings } from "./types";
 import { pxOr } from "./num";
+import { normalizeHex } from "./palette";
 
 // Onglet « Polices » des Réglages du site : police des titres et police du texte,
 // choisies dans une liste de polices Google Fonts. Par défaut (Playfair Display /
@@ -131,4 +132,28 @@ export function inlineTextStyle(
 // (ex. blockTextStyle(blok, "title") lit title_font / title_size).
 export function blockTextStyle(blok: Record<string, unknown>, key: string): { style?: CSSProperties; href?: string } {
   return inlineTextStyle(blok[`${key}_font`], blok[`${key}_size`], ALL_FONTS);
+}
+
+// Pourcentage saisi (chaîne ou nombre) → multiplicateur, ou undefined si vide / 100 / invalide.
+function scaleOf(raw: unknown, min = 50, max = 300): number | undefined {
+  if (raw === undefined || raw === null || String(raw).trim() === "") return undefined;
+  const pct = pxOr(raw as string | number, 100, min, max);
+  return pct === 100 ? undefined : pct / 100;
+}
+
+// Style d'un badge d'après les champs `<prefix>_font`, `<prefix>_text_size` (texte),
+// `<prefix>_size` (fond, via padding), `<prefix>_bg` et `<prefix>_color` (codes hex).
+// Les multiplicateurs sont lus par .badge dans css/style.css.
+export function badgeStyle(blok: Record<string, unknown>, prefix = "badge"): { style?: CSSProperties; href?: string } {
+  const base = inlineTextStyle(blok[`${prefix}_font`], undefined, ALL_FONTS);
+  const style: Record<string, string | number> = { ...((base.style ?? {}) as Record<string, string | number>) };
+  const text = scaleOf(blok[`${prefix}_text_size`]);
+  if (text) style["--badge-text-scale"] = text;
+  const pad = scaleOf(blok[`${prefix}_size`]);
+  if (pad) style["--badge-pad-scale"] = pad;
+  const bg = normalizeHex(blok[`${prefix}_bg`]);
+  if (bg) style.backgroundColor = bg;
+  const color = normalizeHex(blok[`${prefix}_color`]);
+  if (color) style.color = color;
+  return { style: Object.keys(style).length ? (style as CSSProperties) : undefined, href: base.href };
 }
