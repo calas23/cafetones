@@ -128,7 +128,17 @@ certificat auto-signé dans le navigateur.
   onglet **Polices** → **Police des titres** (14 choix, de la serif élégante à
   la manuscrite) et **Police du texte** (10 choix) → Save → Publish. Les
   polices viennent de Google Fonts et se chargent toutes seules.
-- **Utiliser une police absente de la liste** : même onglet → « Titres — autre
+- **Ajouter des polices à toutes les listes « police »** : menu de gauche
+  **Content** → **Datasources** → **Polices (listes de typographie)** →
+  **+ New entry** : *Name* = le libellé qui s'affichera dans les listes (ex.
+  « Lobster — script »), *Value* = le nom exact Google Fonts (ex. `Lobster`,
+  graisse normale seule) ou l'adresse « embed » de la police (fonts.google.com
+  → la police → Get font → Get embed code → l'adresse `https://fonts.googleapis.com/css2?…`,
+  pour avoir aussi le gras et l'italique) → Save. La police apparaît aussitôt
+  dans toutes les listes (Réglages du site et onglets Typographie). Les 20
+  polices d'origine sont dans cette même liste et y restent.
+- **Utiliser une police absente de la liste** (autre méthode, Réglages du site
+  seulement) : même onglet → « Titres — autre
   police Google Fonts » ou « Texte — autre police Google Fonts » → taper le nom
   exact vu sur fonts.google.com (ex. « Lobster »). Pour avoir le vrai gras et le
   vrai italique, coller aussi l'adresse « embed » de la police (fonts.google.com
@@ -200,9 +210,14 @@ certificat auto-signé dans le navigateur.
   Champs « autre police » : nom exact Google Fonts (prioritaire sur la liste) +
   URL css2 facultative ; sans URL, feuille `css2?family=Nom` (graisse normale
   seule). URL hors `https://fonts.googleapis.com/css2?` ignorée. Pour enrichir
-  la liste déroulante elle-même : ajouter l'entrée dans `lib/fonts.ts` et dans
-  l'option correspondante de `scripts/storyblok/components.mjs`, puis bootstrap
-  « composants uniquement ».
+  la liste déroulante elle-même : la cliente ajoute une entrée à la datasource
+  « polices » (voir guide) ; côté code, `lib/fonts.ts` (`DISPLAY_FONTS` /
+  `BODY_FONTS`) + `FONT_DATASOURCE` de `components.mjs` synchronisée par le
+  bootstrap (créée si absente, entrées du code ajoutées ou mises à jour par
+  nom, entrées personnalisées jamais touchées). Toutes les listes « police »
+  sont des champs `option` avec `source: "internal"` et `datasource_slug:
+  "polices"` ; `resolveFont()` accepte une clé du code, une adresse css2 ou un
+  nom Google Fonts.
 - **Tailles** : `lib/text-scale.ts` pose `--scale-text` (multiplie la taille
   de base `html`, 16 px ; tout est en rem) et `--scale-headings` (`zoom` sur
   h1-h4, `style.css`). 100 %, vide ou invalide = rien de posé.
@@ -283,8 +298,8 @@ certificat auto-signé dans le navigateur.
 | `color_bg` | Texte | Fond des pages |
 | `color_bg_alt` | Texte | Fond des sections alternées |
 | `color_text` | Texte | Couleur du texte |
-| `font_display` | Choix — valeurs : playfair · lora · merriweather · dm-serif · fraunces · abril · poppins · montserrat · raleway · fredoka · nunito · baloo-2 · bebas · caveat | Police des titres |
-| `font_body` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather | Police du texte |
+| `font_display` | Choix — liste Datasource « polices » | Police des titres |
+| `font_body` | Choix — liste Datasource « polices » | Police du texte |
 | `font_display_custom_name` | Texte | Titres — autre police Google Fonts (nom exact) |
 | `font_display_custom_url` | Texte | Titres — URL Google Fonts (facultatif) |
 | `font_body_custom_name` | Texte | Texte — autre police Google Fonts (nom exact) |
@@ -306,11 +321,11 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `buttons` | Liste de blocs (button) | Boutons |
-| `title_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Titre — police |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
-| `subtitle_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Sous-titre — police |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
 | `subtitle_size` | Nombre | Sous-titre — taille (%) |
-| `badge_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Badge — police |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -395,16 +410,16 @@ certificat auto-signé dans le navigateur.
 | `products` | Liste de blocs (product_card) | Produits |
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
-| `badge_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Badge — police |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
 | `badge_color` | Texte | Badge — couleur du texte |
-| `title_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Titre — police |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
-| `subtitle_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Sous-titre — police |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
 | `subtitle_size` | Nombre | Sous-titre — taille (%) |
-| `cta_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Bouton bas — police |
+| `cta_font` | Choix — liste Datasource « polices » | Bouton bas — police |
 | `cta_size` | Nombre | Bouton bas — taille (%) |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 
@@ -750,9 +765,9 @@ certificat auto-signé dans le navigateur.
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `display_name` | Texte | Nom affiché |
-| `name_font` | Choix — valeurs : playfair · lora · merriweather · dm-serif · fraunces · abril · poppins · montserrat · raleway · fredoka · nunito · baloo-2 · bebas · caveat | Nom — police |
+| `name_font` | Choix — liste Datasource « polices » | Nom — police |
 | `name_size` | Nombre | Nom — taille (%) |
-| `text_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Texte — police |
+| `text_font` | Choix — liste Datasource « polices » | Texte — police |
 | `text_size` | Nombre | Texte — taille (%) |
 | `display_subtitle` | Texte | Sous-titre affiché |
 | `display_desc` | Texte long | Description courte affichée |
@@ -763,12 +778,12 @@ certificat auto-signé dans le navigateur.
 | `badge_label` | Texte | Badge — texte |
 | `badge_style` | Choix — valeurs : gold · simple | Badge — style |
 | `medals_label` | Texte | Ligne médailles (ex. 7 médailles ICT) |
-| `badge_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Badge — police |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
 | `badge_color` | Texte | Badge — couleur du texte |
-| `medals_font` | Choix — valeurs : dm-sans · inter · nunito · poppins · work-sans · source-sans · lato · raleway · lora · merriweather · playfair · dm-serif · fraunces · abril · montserrat · fredoka · baloo-2 · bebas · caveat | Ligne médailles — police |
+| `medals_font` | Choix — liste Datasource « polices » | Ligne médailles — police |
 | `medals_size` | Nombre | Ligne médailles — taille (%) |
 | `seasonal_note` | Texte | Note saisonnière (pâtisseries) |
 | `image` | Image | Photo |

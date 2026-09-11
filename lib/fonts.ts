@@ -49,6 +49,31 @@ export const BODY_FONTS: Record<string, FontDef> = {
 
 export type FontSettings = { vars?: CSSProperties; hrefs?: string[] };
 
+export type ResolvedFont = { family: string; fallback: string; href: string };
+
+// Valeur d'une liste « police » → police à charger. Trois formes acceptées :
+// une clé du code (ex. "fredoka"), une adresse « embed » Google Fonts css2 (gras/italique
+// inclus), ou un nom exact Google Fonts (ex. "Lobster", graisse normale seule).
+// Ce sont les valeurs de la datasource « Polices » de Storyblok, que la cliente enrichit.
+export function resolveFont(value: unknown, table: Record<string, FontDef> = ALL_FONTS): ResolvedFont | undefined {
+  if (typeof value !== "string") return undefined;
+  const v = value.trim();
+  if (!v) return undefined;
+  if (v in table) {
+    const f = table[v];
+    return { family: f.family, fallback: f.fallback, href: `${GOOGLE_CSS2}family=${f.query}&display=swap` };
+  }
+  if (v.startsWith(GOOGLE_CSS2) && !/[<>"']/.test(v)) {
+    const m = /[?&]family=([^:&]+)/.exec(v);
+    if (!m) return undefined;
+    return { family: decodeURIComponent(m[1]).replace(/\+/g, " "), fallback: SANS, href: v };
+  }
+  if (/^[A-Za-z0-9 ]{2,40}$/.test(v)) {
+    return { family: v, fallback: SANS, href: `${GOOGLE_CSS2}family=${v.replace(/ /g, "+")}&display=swap` };
+  }
+  return undefined;
+}
+
 const GOOGLE_CSS2 = "https://fonts.googleapis.com/css2?";
 
 // Police « autre » saisie à la main : nom exact Google Fonts + URL « embed » facultative.
@@ -66,38 +91,36 @@ function customFont(name: unknown, url: unknown): { family: string; href: string
   return { family, href };
 }
 
-function pick(table: Record<string, FontDef>, value: unknown, fallbackKey: string): string {
-  return typeof value === "string" && value in table ? value : fallbackKey;
-}
-
 export function fontSettings(settings: SiteSettings | null | undefined): FontSettings {
-  const displayKey = pick(DISPLAY_FONTS, settings?.font_display, DEFAULT_DISPLAY_FONT);
-  const bodyKey = pick(BODY_FONTS, settings?.font_body, DEFAULT_BODY_FONT);
   const customDisplay = customFont(settings?.font_display_custom_name, settings?.font_display_custom_url);
   const customBody = customFont(settings?.font_body_custom_name, settings?.font_body_custom_url);
   const vars: Record<string, string> = {};
-  const families: string[] = []; // requêtes css2 des polices de la liste
-  const hrefs: string[] = []; // feuilles complètes des polices personnalisées
+  const hrefs: string[] = [];
+  const add = (href: string) => {
+    if (!hrefs.includes(href)) hrefs.push(href);
+  };
 
-  // Titres : la police personnalisée, si renseignée, passe avant la liste.
+  // Titres : la police « autre » saisie à la main passe avant la liste ; la liste (datasource)
+  // accepte les clés du code et les polices ajoutées par la cliente.
   if (customDisplay) {
     vars["--font-display"] = `'${customDisplay.family}', ${SERIF}`;
-    hrefs.push(customDisplay.href);
-  } else if (displayKey !== DEFAULT_DISPLAY_FONT) {
-    const f = DISPLAY_FONTS[displayKey];
-    vars["--font-display"] = `'${f.family}', ${f.fallback}`;
-    families.push(f.query);
+    add(customDisplay.href);
+  } else if (settings?.font_display && settings.font_display !== DEFAULT_DISPLAY_FONT) {
+    const f = resolveFont(settings.font_display);
+    if (f) {
+      vars["--font-display"] = `'${f.family}', ${f.fallback}`;
+      add(f.href);
+    }
   }
   if (customBody) {
     vars["--font-body"] = `'${customBody.family}', ${SANS}`;
-    if (!hrefs.includes(customBody.href)) hrefs.push(customBody.href);
-  } else if (bodyKey !== DEFAULT_BODY_FONT) {
-    const f = BODY_FONTS[bodyKey];
-    vars["--font-body"] = `'${f.family}', ${f.fallback}`;
-    if (!families.includes(f.query)) families.push(f.query);
-  }
-  if (families.length) {
-    hrefs.unshift(`${GOOGLE_CSS2}${families.map((q) => `family=${q}`).join("&")}&display=swap`);
+    add(customBody.href);
+  } else if (settings?.font_body && settings.font_body !== DEFAULT_BODY_FONT) {
+    const f = resolveFont(settings.font_body);
+    if (f) {
+      vars["--font-body"] = `'${f.family}', ${f.fallback}`;
+      add(f.href);
+    }
   }
   if (!hrefs.length) return {};
   return { vars: vars as CSSProperties, hrefs };
@@ -116,10 +139,10 @@ export function inlineTextStyle(
 ): { style?: CSSProperties; href?: string } {
   const style: CSSProperties = {};
   let href: string | undefined;
-  if (typeof font === "string" && font in table) {
-    const f = table[font];
+  const f = resolveFont(font, table);
+  if (f) {
     style.fontFamily = `'${f.family}', ${f.fallback}`;
-    href = `${GOOGLE_CSS2}family=${f.query}&display=swap`;
+    href = f.href;
   }
   if (sizePct !== undefined && sizePct !== null && String(sizePct).trim() !== "") {
     const pct = pxOr(sizePct as string | number, 100, 50, 300);
