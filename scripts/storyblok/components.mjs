@@ -8,8 +8,6 @@ const boolean = (display_name, extra = {}) => ({ type: "boolean", display_name, 
 const number = (display_name, extra = {}) => ({ type: "number", display_name, ...extra });
 const HEX_RE = "^#[0-9A-Fa-f]{6}$";
 const HEX_HELP = "Code couleur hexadécimal à 6 caractères, ex. #8E1B1B. Vide = couleur de la palette choisie.";
-const GFONTS_RE = "^https://fonts\\.googleapis\\.com/css2\\?.*";
-const GFONTS_HELP = "Sur fonts.google.com : ouvrir la police → « Get font » → « Get embed code » → copier l'adresse qui commence par https://fonts.googleapis.com/css2?… Sans cette adresse, seule la graisse normale est chargée (gras et italique simulés).";
 const asset = (display_name, extra = {}) => ({ type: "asset", filetypes: ["images"], display_name, ...extra });
 const richtext = (display_name, extra = {}) => ({ type: "richtext", display_name, ...extra });
 const bloks = (display_name, whitelist, extra = {}) => ({
@@ -272,7 +270,7 @@ export const COMPONENTS = [
       color_bg: text("Fond des pages", { regex: HEX_RE, description: HEX_HELP }),
       color_bg_alt: text("Fond des sections alternées", { regex: HEX_RE, description: HEX_HELP }),
       color_text: text("Couleur du texte", { regex: HEX_RE, description: HEX_HELP }),
-      "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "font_display_custom_name", "font_display_custom_url", "font_body_custom_name", "font_body_custom_url", "text_scale", "heading_scale"] },
+      "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "text_scale", "heading_scale"] },
       font_display: fontOption("Police des titres", {
         default_value: "playfair",
         description: "Police des titres (h1, h2, h3, chiffres clés). Vide = Playfair Display. " + FONT_HELP_ADD,
@@ -280,20 +278,6 @@ export const COMPONENTS = [
       font_body: fontOption("Police du texte", {
         default_value: "dm-sans",
         description: "Police des paragraphes, menus, boutons et formulaires. Vide = DM Sans. " + FONT_HELP_ADD,
-      }),
-      font_display_custom_name: text("Titres — autre police Google Fonts (nom exact)", {
-        description: "Pour une police absente de la liste : le nom exact tel qu'affiché sur fonts.google.com, ex. « Lobster ». Prioritaire sur la liste. Vide = liste.",
-      }),
-      font_display_custom_url: text("Titres — URL Google Fonts (facultatif)", {
-        regex: GFONTS_RE,
-        description: GFONTS_HELP,
-      }),
-      font_body_custom_name: text("Texte — autre police Google Fonts (nom exact)", {
-        description: "Idem pour le texte courant, ex. « Quicksand ». Prioritaire sur la liste. Vide = liste.",
-      }),
-      font_body_custom_url: text("Texte — URL Google Fonts (facultatif)", {
-        regex: GFONTS_RE,
-        description: GFONTS_HELP,
       }),
       text_scale: number("Taille du texte (%)", {
         description: "100 = taille actuelle. Ex. 90 = un peu plus petit, 115 = un peu plus grand. Agit sur tout le site, titres et espacements compris. Entre 70 et 150.",
@@ -386,10 +370,6 @@ export const COMPONENTS = [
       price_small: text("Complément de prix en petit (ex. (0,45 €/pod))"),
       price_detail: text("Détail de prix (ligne dessous)"),
       badge_label: text("Badge — texte"),
-      badge_style: option("Badge — style", [
-        ["gold", "Doré"],
-        ["simple", "Simple"],
-      ]),
       medals_label: text("Ligne médailles (ex. 7 médailles ICT)"),
       "tab-typo": { type: "tab", display_name: "Typographie", keys: ["name_font", "name_size", "text_font", "text_size", ...BADGE_KEYS(), "medals_font", "medals_size"] },
       ...badgeFields(),

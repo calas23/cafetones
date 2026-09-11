@@ -137,14 +137,6 @@ certificat auto-signé dans le navigateur.
   pour avoir aussi le gras et l'italique) → Save. La police apparaît aussitôt
   dans toutes les listes (Réglages du site et onglets Typographie). Les 20
   polices d'origine sont dans cette même liste et y restent.
-- **Utiliser une police absente de la liste** (autre méthode, Réglages du site
-  seulement) : même onglet → « Titres — autre
-  police Google Fonts » ou « Texte — autre police Google Fonts » → taper le nom
-  exact vu sur fonts.google.com (ex. « Lobster »). Pour avoir le vrai gras et le
-  vrai italique, coller aussi l'adresse « embed » de la police (fonts.google.com
-  → la police → Get font → Get embed code → l'adresse qui commence par
-  https://fonts.googleapis.com/css2?) dans le champ URL. Ce champ libre passe
-  avant la liste ; le vider ramène à la liste.
 - **Changer la taille des textes** : même onglet **Polices** → **Taille du
   texte (%)** (tout le site, 100 = actuel, ex. 110 pour agrandir un peu) et
   **Taille des titres (%)** (titres seulement, en plus) → Save → Publish.
@@ -207,9 +199,7 @@ certificat auto-signé dans le navigateur.
   rien d'ajouté (le `@import` de `style.css` charge déjà Playfair Display et
   DM Sans) ; sinon `<link>` Google Fonts dans `<head>` et variables
   `--font-display` / `--font-body` sur `<html>`. Valeur inconnue = défaut.
-  Champs « autre police » : nom exact Google Fonts (prioritaire sur la liste) +
-  URL css2 facultative ; sans URL, feuille `css2?family=Nom` (graisse normale
-  seule). URL hors `https://fonts.googleapis.com/css2?` ignorée. Pour enrichir
+  Pour enrichir
   la liste déroulante elle-même : la cliente ajoute une entrée à la datasource
   « polices » (voir guide) ; côté code, `lib/fonts.ts` (`DISPLAY_FONTS` /
   `BODY_FONTS`) + `FONT_DATASOURCE` de `components.mjs` synchronisée par le
@@ -300,10 +290,6 @@ certificat auto-signé dans le navigateur.
 | `color_text` | Texte | Couleur du texte |
 | `font_display` | Choix — liste Datasource « polices » | Police des titres |
 | `font_body` | Choix — liste Datasource « polices » | Police du texte |
-| `font_display_custom_name` | Texte | Titres — autre police Google Fonts (nom exact) |
-| `font_display_custom_url` | Texte | Titres — URL Google Fonts (facultatif) |
-| `font_body_custom_name` | Texte | Texte — autre police Google Fonts (nom exact) |
-| `font_body_custom_url` | Texte | Texte — URL Google Fonts (facultatif) |
 | `text_scale` | Nombre | Taille du texte (%) |
 | `heading_scale` | Nombre | Taille des titres (%) |
 
@@ -776,7 +762,6 @@ certificat auto-signé dans le navigateur.
 | `price_small` | Texte | Complément de prix en petit (ex. (0,45 €/pod)) |
 | `price_detail` | Texte | Détail de prix (ligne dessous) |
 | `badge_label` | Texte | Badge — texte |
-| `badge_style` | Choix — valeurs : gold · simple | Badge — style |
 | `medals_label` | Texte | Ligne médailles (ex. 7 médailles ICT) |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
