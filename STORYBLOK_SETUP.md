@@ -157,8 +157,12 @@ certificat auto-signé dans le navigateur.
   onglet **Typographie** → police et taille du titre (et du sous-titre pour le
   formulaire) → Save → Publish.
 - **Pied de page** : Réglages du site → onglet **Pied de page** → **Hauteur du
-  logo du pied de page (px)** (vide = 36) et **Taille du pied de page (%)**
-  (100 = actuelle, agit sur tout le pied de page) → Save → Publish.
+  logo du pied de page (px)** (vide = 36), **Taille du pied de page (%)**
+  (100 = actuelle, agit sur tout le pied de page) et **Taille des textes du
+  pied de page (%)** (textes seuls) → Save → Publish.
+- **Photos des best-sellers** : cliquer la section → champ **Taille des
+  photos (%)** (100 = actuelle, 150 = une fois et demie plus grandes) → Save →
+  Publish.
 - **Badges** (héros d'accueil, section best-sellers et fiches produit, onglet Typographie) :
   police, **taille du texte (%)**, **taille du fond (%)** (épaisseur du badge
   autour du texte), **couleur de fond** et **couleur du texte** en codes hex.
@@ -298,6 +302,7 @@ certificat auto-signé dans le navigateur.
 | `privacy_link` | Texte | Lien confidentialité — URL |
 | `footer_logo_height` | Nombre | Hauteur du logo du pied de page (px) |
 | `footer_zoom` | Nombre | Taille du pied de page (%) |
+| `footer_text_size` | Nombre | Taille des textes du pied de page (%) |
 | `palette` | Choix — valeurs : rouge-creme · cafe · sicilia · orange · marine | Palette |
 | `color_dark` | Texte | Couleur foncée (sections sombres, titres, pied de page) |
 | `color_accent` | Texte | Couleur d'accent (boutons, badges, liens) |
@@ -424,6 +429,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `products` | Liste de blocs (product_card) | Produits |
+| `image_scale` | Nombre | Taille des photos (%) |
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |

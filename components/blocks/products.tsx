@@ -5,6 +5,7 @@ import { ALL_FONTS, badgeStyle, blockTextStyle, inlineTextStyle } from "@/lib/fo
 import { PricingToggle } from "./PricingToggle";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { fmt } from "@/lib/text";
+import { pxOr } from "@/lib/num";
 import { assetUrl, type SbAsset, type SbBlok } from "@/lib/types";
 import { aos } from "./common-sections";
 
@@ -172,6 +173,7 @@ type ProductsSectionBlok = SbBlok &
     products?: ProductCardBlok[];
     cta_label?: string;
     cta_link?: string;
+    image_scale?: string | number; // taille des photos en % (vide = 100)
   };
 
 export function ProductsHomeSection({ blok }: { blok: ProductsSectionBlok }) {
@@ -180,6 +182,9 @@ export function ProductsHomeSection({ blok }: { blok: ProductsSectionBlok }) {
   const title = blockTextStyle(blok, "title");
   const subtitle = blockTextStyle(blok, "subtitle");
   const cta = blockTextStyle(blok, "cta");
+  // « Taille des photos (%) » : multiplicateur de la hauteur de la zone image des cartes (css/home.css).
+  const rawImg = blok.image_scale;
+  const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 50, 250);
   return (
     <section className="section" style={{ backgroundColor: "var(--color-white)" }} {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
@@ -202,7 +207,7 @@ export function ProductsHomeSection({ blok }: { blok: ProductsSectionBlok }) {
           <Illustration {...blok} />
         </div>
 
-        <div className="home-products">
+        <div className="home-products" style={imgScale !== 100 ? ({ "--card-img-scale": imgScale / 100 } as CSSProperties) : undefined}>
           {(blok.products ?? []).map((p) => (
             <HomeProductCard key={p._uid} p={p} />
           ))}
