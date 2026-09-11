@@ -14,6 +14,13 @@ main.page-landing .hero {
   padding-bottom: calc(4rem * var(--sb-space, 1));
   overflow: hidden;
 }
+/* Sous un fil d'Ariane (nav.breadcrumb, qui dégage déjà le header fixe), le décalage
+   --header-height du bandeau serait un espace mort en haut : marges haut/bas identiques pour
+   que le contenu reste centré dans le bandeau, quel que soit l'espacement choisi dans Storyblok. */
+.breadcrumb ~ main.page-landing .hero {
+  padding-top: calc(4rem * var(--sb-space, 1));
+  padding-bottom: calc(4rem * var(--sb-space, 1));
+}
 main.page-landing .hero::before {
   content: '';
   position: absolute;
