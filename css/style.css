@@ -825,18 +825,6 @@ p {
   position: relative;
 }
 
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--color-crema), transparent);
-  border-radius: 2px;
-}
-
 .cta-form {
   max-width: 640px;
   margin-left: auto;
