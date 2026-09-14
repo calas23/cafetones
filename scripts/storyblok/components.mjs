@@ -538,6 +538,11 @@ export const COMPONENTS = [
     schema: {
       name: text("Nom"),
       since: text("Depuis (ex. Depuis 1936)"),
+      image: asset("Image (optionnelle)", { description: "Photo ou logo affiché en haut de la carte. Vide = carte sans image." }),
+      image_fit: option("Cadrage de l'image", [
+        ["cover", "Remplir la zone (photo)"],
+        ["contain", "Afficher en entier (logo)"],
+      ]),
       text: textarea("Paragraphes (séparés par une ligne vide)"),
       blends_title: text("Titre de la liste des mélanges"),
       blends: bloks("Mélanges", ["blend_item"]),
@@ -832,6 +837,9 @@ export const COMPONENTS = [
       title: text("Titre"),
       text: textarea("Texte"),
       buttons: bloks("Boutons", ["button"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color", "text_font", "text_size", "text_color"] },
+      ...typo("title", "Titre"),
+      ...typo("text", "Texte"),
     },
   },
   {
@@ -1020,6 +1028,8 @@ export const COMPONENTS = [
       ...IMAGE_DIMS,
       quote: text("Citation"),
       quote_author: text("Auteur de la citation"),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color"] },
+      ...typo("title", "Titre"),
     },
   },
   {
@@ -1031,6 +1041,9 @@ export const COMPONENTS = [
       subtitle: textarea("Sous-titre"),
       ...ILLUSTRATION_FIELDS,
       roasters: bloks("Torréfacteurs", ["roaster_card"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
     },
   },
   {
@@ -1045,6 +1058,9 @@ export const COMPONENTS = [
       title: text("Titre"),
       subtitle: textarea("Sous-titre"),
       cards: bloks("Cartes", ["cert_card"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
     },
   },
   {
@@ -1055,6 +1071,8 @@ export const COMPONENTS = [
       title: text("Titre"),
       text: textarea("Paragraphes (séparés par une ligne vide)"),
       traits: bloks("Caractéristiques", ["trait_item"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color"] },
+      ...typo("title", "Titre"),
     },
   },
   {

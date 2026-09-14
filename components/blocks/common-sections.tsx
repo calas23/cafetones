@@ -261,12 +261,18 @@ export function B2bSection({ blok }: { blok: B2bBlok }) {
 type CtaBlok = SbBlok & { theme?: string; title?: string; text?: string; buttons?: SbBlok[] };
 
 export function CtaSection({ blok }: { blok: CtaBlok }) {
+  // Onglet « Typographie » : titre, texte.
+  const title = blockTextStyle(blok, "title");
+  const titleStyle = { ...title.style };
+  const body = blockTextStyle(blok, "text");
   if (blok.theme === "espresso") {
     return (
       <section className="section section--espresso" style={{ padding: "5rem 0" }} {...storyblokEditable(blok)}>
+        <FontLink href={title.href} />
+        <FontLink href={body.href} />
         <div className="container text-center">
-          <h2 style={{ color: "var(--color-cream)", fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)" }}>{fmt(blok.title)}</h2>
-          <p className="sb-subtitle" style={{ color: "var(--color-cream-dark)", maxWidth: "540px", margin: "1rem auto 2rem" }}>{fmt(blok.text)}</p>
+          <h2 style={{ color: "var(--color-cream)", fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", ...title.style }}>{fmt(blok.title)}</h2>
+          <p className="sb-subtitle" style={{ color: "var(--color-cream-dark)", maxWidth: "540px", margin: "1rem auto 2rem", ...body.style }}>{fmt(blok.text)}</p>
           <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
             <Buttons buttons={blok.buttons} />
           </div>
@@ -276,9 +282,11 @@ export function CtaSection({ blok }: { blok: CtaBlok }) {
   }
   return (
     <section className="section section--cream" {...storyblokEditable(blok)}>
+      <FontLink href={title.href} />
+      <FontLink href={body.href} />
       <div className="container text-center">
-        <h2>{fmt(blok.title)}</h2>
-        <p className="text-muted sb-subtitle" style={{ maxWidth: "540px", margin: "1rem auto 2rem" }}>{fmt(blok.text)}</p>
+        <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>
+        <p className="text-muted sb-subtitle" style={{ maxWidth: "540px", margin: "1rem auto 2rem", ...body.style }}>{fmt(blok.text)}</p>
         <Buttons buttons={blok.buttons} />
       </div>
     </section>

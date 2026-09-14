@@ -224,6 +224,19 @@ certificat auto-signé dans le navigateur.
   Save → Publish. Taille : cliquer la section (Cafés en grains, Cafés moulus,
   Pods, Grands Crus, Pâtisseries) → **Taille des photos (%)** (100 = actuelle,
   150 = une fois et demie plus grandes, vide = 100) → Save → Publish.
+- **Page À propos — titres de chaque section** (« Qui sommes-nous ? »,
+  torréfacteurs, certifications, récompenses, Air Pur, bandeau final) : cliquer
+  la section → onglet **Typographie** → **Titre — taille (%)**, police, couleur
+  (sous-titre idem quand il existe) → Save → Publish. Le titre du haut « Plus
+  qu'un distributeur… » : bloc Héros — Bandeau simple, même onglet.
+- **Page À propos — image sur une carte torréfacteur** (La Genovese, Musetti) :
+  cliquer la carte → **Image (optionnelle)** → Upload ou bibliothèque (Assets) ;
+  **Cadrage de l'image** : « Remplir la zone » pour une photo, « Afficher en
+  entier » pour un logo → Save → Publish. Vide = carte sans image.
+- **Fusionner deux sections certifications / récompenses** : c'est du contenu :
+  dans la section à garder, ajouter les cartes de l'autre (bouton + → Carte
+  certification, ou ⋯ → Copy / Paste), adapter le titre, puis supprimer
+  l'autre section (⋯ → Delete) → Save → Publish.
 - **Disposition du pied de page** : Réglages du site → onglet **Pied de page**
   → **Disposition du pied de page** : logo et présentation à gauche, colonnes à
   droite sur toute la largeur (défaut), ou colonnes réparties sur la largeur
@@ -714,6 +727,12 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Texte |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `text_font` | Choix — liste Datasource « polices » | Texte — police |
+| `text_size` | Nombre | Texte — taille (%) |
+| `text_color` | Texte | Texte — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -925,6 +944,9 @@ certificat auto-signé dans le navigateur.
 | `image_height` | Texte | Hauteur HTML de l'image (px) |
 | `quote` | Texte | Citation |
 | `quote_author` | Texte | Auteur de la citation |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -939,6 +961,12 @@ certificat auto-signé dans le navigateur.
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `roasters` | Liste de blocs (roaster_card) | Torréfacteurs |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -951,6 +979,12 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `cards` | Liste de blocs (cert_card) | Cartes |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
 
@@ -961,6 +995,9 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Paragraphes (séparés par une ligne vide) |
 | `traits` | Liste de blocs (trait_item) | Caractéristiques |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -1164,6 +1201,8 @@ certificat auto-signé dans le navigateur.
 |---|---|---|
 | `name` | Texte | Nom |
 | `since` | Texte | Depuis (ex. Depuis 1936) |
+| `image` | Image | Image (optionnelle) |
+| `image_fit` | Choix — valeurs : cover · contain | Cadrage de l'image |
 | `text` | Texte long | Paragraphes (séparés par une ligne vide) |
 | `blends_title` | Texte | Titre de la liste des mélanges |
 | `blends` | Liste de blocs (blend_item) | Mélanges |
