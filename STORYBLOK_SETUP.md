@@ -199,6 +199,11 @@ certificat auto-signé dans le navigateur.
   **Couleur de fond** (code hex du voile posé sur l'image, vide = rouge foncé
   de la palette), **Opacité du voile (%)** (0 = image sans voile, 100 = couleur
   pleine sans image, vide = 65) → Save → Publish.
+- **Page CHR — titre du bandeau sur une seule ligne** : cliquer le bandeau →
+  **Largeur du bloc de texte (px)** (vide = 720 ; ex. 1100 pour que « L'espresso
+  italien que vos clients méritent » tienne sur une ligne sur ordinateur ; entre
+  400 et 1400) → Save → Publish. Sur mobile le titre se répartit toujours sur
+  plusieurs lignes. Autre levier : onglet Typographie → **Titre — taille (%)**.
 - **Page CHR — taille des photos des cartes « Pour sublimer l'expérience
   café »** : cliquer la section (bloc Section compléments) → **Taille des
   photos (%)** (100 = actuelle, 150 = photos une fois et demie plus hautes et
@@ -506,6 +511,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre (les numéros de téléphone deviennent des liens) |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `content_width` | Nombre | Largeur du bloc de texte (px) |
 | `background_image` | Image | Image de fond (vide = photo d'origine) |
 | `background` | Texte | Couleur de fond (code hex, vide = rouge foncé de la palette) |
 | `overlay_opacity` | Nombre | Opacité du voile (%) |

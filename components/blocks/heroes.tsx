@@ -211,6 +211,7 @@ type ChrHeroBlok = SbBlok & {
   background_image?: SbAsset; // vide = photo d'origine (css/chr.css)
   background?: string; // « Couleur de fond » : couleur du voile sur l'image (hex, vide = rouge foncé)
   overlay_opacity?: string | number; // opacité du voile en % (vide = 65)
+  content_width?: string | number; // largeur max du bloc de texte en px (vide = 720)
 };
 
 // Voile du héros CHR (variable --chr-overlay, voir chr.css). Rien de renseigné = voile d'origine ;
@@ -231,9 +232,13 @@ export function ChrHero({ blok }: { blok: ChrHeroBlok }) {
   // Onglet « Fond » : image, couleur et opacité du voile.
   const bg = assetUrl(blok.background_image);
   const overlay = chrOverlay(blok.background, blok.overlay_opacity);
+  // « Largeur du bloc de texte (px) » : largeur max du badge, du titre, du sous-titre et des boutons.
+  const rawWidth = blok.content_width;
+  const contentWidth = rawWidth === undefined || rawWidth === null || String(rawWidth).trim() === "" ? 0 : pxOr(rawWidth, 0, 400, 1400);
   const sectionStyle: Record<string, string> = {};
   if (bg) sectionStyle.backgroundImage = `url("${bg}")`;
   if (overlay) sectionStyle["--chr-overlay"] = overlay;
+  if (contentWidth) sectionStyle["--chr-content-width"] = `${contentWidth}px`;
   return (
     <section
       className="chr-hero"
