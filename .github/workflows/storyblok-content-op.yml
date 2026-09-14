@@ -1,0 +1,52 @@
+# Opérations ponctuelles sur le contenu Storyblok (scripts/storyblok/ops/*.mjs) :
+# GitHub → Actions → "Storyblok Content Op" → Run workflow. Toujours faire d'abord une
+# simulation (dry_run) : le journal montre l'état de la page et le plan de modification.
+# Nécessite les secrets du dépôt STORYBLOK_PAT et STORYBLOK_SPACE_ID.
+
+name: Storyblok Content Op
+
+on:
+  workflow_dispatch:
+    inputs:
+      op:
+        description: "Opération"
+        type: choice
+        options:
+          - merge-cert-sections
+        default: merge-cert-sections
+      dry_run:
+        description: "Simulation (n'écrit rien dans Storyblok)"
+        type: boolean
+        default: true
+      publish:
+        description: "Publier la page après modification (sinon brouillon à publier dans Storyblok)"
+        type: boolean
+        default: false
+      story:
+        description: "Slug complet de la page"
+        type: string
+        default: "pages/a-propos"
+      title:
+        description: "Titre de la section fusionnée"
+        type: string
+        default: "Nos certifications et récompenses"
+
+jobs:
+  op:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Opération de contenu
+        env:
+          STORYBLOK_PAT: ${{ secrets.STORYBLOK_PAT }}
+          STORYBLOK_SPACE_ID: ${{ secrets.STORYBLOK_SPACE_ID }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          PUBLISH: ${{ inputs.publish && '1' || '' }}
+          STORY_SLUG: ${{ inputs.story }}
+          NEW_TITLE: ${{ inputs.title }}
+        run: node "scripts/storyblok/ops/${{ inputs.op }}.mjs"
