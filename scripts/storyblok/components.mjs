@@ -674,6 +674,9 @@ export const COMPONENTS = [
       title: text("Titre"),
       subtitle: textarea("Sous-titre (les numéros de téléphone deviennent des liens)"),
       buttons: bloks("Boutons", ["button"]),
+      content_width: number("Largeur du bloc de texte (px)", {
+        description: "Largeur maximale du badge, du titre, du sous-titre et des boutons. Vide = 720. Augmenter, ex. 1100, pour que le titre tienne sur une seule ligne sur ordinateur. Entre 400 et 1400.",
+      }),
       "tab-fond": { type: "tab", display_name: "Fond", keys: ["background_image", "background", "overlay_opacity"] },
       background_image: asset("Image de fond (vide = photo d'origine)"),
       background: text("Couleur de fond (code hex, vide = rouge foncé de la palette)", {
