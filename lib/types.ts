@@ -40,6 +40,8 @@ export interface SiteSettings extends SbBlok {
   font_body?: string; // vide = dm-sans
   text_scale?: string | number; // % (100 = origine), tout le site
   heading_scale?: string | number; // % (100 = origine), titres seuls
+  font_subtitle?: string; // police de tous les sous-titres (vide = héritée, police du texte)
+  subtitle_scale?: string | number; // % (100 = origine), sous-titres seuls
   footer_logo_height?: string | number; // px, vide = 36
   footer_zoom?: string | number; // % (100 = origine), tout le pied de page
   footer_text_size?: string | number; // % (100 = origine), textes du pied de page seuls

@@ -62,7 +62,7 @@ export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
 
           <h1 className="home-hero__title" style={title.style}>{fmt(blok.title)}</h1>
 
-          <p className="home-hero__subtitle" style={subtitle.style}>{fmt(blok.subtitle)}</p>
+          <p className="home-hero__subtitle sb-subtitle" style={subtitle.style}>{fmt(blok.subtitle)}</p>
 
           <div className="home-hero__actions">
             <Buttons buttons={blok.buttons} />
@@ -82,7 +82,7 @@ export function PageHero({ blok }: { blok: PageHeroBlok }) {
         {blok.badge ? <span className="badge badge--gold">{blok.badge}</span> : null}
         <h1 style={{ marginTop: "1rem" }}>{fmt(blok.title)}</h1>
         {blok.text ? (
-          <p className="text-muted" style={{ marginTop: "0.75rem" }}>{fmt(blok.text)}</p>
+          <p className="text-muted sb-subtitle" style={{ marginTop: "0.75rem" }}>{fmt(blok.text)}</p>
         ) : null}
       </div>
     </section>
@@ -124,7 +124,7 @@ export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
 
           <h1 className="hero__title" style={title.style}>{fmt(blok.title)}</h1>
 
-          <p className="hero__subtitle" style={subtitle.style}>{fmt(blok.subtitle)}</p>
+          <p className="hero__subtitle sb-subtitle" style={subtitle.style}>{fmt(blok.subtitle)}</p>
 
           <div className="hero__actions">
             <Buttons buttons={blok.buttons} />
@@ -174,7 +174,7 @@ export function PartHero({ blok }: { blok: PartHeroBlok }) {
           <div className="part-hero__content">
             {blok.badge ? <span className="badge badge--gold">{blok.badge}</span> : null}
             <h1>{fmt(blok.title)}</h1>
-            <p className="part-hero__subtitle">{fmt(blok.subtitle)}</p>
+            <p className="part-hero__subtitle sb-subtitle">{fmt(blok.subtitle)}</p>
             <div className="part-hero__actions">
               <Buttons buttons={blok.buttons} />
             </div>
@@ -242,7 +242,7 @@ export function ChrHero({ blok }: { blok: ChrHeroBlok }) {
 
           <h1 className="chr-hero__title" style={title.style}>{fmt(blok.title)}</h1>
 
-          <p className="chr-hero__subtitle" style={subtitle.style}>{fmtTel(blok.subtitle)}</p>
+          <p className="chr-hero__subtitle sb-subtitle" style={subtitle.style}>{fmtTel(blok.subtitle)}</p>
 
           <div className="chr-hero__actions">
             <Buttons buttons={blok.buttons} />

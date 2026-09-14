@@ -74,7 +74,7 @@ export function RoastersSection({ blok }: { blok: RoastersBlok }) {
         >
           <h2>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>
@@ -119,7 +119,7 @@ export function CertCardsSection({ blok }: { blok: CertCardsBlok }) {
         <div className="text-center animate-on-scroll">
           <h2>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
           ) : null}
         </div>
 

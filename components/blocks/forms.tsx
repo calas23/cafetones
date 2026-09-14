@@ -265,7 +265,7 @@ export function QuoteFormSection({ blok }: { blok: QuoteFormBlok }) {
             <FontLink href={titleStyle.href} />
             <FontLink href={subtitleStyle.href} />
             <h2 className="cta-form__title" style={titleStyle.style}>{blok.title}</h2>
-            <p className="cta-form__subtitle" style={subtitleStyle.style}>{blok.subtitle}</p>
+            <p className="cta-form__subtitle sb-subtitle" style={subtitleStyle.style}>{blok.subtitle}</p>
 
             <div className="phone-cta-block">
               <div className="phone-cta-block__label">{blok.phone_label}</div>
@@ -409,7 +409,7 @@ export function PartContactSection({ blok }: { blok: PartContactBlok }) {
       <div className="container">
         <div className="text-center animate-on-scroll">
           <h2>{blok.title}</h2>
-          <p className="text-muted" style={{ maxWidth: "540px", margin: "1rem auto 0" }}>{blok.subtitle}</p>
+          <p className="text-muted sb-subtitle" style={{ maxWidth: "540px", margin: "1rem auto 0" }}>{blok.subtitle}</p>
         </div>
 
         <div className="part-contact">

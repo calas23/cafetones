@@ -204,7 +204,7 @@ export function ProductsHomeSection({ blok }: { blok: ProductsSectionBlok }) {
           {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
           <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "560px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>
@@ -273,7 +273,7 @@ export function ChrProductsSection({ blok }: { blok: ProductsSectionBlok }) {
           {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
           <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "580px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "580px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>
@@ -412,7 +412,7 @@ export function PricingSection({ blok }: { blok: PricingSectionBlok }) {
           {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
           <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "560px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>
@@ -527,7 +527,7 @@ export function PartProductsSection({ blok }: { blok: PartProductsBlok }) {
           {blok.badge ? <span className="badge badge--gold">{blok.badge}</span> : null}
           <h2 style={{ marginTop: "1rem" }}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "580px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "580px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
           ) : null}
         </div>
 
@@ -562,7 +562,7 @@ export function PastriesSection({ blok }: { blok: PastriesBlok }) {
         >
           <h2>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>
@@ -613,7 +613,7 @@ export function ChrExtrasSection({ blok }: { blok: ChrExtrasBlok }) {
         <div className="text-center animate-on-scroll">
           <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "540px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "540px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
         </div>
 
