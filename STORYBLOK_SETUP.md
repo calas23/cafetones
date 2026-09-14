@@ -199,6 +199,17 @@ certificat auto-signé dans le navigateur.
   **Couleur de fond** (code hex du voile posé sur l'image, vide = rouge foncé
   de la palette), **Opacité du voile (%)** (0 = image sans voile, 100 = couleur
   pleine sans image, vide = 65) → Save → Publish.
+- **Page CHR — taille des photos des cartes « Pour sublimer l'expérience
+  café »** : cliquer la section (bloc Section compléments) → **Taille des
+  photos (%)** (100 = actuelle, 150 = photos une fois et demie plus hautes et
+  moins rognées, vide = 100 ; vaut pour toutes les cartes de la section) →
+  Save → Publish.
+- **Page CHR — photo d'une carte « Tasses » / « Pâtisseries »** (ajouter,
+  remplacer) : cliquer la carte → **Image (optionnelle)** → choisir une image
+  de la bibliothèque (Assets, ex. « tasse-cappuccino », « panettone »), Upload
+  d'un fichier, ou « URL externe » (adresse d'une photo déjà en ligne, ex.
+  https://cafetones.fr/img/tasse-cappuccino-anniversario.jpg) → Save →
+  Publish. Vide = carte sans photo.
 - **Disposition du pied de page** : Réglages du site → onglet **Pied de page**
   → **Disposition du pied de page** : logo et présentation à gauche, colonnes à
   droite sur toute la largeur (défaut), ou colonnes réparties sur la largeur
@@ -745,6 +756,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `cards` | Liste de blocs (extra_card) | Cartes |
+| `image_scale` | Nombre | Taille des photos (%) |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
 | `title_color` | Texte | Titre — couleur |

@@ -561,7 +561,10 @@ export const COMPONENTS = [
     display_name: "Carte complément (CHR)",
     group: "Éléments",
     schema: {
-      image: asset("Image (optionnelle)"),
+      image: asset("Image (optionnelle)", {
+        allow_external_url: true,
+        description: "Upload, choix dans la bibliothèque (Assets), ou « URL externe » pour une photo déjà en ligne, ex. https://cafetones.fr/img/tasse-cappuccino-anniversario.jpg. Vide = carte sans photo.",
+      }),
       title: text("Titre"),
       text: textarea("Paragraphes (séparés par une ligne vide)"),
       note: textarea("Note (en italique)"),
@@ -883,6 +886,9 @@ export const COMPONENTS = [
       title: text("Titre"),
       subtitle: textarea("Sous-titre"),
       cards: bloks("Cartes", ["extra_card"]),
+      image_scale: number("Taille des photos (%)", {
+        description: "Hauteur de la zone photo des cartes (tasses, pâtisseries…). 100 = actuelle, 150 = photos une fois et demie plus hautes, donc moins rognées. Entre 50 et 250. Vide = taille d'origine.",
+      }),
       "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
       ...typo("title", "Titre"),
       ...typo("subtitle", "Sous-titre"),

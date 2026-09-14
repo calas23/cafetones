@@ -598,13 +598,21 @@ type ExtraCard = SbBlok & {
   button_link?: string;
   delay?: string;
 };
-type ChrExtrasBlok = SbBlok & { title?: string; subtitle?: string; cards?: ExtraCard[] };
+type ChrExtrasBlok = SbBlok & {
+  title?: string;
+  subtitle?: string;
+  cards?: ExtraCard[];
+  image_scale?: string | number; // taille des photos en % (vide = 100)
+};
 
 export function ChrExtrasSection({ blok }: { blok: ChrExtrasBlok }) {
   // Onglet « Typographie » : titre, sous-titre.
   const title = blockTextStyle(blok, "title");
   const subtitle = blockTextStyle(blok, "subtitle");
   const titleStyle = { ...title.style };
+  // « Taille des photos (%) » : multiplicateur de la hauteur de la zone image des cartes (css/chr.css).
+  const rawImg = blok.image_scale;
+  const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 50, 250);
   return (
     <section className="section section--cream" {...storyblokEditable(blok)}>
       <FontLink href={title.href} />
@@ -617,7 +625,7 @@ export function ChrExtrasSection({ blok }: { blok: ChrExtrasBlok }) {
           ) : null}
         </div>
 
-        <div className="chr-extras">
+        <div className="chr-extras" style={imgScale !== 100 ? ({ "--extra-img-scale": imgScale / 100 } as CSSProperties) : undefined}>
           {(blok.cards ?? []).map((card) => {
             const imgUrl = assetUrl(card.image);
             return (
