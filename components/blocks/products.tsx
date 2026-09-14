@@ -253,8 +253,15 @@ export function ChrProductCard({ p }: { p: ProductCardBlok }) {
 }
 
 export function ChrProductsSection({ blok }: { blok: ProductsSectionBlok }) {
+  // Onglet « Typographie » : badge, titre, sous-titre.
+  const badge = badgeStyle(blok);
+  const title = blockTextStyle(blok, "title");
+  const subtitle = blockTextStyle(blok, "subtitle");
   return (
     <section className="section" style={{ backgroundColor: "var(--color-white)" }} {...storyblokEditable(blok)}>
+      <FontLink href={badge.href} />
+      <FontLink href={title.href} />
+      <FontLink href={subtitle.href} />
       <div className="container">
         <div
           className="text-center animate-on-scroll"
@@ -263,10 +270,10 @@ export function ChrProductsSection({ blok }: { blok: ProductsSectionBlok }) {
           data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
-          {blok.badge ? <span className="badge badge--gold">{blok.badge}</span> : null}
-          <h2 style={{ marginTop: "1rem" }}>{fmt(blok.title)}</h2>
+          {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
+          <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "580px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted" style={{ maxWidth: "580px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>
@@ -594,13 +601,19 @@ type ExtraCard = SbBlok & {
 type ChrExtrasBlok = SbBlok & { title?: string; subtitle?: string; cards?: ExtraCard[] };
 
 export function ChrExtrasSection({ blok }: { blok: ChrExtrasBlok }) {
+  // Onglet « Typographie » : titre, sous-titre.
+  const title = blockTextStyle(blok, "title");
+  const subtitle = blockTextStyle(blok, "subtitle");
+  const titleStyle = { ...title.style };
   return (
     <section className="section section--cream" {...storyblokEditable(blok)}>
+      <FontLink href={title.href} />
+      <FontLink href={subtitle.href} />
       <div className="container">
         <div className="text-center animate-on-scroll">
-          <h2>{fmt(blok.title)}</h2>
+          <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "540px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted" style={{ maxWidth: "540px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
         </div>
 

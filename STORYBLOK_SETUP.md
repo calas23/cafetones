@@ -186,6 +186,15 @@ certificat auto-signé dans le navigateur.
   confiance », formulaire) : cliquer la section → onglet **Typographie** →
   **Titre — taille (%)** (police et couleur aussi ; sous-titre et badge idem)
   → Save → Publish. Vide = taille d'origine.
+- **Page CHR — titres et typographie de chaque section** (bandeau, « Comment ça
+  marche », produits, compléments, « Pourquoi les établissements… »,
+  formulaire) : cliquer la section → onglet **Typographie** → **Titre — taille
+  (%)**, police, couleur (sous-titre et badge idem) → Save → Publish.
+- **Page CHR — image et couleur du bandeau** : cliquer le bandeau (bloc Héros —
+  CHR) → onglet **Fond** → **Image de fond** (Upload ; vide = photo d'origine),
+  **Couleur de fond** (code hex du voile posé sur l'image, vide = rouge foncé
+  de la palette), **Opacité du voile (%)** (0 = image sans voile, 100 = couleur
+  pleine sans image, vide = 65) → Save → Publish.
 - **Disposition du pied de page** : Réglages du site → onglet **Pied de page**
   → **Disposition du pied de page** : logo et présentation à gauche, colonnes à
   droite sur toute la largeur (défaut), ou colonnes réparties sur la largeur
@@ -458,7 +467,20 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre (les numéros de téléphone deviennent des liens) |
 | `buttons` | Liste de blocs (button) | Boutons |
-| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
+| `background_image` | Image | Image de fond (vide = photo d'origine) |
+| `background` | Texte | Couleur de fond (code hex, vide = rouge foncé de la palette) |
+| `overlay_opacity` | Nombre | Opacité du voile (%) |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
 
@@ -693,6 +715,17 @@ certificat auto-signé dans le navigateur.
 | `products` | Liste de blocs (product_card) | Produits |
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -704,6 +737,12 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `cards` | Liste de blocs (extra_card) | Cartes |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |

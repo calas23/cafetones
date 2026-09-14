@@ -661,6 +661,19 @@ export const COMPONENTS = [
       title: text("Titre"),
       subtitle: textarea("Sous-titre (les numéros de téléphone deviennent des liens)"),
       buttons: bloks("Boutons", ["button"]),
+      "tab-fond": { type: "tab", display_name: "Fond", keys: ["background_image", "background", "overlay_opacity"] },
+      background_image: asset("Image de fond (vide = photo d'origine)"),
+      background: text("Couleur de fond (code hex, vide = rouge foncé de la palette)", {
+        regex: HEX_RE,
+        description: "Couleur du voile posé sur l'image pour garder le texte lisible. Avec « Opacité du voile » à 100, l'image est cachée et cette couleur remplit tout le bandeau.",
+      }),
+      overlay_opacity: number("Opacité du voile (%)", {
+        description: "0 = image telle quelle, sans voile. 100 = couleur pleine. Vide = 65 (voile d'origine). Entre 0 et 100.",
+      }),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
+      ...badgeFields(),
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
     },
   },
   {
@@ -850,6 +863,10 @@ export const COMPONENTS = [
       products: bloks("Produits", ["product_card"]),
       cta_label: text("Bouton bas — texte"),
       cta_link: text("Bouton bas — lien"),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
+      ...badgeFields(),
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
     },
   },
   {
@@ -860,6 +877,9 @@ export const COMPONENTS = [
       title: text("Titre"),
       subtitle: textarea("Sous-titre"),
       cards: bloks("Cartes", ["extra_card"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
     },
   },
   {

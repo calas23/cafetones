@@ -30,7 +30,9 @@ main.page-chr .chr-hero::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(var(--rgb-espresso), 0.65);
+  /* --chr-overlay : « Couleur de fond » + « Opacité du voile » du bloc Héros — CHR (Storyblok),
+     posée sur la section ; absente = voile d'origine. */
+  background-color: var(--chr-overlay, rgba(var(--rgb-espresso), 0.65));
   z-index: 1;
 }
 main.page-chr .chr-hero__content {
