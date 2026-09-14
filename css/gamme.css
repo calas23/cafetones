@@ -212,7 +212,7 @@ main.page-gamme .gamme-card:hover {
   transform: translateY(-2px);
 }
 main.page-gamme .gamme-card__image {
-  height: 200px;
+  height: calc(200px * var(--gamme-img-scale, 1));
   padding: 1.5rem;
   background-color: var(--color-cream-warm);
   display: flex;
@@ -309,8 +309,10 @@ main.page-gamme .gamme-card__format {
   color: var(--color-text-light);
   margin-top: 0.25rem;
 }
+/* --gamme-img-scale : « Taille des photos (%) » d'une section de gamme (Storyblok, posée sur
+   .gamme-cards) ; 1 (absente) = zone de 200 px et photo de 180 px max, comme à l'origine. */
 main.page-gamme .gamme-card__image {
-  height: 200px;
+  height: calc(200px * var(--gamme-img-scale, 1));
   padding: 1rem 1.5rem 0;
   background-color: var(--color-cream-warm);
   display: flex;
@@ -320,7 +322,7 @@ main.page-gamme .gamme-card__image {
   overflow: hidden;
 }
 main.page-gamme .gamme-card__image img {
-  max-height: 180px;
+  max-height: calc(180px * var(--gamme-img-scale, 1));
   max-width: 100%;
   width: auto;
   object-fit: contain;

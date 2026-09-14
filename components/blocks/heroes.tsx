@@ -76,13 +76,20 @@ export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
 type PageHeroBlok = SbBlok & { badge?: string; title?: string; text?: string };
 
 export function PageHero({ blok }: { blok: PageHeroBlok }) {
+  // Onglet « Typographie » : badge, titre, texte.
+  const badge = badgeStyle(blok);
+  const title = blockTextStyle(blok, "title");
+  const text = blockTextStyle(blok, "text");
   return (
     <section className="page-hero" {...storyblokEditable(blok)}>
+      <FontLink href={badge.href} />
+      <FontLink href={title.href} />
+      <FontLink href={text.href} />
       <div className="container">
-        {blok.badge ? <span className="badge badge--gold">{blok.badge}</span> : null}
-        <h1 style={{ marginTop: "1rem" }}>{fmt(blok.title)}</h1>
+        {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
+        <h1 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h1>
         {blok.text ? (
-          <p className="text-muted sb-subtitle" style={{ marginTop: "0.75rem" }}>{fmt(blok.text)}</p>
+          <p className="text-muted sb-subtitle" style={{ marginTop: "0.75rem", ...text.style }}>{fmt(blok.text)}</p>
         ) : null}
       </div>
     </section>

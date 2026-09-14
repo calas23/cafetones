@@ -210,6 +210,15 @@ certificat auto-signé dans le navigateur.
   d'un fichier, ou « URL externe » (adresse d'une photo déjà en ligne, ex.
   https://cafetones.fr/img/tasse-cappuccino-anniversario.jpg) → Save →
   Publish. Vide = carte sans photo.
+- **Page Notre gamme — titre « Notre gamme complète »** (et bandeaux simples
+  des pages À propos et Contact) : cliquer le bandeau (bloc Héros — Bandeau
+  simple) → onglet **Typographie** → **Titre — police / taille (%) / couleur**
+  (texte et badge idem) → Save → Publish.
+- **Page Notre gamme — photo d'un café ou d'une pâtisserie** : cliquer le
+  produit → champ **Photo** → Upload ou image de la bibliothèque (Assets) →
+  Save → Publish. Taille : cliquer la section (Cafés en grains, Cafés moulus,
+  Pods, Grands Crus, Pâtisseries) → **Taille des photos (%)** (100 = actuelle,
+  150 = une fois et demie plus grandes, vide = 100) → Save → Publish.
 - **Disposition du pied de page** : Réglages du site → onglet **Pied de page**
   → **Disposition du pied de page** : logo et présentation à gauche, colonnes à
   droite sur toute la largeur (défaut), ou colonnes réparties sur la largeur
@@ -431,6 +440,17 @@ certificat auto-signé dans le navigateur.
 | `badge` | Texte | Badge |
 | `title` | Texte | Titre |
 | `text` | Texte long | Texte |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `text_font` | Choix — liste Datasource « polices » | Texte — police |
+| `text_size` | Nombre | Texte — taille (%) |
+| `text_color` | Texte | Texte — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -794,6 +814,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `intro` | Texte long | Introduction |
 | `products` | Liste de blocs (product_card) | Produits |
+| `image_scale` | Nombre | Taille des photos (%) |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
