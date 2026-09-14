@@ -1044,6 +1044,9 @@ export const COMPONENTS = [
       image_scale: number("Taille des photos (%)", {
         description: "Hauteur de la zone image des cartes torréfacteurs. 100 = actuelle, 150 = une fois et demie plus haute. Entre 50 et 250. Vide = taille d'origine.",
       }),
+      card_gap: number("Espace entre les cartes (px)", {
+        description: "Écart entre les cartes torréfacteurs. Vide = 32. 0 = cartes collées, 64 = deux fois plus d'espace. Entre 0 et 200.",
+      }),
       "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
       ...typo("title", "Titre"),
       ...typo("subtitle", "Sous-titre"),

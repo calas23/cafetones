@@ -39,7 +39,8 @@ main.page-about .about-quote span {
 main.page-about .about-roasters {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  /* --roaster-gap : « Espace entre les cartes (px) » (Storyblok) ; absente = 2rem d'origine. */
+  gap: var(--roaster-gap, 2rem);
   margin-top: 3rem;
 }
 main.page-about .about-roaster-card {
