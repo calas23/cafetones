@@ -348,6 +348,14 @@ certificat auto-signé dans le navigateur.
 
 ---
 
+- **Opérations de contenu ponctuelles** : Actions → **Storyblok Content Op** →
+  choisir l'opération (ex. `merge-cert-sections` : fusionne les sections
+  certifications / récompenses d'une page sous un nouveau titre), lancer
+  d'abord en **simulation** (le journal montre l'état de la page et le plan),
+  puis sans simulation. La page est enregistrée en brouillon (Publish dans
+  Storyblok), ou publiée si l'option « publier » est cochée. Scripts dans
+  `scripts/storyblok/ops/`, client API partagé `scripts/storyblok/mapi.mjs`.
+
 ## 4. Référence des blocs
 
 *Générée par `node scripts/storyblok/gen-doc.mjs` — ne pas éditer à la main.*
