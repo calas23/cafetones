@@ -177,8 +177,15 @@ type StepsBlok = SbBlok &
   IllustrationProps & { anchor_id?: string; badge?: string; title?: string; subtitle?: string; steps?: StepItem[] };
 
 export function StepsSection({ blok }: { blok: StepsBlok }) {
+  // Onglet « Typographie » : badge, titre, sous-titre.
+  const badge = badgeStyle(blok);
+  const title = blockTextStyle(blok, "title");
+  const subtitle = blockTextStyle(blok, "subtitle");
   return (
     <section className="section steps" id={blok.anchor_id || undefined} {...storyblokEditable(blok)}>
+      <FontLink href={badge.href} />
+      <FontLink href={title.href} />
+      <FontLink href={subtitle.href} />
       <div className="container">
         <div
           className="text-center animate-on-scroll"
@@ -187,10 +194,10 @@ export function StepsSection({ blok }: { blok: StepsBlok }) {
           data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
-          {blok.badge ? <span className="badge badge--gold">{blok.badge}</span> : null}
-          <h2 style={{ marginTop: "1rem" }}>{fmt(blok.title)}</h2>
+          {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
+          <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "540px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted" style={{ maxWidth: "540px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>
@@ -219,12 +226,18 @@ type B2bBlok = SbBlok & {
 
 export function B2bSection({ blok }: { blok: B2bBlok }) {
   const sectionClass = blok.background === "cream" ? "section section--cream" : "section";
+  // Onglet « Typographie » : badge, titre.
+  const badge = badgeStyle(blok);
+  const title = blockTextStyle(blok, "title");
+  const titleStyle = { ...(blok.badge ? { marginTop: "1rem" } : {}), ...title.style };
   return (
     <section className={sectionClass} {...storyblokEditable(blok)}>
+      <FontLink href={badge.href} />
+      <FontLink href={title.href} />
       <div className="container">
         <div className="text-center animate-on-scroll">
-          {blok.badge ? <span className="badge badge--gold">{blok.badge}</span> : null}
-          <h2 style={blok.badge ? { marginTop: "1rem" } : undefined}>{fmt(blok.title)}</h2>
+          {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
+          <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>
         </div>
 
         <div className="b2b-grid" style={blok.grid_margin_top ? { marginTop: "2rem" } : undefined}>

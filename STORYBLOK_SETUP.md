@@ -181,6 +181,11 @@ certificat auto-signé dans le navigateur.
 - **Titres « Parlons café » et « Nos certifications »** : cliquer la section →
   onglet **Typographie** → police et taille du titre (et du sous-titre pour le
   formulaire) → Save → Publish.
+- **Titres des sections de la page Bureau & Entreprise** (bandeau, « Comment ça
+  marche », « Nos cafés pour le bureau », « Pourquoi les bureaux nous font
+  confiance », formulaire) : cliquer la section → onglet **Typographie** →
+  **Titre — taille (%)** (police et couleur aussi ; sous-titre et badge idem)
+  → Save → Publish. Vide = taille d'origine.
 - **Disposition du pied de page** : Réglages du site → onglet **Pied de page**
   → **Disposition du pied de page** : logo et présentation à gauche, colonnes à
   droite sur toute la largeur (défaut), ou colonnes réparties sur la largeur
@@ -569,6 +574,17 @@ certificat auto-signé dans le navigateur.
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `steps` | Liste de blocs (step_item) | Étapes |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -588,6 +604,17 @@ certificat auto-signé dans le navigateur.
 | `note` | Texte | Note sous le tableau |
 | `cta_label` | Texte | Bouton — texte |
 | `cta_link` | Texte | Bouton — lien |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
+| `subtitle_font` | Choix — liste Datasource « polices » | Sous-titre — police |
+| `subtitle_size` | Nombre | Sous-titre — taille (%) |
+| `subtitle_color` | Texte | Sous-titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -601,6 +628,14 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `grid_margin_top` | Case à cocher | Espace réduit sous le titre (variante particuliers) |
 | `cards` | Liste de blocs (b2b_card) | Cartes |
+| `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_text_size` | Nombre | Badge — taille du texte (%) |
+| `badge_size` | Nombre | Badge — taille du fond (%) |
+| `badge_bg` | Texte | Badge — couleur de fond |
+| `badge_color` | Texte | Badge — couleur du texte |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
 

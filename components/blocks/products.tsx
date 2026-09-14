@@ -385,8 +385,15 @@ type PricingSectionBlok = SbBlok &
 
 export function PricingSection({ blok }: { blok: PricingSectionBlok }) {
   const products = blok.products ?? [];
+  // Onglet « Typographie » : badge, titre, sous-titre.
+  const badge = badgeStyle(blok);
+  const title = blockTextStyle(blok, "title");
+  const subtitle = blockTextStyle(blok, "subtitle");
   return (
     <section className="section" id={blok.anchor_id || undefined} {...storyblokEditable(blok)}>
+      <FontLink href={badge.href} />
+      <FontLink href={title.href} />
+      <FontLink href={subtitle.href} />
       <div className="container">
         <div
           className="text-center animate-on-scroll"
@@ -395,10 +402,10 @@ export function PricingSection({ blok }: { blok: PricingSectionBlok }) {
           data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
-          {blok.badge ? <span className="badge badge--gold">{blok.badge}</span> : null}
-          <h2 style={{ marginTop: "1rem" }}>{fmt(blok.title)}</h2>
+          {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
+          <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted" style={{ maxWidth: "560px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>

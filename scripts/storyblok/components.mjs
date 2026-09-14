@@ -747,6 +747,10 @@ export const COMPONENTS = [
       subtitle: textarea("Sous-titre"),
       ...ILLUSTRATION_FIELDS,
       steps: bloks("Étapes", ["step_item"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
+      ...badgeFields(),
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
     },
   },
   {
@@ -763,6 +767,10 @@ export const COMPONENTS = [
       note: text("Note sous le tableau"),
       cta_label: text("Bouton — texte"),
       cta_link: text("Bouton — lien"),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
+      ...badgeFields(),
+      ...typo("title", "Titre"),
+      ...typo("subtitle", "Sous-titre"),
     },
   },
   {
@@ -778,6 +786,9 @@ export const COMPONENTS = [
       title: text("Titre"),
       grid_margin_top: boolean("Espace réduit sous le titre (variante particuliers)"),
       cards: bloks("Cartes", ["b2b_card"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "title_color"] },
+      ...badgeFields(),
+      ...typo("title", "Titre"),
     },
   },
   {
