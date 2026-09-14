@@ -1,4 +1,6 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
+import { blockTextStyle } from "@/lib/fonts";
+import { FontLink } from "@/components/FontLink";
 import { Icon } from "@/components/Icon";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { fmt, paragraphs } from "@/lib/text";
@@ -19,12 +21,16 @@ type AboutStoryBlok = SbBlok & {
 
 export function AboutStorySection({ blok }: { blok: AboutStoryBlok }) {
   const paras = paragraphs(blok.text);
+  // Onglet « Typographie » : titre.
+  const title = blockTextStyle(blok, "title");
+  const titleStyle = { ...title.style };
   return (
     <section className="section" {...storyblokEditable(blok)}>
+      <FontLink href={title.href} />
       <div className="container">
         <div className="about-story">
           <div className="about-story__text animate-on-scroll">
-            <h2>{fmt(blok.title)}</h2>
+            <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>
             {paras.map((p, i) => (
               <p key={i} style={i === 0 ? { marginTop: "1.5rem" } : undefined}>{fmt(p)}</p>
             ))}
@@ -54,6 +60,8 @@ type BlendItem = SbBlok & { name?: string; text?: string };
 type RoasterCard = SbBlok & {
   name?: string;
   since?: string;
+  image?: SbAsset; // image optionnelle en haut de la carte
+  image_fit?: string; // cover (photo, défaut) | contain (logo)
   text?: string;
   blends_title?: string;
   blends?: BlendItem[];
@@ -62,8 +70,14 @@ type RoasterCard = SbBlok & {
 type RoastersBlok = SbBlok & IllustrationProps & { title?: string; subtitle?: string; roasters?: RoasterCard[] };
 
 export function RoastersSection({ blok }: { blok: RoastersBlok }) {
+  // Onglet « Typographie » : titre, sous-titre.
+  const title = blockTextStyle(blok, "title");
+  const titleStyle = { ...title.style };
+  const subtitle = blockTextStyle(blok, "subtitle");
   return (
     <section className="section section--cream" {...storyblokEditable(blok)}>
+      <FontLink href={title.href} />
+      <FontLink href={subtitle.href} />
       <div className="container">
         <div
           className="text-center animate-on-scroll"
@@ -72,9 +86,9 @@ export function RoastersSection({ blok }: { blok: RoastersBlok }) {
           data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
-          <h2>{fmt(blok.title)}</h2>
+          <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>
@@ -82,6 +96,12 @@ export function RoastersSection({ blok }: { blok: RoastersBlok }) {
         <div className="about-roasters">
           {(blok.roasters ?? []).map((r) => (
             <div className={`about-roaster-card ${aos(r.delay)}`} key={r._uid} {...storyblokEditable(r)}>
+              {assetUrl(r.image) ? (
+                <div className={r.image_fit === "contain" ? "about-roaster-card__image about-roaster-card__image--contain" : "about-roaster-card__image"}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={assetUrl(r.image)} alt={r.image?.alt || r.name || ""} loading="lazy" />
+                </div>
+              ) : null}
               <div className="about-roaster-card__header">
                 <div className="about-roaster-card__name">{r.name}</div>
                 <div className="about-roaster-card__since">{r.since}</div>
@@ -113,13 +133,19 @@ type CertCardsBlok = SbBlok & { background?: string; title?: string; subtitle?: 
 
 export function CertCardsSection({ blok }: { blok: CertCardsBlok }) {
   const sectionClass = blok.background === "cream" ? "section section--cream" : "section";
+  // Onglet « Typographie » : titre, sous-titre.
+  const title = blockTextStyle(blok, "title");
+  const titleStyle = { ...title.style };
+  const subtitle = blockTextStyle(blok, "subtitle");
   return (
     <section className={sectionClass} {...storyblokEditable(blok)}>
+      <FontLink href={title.href} />
+      <FontLink href={subtitle.href} />
       <div className="container">
         <div className="text-center animate-on-scroll">
-          <h2>{fmt(blok.title)}</h2>
+          <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
         </div>
 
@@ -144,12 +170,15 @@ type AirpurBlok = SbBlok & { title?: string; text?: string; traits?: TraitItem[]
 
 export function AirpurSection({ blok }: { blok: AirpurBlok }) {
   const paras = paragraphs(blok.text);
+  // Onglet « Typographie » : titre.
+  const title = blockTextStyle(blok, "title");
   return (
     <section className="section section--espresso" {...storyblokEditable(blok)}>
+      <FontLink href={title.href} />
       <div className="container">
         <div className="about-airpur">
           <div className="about-airpur__text animate-on-scroll">
-            <h2 style={{ color: "var(--color-cream)" }}>{fmt(blok.title)}</h2>
+            <h2 style={{ color: "var(--color-cream)", ...title.style }}>{fmt(blok.title)}</h2>
             {paras.map((p, i) => (
               <p key={i} style={i === 0 ? { marginTop: "1.5rem" } : undefined}>{fmt(p)}</p>
             ))}
