@@ -53,12 +53,14 @@ type PageBlok = SbBlok & {
 };
 
 function mainClassName(blok: PageBlok): string | undefined {
-  // Scopes explicites (pages migrées, fidélité stricte à l'ancien site),
-  // sinon dérivés des blocs présents (nouvelles pages créées dans Storyblok).
+  // Scopes explicites (pages migrées : CSS chargées par l'ancien site, champ « Avancé »),
+  // complétés par ceux qu'exigent les blocs présents : une section partagée (étapes, cartes
+  // « Pourquoi nous »…) est ainsi toujours stylée, quelle que soit la page où elle est posée.
+  // L'ancien site ne chargeait pas landing.css sur les pages CHR et Particuliers : leurs
+  // sections étapes et cartes s'affichaient brutes.
   const explicit = (blok.style_scopes ?? []).filter(Boolean);
-  const scopes = explicit.length
-    ? explicit
-    : [...new Set((blok.body ?? []).map((b) => SCOPE_BY_BLOCK[b.component]).filter(Boolean))];
+  const derived = (blok.body ?? []).map((b) => SCOPE_BY_BLOCK[b.component]).filter(Boolean);
+  const scopes = [...new Set([...explicit, ...derived])];
   if (!scopes.length) return undefined;
   return scopes.map((s) => `page-${s}`).join(" ");
 }

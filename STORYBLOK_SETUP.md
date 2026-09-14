@@ -246,7 +246,9 @@ certificat auto-signé dans le navigateur.
 - **Tokens** : uniquement côté serveur (`STORYBLOK_*`, jamais `NEXT_PUBLIC_*`).
 - **CSS** : les feuilles par page de l'ancien site sont scopées
   (`main.page-home`, `main.page-chr`, …). Les pages migrées gardent leurs scopes
-  d'origine (champ « Avancé ») ; les nouvelles pages les déduisent de leurs blocs.
+  d'origine (champ « Avancé »), complétés automatiquement par ceux qu'exigent les
+  blocs présents (une section « étapes » ou « Pourquoi nous » est stylée sur
+  n'importe quelle page) ; les nouvelles pages les déduisent de leurs blocs.
 - **Formulaires** : comportement identique à l'ancien site — validation +
   événement GTM `form_submission`, **aucun envoi serveur** (GTM est d'ailleurs
   désactivé dans le code). Les demandes ne sont donc pas transmises par email.
