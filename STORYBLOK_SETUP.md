@@ -235,6 +235,8 @@ certificat auto-signé dans le navigateur.
   entier » pour un logo → Save → Publish. Vide = carte sans image. Taille :
   cliquer la section « Nos torréfacteurs partenaires » → **Taille des photos
   (%)** (100 = actuelle, 150 = plus hautes, vide = 100) → Save → Publish.
+  Écart entre les deux cartes : même section → **Espace entre les cartes (px)**
+  (vide = 32 ; 0 = collées, 64 = deux fois plus d'espace) → Save → Publish.
 - **Fusionner deux sections certifications / récompenses** : c'est du contenu :
   dans la section à garder, ajouter les cartes de l'autre (bouton + → Carte
   certification, ou ⋯ → Copy / Paste), adapter le titre, puis supprimer
@@ -972,6 +974,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `roasters` | Liste de blocs (roaster_card) | Torréfacteurs |
 | `image_scale` | Nombre | Taille des photos (%) |
+| `card_gap` | Nombre | Espace entre les cartes (px) |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
 | `title_color` | Texte | Titre — couleur |

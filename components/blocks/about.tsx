@@ -75,6 +75,7 @@ type RoastersBlok = SbBlok &
     subtitle?: string;
     roasters?: RoasterCard[];
     image_scale?: string | number; // taille des photos en % (vide = 100)
+    card_gap?: string | number; // espace entre les cartes en px (vide = 32)
   };
 
 export function RoastersSection({ blok }: { blok: RoastersBlok }) {
@@ -85,6 +86,12 @@ export function RoastersSection({ blok }: { blok: RoastersBlok }) {
   // « Taille des photos (%) » : multiplicateur de la hauteur de la zone image des cartes (css/about.css).
   const rawImg = blok.image_scale;
   const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 50, 250);
+  // « Espace entre les cartes (px) » : gap de la grille (vide = 2rem d'origine, css/about.css).
+  const rawGap = blok.card_gap;
+  const gap = rawGap === undefined || rawGap === null || String(rawGap).trim() === "" ? -1 : pxOr(rawGap as string | number, -1, 0, 200);
+  const gridStyle: Record<string, string | number> = {};
+  if (imgScale !== 100) gridStyle["--roaster-img-scale"] = imgScale / 100;
+  if (gap >= 0) gridStyle["--roaster-gap"] = `${gap}px`;
   return (
     <section className="section section--cream" {...storyblokEditable(blok)}>
       <FontLink href={title.href} />
@@ -104,7 +111,7 @@ export function RoastersSection({ blok }: { blok: RoastersBlok }) {
           <Illustration {...blok} />
         </div>
 
-        <div className="about-roasters" style={imgScale !== 100 ? ({ "--roaster-img-scale": imgScale / 100 } as CSSProperties) : undefined}>
+        <div className="about-roasters" style={Object.keys(gridStyle).length ? (gridStyle as CSSProperties) : undefined}>
           {(blok.roasters ?? []).map((r) => (
             <div className={`about-roaster-card ${aos(r.delay)}`} key={r._uid} {...storyblokEditable(r)}>
               {assetUrl(r.image) ? (
