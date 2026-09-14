@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import { pxOr } from "./num";
 import type { SiteSettings } from "./types";
 
-// Onglet « Polices » : « Taille du texte (%) » et « Taille des titres (%) ».
+// Onglet « Polices » : « Taille du texte (%) », « Taille des titres (%) » et « Taille des sous-titres (%) ».
 // 100 = taille d'origine. Vide, 100 ou valeur invalide → rien n'est posé.
 // --scale-text multiplie la taille de base (html, 16 px) : tout le site suit, car les
 // tailles sont en rem. --scale-headings s'ajoute sur les titres seuls (zoom CSS sur h1-h4).
@@ -15,5 +15,6 @@ export function textScaleVars(settings: SiteSettings | null | undefined): CSSPro
   };
   set("--scale-text", settings?.text_scale, 70, 150);
   set("--scale-headings", settings?.heading_scale, 70, 200);
+  set("--scale-subtitle", settings?.subtitle_scale, 50, 200); // sous-titres seuls (classe sb-subtitle)
   return Object.keys(vars).length ? (vars as CSSProperties) : undefined;
 }

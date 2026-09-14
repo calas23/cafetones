@@ -98,6 +98,14 @@ export function fontSettings(settings: SiteSettings | null | undefined): FontSet
       add(f.href);
     }
   }
+  // « Police des sous-titres » : tous les sous-titres du site (classe sb-subtitle, css/style.css).
+  if (settings?.font_subtitle) {
+    const f = resolveFont(settings.font_subtitle);
+    if (f) {
+      vars["--font-subtitle"] = `'${f.family}', ${f.fallback}`;
+      add(f.href);
+    }
+  }
   if (!hrefs.length) return {};
   return { vars: vars as CSSProperties, hrefs };
 }

@@ -62,7 +62,7 @@ export function UniversesSection({ blok }: { blok: UniversesBlok }) {
         <div className="text-center animate-on-scroll">
           <h2>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "560px", margin: "1rem auto 0" }}>{fmt(blok.subtitle)}</p>
           ) : null}
         </div>
 
@@ -197,7 +197,7 @@ export function StepsSection({ blok }: { blok: StepsBlok }) {
           {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
           <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
           {blok.subtitle ? (
-            <p className="text-muted" style={{ maxWidth: "540px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
+            <p className="text-muted sb-subtitle" style={{ maxWidth: "540px", margin: "1rem auto 0", ...subtitle.style }}>{fmt(blok.subtitle)}</p>
           ) : null}
           <Illustration {...blok} />
         </div>
@@ -266,7 +266,7 @@ export function CtaSection({ blok }: { blok: CtaBlok }) {
       <section className="section section--espresso" style={{ padding: "5rem 0" }} {...storyblokEditable(blok)}>
         <div className="container text-center">
           <h2 style={{ color: "var(--color-cream)", fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)" }}>{fmt(blok.title)}</h2>
-          <p style={{ color: "var(--color-cream-dark)", maxWidth: "540px", margin: "1rem auto 2rem" }}>{fmt(blok.text)}</p>
+          <p className="sb-subtitle" style={{ color: "var(--color-cream-dark)", maxWidth: "540px", margin: "1rem auto 2rem" }}>{fmt(blok.text)}</p>
           <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
             <Buttons buttons={blok.buttons} />
           </div>
@@ -278,7 +278,7 @@ export function CtaSection({ blok }: { blok: CtaBlok }) {
     <section className="section section--cream" {...storyblokEditable(blok)}>
       <div className="container text-center">
         <h2>{fmt(blok.title)}</h2>
-        <p className="text-muted" style={{ maxWidth: "540px", margin: "1rem auto 2rem" }}>{fmt(blok.text)}</p>
+        <p className="text-muted sb-subtitle" style={{ maxWidth: "540px", margin: "1rem auto 2rem" }}>{fmt(blok.text)}</p>
         <Buttons buttons={blok.buttons} />
       </div>
     </section>

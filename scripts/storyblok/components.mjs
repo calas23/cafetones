@@ -311,7 +311,7 @@ export const COMPONENTS = [
       color_bg: text("Fond des pages", { regex: HEX_RE, description: HEX_HELP }),
       color_bg_alt: text("Fond des sections alternées", { regex: HEX_RE, description: HEX_HELP }),
       color_text: text("Couleur du texte", { regex: HEX_RE, description: HEX_HELP }),
-      "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "text_scale", "heading_scale"] },
+      "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "font_subtitle", "text_scale", "heading_scale", "subtitle_scale"] },
       font_display: fontOption("Police des titres", {
         default_value: "playfair",
         description: "Police des titres (h1, h2, h3, chiffres clés). Vide = Playfair Display. " + FONT_HELP_ADD,
@@ -320,11 +320,17 @@ export const COMPONENTS = [
         default_value: "dm-sans",
         description: "Police des paragraphes, menus, boutons et formulaires. Vide = DM Sans. " + FONT_HELP_ADD,
       }),
+      font_subtitle: fontOption("Police des sous-titres", {
+        description: "Tous les sous-titres du site d'un coup (lignes sous les titres des bandeaux et des sections). Vide = police du texte. Un « Sous-titre — police » réglé dans une section prime sur ce choix. " + FONT_HELP_ADD,
+      }),
       text_scale: number("Taille du texte (%)", {
         description: "100 = taille actuelle. Ex. 90 = un peu plus petit, 115 = un peu plus grand. Agit sur tout le site, titres et espacements compris. Entre 70 et 150.",
       }),
       heading_scale: number("Taille des titres (%)", {
         description: "100 = taille actuelle. Agit sur les titres seulement, en plus de la taille du texte. Entre 70 et 200.",
+      }),
+      subtitle_scale: number("Taille des sous-titres (%)", {
+        description: "100 = taille actuelle. Agit sur tous les sous-titres du site, en plus de la taille du texte. Entre 50 et 200.",
       }),
     },
   },

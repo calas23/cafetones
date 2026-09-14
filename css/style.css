@@ -166,6 +166,14 @@ p {
   color: var(--color-text-muted);
 }
 
+/* --font-subtitle / --scale-subtitle : « Police des sous-titres » et « Taille des sous-titres (%) »
+   (Réglages du site → Polices, posées sur <html>). Absentes = police héritée et taille d'origine.
+   Un « Sous-titre — police / taille » réglé dans une section (style inline) prime. */
+.sb-subtitle {
+  font-family: var(--font-subtitle, inherit);
+  zoom: var(--scale-subtitle, 1);
+}
+
 .text-light {
   color: var(--color-text-light);
 }

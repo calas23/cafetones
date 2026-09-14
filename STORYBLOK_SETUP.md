@@ -145,6 +145,10 @@ certificat auto-signé dans le navigateur.
 - **Changer la taille des textes** : même onglet **Polices** → **Taille du
   texte (%)** (tout le site, 100 = actuel, ex. 110 pour agrandir un peu) et
   **Taille des titres (%)** (titres seulement, en plus) → Save → Publish.
+- **Même police pour tous les sous-titres** : Réglages du site → onglet
+  **Polices** → **Police des sous-titres** (et **Taille des sous-titres (%)**)
+  → Save → Publish. Vaut pour toutes les pages ; un « Sous-titre — police »
+  réglé dans une section reste prioritaire pour cette section seulement.
 - **Police et taille du nom d'un produit** (cartes des best-sellers, de la
   gamme, CHR, particuliers) : cliquer le produit → **Nom — police** (même
   liste que l'onglet Polices, vide = police des titres) et **Nom — taille (%)**
@@ -372,8 +376,10 @@ certificat auto-signé dans le navigateur.
 | `color_text` | Texte | Couleur du texte |
 | `font_display` | Choix — liste Datasource « polices » | Police des titres |
 | `font_body` | Choix — liste Datasource « polices » | Police du texte |
+| `font_subtitle` | Choix — liste Datasource « polices » | Police des sous-titres |
 | `text_scale` | Nombre | Taille du texte (%) |
 | `heading_scale` | Nombre | Taille des titres (%) |
+| `subtitle_scale` | Nombre | Taille des sous-titres (%) |
 
 ## Groupe « Sections » (32)
 
