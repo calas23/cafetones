@@ -1,5 +1,7 @@
+import type { CSSProperties } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { blockTextStyle } from "@/lib/fonts";
+import { pxOr } from "@/lib/num";
 import { FontLink } from "@/components/FontLink";
 import { Icon } from "@/components/Icon";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
@@ -67,13 +69,22 @@ type RoasterCard = SbBlok & {
   blends?: BlendItem[];
   delay?: string;
 };
-type RoastersBlok = SbBlok & IllustrationProps & { title?: string; subtitle?: string; roasters?: RoasterCard[] };
+type RoastersBlok = SbBlok &
+  IllustrationProps & {
+    title?: string;
+    subtitle?: string;
+    roasters?: RoasterCard[];
+    image_scale?: string | number; // taille des photos en % (vide = 100)
+  };
 
 export function RoastersSection({ blok }: { blok: RoastersBlok }) {
   // Onglet « Typographie » : titre, sous-titre.
   const title = blockTextStyle(blok, "title");
   const titleStyle = { ...title.style };
   const subtitle = blockTextStyle(blok, "subtitle");
+  // « Taille des photos (%) » : multiplicateur de la hauteur de la zone image des cartes (css/about.css).
+  const rawImg = blok.image_scale;
+  const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 50, 250);
   return (
     <section className="section section--cream" {...storyblokEditable(blok)}>
       <FontLink href={title.href} />
@@ -93,7 +104,7 @@ export function RoastersSection({ blok }: { blok: RoastersBlok }) {
           <Illustration {...blok} />
         </div>
 
-        <div className="about-roasters">
+        <div className="about-roasters" style={imgScale !== 100 ? ({ "--roaster-img-scale": imgScale / 100 } as CSSProperties) : undefined}>
           {(blok.roasters ?? []).map((r) => (
             <div className={`about-roaster-card ${aos(r.delay)}`} key={r._uid} {...storyblokEditable(r)}>
               {assetUrl(r.image) ? (

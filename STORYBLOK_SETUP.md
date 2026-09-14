@@ -232,7 +232,9 @@ certificat auto-signé dans le navigateur.
 - **Page À propos — image sur une carte torréfacteur** (La Genovese, Musetti) :
   cliquer la carte → **Image (optionnelle)** → Upload ou bibliothèque (Assets) ;
   **Cadrage de l'image** : « Remplir la zone » pour une photo, « Afficher en
-  entier » pour un logo → Save → Publish. Vide = carte sans image.
+  entier » pour un logo → Save → Publish. Vide = carte sans image. Taille :
+  cliquer la section « Nos torréfacteurs partenaires » → **Taille des photos
+  (%)** (100 = actuelle, 150 = plus hautes, vide = 100) → Save → Publish.
 - **Fusionner deux sections certifications / récompenses** : c'est du contenu :
   dans la section à garder, ajouter les cartes de l'autre (bouton + → Carte
   certification, ou ⋯ → Copy / Paste), adapter le titre, puis supprimer
@@ -961,6 +963,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `roasters` | Liste de blocs (roaster_card) | Torréfacteurs |
+| `image_scale` | Nombre | Taille des photos (%) |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
 | `title_color` | Texte | Titre — couleur |

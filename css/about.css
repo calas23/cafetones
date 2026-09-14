@@ -50,8 +50,9 @@ main.page-about .about-roaster-card {
 }
 /* Image optionnelle d'une carte torréfacteur (champ « Image » du bloc) : bandeau au-dessus de
    l'en-tête. Photo recadrée pour remplir la zone ; « Afficher en entier » (logo) = image entière. */
+/* --roaster-img-scale : « Taille des photos (%) » de la section (Storyblok, posée sur .about-roasters) ; absente = 200 px. */
 main.page-about .about-roaster-card__image {
-  height: 200px;
+  height: calc(200px * var(--roaster-img-scale, 1));
   background-color: var(--color-cream-warm);
   overflow: hidden;
 }

@@ -1041,6 +1041,9 @@ export const COMPONENTS = [
       subtitle: textarea("Sous-titre"),
       ...ILLUSTRATION_FIELDS,
       roasters: bloks("Torréfacteurs", ["roaster_card"]),
+      image_scale: number("Taille des photos (%)", {
+        description: "Hauteur de la zone image des cartes torréfacteurs. 100 = actuelle, 150 = une fois et demie plus haute. Entre 50 et 250. Vide = taille d'origine.",
+      }),
       "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
       ...typo("title", "Titre"),
       ...typo("subtitle", "Sous-titre"),
