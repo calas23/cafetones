@@ -4,6 +4,7 @@ import { Icon } from "@/components/Icon";
 import { fmt, fmtTel } from "@/lib/text";
 import { pxOr } from "@/lib/num";
 import { badgeStyle, blockTextStyle } from "@/lib/fonts";
+import { hexToRgbList, normalizeHex } from "@/lib/palette";
 import { FontLink } from "@/components/FontLink";
 import { assetUrl, type SbAsset, type SbBlok } from "@/lib/types";
 import { Buttons } from "./shared";
@@ -200,18 +201,48 @@ type ChrHeroBlok = SbBlok & {
   title?: string;
   subtitle?: string;
   buttons?: SbBlok[];
+  background_image?: SbAsset; // vide = photo d'origine (css/chr.css)
+  background?: string; // « Couleur de fond » : couleur du voile sur l'image (hex, vide = rouge foncé)
+  overlay_opacity?: string | number; // opacité du voile en % (vide = 65)
 };
 
+// Voile du héros CHR (variable --chr-overlay, voir chr.css). Rien de renseigné = voile d'origine ;
+// couleur seule = opacité d'origine (65 %) ; opacité seule = rouge foncé de la palette.
+function chrOverlay(color: unknown, opacity: string | number | undefined): string | undefined {
+  const hex = normalizeHex(color);
+  const pct = opacity === undefined || opacity === null || String(opacity).trim() === "" ? undefined : pxOr(opacity, 65, 0, 100);
+  if (!hex && pct === undefined) return undefined;
+  const alpha = (pct ?? 65) / 100;
+  return hex ? `rgba(${hexToRgbList(hex)}, ${alpha})` : `rgba(var(--rgb-espresso), ${alpha})`;
+}
+
 export function ChrHero({ blok }: { blok: ChrHeroBlok }) {
+  // Onglet « Typographie » : badge, titre, sous-titre.
+  const badge = badgeStyle(blok);
+  const title = blockTextStyle(blok, "title");
+  const subtitle = blockTextStyle(blok, "subtitle");
+  // Onglet « Fond » : image, couleur et opacité du voile.
+  const bg = assetUrl(blok.background_image);
+  const overlay = chrOverlay(blok.background, blok.overlay_opacity);
+  const sectionStyle: Record<string, string> = {};
+  if (bg) sectionStyle.backgroundImage = `url("${bg}")`;
+  if (overlay) sectionStyle["--chr-overlay"] = overlay;
   return (
-    <section className="chr-hero" {...storyblokEditable(blok)}>
+    <section
+      className="chr-hero"
+      style={Object.keys(sectionStyle).length ? (sectionStyle as CSSProperties) : undefined}
+      {...storyblokEditable(blok)}
+    >
+      <FontLink href={badge.href} />
+      <FontLink href={title.href} />
+      <FontLink href={subtitle.href} />
       <div className="container">
         <div className="chr-hero__content">
-          {blok.badge ? <span className="badge badge--dark chr-hero__badge">{blok.badge}</span> : null}
+          {blok.badge ? <span className="badge badge--dark chr-hero__badge" style={badge.style}>{blok.badge}</span> : null}
 
-          <h1 className="chr-hero__title">{fmt(blok.title)}</h1>
+          <h1 className="chr-hero__title" style={title.style}>{fmt(blok.title)}</h1>
 
-          <p className="chr-hero__subtitle">{fmtTel(blok.subtitle)}</p>
+          <p className="chr-hero__subtitle" style={subtitle.style}>{fmtTel(blok.subtitle)}</p>
 
           <div className="chr-hero__actions">
             <Buttons buttons={blok.buttons} />

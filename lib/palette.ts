@@ -37,6 +37,10 @@ const mix = (a: string, b: string, t: number) => {
   return toHex([0, 1, 2].map((i) => A[i] + (B[i] - A[i]) * t) as RGB);
 };
 const rgbList = (hex: string) => toRgb(hex).join(", ");
+// « r, g, b » d'un code hex normalisé (#RRGGBB), pour composer un rgba(...) en CSS.
+export function hexToRgbList(hex: string): string {
+  return rgbList(hex);
+}
 
 export function derivePalette(p: PaletteBase): Record<string, string> {
   const white = "#FFFFFF", black = "#000000";
