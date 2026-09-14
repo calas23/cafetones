@@ -341,9 +341,13 @@ type GammeSectionBlok = SbBlok & {
   title?: string;
   intro?: string;
   products?: ProductCardBlok[];
+  image_scale?: string | number; // taille des photos en % (vide = 100)
 };
 
 export function GammeSection({ blok }: { blok: GammeSectionBlok }) {
+  // « Taille des photos (%) » : multiplicateur de la hauteur de la zone image des cartes (css/gamme.css).
+  const rawImg = blok.image_scale;
+  const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 50, 250);
   return (
     <section
       className="gamme-section"
@@ -356,7 +360,7 @@ export function GammeSection({ blok }: { blok: GammeSectionBlok }) {
           <h2>{fmt(blok.title)}</h2>
           <p>{fmt(blok.intro)}</p>
         </div>
-        <div className="gamme-cards">
+        <div className="gamme-cards" style={imgScale !== 100 ? ({ "--gamme-img-scale": imgScale / 100 } as CSSProperties) : undefined}>
           {(blok.products ?? []).map((p) => (
             <GammeCard key={p._uid} p={p} />
           ))}

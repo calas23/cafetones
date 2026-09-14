@@ -625,6 +625,10 @@ export const COMPONENTS = [
       badge: text("Badge"),
       title: text("Titre"),
       text: textarea("Texte"),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "title_color", "text_font", "text_size", "text_color"] },
+      ...badgeFields(),
+      ...typo("title", "Titre"),
+      ...typo("text", "Texte"),
     },
   },
   {
@@ -916,6 +920,9 @@ export const COMPONENTS = [
       title: text("Titre"),
       intro: textarea("Introduction"),
       products: bloks("Produits", ["product_card"]),
+      image_scale: number("Taille des photos (%)", {
+        description: "Hauteur de la zone photo des cartes de cette section. 100 = actuelle, 150 = photos une fois et demie plus grandes. Entre 50 et 250. Vide = taille d'origine.",
+      }),
     },
   },
   {
