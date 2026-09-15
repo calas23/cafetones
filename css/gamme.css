@@ -66,6 +66,15 @@ main.page-gamme .gamme-nav__inner {
   padding-right: 1.5rem;
   scrollbar-width: none;
 }
+/* Filtres centrés dans la barre quand ils y tiennent ; alignés à gauche et défilables sinon
+   (marges automatiques du premier et du dernier bouton : l'espace libre se répartit des deux
+   côtés et devient nul en cas de débordement). */
+main.page-gamme .gamme-nav__inner > :first-child {
+  margin-left: auto;
+}
+main.page-gamme .gamme-nav__inner > :last-child {
+  margin-right: auto;
+}
 main.page-gamme .gamme-nav__inner::-webkit-scrollbar {
   display: none;
 }
