@@ -989,6 +989,7 @@ export const COMPONENTS = [
       note: textarea("Note de consentement"),
       success_title: text("Succès — titre"),
       success_text: textarea("Succès — texte"),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["form_title_font", "form_title_size", "form_title_color", "info_titles_font", "info_titles_size", "info_titles_color"] },
       "tab-infos": { type: "tab", display_name: "Colonne infos", keys: ["info_title", "address", "phone", "phone_location", "email", "hours", "zone_title", "zone_text", "degust_title", "degust_text", "degust_button_label", "degust_button_link", "map_heading", "map_url", "map_title"] },
       info_title: text("Titre coordonnées"),
       address: text("Adresse"),
@@ -1005,6 +1006,8 @@ export const COMPONENTS = [
       map_heading: text("Titre carte"),
       map_url: textarea("URL d'intégration Google Maps"),
       map_title: text("Titre accessible de la carte"),
+      ...typo("form_title", "Formulaire — titre"),
+      ...typo("info_titles", "Titres de la colonne infos"),
     },
   },
   {
@@ -1015,6 +1018,8 @@ export const COMPONENTS = [
       title: text("Titre"),
       ...ILLUSTRATION_FIELDS,
       items: bloks("Questions", ["faq_item"]),
+      "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color"] },
+      ...typo("title", "Titre"),
     },
   },
   {
