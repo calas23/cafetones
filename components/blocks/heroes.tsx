@@ -107,6 +107,7 @@ type LandingHeroBlok = SbBlok & {
   image_height?: string;
   content_spacing?: string | number; // espacement vertical entre les éléments en % (vide = 100)
   image_style?: string; // card (défaut : coins arrondis + ombre) | seamless (sans cadre, fond blanc fondu)
+  image_scale?: string | number; // taille de l'image en % (vide = 100), échelle visuelle centrée
 };
 
 export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
@@ -119,8 +120,12 @@ export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
   const rawSpacing = blok.content_spacing;
   const spacing = rawSpacing === undefined || rawSpacing === null || String(rawSpacing).trim() === "" ? 0 : pxOr(rawSpacing, 0, 25, 200);
   const contentStyle = spacing ? ({ "--hero-gap": String(spacing / 100) } as CSSProperties) : undefined;
+  // « Taille de l'image (%) » : échelle visuelle de l'image (transform, sans effet sur la mise en page).
+  const rawImg = blok.image_scale;
+  const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 30, 150);
+  const sectionStyle = imgScale !== 100 ? ({ "--hero-img-transform": `scale(${imgScale / 100})` } as CSSProperties) : undefined;
   return (
-    <section className="hero" {...storyblokEditable(blok)}>
+    <section className="hero" style={sectionStyle} {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
       <FontLink href={title.href} />
       <FontLink href={subtitle.href} />

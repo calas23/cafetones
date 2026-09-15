@@ -104,6 +104,10 @@ main.page-landing .hero__image-wrapper {
   border-radius: var(--border-radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
+  /* --hero-img-transform : « Taille de l'image (%) » (Storyblok, posée sur la section) ; absente = aucune
+     transformation. Échelle visuelle centrée : la mise en page (colonnes, textes) ne bouge pas. */
+  transform: var(--hero-img-transform, none);
+  transform-origin: center center;
 }
 main.page-landing .hero__image-wrapper img {
   width: 100%;

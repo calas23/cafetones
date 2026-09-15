@@ -650,6 +650,9 @@ export const COMPONENTS = [
         ["card", "Carte : coins arrondis et ombre (défaut)"],
         ["seamless", "Sans cadre : fondu dans la page (illustration à fond blanc)"],
       ]),
+      image_scale: number("Taille de l'image (%)", {
+        description: "Taille de l'image de droite. 100 = actuelle, 70 = plus petite, 130 = plus grande (elle déborde alors un peu de sa colonne). Entre 30 et 150. Vide = taille d'origine.",
+      }),
       content_spacing: number("Espacement entre les éléments (%)", {
         description: "Espace vertical entre le badge, le titre, le texte, les boutons et les points de confiance. 100 = actuel, 50 = deux fois moins d'espace. Entre 25 et 200.",
       }),
