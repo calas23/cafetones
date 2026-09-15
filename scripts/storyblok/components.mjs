@@ -754,6 +754,21 @@ export const COMPONENTS = [
       title: text("Titre"),
       text: textarea("Paragraphes (séparés par une ligne vide)"),
       buttons: bloks("Boutons", ["button"]),
+      "tab-image": { type: "tab", display_name: "Image", keys: ["layout", "image", "image_style", "image_scale"] },
+      layout: option("Disposition", [
+        ["center", "Texte centré (défaut)"],
+        ["split", "Texte à gauche, image à droite"],
+      ]),
+      image: asset("Image (colonne de droite)", {
+        description: "Affichée à droite du texte avec la disposition « Texte à gauche, image à droite ». Sur ce fond rouge, une image PNG à fond transparent donne un rendu sans cadre blanc.",
+      }),
+      image_style: option("Style de l'image", [
+        ["card", "Coins arrondis (défaut)"],
+        ["seamless", "Sans cadre (image à fond transparent)"],
+      ]),
+      image_scale: number("Taille de l'image (%)", {
+        description: "100 = actuelle, 70 = plus petite, 130 = plus grande. Entre 30 et 150. Vide = taille d'origine.",
+      }),
       "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "text_font", "text_size"] },
       ...badgeFields(),
       ...typo("title", "Titre"),

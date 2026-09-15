@@ -1,3 +1,5 @@
+import { pxOr } from "@/lib/num";
+import type { CSSProperties } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { badgeStyle, blockTextStyle } from "@/lib/fonts";
 import { FontLink } from "@/components/FontLink";
@@ -93,7 +95,16 @@ export function UniversesSection({ blok }: { blok: UniversesBlok }) {
   );
 }
 
-type EspressoTextBlok = SbBlok & { badge?: string; title?: string; text?: string; buttons?: SbBlok[] };
+type EspressoTextBlok = SbBlok & {
+  badge?: string;
+  title?: string;
+  text?: string;
+  buttons?: SbBlok[];
+  layout?: string; // center (défaut) | split : texte à gauche, image à droite
+  image?: SbAsset; // colonne de droite (disposition split)
+  image_style?: string; // card (coins arrondis, défaut) | seamless (sans cadre)
+  image_scale?: string | number; // taille de l'image en % (vide = 100), échelle visuelle centrée
+};
 
 export function EspressoTextSection({ blok }: { blok: EspressoTextBlok }) {
   const paras = paragraphs(blok.text);
@@ -101,22 +112,47 @@ export function EspressoTextSection({ blok }: { blok: EspressoTextBlok }) {
   const badge = badgeStyle(blok);
   const title = blockTextStyle(blok, "title");
   const text = blockTextStyle(blok, "text");
+  const content = (
+    <>
+      {blok.badge ? <span className="badge badge--dark" style={badge.style}>{blok.badge}</span> : null}
+      <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
+      {paras.map((p, i) => (
+        <p key={i} style={{ color: "var(--color-cream-dark)", ...(i === 0 ? { marginTop: "1.5rem" } : {}), ...text.style }}>
+          {fmt(p)}
+        </p>
+      ))}
+      <Buttons buttons={blok.buttons} />
+    </>
+  );
+  // Onglet « Image » : disposition texte à gauche + image à droite (css/style.css, .espresso-split).
+  const split = blok.layout === "split";
+  const imgUrl = assetUrl(blok.image);
+  const rawImg = blok.image_scale;
+  const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 30, 150);
+  const imgStyle = imgScale !== 100 ? ({ transform: `scale(${imgScale / 100})` } as CSSProperties) : undefined;
   return (
     <section className="section section--espresso" {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
       <FontLink href={title.href} />
       <FontLink href={text.href} />
       <div className="container">
-        <div className="text-center animate-on-scroll" style={{ maxWidth: "700px", margin: "0 auto" }}>
-          {blok.badge ? <span className="badge badge--dark" style={badge.style}>{blok.badge}</span> : null}
-          <h2 style={{ marginTop: "1rem", ...title.style }}>{fmt(blok.title)}</h2>
-          {paras.map((p, i) => (
-            <p key={i} style={{ color: "var(--color-cream-dark)", ...(i === 0 ? { marginTop: "1.5rem" } : {}), ...text.style }}>
-              {fmt(p)}
-            </p>
-          ))}
-          <Buttons buttons={blok.buttons} />
-        </div>
+        {split ? (
+          <div className="espresso-split">
+            <div className="espresso-split__text animate-on-scroll">{content}</div>
+            {imgUrl ? (
+              <div className={blok.image_style === "seamless" ? "espresso-split__visual espresso-split__visual--seamless animate-on-scroll delay-1" : "espresso-split__visual animate-on-scroll delay-1"}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={imgUrl} alt={blok.image?.alt || ""} loading="lazy" style={imgStyle} />
+              </div>
+            ) : (
+              <div className="espresso-split__visual" aria-hidden="true" />
+            )}
+          </div>
+        ) : (
+          <div className="text-center animate-on-scroll" style={{ maxWidth: "700px", margin: "0 auto" }}>
+            {content}
+          </div>
+        )}
       </div>
     </section>
   );

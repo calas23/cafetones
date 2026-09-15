@@ -199,6 +199,12 @@ certificat auto-signé dans le navigateur.
   **Couleur de fond** (code hex du voile posé sur l'image, vide = rouge foncé
   de la palette), **Opacité du voile (%)** (0 = image sans voile, 100 = couleur
   pleine sans image, vide = 65) → Save → Publish.
+- **Accueil — section rouge « Pourquoi nous choisir » avec une illustration à
+  droite** : cliquer la section → onglet **Image** → **Disposition** = « Texte à
+  gauche, image à droite » → **Image** (Upload ; un PNG à fond transparent évite
+  un cadre blanc sur le rouge) → **Style de l'image** (coins arrondis ou sans
+  cadre) et **Taille de l'image (%)** → Save → Publish. Disposition « Texte
+  centré » = rendu d'origine.
 - **Page Bureau & Entreprise — image du bandeau sans cadre** (illustration à
   fond blanc) : cliquer le bandeau → **Style de l'image** → « Sans cadre » : plus
   de coins arrondis ni d'ombre, image entière, fond blanc fondu dans la page →
@@ -632,6 +638,10 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Paragraphes (séparés par une ligne vide) |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `layout` | Choix — valeurs : center · split | Disposition |
+| `image` | Image | Image (colonne de droite) |
+| `image_style` | Choix — valeurs : card · seamless | Style de l'image |
+| `image_scale` | Nombre | Taille de l'image (%) |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
