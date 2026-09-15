@@ -289,12 +289,16 @@ export function FaqSection({ blok }: { blok: FaqBlok }) {
           {(blok.items ?? []).map((item, i) => {
             const delayCls = item.delay ? ` delay-${item.delay}` : "";
             return (
+              // L'état ouvert est porté par data-open, pas par la classe : la liste de classes reste
+              // identique d'un rendu à l'autre, React ne la réécrit donc pas et la classe « visible »
+              // posée par l'animation au défilement (hors React) survit au clic.
               <div
-                className={`faq-item animate-on-scroll${delayCls}${open === i ? " active" : ""}`}
+                className={`faq-item animate-on-scroll${delayCls}`}
+                data-open={open === i ? "true" : undefined}
                 key={item._uid}
                 {...storyblokEditable(item)}
               >
-                <button className="faq-question" type="button" onClick={() => setOpen(open === i ? null : i)}>
+                <button className="faq-question" type="button" aria-expanded={open === i} onClick={() => setOpen(open === i ? null : i)}>
                   {item.question}
                   <Icon name="chevron-down" size={20} stroke={2} />
                 </button>
