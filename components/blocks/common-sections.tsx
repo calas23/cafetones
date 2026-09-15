@@ -101,7 +101,7 @@ type EspressoTextBlok = SbBlok & {
   text?: string;
   buttons?: SbBlok[];
   layout?: string; // center (défaut) | split : texte à gauche, image à droite
-  section_width?: string; // site (défaut) | wide : contenu sur toute la largeur de l'écran
+  image_gap?: string | number; // espace entre le texte et l'image en px (vide = 64, ordinateur)
   image?: SbAsset; // colonne de droite (disposition split)
   image_style?: string; // card (coins arrondis, défaut) | seamless (sans cadre)
   image_scale?: string | number; // taille de l'image en % (vide = 100), échelle visuelle centrée
@@ -131,15 +131,18 @@ export function EspressoTextSection({ blok }: { blok: EspressoTextBlok }) {
   const rawImg = blok.image_scale;
   const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 30, 150);
   const imgStyle = imgScale !== 100 ? ({ transform: `scale(${imgScale / 100})` } as CSSProperties) : undefined;
-  const wide = blok.section_width === "wide";
+  // « Espace entre le texte et l'image (px) » : gap de la grille deux colonnes (vide = 4rem d'origine).
+  const rawGap = blok.image_gap;
+  const gap = rawGap === undefined || rawGap === null || String(rawGap).trim() === "" ? -1 : pxOr(rawGap as string | number, -1, 0, 300);
+  const splitStyle = gap >= 0 ? ({ "--espresso-gap": `${gap}px` } as CSSProperties) : undefined;
   return (
     <section className="section section--espresso" {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
       <FontLink href={title.href} />
       <FontLink href={text.href} />
-      <div className={wide ? "container container--wide" : "container"}>
+      <div className="container">
         {split ? (
-          <div className="espresso-split">
+          <div className="espresso-split" style={splitStyle}>
             <div className="espresso-split__text animate-on-scroll">{content}</div>
             {imgUrl ? (
               <div className={blok.image_style === "seamless" ? "espresso-split__visual espresso-split__visual--seamless animate-on-scroll delay-1" : "espresso-split__visual animate-on-scroll delay-1"}>
