@@ -646,6 +646,10 @@ export const COMPONENTS = [
       subtitle: textarea("Sous-titre"),
       buttons: bloks("Boutons", ["button"]),
       trust_items: bloks("Éléments de confiance", ["trust_item"]),
+      image_style: option("Style de l'image", [
+        ["card", "Carte : coins arrondis et ombre (défaut)"],
+        ["seamless", "Sans cadre : fondu dans la page (illustration à fond blanc)"],
+      ]),
       content_spacing: number("Espacement entre les éléments (%)", {
         description: "Espace vertical entre le badge, le titre, le texte, les boutons et les points de confiance. 100 = actuel, 50 = deux fois moins d'espace. Entre 25 et 200.",
       }),
