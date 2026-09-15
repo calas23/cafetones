@@ -245,10 +245,19 @@ p {
 .espresso-split__visual--seamless img {
   border-radius: 0;
 }
+/* « Largeur de la section » = toute la largeur de l'écran (Storyblok) : le conteneur n'est plus
+   limité à la largeur du site, le texte part du bord gauche et l'image va jusqu'au bord droit. */
+.container--wide {
+  max-width: none;
+}
 @media (min-width: 900px) {
   .espresso-split {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+  }
+  .container--wide {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 

@@ -101,6 +101,7 @@ type EspressoTextBlok = SbBlok & {
   text?: string;
   buttons?: SbBlok[];
   layout?: string; // center (défaut) | split : texte à gauche, image à droite
+  section_width?: string; // site (défaut) | wide : contenu sur toute la largeur de l'écran
   image?: SbAsset; // colonne de droite (disposition split)
   image_style?: string; // card (coins arrondis, défaut) | seamless (sans cadre)
   image_scale?: string | number; // taille de l'image en % (vide = 100), échelle visuelle centrée
@@ -130,12 +131,13 @@ export function EspressoTextSection({ blok }: { blok: EspressoTextBlok }) {
   const rawImg = blok.image_scale;
   const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 30, 150);
   const imgStyle = imgScale !== 100 ? ({ transform: `scale(${imgScale / 100})` } as CSSProperties) : undefined;
+  const wide = blok.section_width === "wide";
   return (
     <section className="section section--espresso" {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
       <FontLink href={title.href} />
       <FontLink href={text.href} />
-      <div className="container">
+      <div className={wide ? "container container--wide" : "container"}>
         {split ? (
           <div className="espresso-split">
             <div className="espresso-split__text animate-on-scroll">{content}</div>
