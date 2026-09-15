@@ -96,10 +96,10 @@ main.page-contact .faq-question svg {
   color: var(--color-text-light);
   transition: transform 0.3s ease, color 0.3s ease;
 }
-main.page-contact .faq-item.active .faq-question {
+main.page-contact .faq-item[data-open="true"] .faq-question {
   color: var(--color-crema-dark);
 }
-main.page-contact .faq-item.active .faq-question svg {
+main.page-contact .faq-item[data-open="true"] .faq-question svg {
   transform: rotate(180deg);
   color: var(--color-crema-dark);
 }
