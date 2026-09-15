@@ -202,7 +202,9 @@ certificat auto-signé dans le navigateur.
 - **Page Bureau & Entreprise — image du bandeau sans cadre** (illustration à
   fond blanc) : cliquer le bandeau → **Style de l'image** → « Sans cadre » : plus
   de coins arrondis ni d'ombre, image entière, fond blanc fondu dans la page →
-  Save → Publish. « Carte » = rendu d'origine.
+  Save → Publish. « Carte » = rendu d'origine. Taille de cette image : même
+  bloc → **Taille de l'image (%)** (100 = actuelle, 70 = plus petite, 130 =
+  plus grande, vide = 100).
 - **Page CHR — titre du bandeau sur une seule ligne** : cliquer le bandeau →
   **Largeur du bloc de texte (px)** (vide = 720 ; ex. 1100 pour que « L'espresso
   italien que vos clients méritent » tienne sur une ligne sur ordinateur ; entre
@@ -506,6 +508,7 @@ certificat auto-signé dans le navigateur.
 | `buttons` | Liste de blocs (button) | Boutons |
 | `trust_items` | Liste de blocs (trust_item) | Éléments de confiance |
 | `image_style` | Choix — valeurs : card · seamless | Style de l'image |
+| `image_scale` | Nombre | Taille de l'image (%) |
 | `content_spacing` | Nombre | Espacement entre les éléments (%) |
 | `image` | Image | Image |
 | `image_width` | Texte | Largeur HTML de l'image (px) |
