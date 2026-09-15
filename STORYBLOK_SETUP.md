@@ -204,7 +204,8 @@ certificat auto-signé dans le navigateur.
   gauche, image à droite » → **Image** (Upload ; un PNG à fond transparent évite
   un cadre blanc sur le rouge) → **Style de l'image** (coins arrondis ou sans
   cadre) et **Taille de l'image (%)** → Save → Publish. Disposition « Texte
-  centré » = rendu d'origine.
+  centré » = rendu d'origine. Pour pousser le texte plus à gauche (et l'image
+  plus à droite) : **Largeur de la section** = « Toute la largeur de l'écran ».
 - **Page Bureau & Entreprise — image du bandeau sans cadre** (illustration à
   fond blanc) : cliquer le bandeau → **Style de l'image** → « Sans cadre » : plus
   de coins arrondis ni d'ombre, image entière, fond blanc fondu dans la page →
@@ -639,6 +640,7 @@ certificat auto-signé dans le navigateur.
 | `text` | Texte long | Paragraphes (séparés par une ligne vide) |
 | `buttons` | Liste de blocs (button) | Boutons |
 | `layout` | Choix — valeurs : center · split | Disposition |
+| `section_width` | Choix — valeurs : site · wide | Largeur de la section |
 | `image` | Image | Image (colonne de droite) |
 | `image_style` | Choix — valeurs : card · seamless | Style de l'image |
 | `image_scale` | Nombre | Taille de l'image (%) |

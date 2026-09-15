@@ -754,10 +754,14 @@ export const COMPONENTS = [
       title: text("Titre"),
       text: textarea("Paragraphes (séparés par une ligne vide)"),
       buttons: bloks("Boutons", ["button"]),
-      "tab-image": { type: "tab", display_name: "Image", keys: ["layout", "image", "image_style", "image_scale"] },
+      "tab-image": { type: "tab", display_name: "Image", keys: ["layout", "section_width", "image", "image_style", "image_scale"] },
       layout: option("Disposition", [
         ["center", "Texte centré (défaut)"],
         ["split", "Texte à gauche, image à droite"],
+      ]),
+      section_width: option("Largeur de la section", [
+        ["site", "Alignée sur la largeur du site (défaut)"],
+        ["wide", "Toute la largeur de l'écran : texte plus à gauche, image plus à droite"],
       ]),
       image: asset("Image (colonne de droite)", {
         description: "Affichée à droite du texte avec la disposition « Texte à gauche, image à droite ». Sur ce fond rouge, une image PNG à fond transparent donne un rendu sans cadre blanc.",
