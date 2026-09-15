@@ -754,11 +754,14 @@ export const COMPONENTS = [
       title: text("Titre"),
       text: textarea("Paragraphes (séparés par une ligne vide)"),
       buttons: bloks("Boutons", ["button"]),
-      "tab-image": { type: "tab", display_name: "Image", keys: ["layout", "image", "image_style", "image_scale"] },
+      "tab-image": { type: "tab", display_name: "Image", keys: ["layout", "image_gap", "image", "image_style", "image_scale"] },
       layout: option("Disposition", [
         ["center", "Texte centré (défaut)"],
         ["split", "Texte à gauche, image à droite"],
       ]),
+      image_gap: number("Espace entre le texte et l'image (px)", {
+        description: "Écart entre la colonne de texte et l'image (disposition « Texte à gauche, image à droite », sur ordinateur). Vide = 64. Ex. 120 pour plus d'air. Entre 0 et 300.",
+      }),
       image: asset("Image (colonne de droite)", {
         description: "Affichée à droite du texte avec la disposition « Texte à gauche, image à droite ». Sur ce fond rouge, une image PNG à fond transparent donne un rendu sans cadre blanc.",
       }),

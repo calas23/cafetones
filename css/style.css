@@ -248,7 +248,8 @@ p {
 @media (min-width: 900px) {
   .espresso-split {
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    /* --espresso-gap : « Espace entre le texte et l'image (px) » (Storyblok) ; absente = 4rem. */
+    gap: var(--espresso-gap, 4rem);
   }
 }
 
