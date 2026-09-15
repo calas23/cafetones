@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from "react";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { Icon } from "@/components/Icon";
+import { FontLink } from "@/components/FontLink";
+import { blockTextStyle } from "@/lib/fonts";
 import { Illustration } from "@/components/Illustration";
 import { PhoneText } from "@/components/PhoneText";
 import { telHref } from "@/lib/phone";
@@ -53,6 +55,12 @@ export function ContactSection({ blok }: { blok: ContactSectionBlok }) {
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
   const phone = blok.phone || "06 62 11 97 48";
+  // Onglet « Typographie » : titre du formulaire, titres de la colonne infos.
+  const formTitle = blockTextStyle(blok, "form_title");
+  const formTitleStyle = { ...formTitle.style };
+  const infoTitle = blockTextStyle(blok, "info_titles");
+  const infoTitleStyle = { ...infoTitle.style };
+  const h3Style = Object.keys(infoTitleStyle).length ? infoTitleStyle : undefined;
 
   const validateField = (el: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement): boolean => {
     const err = validateValue(el);
@@ -100,10 +108,12 @@ export function ContactSection({ blok }: { blok: ContactSectionBlok }) {
 
   return (
     <section className="section" {...storyblokEditable(blok)}>
+      <FontLink href={formTitle.href} />
+      <FontLink href={infoTitle.href} />
       <div className="container">
         <div className="contact-layout">
           <div className="contact-form-card animate-on-scroll">
-            <h2>{blok.form_title}</h2>
+            <h2 style={Object.keys(formTitleStyle).length ? formTitleStyle : undefined}>{blok.form_title}</h2>
             <p>{fmt(blok.form_intro)}</p>
 
             <form data-form="contact-page" noValidate onSubmit={onSubmit}>
@@ -203,7 +213,7 @@ export function ContactSection({ blok }: { blok: ContactSectionBlok }) {
           </div>
 
           <div className="contact-info animate-on-scroll delay-1">
-            <h3>{blok.info_title}</h3>
+            <h3 style={h3Style}>{blok.info_title}</h3>
             <div className="contact-info-line">
               <Icon name="map-pin" size={18} stroke={1.8} />
               {blok.address}
@@ -221,16 +231,16 @@ export function ContactSection({ blok }: { blok: ContactSectionBlok }) {
               {blok.hours}
             </div>
 
-            <h3>{blok.zone_title}</h3>
+            <h3 style={h3Style}>{blok.zone_title}</h3>
             <p>{fmt(blok.zone_text)}</p>
 
-            <h3>{blok.degust_title}</h3>
+            <h3 style={h3Style}>{blok.degust_title}</h3>
             <p>{fmt(blok.degust_text)}</p>
             <a href={blok.degust_button_link || "#"} className="btn btn--primary" style={{ marginTop: "0.75rem" }}>
               {blok.degust_button_label}
             </a>
 
-            <h3>{blok.map_heading}</h3>
+            <h3 style={h3Style}>{blok.map_heading}</h3>
             {blok.map_url ? (
               <iframe
                 className="contact-map"
@@ -263,6 +273,9 @@ export type FaqBlok = SbBlok & {
 export function FaqSection({ blok }: { blok: FaqBlok }) {
   const [open, setOpen] = useState<number | null>(null);
   const refs = useRef<(HTMLDivElement | null)[]>([]);
+  // Onglet « Typographie » : titre.
+  const title = blockTextStyle(blok, "title");
+  const titleStyle = { ...title.style };
 
   useEffect(() => {
     refs.current.forEach((el, i) => {
@@ -273,6 +286,7 @@ export function FaqSection({ blok }: { blok: FaqBlok }) {
 
   return (
     <section className="section section--cream" {...storyblokEditable(blok)}>
+      <FontLink href={title.href} />
       <div className="container">
         <div
           className="text-center animate-on-scroll"
@@ -281,7 +295,7 @@ export function FaqSection({ blok }: { blok: FaqBlok }) {
           data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
-          <h2>{fmt(blok.title)}</h2>
+          <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>
           <Illustration {...blok} />
         </div>
 

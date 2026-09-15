@@ -241,6 +241,13 @@ certificat auto-signé dans le navigateur.
   dans la section à garder, ajouter les cartes de l'autre (bouton + → Carte
   certification, ou ⋯ → Copy / Paste), adapter le titre, puis supprimer
   l'autre section (⋯ → Delete) → Save → Publish.
+- **Page Contact — titres** : « Contactez-nous » : cliquer le bandeau (bloc
+  Héros — Bandeau simple) → onglet **Typographie** → **Titre — police / taille
+  (%) / couleur**. « Envoyez-nous un message » et les titres de la colonne de
+  droite (coordonnées, zone de livraison, dégustation, carte) : cliquer la
+  section contact → onglet **Typographie** → **Formulaire — titre** et **Titres
+  de la colonne infos** (police, taille, couleur). « Questions fréquentes » :
+  cliquer la section FAQ → onglet **Typographie** → Save → Publish.
 - **Disposition du pied de page** : Réglages du site → onglet **Pied de page**
   → **Disposition du pied de page** : logo et présentation à gauche, colonnes à
   droite sur toute la largeur (défaut), ou colonnes réparties sur la largeur
@@ -928,6 +935,12 @@ certificat auto-signé dans le navigateur.
 | `map_heading` | Texte | Titre carte |
 | `map_url` | Texte long | URL d'intégration Google Maps |
 | `map_title` | Texte | Titre accessible de la carte |
+| `form_title_font` | Choix — liste Datasource « polices » | Formulaire — titre — police |
+| `form_title_size` | Nombre | Formulaire — titre — taille (%) |
+| `form_title_color` | Texte | Formulaire — titre — couleur |
+| `info_titles_font` | Choix — liste Datasource « polices » | Titres de la colonne infos — police |
+| `info_titles_size` | Nombre | Titres de la colonne infos — taille (%) |
+| `info_titles_color` | Texte | Titres de la colonne infos — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -941,6 +954,9 @@ certificat auto-signé dans le navigateur.
 | `illustration_position` | Choix — valeurs : right · left · corner-br | Position de l'illustration |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `items` | Liste de blocs (faq_item) | Questions |
+| `title_font` | Choix — liste Datasource « polices » | Titre — police |
+| `title_size` | Nombre | Titre — taille (%) |
+| `title_color` | Texte | Titre — couleur |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
