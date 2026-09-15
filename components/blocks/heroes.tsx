@@ -147,7 +147,7 @@ export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
           </div>
         </div>
 
-        <div className="hero__visual">
+        <div className={blok.image_style === "seamless" ? "hero__visual hero__visual--seamless" : "hero__visual"}>
           <div className={blok.image_style === "seamless" ? "hero__image-wrapper hero__image-wrapper--seamless" : "hero__image-wrapper"}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

@@ -119,6 +119,10 @@ main.page-landing .hero__image-wrapper--seamless {
 }
 main.page-landing .hero__image-wrapper--seamless img {
   object-fit: contain;
+}
+/* Le mode de fusion est posé sur la colonne animée elle-même : son animation d'apparition
+   (opacité) isole ses enfants, un mix-blend-mode sur l'image seule n'atteindrait pas la page. */
+main.page-landing .hero__visual--seamless {
   mix-blend-mode: multiply;
 }
 main.page-landing .hero__image-badge {
