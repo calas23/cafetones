@@ -224,6 +224,33 @@ p {
 .section--espresso h4 {
   color: var(--color-cream);
 }
+/* Section texte fond espresso, disposition « Texte à gauche, image à droite » (Storyblok, onglet
+   Image) : deux colonnes dès 900 px, texte aligné à gauche, image dans la colonne de droite. */
+.espresso-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.espresso-split__text {
+  text-align: left;
+}
+.espresso-split__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-xl);
+  transform-origin: center center;
+}
+.espresso-split__visual--seamless img {
+  border-radius: 0;
+}
+@media (min-width: 900px) {
+  .espresso-split {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
 
 .section--cream {
   background-color: var(--color-cream-warm);
