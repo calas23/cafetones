@@ -110,6 +110,21 @@ main.page-landing .hero__image-wrapper img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+/* « Style de l'image » = Sans cadre (Storyblok) : ni coins arrondis ni ombre, image entière, et
+   le fond blanc d'une illustration se fond dans la page (mode de fusion multiply). */
+main.page-landing .hero__image-wrapper--seamless {
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+main.page-landing .hero__image-wrapper--seamless img {
+  object-fit: contain;
+}
+/* Le mode de fusion est posé sur la colonne animée elle-même : son animation d'apparition
+   (opacité) isole ses enfants, un mix-blend-mode sur l'image seule n'atteindrait pas la page. */
+main.page-landing .hero__visual--seamless {
+  mix-blend-mode: multiply;
+}
 main.page-landing .hero__image-badge {
   position: absolute;
   bottom: 1.5rem;

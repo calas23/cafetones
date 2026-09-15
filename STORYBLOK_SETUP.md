@@ -199,6 +199,10 @@ certificat auto-signé dans le navigateur.
   **Couleur de fond** (code hex du voile posé sur l'image, vide = rouge foncé
   de la palette), **Opacité du voile (%)** (0 = image sans voile, 100 = couleur
   pleine sans image, vide = 65) → Save → Publish.
+- **Page Bureau & Entreprise — image du bandeau sans cadre** (illustration à
+  fond blanc) : cliquer le bandeau → **Style de l'image** → « Sans cadre » : plus
+  de coins arrondis ni d'ombre, image entière, fond blanc fondu dans la page →
+  Save → Publish. « Carte » = rendu d'origine.
 - **Page CHR — titre du bandeau sur une seule ligne** : cliquer le bandeau →
   **Largeur du bloc de texte (px)** (vide = 720 ; ex. 1100 pour que « L'espresso
   italien que vos clients méritent » tienne sur une ligne sur ordinateur ; entre
@@ -501,6 +505,7 @@ certificat auto-signé dans le navigateur.
 | `subtitle` | Texte long | Sous-titre |
 | `buttons` | Liste de blocs (button) | Boutons |
 | `trust_items` | Liste de blocs (trust_item) | Éléments de confiance |
+| `image_style` | Choix — valeurs : card · seamless | Style de l'image |
 | `content_spacing` | Nombre | Espacement entre les éléments (%) |
 | `image` | Image | Image |
 | `image_width` | Texte | Largeur HTML de l'image (px) |

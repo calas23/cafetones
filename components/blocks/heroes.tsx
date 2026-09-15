@@ -106,6 +106,7 @@ type LandingHeroBlok = SbBlok & {
   image_width?: string;
   image_height?: string;
   content_spacing?: string | number; // espacement vertical entre les éléments en % (vide = 100)
+  image_style?: string; // card (défaut : coins arrondis + ombre) | seamless (sans cadre, fond blanc fondu)
 };
 
 export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
@@ -146,8 +147,8 @@ export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
           </div>
         </div>
 
-        <div className="hero__visual">
-          <div className="hero__image-wrapper">
+        <div className={blok.image_style === "seamless" ? "hero__visual hero__visual--seamless" : "hero__visual"}>
+          <div className={blok.image_style === "seamless" ? "hero__image-wrapper hero__image-wrapper--seamless" : "hero__image-wrapper"}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={assetUrl(blok.image)}
