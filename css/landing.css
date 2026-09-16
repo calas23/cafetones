@@ -129,6 +129,18 @@ main.page-landing .hero__image-wrapper--seamless img {
 main.page-landing .hero__visual--seamless {
   mix-blend-mode: multiply;
 }
+/* Héros CHR en disposition texte / illustration (classe hero--chr, voir heroes.tsx). Sans cadre,
+   l'illustration est affichée entière, dans ses proportions (pas de boîte 4:3) ; les boutons passent
+   à la ligne si la colonne de texte est étroite. Les variables sont posées par le bloc Storyblok :
+   --hero-cols (« Taille de l'image (%) » = largeur de la colonne illustration par rapport au texte),
+   --hero-text-shift (« Décaler le texte vers la gauche (px) », borné par la marge à gauche du site). */
+main.page-landing .hero--chr .hero__image-wrapper--seamless img {
+  aspect-ratio: auto;
+  height: auto;
+}
+main.page-landing .hero--chr .hero__actions {
+  flex-wrap: wrap;
+}
 main.page-landing .hero__image-badge {
   position: absolute;
   bottom: 1.5rem;
@@ -375,6 +387,12 @@ main.page-landing .pricing-cards {
 main.page-landing .hero__inner {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+  }
+main.page-landing .hero--chr .hero__inner {
+    grid-template-columns: var(--hero-cols, 1fr 1fr);
+  }
+main.page-landing .hero--chr .hero__content {
+    margin-left: calc(-1 * min(var(--hero-text-shift, 0px), max(0px, (100vw - var(--max-width)) / 2)));
   }
 main.page-landing .hero__visual {
     display: block;
