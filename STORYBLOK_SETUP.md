@@ -250,6 +250,14 @@ certificat auto-signé dans le navigateur.
   (%)** (100 = actuelle, 150 = plus hautes, vide = 100) → Save → Publish.
   Écart entre les deux cartes : même section → **Espace entre les cartes (px)**
   (vide = 32 ; 0 = collées, 64 = deux fois plus d'espace) → Save → Publish.
+- **Page À propos — vrais logos sur les cartes certifications / récompenses** :
+  cliquer la carte → **Logo (optionnel)** → Upload du logo officiel (PNG ou SVG
+  à fond transparent) → Save → Publish ; il remplace l'icône. Taille : cliquer
+  la section → **Taille des logos (%)** (100 = 96 × 72 px, vide = 100). Les
+  logos officiels s'obtiennent auprès de La Genovese (titulaire des
+  certifications) ou des organismes ; le logo ISO lui-même ne doit pas être
+  utilisé pour signaler une certification (utiliser la marque de l'organisme
+  certificateur).
 - **Fusionner deux sections certifications / récompenses** : c'est du contenu :
   dans la section à garder, ajouter les cartes de l'autre (bouton + → Carte
   certification, ou ⋯ → Copy / Paste), adapter le titre, puis supprimer
@@ -1029,6 +1037,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
 | `cards` | Liste de blocs (cert_card) | Cartes |
+| `logo_scale` | Nombre | Taille des logos (%) |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
 | `title_color` | Texte | Titre — couleur |
@@ -1240,6 +1249,7 @@ certificat auto-signé dans le navigateur.
 
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
+| `image` | Image | Logo (optionnel) |
 | `icon` | Choix — valeurs : phone · map-pin · mail · clock · arrow-right · check · chevron-down · star · bell · coffee · medal · shield · pin-check · users · file-invoice · file-text · wrench · check-circle · globe | Icône |
 | `title` | Texte | Titre |
 | `text` | Texte long | Texte |

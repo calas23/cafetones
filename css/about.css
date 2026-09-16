@@ -143,6 +143,22 @@ main.page-about .about-cert-card__icon svg {
   width: 26px;
   height: 26px;
 }
+/* Logo officiel d'une carte certification (champ « Logo », remplace l'icône). --cert-logo-scale :
+   « Taille des logos (%) » de la section (Storyblok, posée sur .about-certs) ; absente = 96 × 72 px. */
+main.page-about .about-cert-card__logo {
+  width: calc(96px * var(--cert-logo-scale, 1));
+  height: calc(72px * var(--cert-logo-scale, 1));
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.page-about .about-cert-card__logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
 main.page-about .about-cert-card h4 {
   margin-bottom: 0.5rem;
 }
