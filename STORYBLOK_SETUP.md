@@ -202,6 +202,8 @@ certificat auto-signé dans le navigateur.
   affichée entière), **Taille de l'image (%)** (largeur de l'illustration par
   rapport au texte : 100 = moitié / moitié, 150 = une fois et demie plus large
   que le texte, 200 = deux fois ; jusqu'à 300 ; le texte se resserre à gauche),
+  **Illustration collée au bord droit de l'écran** (case à cocher : plus de
+  marge à droite, l'illustration touche le bord de l'écran et s'agrandit),
   **Espacement entre les éléments (%)**, **Éléments de confiance** (optionnel)
   → Save → Publish. **Décaler le texte vers la gauche (px)** (onglet principal,
   ex. 100 : sur ordinateur le texte commence plus à gauche que le bord du site,
@@ -603,6 +605,7 @@ certificat auto-signé dans le navigateur.
 | `content_width` | Nombre | Largeur du bloc de texte (px) |
 | `text_shift` | Nombre | Décaler le texte vers la gauche (px) |
 | `image` | Image | Illustration (à droite du texte) |
+| `image_bleed` | Case à cocher | Illustration collée au bord droit de l'écran |
 | `image_style` | Choix — valeurs : card · seamless | Style de l'image |
 | `image_scale` | Nombre | Taille de l'image (%) |
 | `content_spacing` | Nombre | Espacement entre les éléments (%) |

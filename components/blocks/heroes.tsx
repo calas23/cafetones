@@ -109,6 +109,7 @@ type LandingHeroBlok = SbBlok & {
   image_style?: string; // card (défaut : coins arrondis + ombre) | seamless (sans cadre, fond blanc fondu)
   image_scale?: string | number; // taille de l'image en % (vide = 100), échelle visuelle centrée
   text_shift?: string | number; // variante chr : décalage du texte vers la gauche en px (vide = 0)
+  image_bleed?: boolean; // variante chr : colonne illustration étendue jusqu'au bord droit de l'écran
 };
 
 // telLinks : les numéros de téléphone du sous-titre deviennent des liens (héros CHR en disposition
@@ -143,7 +144,7 @@ export function LandingHero({ blok, telLinks = false, variant }: { blok: Landing
   const trustItems = blok.trust_items ?? [];
   const imgUrl = assetUrl(blok.image);
   return (
-    <section className={chr ? "hero hero--chr" : "hero"} style={sectionStyle} {...storyblokEditable(blok)}>
+    <section className={chr ? (blok.image_bleed ? "hero hero--chr hero--bleed" : "hero hero--chr") : "hero"} style={sectionStyle} {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
       <FontLink href={title.href} />
       <FontLink href={subtitle.href} />
@@ -250,6 +251,7 @@ type ChrHeroBlok = SbBlok & {
   content_spacing?: string | number;
   trust_items?: (SbBlok & { text?: string })[];
   text_shift?: string | number; // décalage du texte vers la gauche en px, disposition split (vide = 0)
+  image_bleed?: boolean; // « Illustration collée au bord droit de l'écran », disposition split
 };
 
 // Voile du héros CHR (variable --chr-overlay, voir chr.css). Rien de renseigné = voile d'origine ;

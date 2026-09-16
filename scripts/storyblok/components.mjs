@@ -712,9 +712,12 @@ export const COMPONENTS = [
         description: "Disposition texte / illustration, sur ordinateur : le texte commence plus à gauche que le bord habituel du site, de cette valeur (limitée à la marge disponible, rien ne sort de l'écran). Vide = 0. Ex. 100 ; jusqu'à 400.",
       }),
       "tab-fond": { type: "tab", display_name: "Fond", keys: ["background_image", "background", "overlay_opacity"] },
-      "tab-image": { type: "tab", display_name: "Illustration", keys: ["image", "image_style", "image_scale", "content_spacing", "trust_items"] },
+      "tab-image": { type: "tab", display_name: "Illustration", keys: ["image", "image_style", "image_scale", "image_bleed", "content_spacing", "trust_items"] },
       image: asset("Illustration (à droite du texte)", {
         description: "Disposition « Texte à gauche, illustration à droite ». Vide = colonne de droite vide.",
+      }),
+      image_bleed: boolean("Illustration collée au bord droit de l'écran", {
+        description: "Sur ordinateur, la colonne illustration s'étend jusqu'au bord droit de l'écran, sans marge ; l'illustration en profite pour s'agrandir. Décoché = dans la largeur du site.",
       }),
       image_style: option("Style de l'image", [
         ["card", "Carte : coins arrondis et ombre (défaut)"],
