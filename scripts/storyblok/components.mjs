@@ -708,6 +708,9 @@ export const COMPONENTS = [
       content_width: number("Largeur du bloc de texte (px)", {
         description: "Disposition centrée. Largeur maximale du badge, du titre, du sous-titre et des boutons. Vide = 720. Augmenter, ex. 1100, pour que le titre tienne sur une seule ligne sur ordinateur. Entre 400 et 1400.",
       }),
+      text_shift: number("Décaler le texte vers la gauche (px)", {
+        description: "Disposition texte / illustration, sur ordinateur : le texte commence plus à gauche que le bord habituel du site, de cette valeur (limitée à la marge disponible, rien ne sort de l'écran). Vide = 0. Ex. 100 ; jusqu'à 400.",
+      }),
       "tab-fond": { type: "tab", display_name: "Fond", keys: ["background_image", "background", "overlay_opacity"] },
       "tab-image": { type: "tab", display_name: "Illustration", keys: ["image", "image_style", "image_scale", "content_spacing", "trust_items"] },
       image: asset("Illustration (à droite du texte)", {
@@ -715,10 +718,10 @@ export const COMPONENTS = [
       }),
       image_style: option("Style de l'image", [
         ["card", "Carte : coins arrondis et ombre (défaut)"],
-        ["seamless", "Sans cadre : fondu dans la page (illustration à fond blanc)"],
+        ["seamless", "Sans cadre : fondu dans la page (illustration à fond blanc, affichée entière)"],
       ]),
       image_scale: number("Taille de l'image (%)", {
-        description: "Taille de l'illustration. 100 = actuelle, 70 = plus petite, 130 = plus grande (elle déborde alors un peu de sa colonne). Entre 30 et 150. Vide = taille d'origine.",
+        description: "Largeur de l'illustration par rapport au texte, sur ordinateur. 100 = moitié / moitié, 150 = illustration une fois et demie plus large que le texte, 200 = deux fois plus large (le texte se resserre à gauche). Entre 30 et 300. Vide = moitié / moitié.",
       }),
       content_spacing: number("Espacement entre les éléments (%)", {
         description: "Espace vertical entre le badge, le titre, le texte, les boutons et les points de confiance. 100 = actuel, 50 = deux fois moins d'espace. Entre 25 et 200.",

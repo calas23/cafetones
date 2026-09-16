@@ -198,13 +198,19 @@ certificat auto-signé dans le navigateur.
   illustration à droite)** : cliquer le bandeau (bloc Héros — CHR) →
   **Disposition** = « Texte à gauche, illustration à droite » → onglet
   **Illustration** → **Illustration** (Upload ou image de la bibliothèque),
-  **Style de l'image** (« Sans cadre » pour une illustration à fond blanc),
-  **Taille de l'image (%)**, **Espacement entre les éléments (%)**, **Éléments
-  de confiance** (optionnel) → Save → Publish. Le bandeau prend alors le fond
-  clair, le badge doré, le titre, le texte et les boutons de la page Bureau ;
-  l'onglet Typographie du bloc continue de s'appliquer. « Texte centré sur la
-  photo de fond » = rendu d'origine (l'onglet Fond et la largeur du bloc de
-  texte ne servent qu'à cette disposition).
+  **Style de l'image** (« Sans cadre » pour une illustration à fond blanc,
+  affichée entière), **Taille de l'image (%)** (largeur de l'illustration par
+  rapport au texte : 100 = moitié / moitié, 150 = une fois et demie plus large
+  que le texte, 200 = deux fois ; jusqu'à 300 ; le texte se resserre à gauche),
+  **Espacement entre les éléments (%)**, **Éléments de confiance** (optionnel)
+  → Save → Publish. **Décaler le texte vers la gauche (px)** (onglet principal,
+  ex. 100 : sur ordinateur le texte commence plus à gauche que le bord du site,
+  sans jamais sortir de l'écran ; vide = 0). Taille des boutons : cliquer
+  chaque bouton du bandeau → **Taille** (Petite / Normale / Grande). Le bandeau
+  prend alors le fond clair, le badge doré, le titre, le texte et les boutons
+  de la page Bureau ; l'onglet Typographie du bloc continue de s'appliquer.
+  « Texte centré sur la photo de fond » = rendu d'origine (l'onglet Fond et la
+  largeur du bloc de texte ne servent qu'à cette disposition).
 - **Page CHR — image et couleur du bandeau** (disposition centrée) : cliquer le
   bandeau (bloc Héros — CHR) → onglet **Fond** → **Image de fond** (Upload ;
   vide = photo d'origine), **Couleur de fond** (code hex du voile posé sur
@@ -595,6 +601,7 @@ certificat auto-signé dans le navigateur.
 | `buttons` | Liste de blocs (button) | Boutons |
 | `layout` | Choix — valeurs : cover · split | Disposition |
 | `content_width` | Nombre | Largeur du bloc de texte (px) |
+| `text_shift` | Nombre | Décaler le texte vers la gauche (px) |
 | `image` | Image | Illustration (à droite du texte) |
 | `image_style` | Choix — valeurs : card · seamless | Style de l'image |
 | `image_scale` | Nombre | Taille de l'image (%) |

@@ -108,12 +108,17 @@ type LandingHeroBlok = SbBlok & {
   content_spacing?: string | number; // espacement vertical entre les éléments en % (vide = 100)
   image_style?: string; // card (défaut : coins arrondis + ombre) | seamless (sans cadre, fond blanc fondu)
   image_scale?: string | number; // taille de l'image en % (vide = 100), échelle visuelle centrée
+  text_shift?: string | number; // variante chr : décalage du texte vers la gauche en px (vide = 0)
 };
 
 // telLinks : les numéros de téléphone du sous-titre deviennent des liens (héros CHR en disposition
 // texte / illustration, qui réutilise ce rendu). Badge, points de confiance et image ne sont rendus
 // que s'ils sont renseignés (toujours le cas sur la page Bureau & Entreprise : rendu inchangé).
-export function LandingHero({ blok, telLinks = false }: { blok: LandingHeroBlok; telLinks?: boolean }) {
+// variant "chr" (classe hero--chr, voir landing.css) : « Taille de l'image (%) » règle la largeur de la
+// colonne illustration par rapport au texte (--hero-cols, 30 à 300) au lieu d'une échelle visuelle, et
+// « Décaler le texte vers la gauche (px) » pose --hero-text-shift. Page Bureau : inchangée.
+export function LandingHero({ blok, telLinks = false, variant }: { blok: LandingHeroBlok; telLinks?: boolean; variant?: "chr" }) {
+  const chr = variant === "chr";
   // Onglet « Typographie » : badge, titre, sous-titre.
   const badge = badgeStyle(blok);
   const title = blockTextStyle(blok, "title");
@@ -125,12 +130,20 @@ export function LandingHero({ blok, telLinks = false }: { blok: LandingHeroBlok;
   const contentStyle = spacing ? ({ "--hero-gap": String(spacing / 100) } as CSSProperties) : undefined;
   // « Taille de l'image (%) » : échelle visuelle de l'image (transform, sans effet sur la mise en page).
   const rawImg = blok.image_scale;
-  const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 30, 150);
-  const sectionStyle = imgScale !== 100 ? ({ "--hero-img-transform": `scale(${imgScale / 100})` } as CSSProperties) : undefined;
+  const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 30, chr ? 300 : 150);
+  const sectionVars: Record<string, string> = {};
+  if (imgScale !== 100) {
+    if (chr) sectionVars["--hero-cols"] = `minmax(0, 1fr) minmax(0, ${imgScale / 100}fr)`;
+    else sectionVars["--hero-img-transform"] = `scale(${imgScale / 100})`;
+  }
+  const rawShift = blok.text_shift;
+  const textShift = !chr || rawShift === undefined || rawShift === null || String(rawShift).trim() === "" ? 0 : pxOr(rawShift, 0, 0, 400);
+  if (textShift) sectionVars["--hero-text-shift"] = `${textShift}px`;
+  const sectionStyle = Object.keys(sectionVars).length ? (sectionVars as CSSProperties) : undefined;
   const trustItems = blok.trust_items ?? [];
   const imgUrl = assetUrl(blok.image);
   return (
-    <section className="hero" style={sectionStyle} {...storyblokEditable(blok)}>
+    <section className={chr ? "hero hero--chr" : "hero"} style={sectionStyle} {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
       <FontLink href={title.href} />
       <FontLink href={subtitle.href} />
@@ -236,6 +249,7 @@ type ChrHeroBlok = SbBlok & {
   image_scale?: string | number;
   content_spacing?: string | number;
   trust_items?: (SbBlok & { text?: string })[];
+  text_shift?: string | number; // décalage du texte vers la gauche en px, disposition split (vide = 0)
 };
 
 // Voile du héros CHR (variable --chr-overlay, voir chr.css). Rien de renseigné = voile d'origine ;
@@ -254,7 +268,7 @@ export function ChrHero({ blok }: { blok: ChrHeroBlok }) {
   // boutons et typographie de ce bloc. Les champs de l'onglet Fond et la largeur du bloc de texte
   // ne servent qu'à la disposition centrée.
   if (blok.layout === "split") {
-    return <LandingHero blok={{ ...blok, badge_text: blok.badge }} telLinks />;
+    return <LandingHero blok={{ ...blok, badge_text: blok.badge }} telLinks variant="chr" />;
   }
   // Onglet « Typographie » : badge, titre, sous-titre.
   const badge = badgeStyle(blok);
