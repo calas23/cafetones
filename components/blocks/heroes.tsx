@@ -110,7 +110,10 @@ type LandingHeroBlok = SbBlok & {
   image_scale?: string | number; // taille de l'image en % (vide = 100), échelle visuelle centrée
 };
 
-export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
+// telLinks : les numéros de téléphone du sous-titre deviennent des liens (héros CHR en disposition
+// texte / illustration, qui réutilise ce rendu). Badge, points de confiance et image ne sont rendus
+// que s'ils sont renseignés (toujours le cas sur la page Bureau & Entreprise : rendu inchangé).
+export function LandingHero({ blok, telLinks = false }: { blok: LandingHeroBlok; telLinks?: boolean }) {
   // Onglet « Typographie » : badge, titre, sous-titre.
   const badge = badgeStyle(blok);
   const title = blockTextStyle(blok, "title");
@@ -124,6 +127,8 @@ export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
   const rawImg = blok.image_scale;
   const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 30, 150);
   const sectionStyle = imgScale !== 100 ? ({ "--hero-img-transform": `scale(${imgScale / 100})` } as CSSProperties) : undefined;
+  const trustItems = blok.trust_items ?? [];
+  const imgUrl = assetUrl(blok.image);
   return (
     <section className="hero" style={sectionStyle} {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
@@ -131,39 +136,45 @@ export function LandingHero({ blok }: { blok: LandingHeroBlok }) {
       <FontLink href={subtitle.href} />
       <div className="container hero__inner">
         <div className="hero__content" style={contentStyle}>
-          <span className="badge badge--gold hero__badge" style={badge.style}>
-            <Icon name="star" size={14} stroke={2} /> {blok.badge_text}
-          </span>
+          {blok.badge_text ? (
+            <span className="badge badge--gold hero__badge" style={badge.style}>
+              <Icon name="star" size={14} stroke={2} /> {blok.badge_text}
+            </span>
+          ) : null}
 
           <h1 className="hero__title" style={title.style}>{fmt(blok.title)}</h1>
 
-          <p className="hero__subtitle sb-subtitle" style={subtitle.style}>{fmt(blok.subtitle)}</p>
+          <p className="hero__subtitle sb-subtitle" style={subtitle.style}>{telLinks ? fmtTel(blok.subtitle) : fmt(blok.subtitle)}</p>
 
           <div className="hero__actions">
             <Buttons buttons={blok.buttons} />
           </div>
 
-          <div className="hero__trust">
-            {(blok.trust_items ?? []).map((t) => (
-              <span className="hero__trust-item" key={t._uid}>
-                <Icon name="check" size={16} stroke={2} /> {t.text}
-              </span>
-            ))}
-          </div>
+          {trustItems.length ? (
+            <div className="hero__trust">
+              {trustItems.map((t) => (
+                <span className="hero__trust-item" key={t._uid}>
+                  <Icon name="check" size={16} stroke={2} /> {t.text}
+                </span>
+              ))}
+            </div>
+          ) : null}
         </div>
 
-        <div className={blok.image_style === "seamless" ? "hero__visual hero__visual--seamless" : "hero__visual"}>
-          <div className={blok.image_style === "seamless" ? "hero__image-wrapper hero__image-wrapper--seamless" : "hero__image-wrapper"}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={assetUrl(blok.image)}
-              alt={blok.image?.alt || ""}
-              loading="eager"
-              width={blok.image_width || undefined}
-              height={blok.image_height || undefined}
-            />
+        {imgUrl ? (
+          <div className={blok.image_style === "seamless" ? "hero__visual hero__visual--seamless" : "hero__visual"}>
+            <div className={blok.image_style === "seamless" ? "hero__image-wrapper hero__image-wrapper--seamless" : "hero__image-wrapper"}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={imgUrl}
+                alt={blok.image?.alt || ""}
+                loading="eager"
+                width={blok.image_width || undefined}
+                height={blok.image_height || undefined}
+              />
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </section>
   );
@@ -218,6 +229,13 @@ type ChrHeroBlok = SbBlok & {
   background?: string; // « Couleur de fond » : couleur du voile sur l'image (hex, vide = rouge foncé)
   overlay_opacity?: string | number; // opacité du voile en % (vide = 65)
   content_width?: string | number; // largeur max du bloc de texte en px (vide = 720)
+  layout?: string; // vide / cover = texte centré sur la photo de fond ; split = texte à gauche, illustration à droite
+  // Disposition « split » (onglet Illustration) : mêmes champs que le héros Bureau & Entreprise.
+  image?: SbAsset;
+  image_style?: string;
+  image_scale?: string | number;
+  content_spacing?: string | number;
+  trust_items?: (SbBlok & { text?: string })[];
 };
 
 // Voile du héros CHR (variable --chr-overlay, voir chr.css). Rien de renseigné = voile d'origine ;
@@ -231,6 +249,13 @@ function chrOverlay(color: unknown, opacity: string | number | undefined): strin
 }
 
 export function ChrHero({ blok }: { blok: ChrHeroBlok }) {
+  // « Disposition » = texte à gauche, illustration à droite : rendu et styles du héros de la page
+  // Bureau & Entreprise (landing.css, scope page-landing ajouté par Page.tsx), avec les textes,
+  // boutons et typographie de ce bloc. Les champs de l'onglet Fond et la largeur du bloc de texte
+  // ne servent qu'à la disposition centrée.
+  if (blok.layout === "split") {
+    return <LandingHero blok={{ ...blok, badge_text: blok.badge }} telLinks />;
+  }
   // Onglet « Typographie » : badge, titre, sous-titre.
   const badge = badgeStyle(blok);
   const title = blockTextStyle(blok, "title");

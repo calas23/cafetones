@@ -698,10 +698,32 @@ export const COMPONENTS = [
       title: text("Titre"),
       subtitle: textarea("Sous-titre (les numéros de téléphone deviennent des liens)"),
       buttons: bloks("Boutons", ["button"]),
+      layout: option("Disposition", [
+        ["cover", "Texte centré sur la photo de fond (défaut)"],
+        ["split", "Texte à gauche, illustration à droite (comme la page Bureau & Entreprise)"],
+      ], {
+        default_value: "cover",
+        description: "« Texte à gauche, illustration à droite » : fond clair, badge, titre, texte et boutons à gauche, image de l'onglet Illustration à droite. L'onglet Fond et la largeur du bloc de texte ne servent qu'à la disposition centrée.",
+      }),
       content_width: number("Largeur du bloc de texte (px)", {
-        description: "Largeur maximale du badge, du titre, du sous-titre et des boutons. Vide = 720. Augmenter, ex. 1100, pour que le titre tienne sur une seule ligne sur ordinateur. Entre 400 et 1400.",
+        description: "Disposition centrée. Largeur maximale du badge, du titre, du sous-titre et des boutons. Vide = 720. Augmenter, ex. 1100, pour que le titre tienne sur une seule ligne sur ordinateur. Entre 400 et 1400.",
       }),
       "tab-fond": { type: "tab", display_name: "Fond", keys: ["background_image", "background", "overlay_opacity"] },
+      "tab-image": { type: "tab", display_name: "Illustration", keys: ["image", "image_style", "image_scale", "content_spacing", "trust_items"] },
+      image: asset("Illustration (à droite du texte)", {
+        description: "Disposition « Texte à gauche, illustration à droite ». Vide = colonne de droite vide.",
+      }),
+      image_style: option("Style de l'image", [
+        ["card", "Carte : coins arrondis et ombre (défaut)"],
+        ["seamless", "Sans cadre : fondu dans la page (illustration à fond blanc)"],
+      ]),
+      image_scale: number("Taille de l'image (%)", {
+        description: "Taille de l'illustration. 100 = actuelle, 70 = plus petite, 130 = plus grande (elle déborde alors un peu de sa colonne). Entre 30 et 150. Vide = taille d'origine.",
+      }),
+      content_spacing: number("Espacement entre les éléments (%)", {
+        description: "Espace vertical entre le badge, le titre, le texte, les boutons et les points de confiance. 100 = actuel, 50 = deux fois moins d'espace. Entre 25 et 200.",
+      }),
+      trust_items: bloks("Éléments de confiance (optionnel, sous les boutons)", ["trust_item"]),
       background_image: asset("Image de fond (vide = photo d'origine)"),
       background: text("Couleur de fond (code hex, vide = rouge foncé de la palette)", {
         regex: HEX_RE,
