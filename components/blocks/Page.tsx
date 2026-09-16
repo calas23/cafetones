@@ -59,7 +59,13 @@ function mainClassName(blok: PageBlok): string | undefined {
   // L'ancien site ne chargeait pas landing.css sur les pages CHR et Particuliers : leurs
   // sections étapes et cartes s'affichaient brutes.
   const explicit = (blok.style_scopes ?? []).filter(Boolean);
-  const derived = (blok.body ?? []).map((b) => SCOPE_BY_BLOCK[b.component]).filter(Boolean);
+  const derived = (blok.body ?? []).flatMap((b) => {
+    const scopes = [SCOPE_BY_BLOCK[b.component]];
+    // Héros CHR en disposition « texte à gauche, illustration à droite » : rendu du héros Bureau &
+    // Entreprise, dont les styles vivent dans landing.css.
+    if (b.component === "chr_hero" && (b as { layout?: string }).layout === "split") scopes.push("landing");
+    return scopes;
+  }).filter(Boolean);
   const scopes = [...new Set([...explicit, ...derived])];
   if (!scopes.length) return undefined;
   return scopes.map((s) => `page-${s}`).join(" ");

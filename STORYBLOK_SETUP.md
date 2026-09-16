@@ -194,11 +194,23 @@ certificat auto-signé dans le navigateur.
   marche », produits, compléments, « Pourquoi les établissements… »,
   formulaire) : cliquer la section → onglet **Typographie** → **Titre — taille
   (%)**, police, couleur (sous-titre et badge idem) → Save → Publish.
-- **Page CHR — image et couleur du bandeau** : cliquer le bandeau (bloc Héros —
-  CHR) → onglet **Fond** → **Image de fond** (Upload ; vide = photo d'origine),
-  **Couleur de fond** (code hex du voile posé sur l'image, vide = rouge foncé
-  de la palette), **Opacité du voile (%)** (0 = image sans voile, 100 = couleur
-  pleine sans image, vide = 65) → Save → Publish.
+- **Page CHR — bandeau comme la page Bureau & Entreprise (texte à gauche,
+  illustration à droite)** : cliquer le bandeau (bloc Héros — CHR) →
+  **Disposition** = « Texte à gauche, illustration à droite » → onglet
+  **Illustration** → **Illustration** (Upload ou image de la bibliothèque),
+  **Style de l'image** (« Sans cadre » pour une illustration à fond blanc),
+  **Taille de l'image (%)**, **Espacement entre les éléments (%)**, **Éléments
+  de confiance** (optionnel) → Save → Publish. Le bandeau prend alors le fond
+  clair, le badge doré, le titre, le texte et les boutons de la page Bureau ;
+  l'onglet Typographie du bloc continue de s'appliquer. « Texte centré sur la
+  photo de fond » = rendu d'origine (l'onglet Fond et la largeur du bloc de
+  texte ne servent qu'à cette disposition).
+- **Page CHR — image et couleur du bandeau** (disposition centrée) : cliquer le
+  bandeau (bloc Héros — CHR) → onglet **Fond** → **Image de fond** (Upload ;
+  vide = photo d'origine), **Couleur de fond** (code hex du voile posé sur
+  l'image, vide = rouge foncé de la palette), **Opacité du voile (%)** (0 =
+  image sans voile, 100 = couleur pleine sans image, vide = 65) → Save →
+  Publish.
 - **Accueil — section rouge « Pourquoi nous choisir » avec une illustration à
   droite** : cliquer la section → onglet **Image** → **Disposition** = « Texte à
   gauche, image à droite » → **Image** (Upload ; un PNG à fond transparent évite
@@ -391,6 +403,12 @@ certificat auto-signé dans le navigateur.
   puis sans simulation. La page est enregistrée en brouillon (Publish dans
   Storyblok), ou publiée si l'option « publier » est cochée. Scripts dans
   `scripts/storyblok/ops/`, client API partagé `scripts/storyblok/mapi.mjs`.
+  `set-story-fields` pose des champs simples (`fields`, objet JSON) sur une
+  story, ou sur un bloc précis de la page (`block` = nom de composant ou
+  `_uid`, ex. `chr_hero`) ; `copy_from` + `copy_fields` copient en plus des
+  champs (images comprises) depuis une autre page ou un autre bloc, ex.
+  `pages/cafe-bureau-entreprise#landing_hero` et `image,image_style`, sans
+  écraser ce qui est déjà renseigné sur la cible.
 
 ## 4. Référence des blocs
 
@@ -575,7 +593,13 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre (les numéros de téléphone deviennent des liens) |
 | `buttons` | Liste de blocs (button) | Boutons |
+| `layout` | Choix — valeurs : cover · split | Disposition |
 | `content_width` | Nombre | Largeur du bloc de texte (px) |
+| `image` | Image | Illustration (à droite du texte) |
+| `image_style` | Choix — valeurs : card · seamless | Style de l'image |
+| `image_scale` | Nombre | Taille de l'image (%) |
+| `content_spacing` | Nombre | Espacement entre les éléments (%) |
+| `trust_items` | Liste de blocs (trust_item) | Éléments de confiance (optionnel, sous les boutons) |
 | `background_image` | Image | Image de fond (vide = photo d'origine) |
 | `background` | Texte | Couleur de fond (code hex, vide = rouge foncé de la palette) |
 | `overlay_opacity` | Nombre | Opacité du voile (%) |

@@ -35,6 +35,18 @@ on:
         description: "Champs à poser, objet JSON (set-story-fields), ex. {\"instagram_url\":\"https://…\"}"
         type: string
         default: ""
+      block:
+        description: "set-story-fields : bloc cible (_uid ou nom de composant, ex. chr_hero) ; vide = racine de la story"
+        type: string
+        default: ""
+      copy_from:
+        description: "set-story-fields : copier des champs depuis « slug » ou « slug#bloc », ex. pages/cafe-bureau-entreprise#landing_hero"
+        type: string
+        default: ""
+      copy_fields:
+        description: "set-story-fields : champs à copier (virgules), seulement s'ils sont vides sur la cible, ex. image,image_style"
+        type: string
+        default: ""
 
 jobs:
   op:
@@ -55,4 +67,7 @@ jobs:
           STORY_SLUG: ${{ inputs.story }}
           NEW_TITLE: ${{ inputs.title }}
           FIELDS: ${{ inputs.fields }}
+          BLOCK: ${{ inputs.block }}
+          COPY_FROM: ${{ inputs.copy_from }}
+          COPY_FIELDS: ${{ inputs.copy_fields }}
         run: node "scripts/storyblok/ops/${{ inputs.op }}.mjs"
