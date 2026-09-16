@@ -525,6 +525,9 @@ export const COMPONENTS = [
     display_name: "Carte certification",
     group: "Éléments",
     schema: {
+      image: asset("Logo (optionnel)", {
+        description: "Logo officiel de la certification ou du prix (PNG ou SVG, fond transparent de préférence) : remplace l'icône. Vide = icône.",
+      }),
       icon: option("Icône", ICON_OPTIONS),
       title: text("Titre"),
       text: textarea("Texte"),
@@ -1094,6 +1097,9 @@ export const COMPONENTS = [
       title: text("Titre"),
       subtitle: textarea("Sous-titre"),
       cards: bloks("Cartes", ["cert_card"]),
+      logo_scale: number("Taille des logos (%)", {
+        description: "Taille de la zone logo des cartes. 100 = actuelle (96 × 72 px), 150 = une fois et demie plus grande. Entre 50 et 250. Vide = taille d'origine.",
+      }),
       "tab-typo": { type: "tab", display_name: "Typographie", keys: ["title_font", "title_size", "title_color", "subtitle_font", "subtitle_size", "subtitle_color"] },
       ...typo("title", "Titre"),
       ...typo("subtitle", "Sous-titre"),

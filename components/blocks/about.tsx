@@ -146,8 +146,14 @@ export function RoastersSection({ blok }: { blok: RoastersBlok }) {
   );
 }
 
-type CertCard = SbBlok & { icon?: string; title?: string; text?: string; delay?: string };
-type CertCardsBlok = SbBlok & { background?: string; title?: string; subtitle?: string; cards?: CertCard[] };
+type CertCard = SbBlok & { icon?: string; image?: SbAsset; title?: string; text?: string; delay?: string };
+type CertCardsBlok = SbBlok & {
+  background?: string;
+  title?: string;
+  subtitle?: string;
+  cards?: CertCard[];
+  logo_scale?: string | number; // taille de la zone logo en % (vide = 100)
+};
 
 export function CertCardsSection({ blok }: { blok: CertCardsBlok }) {
   const sectionClass = blok.background === "cream" ? "section section--cream" : "section";
@@ -155,6 +161,9 @@ export function CertCardsSection({ blok }: { blok: CertCardsBlok }) {
   const title = blockTextStyle(blok, "title");
   const titleStyle = { ...title.style };
   const subtitle = blockTextStyle(blok, "subtitle");
+  // « Taille des logos (%) » : multiplicateur de la zone logo des cartes (css/about.css).
+  const rawLogo = blok.logo_scale;
+  const logoScale = rawLogo === undefined || rawLogo === null || String(rawLogo).trim() === "" ? 100 : pxOr(rawLogo as string | number, 100, 50, 250);
   return (
     <section className={sectionClass} {...storyblokEditable(blok)}>
       <FontLink href={title.href} />
@@ -167,12 +176,19 @@ export function CertCardsSection({ blok }: { blok: CertCardsBlok }) {
           ) : null}
         </div>
 
-        <div className="about-certs">
+        <div className="about-certs" style={logoScale !== 100 ? ({ "--cert-logo-scale": logoScale / 100 } as CSSProperties) : undefined}>
           {(blok.cards ?? []).map((card) => (
             <div className={`about-cert-card ${aos(card.delay)}`} key={card._uid} {...storyblokEditable(card)}>
-              <div className="about-cert-card__icon">
-                <Icon name={card.icon || "check"} size={26} stroke={1.8} />
-              </div>
+              {assetUrl(card.image) ? (
+                <div className="about-cert-card__logo">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={assetUrl(card.image)} alt={card.image?.alt || card.title || ""} loading="lazy" />
+                </div>
+              ) : (
+                <div className="about-cert-card__icon">
+                  <Icon name={card.icon || "check"} size={26} stroke={1.8} />
+                </div>
+              )}
               <h4>{card.title}</h4>
               <p>{fmt(card.text)}</p>
             </div>
