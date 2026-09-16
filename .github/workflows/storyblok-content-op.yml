@@ -13,6 +13,7 @@ on:
         type: choice
         options:
           - merge-cert-sections
+          - set-story-fields
         default: merge-cert-sections
       dry_run:
         description: "Simulation (n'écrit rien dans Storyblok)"
@@ -27,9 +28,13 @@ on:
         type: string
         default: "pages/a-propos"
       title:
-        description: "Titre de la section fusionnée"
+        description: "Titre de la section fusionnée (merge-cert-sections)"
         type: string
         default: "Nos certifications et récompenses"
+      fields:
+        description: "Champs à poser, objet JSON (set-story-fields), ex. {\"instagram_url\":\"https://…\"}"
+        type: string
+        default: ""
 
 jobs:
   op:
@@ -49,4 +54,5 @@ jobs:
           PUBLISH: ${{ inputs.publish && '1' || '' }}
           STORY_SLUG: ${{ inputs.story }}
           NEW_TITLE: ${{ inputs.title }}
+          FIELDS: ${{ inputs.fields }}
         run: node "scripts/storyblok/ops/${{ inputs.op }}.mjs"
