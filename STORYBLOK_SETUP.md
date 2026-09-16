@@ -269,6 +269,12 @@ certificat auto-signé dans le navigateur.
   section contact → onglet **Typographie** → **Formulaire — titre** et **Titres
   de la colonne infos** (police, taille, couleur). « Questions fréquentes » :
   cliquer la section FAQ → onglet **Typographie** → Save → Publish.
+- **Pied de page — Instagram et taille des icônes** : Réglages du site → onglet
+  **Pied de page** → **Lien Instagram** (adresse de la page Instagram, ex.
+  `https://www.instagram.com/cafetones75/` ; vide = pas de ligne Instagram dans
+  la colonne Contact), **Instagram — texte affiché** (vide = @pseudo déduit de
+  l'adresse), **Taille des icônes de la colonne Contact (px)** (vide = 16,
+  ex. 22 pour des icônes plus grandes, entre 12 et 48) → Save → Publish.
 - **Disposition du pied de page** : Réglages du site → onglet **Pied de page**
   → **Disposition du pied de page** : logo et présentation à gauche, colonnes à
   droite sur toute la largeur (défaut), ou colonnes réparties sur la largeur
@@ -436,6 +442,9 @@ certificat auto-signé dans le navigateur.
 | `address` | Texte | Adresse |
 | `email` | Texte | Email |
 | `hours` | Texte | Horaires |
+| `instagram_url` | Texte | Lien Instagram |
+| `instagram_label` | Texte | Instagram — texte affiché |
+| `footer_icon_size` | Nombre | Taille des icônes de la colonne Contact (px) |
 | `copyright` | Texte | Ligne de copyright |
 | `legal_label` | Texte | Lien mentions légales — texte |
 | `legal_link` | Texte | Lien mentions légales — URL |

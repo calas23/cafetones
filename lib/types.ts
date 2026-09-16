@@ -62,6 +62,9 @@ export interface SiteSettings extends SbBlok {
   address?: string;
   email?: string;
   hours?: string;
+  instagram_url?: string;
+  instagram_label?: string;
+  footer_icon_size?: string | number;
   copyright?: string;
   legal_label?: string;
   legal_link?: string;
