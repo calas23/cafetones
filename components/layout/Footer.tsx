@@ -31,6 +31,14 @@ export function Footer({ settings }: { settings: SiteSettings | null }) {
   const footerStyle: Record<string, string | number> = {};
   if (footerZoom !== 100) footerStyle.zoom = footerZoom / 100;
   if (textScale !== 100) footerStyle["--footer-text-scale"] = textScale / 100;
+  // « Taille des icônes de la colonne Contact (px) » : vide = 16 (taille d'origine, aucune variable posée).
+  const rawIcon = settings?.footer_icon_size;
+  const iconSize = rawIcon === undefined || rawIcon === null || String(rawIcon).trim() === "" ? 16 : pxOr(rawIcon, 16, 12, 48);
+  if (iconSize !== 16) footerStyle["--footer-icon-size"] = `${iconSize}px`;
+  // « Lien Instagram » : vide = pas de ligne. Texte affiché = « Instagram — texte affiché », sinon @pseudo déduit du lien.
+  const instagramUrl = (settings?.instagram_url || "").trim();
+  const instagramHandle = instagramUrl.replace(/^https?:\/\/(www\.)?instagram\.com\//i, "").replace(/[/?#].*$/, "");
+  const instagramLabel = (settings?.instagram_label || "").trim() || (instagramHandle && !/^https?:/i.test(instagramHandle) ? `@${instagramHandle}` : "Instagram");
   // Couleurs du pied de page (codes hex, vides = palette du site).
   const footerBg = normalizeHex(settings?.footer_bg);
   const footerText = normalizeHex(settings?.footer_text_color);
@@ -83,6 +91,12 @@ export function Footer({ settings }: { settings: SiteSettings | null }) {
               <Icon name="clock" size={16} stroke={1.8} />
               {settings?.hours}
             </div>
+            {instagramUrl ? (
+              <div className="footer__contact-line">
+                <Icon name="instagram" size={16} stroke={1.8} />
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer">{instagramLabel}</a>
+              </div>
+            ) : null}
           </div>
           </div>
         </div>

@@ -255,7 +255,7 @@ export const COMPONENTS = [
       nav_links: bloks("Liens du menu", ["nav_link"]),
       mobile_menu_cta_label: text("Menu mobile — bouton texte"),
       mobile_menu_cta_link: text("Menu mobile — bouton lien"),
-      "tab-footer": { type: "tab", display_name: "Pied de page", keys: ["footer_desc", "footer_nav_heading", "footer_nav_links", "footer_cafes_heading", "footer_cafes_links", "footer_contact_heading", "address", "email", "hours", "copyright", "legal_label", "legal_link", "privacy_label", "privacy_link", "footer_layout", "footer_logo_height", "footer_zoom", "footer_text_size", "footer_heading_color", "footer_text_color", "footer_bg"] },
+      "tab-footer": { type: "tab", display_name: "Pied de page", keys: ["footer_desc", "footer_nav_heading", "footer_nav_links", "footer_cafes_heading", "footer_cafes_links", "footer_contact_heading", "address", "email", "hours", "instagram_url", "instagram_label", "footer_icon_size", "copyright", "legal_label", "legal_link", "privacy_label", "privacy_link", "footer_layout", "footer_logo_height", "footer_zoom", "footer_text_size", "footer_heading_color", "footer_text_color", "footer_bg"] },
       footer_desc: textarea("Texte de présentation"),
       footer_nav_heading: text("Titre colonne navigation"),
       footer_nav_links: bloks("Liens colonne navigation", ["nav_link"]),
@@ -265,6 +265,15 @@ export const COMPONENTS = [
       address: text("Adresse"),
       email: text("Email"),
       hours: text("Horaires"),
+      instagram_url: text("Lien Instagram", {
+        description: "Adresse de la page Instagram, ex. https://www.instagram.com/cafetones75/ — vide = pas de ligne Instagram dans la colonne Contact.",
+      }),
+      instagram_label: text("Instagram — texte affiché", {
+        description: "Vide = @cafetones75 (pseudo déduit de l'adresse).",
+      }),
+      footer_icon_size: number("Taille des icônes de la colonne Contact (px)", {
+        description: "Vide = 16 (taille d'origine). Ex. 22 pour des icônes plus grandes. Entre 12 et 48.",
+      }),
       copyright: text("Ligne de copyright"),
       legal_label: text("Lien mentions légales — texte"),
       legal_link: text("Lien mentions légales — URL"),
