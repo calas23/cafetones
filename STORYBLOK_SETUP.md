@@ -251,8 +251,12 @@ certificat auto-signé dans le navigateur.
 - **Page Notre gamme — image de fond du bandeau « Notre gamme complète »** (et
   tout bandeau simple : Contact, Mentions légales…) : cliquer le bandeau (bloc
   Héros — Bandeau simple) → onglet **Fond** → **Image de fond** (Upload ou image
-  de la bibliothèque, ex. « hero-accueil ») → **Cadrage de l'image** (centré,
-  haut, bas) → **Opacité du voile (%)** : voile de la couleur de fond posé sur la
+  de la bibliothèque, ex. « hero-accueil ») → **Taille de l'image** (« Couvrir
+  tout le bandeau », recadrée si besoin, ou « Image entière, sans recadrage »,
+  pour une image en hauteur par exemple) → **Cadrage de l'image** (centré,
+  haut, bas) → **Hauteur minimale du bandeau (px)** (vide = hauteur du texte ;
+  ex. 640 pour voir une image entière plus grande, texte centré verticalement)
+  → **Opacité du voile (%)** : voile de la couleur de fond posé sur la
   photo pour garder le texte lisible (vide = 70 ; 0 = photo telle quelle, mettre
   alors une couleur de titre claire dans l'onglet Typographie ; 100 = couleur
   pleine) → **Couleur de fond** (hex, vide = crème d'origine) → Save → Publish.
@@ -543,7 +547,9 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Texte |
 | `background_image` | Image | Image de fond (vide = fond uni d'origine) |
+| `background_size` | Choix — valeurs : cover · contain | Taille de l'image |
 | `background_position` | Choix — valeurs : center · top · bottom | Cadrage de l'image |
+| `min_height` | Nombre | Hauteur minimale du bandeau (px) |
 | `overlay_opacity` | Nombre | Opacité du voile (%) |
 | `background` | Texte | Couleur de fond (code hex, vide = fond d'origine) |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
