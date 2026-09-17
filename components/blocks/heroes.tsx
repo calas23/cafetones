@@ -73,15 +73,36 @@ export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
   );
 }
 
-type PageHeroBlok = SbBlok & { badge?: string; title?: string; text?: string };
+type PageHeroBlok = SbBlok & {
+  badge?: string;
+  title?: string;
+  text?: string;
+  background_image?: SbAsset; // onglet Fond : vide = fond uni d'origine
+  background_position?: string; // cadrage de l'image : center (défaut) | top | bottom
+  overlay_opacity?: string | number; // voile posé sur l'image en % (vide = 70, 0 = aucun)
+  background?: string; // « Couleur de fond » (hex) : fond du bandeau et couleur du voile
+};
 
 export function PageHero({ blok }: { blok: PageHeroBlok }) {
   // Onglet « Typographie » : badge, titre, texte.
   const badge = badgeStyle(blok);
   const title = blockTextStyle(blok, "title");
   const text = blockTextStyle(blok, "text");
+  // Onglet « Fond » : image en couverture, voile de la couleur de fond (hex choisi, sinon fond
+  // d'origine du bandeau) à l'opacité choisie (vide = 70 %, 0 = image telle quelle). Sans image :
+  // rendu d'origine, aucun style posé (voir .page-hero--image dans css/style.css).
+  const bg = assetUrl(blok.background_image);
+  const sectionStyle: Record<string, string> = {};
+  if (bg) {
+    sectionStyle.backgroundImage = `url("${bg}")`;
+    if (blok.background_position === "top" || blok.background_position === "bottom") sectionStyle.backgroundPosition = `center ${blok.background_position}`;
+    const rawOpacity = blok.overlay_opacity;
+    const pct = rawOpacity === undefined || rawOpacity === null || String(rawOpacity).trim() === "" ? 70 : pxOr(rawOpacity, 70, 0, 100);
+    const hex = normalizeHex(blok.background);
+    if (pct > 0) sectionStyle["--page-hero-overlay"] = hex ? `rgba(${hexToRgbList(hex)}, ${pct / 100})` : `color-mix(in srgb, var(--color-cream-warm) ${pct}%, transparent)`;
+  }
   return (
-    <section className="page-hero" {...storyblokEditable(blok)}>
+    <section className={bg ? "page-hero page-hero--image" : "page-hero"} style={bg ? (sectionStyle as CSSProperties) : undefined} {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
       <FontLink href={title.href} />
       <FontLink href={text.href} />

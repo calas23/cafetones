@@ -876,6 +876,29 @@ p {
   margin-right: auto;
 }
 
+/* Image de fond du bandeau simple (bloc Héros — Bandeau simple, onglet Fond, voir heroes.tsx) :
+   photo en couverture, voile --page-hero-overlay (couleur de fond du bandeau à l'opacité choisie)
+   posé dessus, contenu au-dessus du voile. Sans image, la classe n'est pas posée. */
+.page-hero--image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-hero--image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--page-hero-overlay, transparent);
+  pointer-events: none;
+}
+
+.page-hero--image > .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* ========================================================================
    Formulaire CTA (partagé entre pages)
    ======================================================================== */
