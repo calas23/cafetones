@@ -79,6 +79,8 @@ type PageHeroBlok = SbBlok & {
   text?: string;
   background_image?: SbAsset; // onglet Fond : vide = fond uni d'origine
   background_position?: string; // cadrage de l'image : center (défaut) | top | bottom
+  background_size?: string; // cover (défaut : couvre le bandeau, recadrée) | contain (image entière, sans recadrage)
+  min_height?: string | number; // hauteur minimale du bandeau en px (vide = hauteur du texte)
   overlay_opacity?: string | number; // voile posé sur l'image en % (vide = 70, 0 = aucun)
   background?: string; // « Couleur de fond » (hex) : fond du bandeau et couleur du voile
 };
@@ -96,13 +98,21 @@ export function PageHero({ blok }: { blok: PageHeroBlok }) {
   if (bg) {
     sectionStyle.backgroundImage = `url("${bg}")`;
     if (blok.background_position === "top" || blok.background_position === "bottom") sectionStyle.backgroundPosition = `center ${blok.background_position}`;
+    // « Taille de l'image » = image entière : aucun recadrage, bandes de la couleur de fond autour.
+    if (blok.background_size === "contain") sectionStyle.backgroundSize = "contain";
     const rawOpacity = blok.overlay_opacity;
     const pct = rawOpacity === undefined || rawOpacity === null || String(rawOpacity).trim() === "" ? 70 : pxOr(rawOpacity, 70, 0, 100);
     const hex = normalizeHex(blok.background);
     if (pct > 0) sectionStyle["--page-hero-overlay"] = hex ? `rgba(${hexToRgbList(hex)}, ${pct / 100})` : `color-mix(in srgb, var(--color-cream-warm) ${pct}%, transparent)`;
   }
+  // « Hauteur minimale du bandeau (px) » : le bandeau s'agrandit (texte centré verticalement), par
+  // exemple pour laisser la place à une image entière. Vide = hauteur du texte, rendu d'origine.
+  const rawHeight = blok.min_height;
+  const minHeight = rawHeight === undefined || rawHeight === null || String(rawHeight).trim() === "" ? 0 : pxOr(rawHeight, 0, 200, 1200);
+  if (minHeight) sectionStyle.minHeight = `${minHeight}px`;
+  const classes = ["page-hero", bg ? "page-hero--image" : "", minHeight ? "page-hero--tall" : ""].filter(Boolean).join(" ");
   return (
-    <section className={bg ? "page-hero page-hero--image" : "page-hero"} style={bg ? (sectionStyle as CSSProperties) : undefined} {...storyblokEditable(blok)}>
+    <section className={classes} style={Object.keys(sectionStyle).length ? (sectionStyle as CSSProperties) : undefined} {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
       <FontLink href={title.href} />
       <FontLink href={text.href} />

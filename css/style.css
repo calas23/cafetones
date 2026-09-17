@@ -899,6 +899,13 @@ p {
   z-index: 1;
 }
 
+/* « Hauteur minimale du bandeau (px) » (onglet Fond) : bandeau plus haut, texte centré verticalement. */
+.page-hero--tall {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* ========================================================================
    Formulaire CTA (partagé entre pages)
    ======================================================================== */

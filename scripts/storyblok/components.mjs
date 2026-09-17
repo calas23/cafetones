@@ -642,15 +642,24 @@ export const COMPONENTS = [
       badge: text("Badge"),
       title: text("Titre"),
       text: textarea("Texte"),
-      "tab-fond": { type: "tab", display_name: "Fond", keys: ["background_image", "background_position", "overlay_opacity", "background"] },
+      "tab-fond": { type: "tab", display_name: "Fond", keys: ["background_image", "background_size", "background_position", "min_height", "overlay_opacity", "background"] },
       background_image: asset("Image de fond (vide = fond uni d'origine)", {
-        description: "Photo affichée en couverture derrière le badge, le titre et le texte du bandeau. Un voile de la couleur de fond est posé dessus pour garder le texte lisible (voir Opacité du voile).",
+        description: "Photo affichée derrière le badge, le titre et le texte du bandeau. Un voile de la couleur de fond est posé dessus pour garder le texte lisible (voir Opacité du voile).",
+      }),
+      background_size: option("Taille de l'image", [
+        ["cover", "Couvrir tout le bandeau (recadrée si besoin, défaut)"],
+        ["contain", "Image entière, sans recadrage (couleur de fond autour)"],
+      ], {
+        description: "Une image en hauteur (ex. 1080 × 1920) est fortement recadrée en mode « couvrir » : choisir « image entière » et augmenter la hauteur minimale du bandeau pour la voir en entier.",
       }),
       background_position: option("Cadrage de l'image", [
         ["center", "Centré (défaut)"],
         ["top", "Haut de l'image"],
         ["bottom", "Bas de l'image"],
       ]),
+      min_height: number("Hauteur minimale du bandeau (px)", {
+        description: "Vide = hauteur du texte (bandeau d'origine). Ex. 640 pour laisser de la place à une image entière ; le texte est alors centré verticalement. Entre 200 et 1200.",
+      }),
       overlay_opacity: number("Opacité du voile (%)", {
         description: "Voile de la couleur de fond posé sur l'image. 0 = image telle quelle (prévoir alors une couleur de titre claire, onglet Typographie), 100 = couleur pleine. Vide = 70. Entre 0 et 100.",
       }),
