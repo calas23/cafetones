@@ -252,8 +252,10 @@ certificat auto-signé dans le navigateur.
   tout bandeau simple : Contact, Mentions légales…) : cliquer le bandeau (bloc
   Héros — Bandeau simple) → onglet **Fond** → **Image de fond** (Upload ou image
   de la bibliothèque, ex. « hero-accueil ») → **Taille de l'image** (« Couvrir
-  tout le bandeau », recadrée si besoin, ou « Image entière, sans recadrage »,
-  pour une image en hauteur par exemple) → **Cadrage de l'image** (centré,
+  tout le bandeau », recadrée si besoin ; « Image entière sur toute la largeur » :
+  aucun recadrage, le bandeau prend la hauteur de l'image, ex. 1920 × 1080 ;
+  « Image entière dans la hauteur actuelle » : image réduite, couleur de fond
+  autour) → **Cadrage de l'image** (centré,
   haut, bas) → **Hauteur minimale du bandeau (px)** (vide = hauteur du texte ;
   ex. 640 pour voir une image entière plus grande, texte centré verticalement)
   → **Opacité du voile (%)** : voile de la couleur de fond posé sur la
@@ -547,7 +549,7 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Texte |
 | `background_image` | Image | Image de fond (vide = fond uni d'origine) |
-| `background_size` | Choix — valeurs : cover · contain | Taille de l'image |
+| `background_size` | Choix — valeurs : cover · fit · contain | Taille de l'image |
 | `background_position` | Choix — valeurs : center · top · bottom | Cadrage de l'image |
 | `min_height` | Nombre | Hauteur minimale du bandeau (px) |
 | `overlay_opacity` | Nombre | Opacité du voile (%) |

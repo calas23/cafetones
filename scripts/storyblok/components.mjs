@@ -648,9 +648,10 @@ export const COMPONENTS = [
       }),
       background_size: option("Taille de l'image", [
         ["cover", "Couvrir tout le bandeau (recadrée si besoin, défaut)"],
-        ["contain", "Image entière, sans recadrage (couleur de fond autour)"],
+        ["fit", "Image entière sur toute la largeur : le bandeau prend la hauteur de l'image"],
+        ["contain", "Image entière dans la hauteur actuelle du bandeau (couleur de fond autour)"],
       ], {
-        description: "Une image en hauteur (ex. 1080 × 1920) est fortement recadrée en mode « couvrir » : choisir « image entière » et augmenter la hauteur minimale du bandeau pour la voir en entier.",
+        description: "« Couvrir » recadre l'image si ses proportions diffèrent de celles du bandeau. « Image entière sur toute la largeur » : aucun recadrage, le bandeau s'adapte (ex. image 1920 × 1080 → bandeau aussi haut que large × 9/16). « Image entière dans la hauteur actuelle » : image réduite, entourée de la couleur de fond.",
       }),
       background_position: option("Cadrage de l'image", [
         ["center", "Centré (défaut)"],
