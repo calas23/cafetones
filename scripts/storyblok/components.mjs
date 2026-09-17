@@ -176,12 +176,15 @@ const fontOption = (display_name, extra = {}) => ({
 // Champs d'un badge : police, taille du texte, taille du fond, couleurs (lib/fonts.ts badgeStyle()).
 const badgeFields = (prefix = "badge", label = "Badge") => ({
   [`${prefix}_font`]: fontOption(`${label} — police`),
-  [`${prefix}_text_size`]: number(`${label} — taille du texte (%)`, { description: "100 = taille actuelle. Entre 50 et 300." }),
-  [`${prefix}_size`]: number(`${label} — taille du fond (%)`, { description: "Épaisseur du badge autour du texte. 100 = actuelle. Entre 50 et 300." }),
+  [`${prefix}_scale`]: number(`${label} — taille (%)`, {
+    description: "Agrandit ou réduit tout le badge d'un coup : texte, fond et icône. 100 = actuelle, 150 = une fois et demie plus grand, 70 = plus petit. Entre 50 et 300. Les deux réglages suivants affinent séparément le texte et le fond.",
+  }),
+  [`${prefix}_text_size`]: number(`${label} — taille du texte (%)`, { description: "Texte seul. 100 = taille actuelle. Entre 50 et 300." }),
+  [`${prefix}_size`]: number(`${label} — taille du fond (%)`, { description: "Épaisseur du fond autour du texte. 100 = actuelle. Entre 50 et 300." }),
   [`${prefix}_bg`]: text(`${label} — couleur de fond`, { regex: HEX_RE, description: "Code hex, ex. #1C3559. Vide = couleur du style choisi." }),
   [`${prefix}_color`]: text(`${label} — couleur du texte`, { regex: HEX_RE, description: "Code hex, ex. #FFFFFF. Vide = couleur du style choisi." }),
 });
-const BADGE_KEYS = (prefix = "badge") => [`${prefix}_font`, `${prefix}_text_size`, `${prefix}_size`, `${prefix}_bg`, `${prefix}_color`];
+const BADGE_KEYS = (prefix = "badge") => [`${prefix}_font`, `${prefix}_scale`, `${prefix}_text_size`, `${prefix}_size`, `${prefix}_bg`, `${prefix}_color`];
 const typo = (prefix, label) => ({
   [`${prefix}_font`]: fontOption(`${label} — police`),
   [`${prefix}_size`]: number(`${label} — taille (%)`, { description: "100 = taille actuelle. Entre 50 et 300." }),
