@@ -161,6 +161,9 @@ function scaleOf(raw: unknown, min = 50, max = 300): number | undefined {
 export function badgeStyle(blok: Record<string, unknown>, prefix = "badge"): { style?: CSSProperties; href?: string } {
   const base = inlineTextStyle(blok[`${prefix}_font`], undefined, ALL_FONTS);
   const style: Record<string, string | number> = { ...((base.style ?? {}) as Record<string, string | number>) };
+  // `<prefix>_scale` : « Badge — taille (%) », tout le badge d'un coup (zoom CSS : texte, fond, icône).
+  const all = scaleOf(blok[`${prefix}_scale`]);
+  if (all) style.zoom = all;
   const text = scaleOf(blok[`${prefix}_text_size`]);
   if (text) style["--badge-text-scale"] = text;
   const pad = scaleOf(blok[`${prefix}_size`]);

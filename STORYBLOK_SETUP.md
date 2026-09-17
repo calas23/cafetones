@@ -323,10 +323,15 @@ certificat auto-signé dans le navigateur.
 - **Photos des best-sellers** : cliquer la section → champ **Taille des
   photos (%)** (100 = actuelle, 150 = une fois et demie plus grandes) → Save →
   Publish.
-- **Badges** (héros d'accueil, section best-sellers et fiches produit, onglet Typographie) :
-  police, **taille du texte (%)**, **taille du fond (%)** (épaisseur du badge
-  autour du texte), **couleur de fond** et **couleur du texte** en codes hex.
-  Vide = style d'origine.
+- **Badges** (bandeaux Bureau & Entreprise et CHR, héros d'accueil, section
+  best-sellers, fiches produit… onglet Typographie) : **Badge — taille (%)**
+  (tout le badge d'un coup : 150 = une fois et demie plus grand, 70 = plus
+  petit), police, **taille du texte (%)**, **taille du fond (%)** (épaisseur du
+  fond autour du texte), **couleur de fond** et **couleur du texte** en codes
+  hex. Vide = style d'origine. Ex. badge « Torréfaction italienne depuis 1936 »
+  : page Bureau & Entreprise → cliquer le bandeau → onglet **Typographie** →
+  **Badge — taille (%)** → Save → Publish ; idem pour « Partenaire des
+  restaurateurs… » sur la page CHR.
 - **Changer la couleur de fond d'une section** : dans la page, cliquer la
   section → champ **Couleur de fond** (tout en bas de ses champs) → un code
   hexadécimal comme `#FFF1E3` → Save → Publish. Ne touche que cette section.
@@ -533,6 +538,7 @@ certificat auto-signé dans le navigateur.
 | `subtitle_size` | Nombre | Sous-titre — taille (%) |
 | `subtitle_color` | Texte | Sous-titre — couleur |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -555,6 +561,7 @@ certificat auto-signé dans le navigateur.
 | `overlay_opacity` | Nombre | Opacité du voile (%) |
 | `background` | Texte | Couleur de fond (code hex, vide = fond d'origine) |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -584,6 +591,7 @@ certificat auto-signé dans le navigateur.
 | `image_width` | Texte | Largeur HTML de l'image (px) |
 | `image_height` | Texte | Hauteur HTML de l'image (px) |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -634,6 +642,7 @@ certificat auto-signé dans le navigateur.
 | `background` | Texte | Couleur de fond (code hex, vide = rouge foncé de la palette) |
 | `overlay_opacity` | Nombre | Opacité du voile (%) |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -685,6 +694,7 @@ certificat auto-signé dans le navigateur.
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -716,6 +726,7 @@ certificat auto-signé dans le navigateur.
 | `image_style` | Choix — valeurs : card · seamless | Style de l'image |
 | `image_scale` | Nombre | Taille de l'image (%) |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -765,6 +776,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `steps` | Liste de blocs (step_item) | Étapes |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -795,6 +807,7 @@ certificat auto-signé dans le navigateur.
 | `cta_label` | Texte | Bouton — texte |
 | `cta_link` | Texte | Bouton — lien |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -819,6 +832,7 @@ certificat auto-signé dans le navigateur.
 | `grid_margin_top` | Case à cocher | Espace réduit sous le titre (variante particuliers) |
 | `cards` | Liste de blocs (b2b_card) | Cartes |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -890,6 +904,7 @@ certificat auto-signé dans le navigateur.
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
@@ -1213,6 +1228,7 @@ certificat auto-signé dans le navigateur.
 | `badge_label` | Texte | Badge — texte |
 | `medals_label` | Texte | Ligne médailles (ex. 7 médailles ICT) |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
+| `badge_scale` | Nombre | Badge — taille (%) |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
 | `badge_bg` | Texte | Badge — couleur de fond |
