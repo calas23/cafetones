@@ -248,6 +248,15 @@ certificat auto-signé dans le navigateur.
   d'un fichier, ou « URL externe » (adresse d'une photo déjà en ligne, ex.
   https://cafetones.fr/img/tasse-cappuccino-anniversario.jpg) → Save →
   Publish. Vide = carte sans photo.
+- **Page Notre gamme — image de fond du bandeau « Notre gamme complète »** (et
+  tout bandeau simple : Contact, Mentions légales…) : cliquer le bandeau (bloc
+  Héros — Bandeau simple) → onglet **Fond** → **Image de fond** (Upload ou image
+  de la bibliothèque, ex. « hero-accueil ») → **Cadrage de l'image** (centré,
+  haut, bas) → **Opacité du voile (%)** : voile de la couleur de fond posé sur la
+  photo pour garder le texte lisible (vide = 70 ; 0 = photo telle quelle, mettre
+  alors une couleur de titre claire dans l'onglet Typographie ; 100 = couleur
+  pleine) → **Couleur de fond** (hex, vide = crème d'origine) → Save → Publish.
+  Image vide = bandeau uni d'origine.
 - **Page Notre gamme — titre « Notre gamme complète »** (et bandeaux simples
   des pages À propos et Contact) : cliquer le bandeau (bloc Héros — Bandeau
   simple) → onglet **Typographie** → **Titre — police / taille (%) / couleur**
@@ -533,6 +542,10 @@ certificat auto-signé dans le navigateur.
 | `badge` | Texte | Badge |
 | `title` | Texte | Titre |
 | `text` | Texte long | Texte |
+| `background_image` | Image | Image de fond (vide = fond uni d'origine) |
+| `background_position` | Choix — valeurs : center · top · bottom | Cadrage de l'image |
+| `overlay_opacity` | Nombre | Opacité du voile (%) |
+| `background` | Texte | Couleur de fond (code hex, vide = fond d'origine) |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
 | `badge_text_size` | Nombre | Badge — taille du texte (%) |
 | `badge_size` | Nombre | Badge — taille du fond (%) |
@@ -544,7 +557,6 @@ certificat auto-signé dans le navigateur.
 | `text_font` | Choix — liste Datasource « polices » | Texte — police |
 | `text_size` | Nombre | Texte — taille (%) |
 | `text_color` | Texte | Texte — couleur |
-| `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
 

@@ -642,6 +642,22 @@ export const COMPONENTS = [
       badge: text("Badge"),
       title: text("Titre"),
       text: textarea("Texte"),
+      "tab-fond": { type: "tab", display_name: "Fond", keys: ["background_image", "background_position", "overlay_opacity", "background"] },
+      background_image: asset("Image de fond (vide = fond uni d'origine)", {
+        description: "Photo affichée en couverture derrière le badge, le titre et le texte du bandeau. Un voile de la couleur de fond est posé dessus pour garder le texte lisible (voir Opacité du voile).",
+      }),
+      background_position: option("Cadrage de l'image", [
+        ["center", "Centré (défaut)"],
+        ["top", "Haut de l'image"],
+        ["bottom", "Bas de l'image"],
+      ]),
+      overlay_opacity: number("Opacité du voile (%)", {
+        description: "Voile de la couleur de fond posé sur l'image. 0 = image telle quelle (prévoir alors une couleur de titre claire, onglet Typographie), 100 = couleur pleine. Vide = 70. Entre 0 et 100.",
+      }),
+      background: text("Couleur de fond (code hex, vide = fond d'origine)", {
+        regex: HEX_RE,
+        description: "Ex. #F6F1EA. Fond du bandeau sans image, et couleur du voile posé sur l'image de fond. Vide = crème d'origine.",
+      }),
       "tab-typo": { type: "tab", display_name: "Typographie", keys: [...BADGE_KEYS(), "title_font", "title_size", "title_color", "text_font", "text_size", "text_color"] },
       ...badgeFields(),
       ...typo("title", "Titre"),
