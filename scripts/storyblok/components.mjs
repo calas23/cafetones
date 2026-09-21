@@ -62,6 +62,15 @@ const ILLUSTRATION_FIELDS = {
     ["left", "Gauche"],
     ["corner-br", "Coin bas-droit"],
   ]),
+  illustration_image: asset("Illustration — image personnalisée", {
+    description: "Votre image (photo ou PNG) à la place du dessin décoratif, à la position choisie ci-dessus. Vide = dessin choisi. Masquée sur mobile comme le dessin.",
+  }),
+  illustration_width: number("Illustration — largeur (px)", {
+    description: "Image personnalisée seulement. Vide = largeur de la taille choisie ci-dessous (80 / 120 / 160 px). Entre 40 et 600.",
+  }),
+  illustration_opacity: number("Illustration — opacité (%)", {
+    description: "Image personnalisée seulement. 100 = opaque (défaut), 30 = très transparente. Entre 5 et 100.",
+  }),
   illustration_size: option("Taille de l'illustration", [
     ["sm", "Petite"],
     ["md", "Moyenne"],

@@ -49,6 +49,21 @@
 .illustration--md svg { width: 120px; }
 .illustration--lg svg { width: 160px; }
 
+/* « Illustration — image personnalisée » (Storyblok, voir components/Illustration.tsx) : l'image
+   remplace le dessin, opaque (sauf « opacité (%) »), largeur de la taille choisie ou « largeur (px) »
+   posée en style inline. */
+.illustration--image {
+  opacity: 1;
+}
+.illustration--image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.illustration--image.illustration--sm { width: 80px; }
+.illustration--image.illustration--md { width: 120px; }
+.illustration--image.illustration--lg { width: 160px; }
+
 /* Masquer sur mobile */
 @media (max-width: 768px) {
   .illustration {
