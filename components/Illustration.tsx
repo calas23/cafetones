@@ -13,11 +13,13 @@ export type IllustrationProps = {
   illustration_image?: SbAsset;
   illustration_width?: string | number; // px, vide = largeur de la taille choisie
   illustration_opacity?: string | number; // %, vide = 100 (image personnalisée seulement)
+  illustration_flip?: boolean; // « miroir horizontal » : image ou dessin retourné de gauche à droite
 };
 
-export function Illustration({ illustration, illustration_position, illustration_size, illustration_image, illustration_width, illustration_opacity }: IllustrationProps) {
+export function Illustration({ illustration, illustration_position, illustration_size, illustration_image, illustration_width, illustration_opacity, illustration_flip }: IllustrationProps) {
   const position = illustration_position || "right";
   const size = illustration_size || "md";
+  const flip = illustration_flip ? " illustration--flip" : "";
   const image = assetUrl(illustration_image);
   if (image) {
     const rawW = illustration_width;
@@ -28,7 +30,7 @@ export function Illustration({ illustration, illustration_position, illustration
     if (width) style.width = `${width}px`;
     if (opacity !== 100) style.opacity = opacity / 100;
     return (
-      <div className={`illustration illustration--${position} illustration--${size} illustration--image`} aria-hidden="true" style={Object.keys(style).length ? style : undefined}>
+      <div className={`illustration illustration--${position} illustration--${size} illustration--image${flip}`} aria-hidden="true" style={Object.keys(style).length ? style : undefined}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={image} alt="" loading="lazy" />
       </div>
@@ -39,7 +41,7 @@ export function Illustration({ illustration, illustration_position, illustration
   if (!svg) return null;
   return (
     <div
-      className={`illustration illustration--${position} illustration--${size}`}
+      className={`illustration illustration--${position} illustration--${size}${flip}`}
       aria-hidden="true"
       dangerouslySetInnerHTML={{ __html: svg }}
     />

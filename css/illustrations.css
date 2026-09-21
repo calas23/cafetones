@@ -64,6 +64,13 @@
 .illustration--image.illustration--md { width: 120px; }
 .illustration--image.illustration--lg { width: 160px; }
 
+/* « Illustration — miroir horizontal » : image ou dessin retourné de gauche à droite (sur l'enfant,
+   le wrapper garde sa transformation de positionnement). */
+.illustration--flip img,
+.illustration--flip svg {
+  transform: scaleX(-1);
+}
+
 /* Masquer sur mobile */
 @media (max-width: 768px) {
   .illustration {
