@@ -5,7 +5,7 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 import { Icon } from "@/components/Icon";
 import { FontLink } from "@/components/FontLink";
 import { blockTextStyle } from "@/lib/fonts";
-import { Illustration } from "@/components/Illustration";
+import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { PhoneText } from "@/components/PhoneText";
 import { telHref } from "@/lib/phone";
 import { fmt, fmtTel } from "@/lib/text";
@@ -262,13 +262,11 @@ export function ContactSection({ blok }: { blok: ContactSectionBlok }) {
 /* ---------------- FAQ accordéon ---------------- */
 
 type FaqItem = SbBlok & { question?: string; answer?: string; delay?: string };
-export type FaqBlok = SbBlok & {
-  title?: string;
-  items?: FaqItem[];
-  illustration?: string;
-  illustration_position?: string;
-  illustration_size?: string;
-};
+export type FaqBlok = SbBlok &
+  IllustrationProps & {
+    title?: string;
+    items?: FaqItem[];
+  };
 
 export function FaqSection({ blok }: { blok: FaqBlok }) {
   const [open, setOpen] = useState<number | null>(null);
