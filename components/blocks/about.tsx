@@ -99,9 +99,6 @@ export function RoastersSection({ blok }: { blok: RoastersBlok }) {
       <div className="container">
         <div
           className="text-center animate-on-scroll"
-          data-illustration={blok.illustration || undefined}
-          data-illustration-position={blok.illustration_position || undefined}
-          data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
           <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>

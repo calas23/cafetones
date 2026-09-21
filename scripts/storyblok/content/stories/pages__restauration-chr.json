@@ -84,9 +84,7 @@
         "badge": "Simple et rapide",
         "title": "Comment ça marche",
         "subtitle": "Du premier contact à votre première livraison, tout se fait en quelques jours.",
-        "illustration": "moka",
         "illustration_position": "right",
-        "illustration_size": "md",
         "steps": [
           {
             "_uid": "687a61f5-3cff-7164-84fa-15bd03cb5da6",
@@ -117,9 +115,7 @@
         "badge": "Nos cafés pour les professionnels",
         "title": "Des mélanges pensés pour la restauration",
         "subtitle": "Chaque mélange est conçu pour offrir un espresso parfait en tasse — crème noisette, corps dense, arômes persistants.",
-        "illustration": "tasse",
         "illustration_position": "right",
-        "illustration_size": "sm",
         "products": [
           {
             "_uid": "26372c9b-9b65-2ccc-cdc1-3d597106b300",

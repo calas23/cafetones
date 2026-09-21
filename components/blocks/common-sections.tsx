@@ -24,9 +24,6 @@ export function StatsSection({ blok }: { blok: StatsBlok }) {
       <div
         className="container"
         style={{ position: "relative" }}
-        data-illustration={blok.illustration || undefined}
-        data-illustration-position={blok.illustration_position || undefined}
-        data-illustration-size={blok.illustration_size || undefined}
       >
         <div className="home-stats">
           {(blok.items ?? []).map((item) => (
@@ -230,9 +227,6 @@ export function StepsSection({ blok }: { blok: StepsBlok }) {
       <div className="container">
         <div
           className="text-center animate-on-scroll"
-          data-illustration={blok.illustration || undefined}
-          data-illustration-position={blok.illustration_position || undefined}
-          data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
           {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}

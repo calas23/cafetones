@@ -1,24 +1,11 @@
-/* ========================================================================
-   TONES — Illustrations decoratives hand-drawn
-   ======================================================================== */
-
+/* Illustration de section (Storyblok, champs « Illustration — … », voir components/Illustration.tsx) :
+   image posée en absolu à côté du titre, hors du flux, sans capter les clics. Largeur 120 px par
+   défaut (« largeur (px) » posée en style inline), opaque (« opacité (%) » en style inline). */
 .illustration {
   position: absolute;
   pointer-events: none;
   z-index: 0;
-  color: var(--color-espresso);
-  opacity: 0.12;
   line-height: 0;
-}
-
-.illustration--accent {
-  color: var(--color-crema);
-  opacity: 0.25;
-}
-
-.illustration svg {
-  width: 100%;
-  height: auto;
 }
 
 /* Positionnement */
@@ -44,30 +31,19 @@
   bottom: 20px;
 }
 
-/* Tailles */
-.illustration--sm svg { width: 80px; }
-.illustration--md svg { width: 120px; }
-.illustration--lg svg { width: 160px; }
-
-/* « Illustration — image personnalisée » (Storyblok, voir components/Illustration.tsx) : l'image
-   remplace le dessin, opaque (sauf « opacité (%) »), largeur de la taille choisie ou « largeur (px) »
-   posée en style inline. */
 .illustration--image {
-  opacity: 1;
+  width: 120px;
 }
+
 .illustration--image img {
   display: block;
   width: 100%;
   height: auto;
 }
-.illustration--image.illustration--sm { width: 80px; }
-.illustration--image.illustration--md { width: 120px; }
-.illustration--image.illustration--lg { width: 160px; }
 
-/* « Illustration — miroir horizontal » : image ou dessin retourné de gauche à droite (sur l'enfant,
-   le wrapper garde sa transformation de positionnement). */
-.illustration--flip img,
-.illustration--flip svg {
+/* « Illustration — miroir horizontal » : image retournée de gauche à droite (sur l'image, le wrapper
+   garde sa transformation de positionnement). */
+.illustration--flip img {
   transform: scaleX(-1);
 }
 

@@ -42,9 +42,7 @@
         "component": "roasters_section",
         "title": "Nos torréfacteurs partenaires",
         "subtitle": "Deux maisons italiennes familiales, unies par la même passion de l'excellence.",
-        "illustration": "plant",
         "illustration_position": "right",
-        "illustration_size": "lg",
         "roasters": [
           {
             "_uid": "c464abf0-30fe-d175-8271-147d2485340d",

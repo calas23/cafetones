@@ -48,37 +48,26 @@ const ICON_OPTIONS = [
   ["globe", "Globe"],
 ];
 
+// Illustration de section : une image (photo ou PNG) posée à côté du titre, sur ordinateur.
+// Les anciens dessins décoratifs prédéfinis (tasse, moka…) et leur taille ont été retirés.
 const ILLUSTRATION_FIELDS = {
-  illustration: option("Illustration décorative", [
-    ["", "Aucune"],
-    ["moka", "Cafetière moka"],
-    ["grains", "Grains de café"],
-    ["tasse", "Tasse"],
-    ["plant", "Plant de café"],
-    ["croissant", "Croissant"],
-  ]),
-  illustration_position: option("Position de l'illustration", [
+  illustration_image: asset("Illustration — image", {
+    description: "Image (photo ou PNG à fond transparent) affichée à côté du titre de la section, sur ordinateur (masquée sur mobile). Vide = aucune illustration.",
+  }),
+  illustration_position: option("Illustration — position", [
     ["right", "Droite"],
     ["left", "Gauche"],
     ["corner-br", "Coin bas-droit"],
   ]),
-  illustration_image: asset("Illustration — image personnalisée", {
-    description: "Votre image (photo ou PNG) à la place du dessin décoratif, à la position choisie ci-dessus. Vide = dessin choisi. Masquée sur mobile comme le dessin.",
-  }),
   illustration_width: number("Illustration — largeur (px)", {
-    description: "Image personnalisée seulement. Vide = largeur de la taille choisie ci-dessous (80 / 120 / 160 px). Entre 40 et 600.",
+    description: "Vide = 120. Entre 40 et 600.",
   }),
   illustration_opacity: number("Illustration — opacité (%)", {
-    description: "Image personnalisée seulement. 100 = opaque (défaut), 30 = très transparente. Entre 5 et 100.",
+    description: "100 = opaque (défaut), 30 = très transparente. Entre 5 et 100.",
   }),
   illustration_flip: boolean("Illustration — miroir horizontal", {
-    description: "Retourne l'image personnalisée (ou le dessin) de gauche à droite, par exemple pour orienter une tasse vers le texte.",
+    description: "Retourne l'image de gauche à droite, par exemple pour orienter une tasse vers le texte.",
   }),
-  illustration_size: option("Taille de l'illustration", [
-    ["sm", "Petite"],
-    ["md", "Moyenne"],
-    ["lg", "Grande"],
-  ]),
 };
 
 const DELAY = text("Délai d'animation (1-4, vide = aucun)", {
