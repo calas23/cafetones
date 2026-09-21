@@ -127,8 +127,11 @@ async function main() {
       continue;
     }
     if (!(to in changes)) changes[to] = target[from];
+    // Vidage de l'ancien champ selon son type : Storyblok refuse "" pour un booléen (doit rester
+    // un booléen) et attend un objet asset vide pour une image.
     const v = target[from];
-    changes[from] = v && typeof v === "object" && !Array.isArray(v) && v.fieldtype === "asset" ? { ...EMPTY_ASSET } : Array.isArray(v) ? [] : "";
+    changes[from] =
+      typeof v === "boolean" ? false : v && typeof v === "object" && !Array.isArray(v) && v.fieldtype === "asset" ? { ...EMPTY_ASSET } : Array.isArray(v) ? [] : "";
   }
 
   console.log(`\nStory ${slug} (id ${story.id}) → ${where} :`);
