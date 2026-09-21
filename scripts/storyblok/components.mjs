@@ -48,24 +48,32 @@ const ICON_OPTIONS = [
   ["globe", "Globe"],
 ];
 
-// Illustration de section : une image (photo ou PNG) posée à côté du titre, sur ordinateur.
-// Les anciens dessins décoratifs prédéfinis (tasse, moka…) et leur taille ont été retirés.
+// Illustrations de section : une image (photo ou PNG) de chaque côté du titre, sur ordinateur —
+// gauche, droite, ou les deux. Chaque côté a son image, sa largeur, son opacité et son miroir.
+// Les clés sans « left » sont celles du côté droit (historique : champ unique « Illustration »).
 const ILLUSTRATION_FIELDS = {
-  illustration_image: asset("Illustration — image", {
-    description: "Image (photo ou PNG à fond transparent) affichée à côté du titre de la section, sur ordinateur (masquée sur mobile). Vide = aucune illustration.",
+  illustration_left_image: asset("Illustration gauche — image", {
+    description: "Image (photo ou PNG à fond transparent) affichée à gauche du titre de la section, sur ordinateur (masquée sur mobile). Vide = rien à gauche.",
   }),
-  illustration_position: option("Illustration — position", [
-    ["right", "Droite"],
-    ["left", "Gauche"],
-    ["corner-br", "Coin bas-droit"],
-  ]),
-  illustration_width: number("Illustration — largeur (px)", {
+  illustration_left_width: number("Illustration gauche — largeur (px)", {
     description: "Vide = 120. Entre 40 et 600.",
   }),
-  illustration_opacity: number("Illustration — opacité (%)", {
+  illustration_left_opacity: number("Illustration gauche — opacité (%)", {
     description: "100 = opaque (défaut), 30 = très transparente. Entre 5 et 100.",
   }),
-  illustration_flip: boolean("Illustration — miroir horizontal", {
+  illustration_left_flip: boolean("Illustration gauche — miroir horizontal", {
+    description: "Retourne l'image de gauche à droite.",
+  }),
+  illustration_image: asset("Illustration droite — image", {
+    description: "Image (photo ou PNG à fond transparent) affichée à droite du titre de la section, sur ordinateur (masquée sur mobile). Vide = rien à droite.",
+  }),
+  illustration_width: number("Illustration droite — largeur (px)", {
+    description: "Vide = 120. Entre 40 et 600.",
+  }),
+  illustration_opacity: number("Illustration droite — opacité (%)", {
+    description: "100 = opaque (défaut), 30 = très transparente. Entre 5 et 100.",
+  }),
+  illustration_flip: boolean("Illustration droite — miroir horizontal", {
     description: "Retourne l'image de gauche à droite, par exemple pour orienter une tasse vers le texte.",
   }),
 };

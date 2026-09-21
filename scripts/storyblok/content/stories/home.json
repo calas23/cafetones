@@ -65,7 +65,6 @@
       {
         "_uid": "b0955f20-7abc-7664-5feb-b10e36475832",
         "component": "stats_section",
-        "illustration_position": "corner-br",
         "items": [
           {
             "_uid": "cb42b3b5-6416-7dc8-cdef-54f46cdd8684",
@@ -165,7 +164,6 @@
         "badge": "Nos best-sellers",
         "title": "Les cafés préférés de nos clients",
         "subtitle": "Torréfiés en Italie par des maisons familiales, médaillés internationalement.",
-        "illustration_position": "right",
         "products": [
           {
             "_uid": "3ed4dc05-b640-6881-cf40-7fb78038a138",
