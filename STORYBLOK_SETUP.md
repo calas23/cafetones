@@ -325,8 +325,9 @@ certificat auto-signé dans le navigateur.
   décorative ») : cliquer la section → **Illustration — image personnalisée**
   → Upload ou image de la bibliothèque → **Position de l'illustration** (droite,
   gauche, coin bas-droit), **Illustration — largeur (px)** (vide = 80 / 120 /
-  160 px selon la taille choisie), **Illustration — opacité (%)** (vide = 100)
-  → Save → Publish. Vide = dessin décoratif choisi (« Illustration
+  160 px selon la taille choisie), **Illustration — opacité (%)** (vide = 100),
+  **Illustration — miroir horizontal** (case à cocher : image ou dessin
+  retourné de gauche à droite) → Save → Publish. Vide = dessin décoratif choisi (« Illustration
   décorative »). Sur mobile, l'illustration est masquée. Les photos des
   produits se changent sur chaque produit de la section : cliquer le produit →
   **Photo** → Upload.
@@ -676,6 +677,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_image` | Image | Illustration — image personnalisée |
 | `illustration_width` | Nombre | Illustration — largeur (px) |
 | `illustration_opacity` | Nombre | Illustration — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
@@ -704,6 +706,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_image` | Image | Illustration — image personnalisée |
 | `illustration_width` | Nombre | Illustration — largeur (px) |
 | `illustration_opacity` | Nombre | Illustration — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `products` | Liste de blocs (product_card) | Produits |
 | `image_scale` | Nombre | Taille des photos (%) |
@@ -792,6 +795,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_image` | Image | Illustration — image personnalisée |
 | `illustration_width` | Nombre | Illustration — largeur (px) |
 | `illustration_opacity` | Nombre | Illustration — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `steps` | Liste de blocs (step_item) | Étapes |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
@@ -823,6 +827,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_image` | Image | Illustration — image personnalisée |
 | `illustration_width` | Nombre | Illustration — largeur (px) |
 | `illustration_opacity` | Nombre | Illustration — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `products` | Liste de blocs (product_card) | Produits |
 | `note` | Texte | Note sous le tableau |
@@ -924,6 +929,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_image` | Image | Illustration — image personnalisée |
 | `illustration_width` | Nombre | Illustration — largeur (px) |
 | `illustration_opacity` | Nombre | Illustration — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `products` | Liste de blocs (product_card) | Produits |
 | `cta_label` | Texte | Bouton bas — texte |
@@ -1017,6 +1023,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_image` | Image | Illustration — image personnalisée |
 | `illustration_width` | Nombre | Illustration — largeur (px) |
 | `illustration_opacity` | Nombre | Illustration — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `cards` | Liste de blocs (product_card) | Pâtisseries |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
@@ -1089,6 +1096,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_image` | Image | Illustration — image personnalisée |
 | `illustration_width` | Nombre | Illustration — largeur (px) |
 | `illustration_opacity` | Nombre | Illustration — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `items` | Liste de blocs (faq_item) | Questions |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
@@ -1127,6 +1135,7 @@ certificat auto-signé dans le navigateur.
 | `illustration_image` | Image | Illustration — image personnalisée |
 | `illustration_width` | Nombre | Illustration — largeur (px) |
 | `illustration_opacity` | Nombre | Illustration — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
 | `illustration_size` | Choix — valeurs : sm · md · lg | Taille de l'illustration |
 | `roasters` | Liste de blocs (roaster_card) | Torréfacteurs |
 | `image_scale` | Nombre | Taille des photos (%) |

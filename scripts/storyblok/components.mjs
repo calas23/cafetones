@@ -71,6 +71,9 @@ const ILLUSTRATION_FIELDS = {
   illustration_opacity: number("Illustration — opacité (%)", {
     description: "Image personnalisée seulement. 100 = opaque (défaut), 30 = très transparente. Entre 5 et 100.",
   }),
+  illustration_flip: boolean("Illustration — miroir horizontal", {
+    description: "Retourne l'image personnalisée (ou le dessin) de gauche à droite, par exemple pour orienter une tasse vers le texte.",
+  }),
   illustration_size: option("Taille de l'illustration", [
     ["sm", "Petite"],
     ["md", "Moyenne"],
