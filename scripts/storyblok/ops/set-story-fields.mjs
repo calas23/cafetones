@@ -8,6 +8,9 @@
 //               pages/cafe-bureau-entreprise#landing_hero), y compris des images (objets asset)
 //   COPY_FIELDS champs à copier, séparés par des virgules ; seuls les champs encore vides sur la
 //               cible sont copiés (les valeurs déjà renseignées par la cliente sont conservées)
+//   RENAME_FIELDS optionnel : "ancien:nouveau,ancien2:nouveau2" — déplace des valeurs à l'intérieur
+//               de la cible (le nouveau champ reçoit la valeur, l'ancien est vidé), ex. après un
+//               renommage de champs dans le schéma
 // DRY_RUN=1 affiche les valeurs avant/après sans écrire ; PUBLISH=1 publie aussi.
 
 import { fileURLToPath } from "node:url";
@@ -68,10 +71,18 @@ async function main() {
   const fields = parseFields(process.env.FIELDS || "");
   const copyFrom = (process.env.COPY_FROM || "").trim();
   const copyFields = (process.env.COPY_FIELDS || "").split(",").map((s) => s.trim()).filter(Boolean);
-  if (!Object.keys(fields).length && !(copyFrom && copyFields.length)) {
-    throw new Error("Rien à faire : FIELDS vide et pas de COPY_FROM + COPY_FIELDS.");
+  const renames = (process.env.RENAME_FIELDS || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((pair) => pair.split(":").map((s) => s.trim()));
+  if (!Object.keys(fields).length && !(copyFrom && copyFields.length) && !renames.length) {
+    throw new Error("Rien à faire : FIELDS vide, pas de COPY_FROM + COPY_FIELDS ni de RENAME_FIELDS.");
   }
   for (const k of copyFields) if (!/^[a-z0-9_]+$/i.test(k)) throw new Error(`Nom de champ invalide : ${k}`);
+  for (const pair of renames) {
+    if (pair.length !== 2 || !pair.every((k) => /^[a-z0-9_]+$/i.test(k))) throw new Error(`RENAME_FIELDS : paire invalide « ${pair.join(":")} » (attendu ancien:nouveau)`);
+  }
 
   const client = createClient();
   await client.detectHost();
@@ -106,6 +117,18 @@ async function main() {
       }
       changes[k] = src[k];
     }
+  }
+
+  // Déplacements de valeurs à l'intérieur de la cible (ancien champ → nouveau champ, ancien vidé).
+  const EMPTY_ASSET = { id: null, alt: null, name: "", focus: null, title: null, filename: null, copyright: null, fieldtype: "asset", meta_data: {}, is_external_url: false };
+  for (const [from, to] of renames) {
+    if (isEmpty(target[from])) {
+      console.log(`  ${from} → ${to} : ancien champ vide, rien à déplacer`);
+      continue;
+    }
+    if (!(to in changes)) changes[to] = target[from];
+    const v = target[from];
+    changes[from] = v && typeof v === "object" && !Array.isArray(v) && v.fieldtype === "asset" ? { ...EMPTY_ASSET } : Array.isArray(v) ? [] : "";
   }
 
   console.log(`\nStory ${slug} (id ${story.id}) → ${where} :`);

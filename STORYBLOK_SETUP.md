@@ -320,16 +320,16 @@ certificat auto-signé dans le navigateur.
   pied de page (%)** (textes seuls), et les couleurs en codes hex : **titres de
   colonnes** (Navigation, Nos cafés, Contact), **textes** et **fond** du pied
   de page (vides = palette du site) → Save → Publish.
-- **Accueil — image de la section « Nos best-sellers »** (l'illustration à
-  côté du titre ; même chose sur toute section qui a des champs « Illustration
-  — … ») : cliquer la section → **Illustration — image** → Upload ou image de
-  la bibliothèque → **Illustration — position** (droite, gauche, coin
-  bas-droit), **Illustration — largeur (px)** (vide = 120), **Illustration —
-  opacité (%)** (vide = 100), **Illustration — miroir horizontal** (case à
-  cocher : image retournée de gauche à droite) → Save → Publish. Vide = aucune
-  illustration. Sur mobile, l'illustration est masquée. Les photos des
-  produits se changent sur chaque produit de la section : cliquer le produit →
-  **Photo** → Upload.
+- **Accueil — images de la section « Nos best-sellers »** (une illustration
+  de chaque côté du titre, gauche, droite ou les deux ; même chose sur toute
+  section qui a des champs « Illustration gauche / droite ») : cliquer la
+  section → **Illustration gauche — image** et/ou **Illustration droite —
+  image** → Upload ou image de la bibliothèque → pour chaque côté, **largeur
+  (px)** (vide = 120), **opacité (%)** (vide = 100), **miroir horizontal**
+  (case à cocher : image retournée de gauche à droite) → Save → Publish. Vide
+  d'un côté = rien de ce côté. Sur mobile, les illustrations sont masquées.
+  Les photos des produits se changent sur chaque produit de la section :
+  cliquer le produit → **Photo** → Upload.
 - **Photos des best-sellers** : cliquer la section → champ **Taille des
   photos (%)** (100 = actuelle, 150 = une fois et demie plus grandes) → Save →
   Publish.
@@ -446,7 +446,9 @@ certificat auto-signé dans le navigateur.
   `_uid`, ex. `chr_hero`) ; `copy_from` + `copy_fields` copient en plus des
   champs (images comprises) depuis une autre page ou un autre bloc, ex.
   `pages/cafe-bureau-entreprise#landing_hero` et `image,image_style`, sans
-  écraser ce qui est déjà renseigné sur la cible.
+  écraser ce qui est déjà renseigné sur la cible ; `rename_fields`
+  (`ancien:nouveau,…`) déplace des valeurs à l'intérieur de la cible après un
+  renommage de champs (l'ancien champ est vidé).
 
 ## 4. Référence des blocs
 
@@ -671,11 +673,14 @@ certificat auto-signé dans le navigateur.
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `items` | Liste de blocs (stat_item) | Chiffres |
-| `illustration_image` | Image | Illustration — image |
-| `illustration_position` | Choix — valeurs : right · left · corner-br | Illustration — position |
-| `illustration_width` | Nombre | Illustration — largeur (px) |
-| `illustration_opacity` | Nombre | Illustration — opacité (%) |
-| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
+| `illustration_left_image` | Image | Illustration gauche — image |
+| `illustration_left_width` | Nombre | Illustration gauche — largeur (px) |
+| `illustration_left_opacity` | Nombre | Illustration gauche — opacité (%) |
+| `illustration_left_flip` | Case à cocher | Illustration gauche — miroir horizontal |
+| `illustration_image` | Image | Illustration droite — image |
+| `illustration_width` | Nombre | Illustration droite — largeur (px) |
+| `illustration_opacity` | Nombre | Illustration droite — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration droite — miroir horizontal |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
 | `section_spacing` | Nombre | Espacement haut/bas de la section (%) |
@@ -698,11 +703,14 @@ certificat auto-signé dans le navigateur.
 | `badge` | Texte | Badge |
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
-| `illustration_image` | Image | Illustration — image |
-| `illustration_position` | Choix — valeurs : right · left · corner-br | Illustration — position |
-| `illustration_width` | Nombre | Illustration — largeur (px) |
-| `illustration_opacity` | Nombre | Illustration — opacité (%) |
-| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
+| `illustration_left_image` | Image | Illustration gauche — image |
+| `illustration_left_width` | Nombre | Illustration gauche — largeur (px) |
+| `illustration_left_opacity` | Nombre | Illustration gauche — opacité (%) |
+| `illustration_left_flip` | Case à cocher | Illustration gauche — miroir horizontal |
+| `illustration_image` | Image | Illustration droite — image |
+| `illustration_width` | Nombre | Illustration droite — largeur (px) |
+| `illustration_opacity` | Nombre | Illustration droite — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration droite — miroir horizontal |
 | `products` | Liste de blocs (product_card) | Produits |
 | `image_scale` | Nombre | Taille des photos (%) |
 | `cta_label` | Texte | Bouton bas — texte |
@@ -785,11 +793,14 @@ certificat auto-signé dans le navigateur.
 | `badge` | Texte | Badge |
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
-| `illustration_image` | Image | Illustration — image |
-| `illustration_position` | Choix — valeurs : right · left · corner-br | Illustration — position |
-| `illustration_width` | Nombre | Illustration — largeur (px) |
-| `illustration_opacity` | Nombre | Illustration — opacité (%) |
-| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
+| `illustration_left_image` | Image | Illustration gauche — image |
+| `illustration_left_width` | Nombre | Illustration gauche — largeur (px) |
+| `illustration_left_opacity` | Nombre | Illustration gauche — opacité (%) |
+| `illustration_left_flip` | Case à cocher | Illustration gauche — miroir horizontal |
+| `illustration_image` | Image | Illustration droite — image |
+| `illustration_width` | Nombre | Illustration droite — largeur (px) |
+| `illustration_opacity` | Nombre | Illustration droite — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration droite — miroir horizontal |
 | `steps` | Liste de blocs (step_item) | Étapes |
 | `badge_font` | Choix — liste Datasource « polices » | Badge — police |
 | `badge_scale` | Nombre | Badge — taille (%) |
@@ -815,11 +826,14 @@ certificat auto-signé dans le navigateur.
 | `badge` | Texte | Badge |
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
-| `illustration_image` | Image | Illustration — image |
-| `illustration_position` | Choix — valeurs : right · left · corner-br | Illustration — position |
-| `illustration_width` | Nombre | Illustration — largeur (px) |
-| `illustration_opacity` | Nombre | Illustration — opacité (%) |
-| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
+| `illustration_left_image` | Image | Illustration gauche — image |
+| `illustration_left_width` | Nombre | Illustration gauche — largeur (px) |
+| `illustration_left_opacity` | Nombre | Illustration gauche — opacité (%) |
+| `illustration_left_flip` | Case à cocher | Illustration gauche — miroir horizontal |
+| `illustration_image` | Image | Illustration droite — image |
+| `illustration_width` | Nombre | Illustration droite — largeur (px) |
+| `illustration_opacity` | Nombre | Illustration droite — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration droite — miroir horizontal |
 | `products` | Liste de blocs (product_card) | Produits |
 | `note` | Texte | Note sous le tableau |
 | `cta_label` | Texte | Bouton — texte |
@@ -915,11 +929,14 @@ certificat auto-signé dans le navigateur.
 | `badge` | Texte | Badge |
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
-| `illustration_image` | Image | Illustration — image |
-| `illustration_position` | Choix — valeurs : right · left · corner-br | Illustration — position |
-| `illustration_width` | Nombre | Illustration — largeur (px) |
-| `illustration_opacity` | Nombre | Illustration — opacité (%) |
-| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
+| `illustration_left_image` | Image | Illustration gauche — image |
+| `illustration_left_width` | Nombre | Illustration gauche — largeur (px) |
+| `illustration_left_opacity` | Nombre | Illustration gauche — opacité (%) |
+| `illustration_left_flip` | Case à cocher | Illustration gauche — miroir horizontal |
+| `illustration_image` | Image | Illustration droite — image |
+| `illustration_width` | Nombre | Illustration droite — largeur (px) |
+| `illustration_opacity` | Nombre | Illustration droite — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration droite — miroir horizontal |
 | `products` | Liste de blocs (product_card) | Produits |
 | `cta_label` | Texte | Bouton bas — texte |
 | `cta_link` | Texte | Bouton bas — lien |
@@ -1007,11 +1024,14 @@ certificat auto-signé dans le navigateur.
 |---|---|---|
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
-| `illustration_image` | Image | Illustration — image |
-| `illustration_position` | Choix — valeurs : right · left · corner-br | Illustration — position |
-| `illustration_width` | Nombre | Illustration — largeur (px) |
-| `illustration_opacity` | Nombre | Illustration — opacité (%) |
-| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
+| `illustration_left_image` | Image | Illustration gauche — image |
+| `illustration_left_width` | Nombre | Illustration gauche — largeur (px) |
+| `illustration_left_opacity` | Nombre | Illustration gauche — opacité (%) |
+| `illustration_left_flip` | Case à cocher | Illustration gauche — miroir horizontal |
+| `illustration_image` | Image | Illustration droite — image |
+| `illustration_width` | Nombre | Illustration droite — largeur (px) |
+| `illustration_opacity` | Nombre | Illustration droite — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration droite — miroir horizontal |
 | `cards` | Liste de blocs (product_card) | Pâtisseries |
 | `background` | Texte | Couleur de fond (code hex, vide = fond par défaut) |
 | `section_zoom` | Nombre | Taille de la section (%) |
@@ -1078,11 +1098,14 @@ certificat auto-signé dans le navigateur.
 | Champ (nom technique) | Type | Libellé |
 |---|---|---|
 | `title` | Texte | Titre |
-| `illustration_image` | Image | Illustration — image |
-| `illustration_position` | Choix — valeurs : right · left · corner-br | Illustration — position |
-| `illustration_width` | Nombre | Illustration — largeur (px) |
-| `illustration_opacity` | Nombre | Illustration — opacité (%) |
-| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
+| `illustration_left_image` | Image | Illustration gauche — image |
+| `illustration_left_width` | Nombre | Illustration gauche — largeur (px) |
+| `illustration_left_opacity` | Nombre | Illustration gauche — opacité (%) |
+| `illustration_left_flip` | Case à cocher | Illustration gauche — miroir horizontal |
+| `illustration_image` | Image | Illustration droite — image |
+| `illustration_width` | Nombre | Illustration droite — largeur (px) |
+| `illustration_opacity` | Nombre | Illustration droite — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration droite — miroir horizontal |
 | `items` | Liste de blocs (faq_item) | Questions |
 | `title_font` | Choix — liste Datasource « polices » | Titre — police |
 | `title_size` | Nombre | Titre — taille (%) |
@@ -1115,11 +1138,14 @@ certificat auto-signé dans le navigateur.
 |---|---|---|
 | `title` | Texte | Titre |
 | `subtitle` | Texte long | Sous-titre |
-| `illustration_image` | Image | Illustration — image |
-| `illustration_position` | Choix — valeurs : right · left · corner-br | Illustration — position |
-| `illustration_width` | Nombre | Illustration — largeur (px) |
-| `illustration_opacity` | Nombre | Illustration — opacité (%) |
-| `illustration_flip` | Case à cocher | Illustration — miroir horizontal |
+| `illustration_left_image` | Image | Illustration gauche — image |
+| `illustration_left_width` | Nombre | Illustration gauche — largeur (px) |
+| `illustration_left_opacity` | Nombre | Illustration gauche — opacité (%) |
+| `illustration_left_flip` | Case à cocher | Illustration gauche — miroir horizontal |
+| `illustration_image` | Image | Illustration droite — image |
+| `illustration_width` | Nombre | Illustration droite — largeur (px) |
+| `illustration_opacity` | Nombre | Illustration droite — opacité (%) |
+| `illustration_flip` | Case à cocher | Illustration droite — miroir horizontal |
 | `roasters` | Liste de blocs (roaster_card) | Torréfacteurs |
 | `image_scale` | Nombre | Taille des photos (%) |
 | `card_gap` | Nombre | Espace entre les cartes (px) |

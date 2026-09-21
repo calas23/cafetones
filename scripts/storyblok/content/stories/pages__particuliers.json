@@ -60,7 +60,6 @@
         "badge": "Simple comme un espresso",
         "title": "Comment ça marche",
         "subtitle": "Pas de compte en ligne, pas de plateforme compliquée. Chez TONES, c'est simple et humain.",
-        "illustration_position": "right",
         "steps": [
           {
             "_uid": "c9abac21-524c-2ebc-523d-31dfd9538dd0",
@@ -435,7 +434,6 @@
         "component": "pastries_section",
         "title": "Les douceurs italiennes traditionnelles",
         "subtitle": "Pour accompagner votre café ou pour offrir, découvrez les pâtisseries La Genovese.",
-        "illustration_position": "right",
         "cards": [
           {
             "_uid": "3c7982e5-f466-3263-53d8-3d9213ee8005",
