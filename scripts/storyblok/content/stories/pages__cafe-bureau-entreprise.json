@@ -102,9 +102,7 @@
         "badge": "Simple et rapide",
         "title": "Comment ça marche",
         "subtitle": "Du premier contact à votre première livraison, tout se fait en quelques jours.",
-        "illustration": "moka",
         "illustration_position": "right",
-        "illustration_size": "md",
         "steps": [
           {
             "_uid": "7f05f203-c3d6-9661-7ad0-8bfcb07d255c",
@@ -136,9 +134,7 @@
         "badge": "Tarifs HT — Professionnels",
         "title": "Nos cafés pour le bureau",
         "subtitle": "Des cafés italiens médaillés, à des prix accessibles. Devis personnalisé sur demande.",
-        "illustration": "tasse",
         "illustration_position": "right",
-        "illustration_size": "sm",
         "products": [
           {
             "_uid": "892729a2-a2a1-544d-4b5a-28a894eb6fde",

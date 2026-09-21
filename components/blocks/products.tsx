@@ -196,9 +196,6 @@ export function ProductsHomeSection({ blok }: { blok: ProductsSectionBlok }) {
       <div className="container">
         <div
           className="text-center animate-on-scroll"
-          data-illustration={blok.illustration || undefined}
-          data-illustration-position={blok.illustration_position || undefined}
-          data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
           {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
@@ -265,9 +262,6 @@ export function ChrProductsSection({ blok }: { blok: ProductsSectionBlok }) {
       <div className="container">
         <div
           className="text-center animate-on-scroll"
-          data-illustration={blok.illustration || undefined}
-          data-illustration-position={blok.illustration_position || undefined}
-          data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
           {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
@@ -408,9 +402,6 @@ export function PricingSection({ blok }: { blok: PricingSectionBlok }) {
       <div className="container">
         <div
           className="text-center animate-on-scroll"
-          data-illustration={blok.illustration || undefined}
-          data-illustration-position={blok.illustration_position || undefined}
-          data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
           {blok.badge ? <span className="badge badge--gold" style={badge.style}>{blok.badge}</span> : null}
@@ -559,9 +550,6 @@ export function PastriesSection({ blok }: { blok: PastriesBlok }) {
       <div className="container">
         <div
           className="text-center animate-on-scroll"
-          data-illustration={blok.illustration || undefined}
-          data-illustration-position={blok.illustration_position || undefined}
-          data-illustration-size={blok.illustration_size || undefined}
           style={{ position: "relative" }}
         >
           <h2>{fmt(blok.title)}</h2>
