@@ -17,6 +17,9 @@ main.page-about .about-story__visual img {
   border-radius: var(--border-radius-xl);
   box-shadow: var(--shadow-lg);
   width: 100%;
+  /* La hauteur suit la largeur : les attributs HTML width / height (dimensions de l'ancienne photo
+     3:2) ne déforment plus une image d'autres proportions, quelle que soit la taille de la colonne. */
+  height: auto;
 }
 /* « Style de l'image » = Sans cadre (Storyblok, section histoire) : ni coins arrondis ni ombre, et le
    fond blanc d'une illustration se fond dans la page (mode de fusion multiply, posé sur la colonne
