@@ -1133,6 +1133,13 @@ export const COMPONENTS = [
       title: text("Titre"),
       text: textarea("Paragraphes (séparés par une ligne vide)"),
       image: asset("Image"),
+      image_style: option("Style de l'image", [
+        ["card", "Carte : coins arrondis et ombre (défaut)"],
+        ["seamless", "Sans cadre : fondu dans la page (illustration à fond blanc)"],
+      ]),
+      image_scale: number("Taille de l'image (%)", {
+        description: "Largeur de la colonne image par rapport au texte, sur ordinateur. 100 = actuelle, 150 = une fois et demie plus large (le texte se resserre), 70 = plus petite. Entre 30 et 300. Vide = actuelle.",
+      }),
       ...IMAGE_DIMS,
       quote: text("Citation"),
       quote_author: text("Auteur de la citation"),

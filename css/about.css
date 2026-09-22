@@ -18,6 +18,16 @@ main.page-about .about-story__visual img {
   box-shadow: var(--shadow-lg);
   width: 100%;
 }
+/* « Style de l'image » = Sans cadre (Storyblok, section histoire) : ni coins arrondis ni ombre, et le
+   fond blanc d'une illustration se fond dans la page (mode de fusion multiply, posé sur la colonne
+   animée elle-même : son animation d'apparition isole ses enfants). */
+main.page-about .about-story__visual--seamless {
+  mix-blend-mode: multiply;
+}
+main.page-about .about-story__visual--seamless img {
+  border-radius: 0;
+  box-shadow: none;
+}
 main.page-about .about-quote {
   font-family: var(--font-display);
   font-style: italic;
@@ -220,8 +230,9 @@ main.page-about .about-roasters {
 }
 
 @media (min-width: 900px) {
+/* --about-cols : « Taille de l'image (%) » de la section histoire (Storyblok) ; absente = 3fr 2fr. */
 main.page-about .about-story {
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: var(--about-cols, 3fr 2fr);
   }
 main.page-about .about-certs {
     grid-template-columns: 1fr 1fr 1fr;
