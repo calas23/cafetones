@@ -12,6 +12,8 @@ import { aos } from "./common-sections";
 // Cartes produit (une seule définition de bloc, plusieurs rendus selon la
 // section) + sections produits. Les data-attributes alimentent la modale.
 
+type ProductVariantBlok = SbBlok & { name?: string; description?: string; image?: SbAsset; price?: string };
+
 export type ProductCardBlok = SbBlok & {
   name_font?: string; // police du nom (clé de lib/fonts.ts, vide = défaut)
   name_size?: string | number; // taille du nom en % (vide = 100)
@@ -31,6 +33,8 @@ export type ProductCardBlok = SbBlok & {
   medals_label?: string;
   seasonal_note?: string;
   categories?: string;
+  variants_label?: string; // titre de la liste des variantes dans la fenêtre (vide = « Variantes »)
+  variants?: ProductVariantBlok[]; // déclinaisons affichées dans la fenêtre du produit
   patisserie_style?: boolean;
   delay?: string;
   image?: SbAsset;
@@ -98,6 +102,12 @@ export function modalDataAttrs(p: ProductCardBlok): Record<string, string> {
   ];
   for (const [k, v] of map) if (v) attrs[k] = v;
   if (p.categories) attrs["data-categories"] = p.categories;
+  // Variantes (fenêtre) : JSON lu par buildModalHtml (components/behaviors/GlobalBehaviors.tsx).
+  const variants = (p.variants ?? []).map((v) => ({ name: v.name || "", description: v.description || "", image: assetUrl(v.image) || "", price: v.price || "" }));
+  if (variants.length) {
+    attrs["data-variants"] = JSON.stringify(variants);
+    if (p.variants_label) attrs["data-variants-label"] = p.variants_label;
+  }
   return attrs;
 }
 

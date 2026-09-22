@@ -732,7 +732,46 @@
             "price_detail": "",
             "medals_label": "",
             "seasonal_note": "Commande en septembre, livraison en décembre.",
-            "patisserie_style": true
+            "patisserie_style": true,
+            "variants_label": "Nos panettones",
+            "variants": [
+              {
+                "_uid": "a1f0c0de-0001-4c1e-8a11-000000000001",
+                "component": "product_variant",
+                "name": "Panettone al caffè",
+                "description": "Fourré de crème au café et de pépites de chocolat au café. Sans raisins secs ni fruits confits. Levée naturelle.",
+                "image": {
+                  "filename": "/img/panettone-caffe.jpg",
+                  "alt": "Panettone al caffè"
+                }
+              },
+              {
+                "_uid": "a1f0c0de-0002-4c1e-8a11-000000000002",
+                "component": "product_variant",
+                "name": "Panettone al cioccolato",
+                "description": "Aux pépites de chocolat, nappé de chocolat noir et parsemé de noisettes concassées. Sans raisins secs ni fruits confits.",
+                "image": {
+                  "filename": "/img/panettone-cioccolato.jpg",
+                  "alt": "Panettone al cioccolato"
+                }
+              },
+              {
+                "_uid": "a1f0c0de-0003-4c1e-8a11-000000000003",
+                "component": "product_variant",
+                "name": "Panettone mandorlato",
+                "description": "Levée naturelle, glaçage aux amandes et sucre en grains. Avec raisins secs et écorces confites.",
+                "image": {
+                  "filename": "/img/panettone-mandorlato.jpg",
+                  "alt": "Panettone mandorlato"
+                }
+              },
+              {
+                "_uid": "a1f0c0de-0004-4c1e-8a11-000000000004",
+                "component": "product_variant",
+                "name": "Panettone al limoncello",
+                "description": ""
+              }
+            ]
           },
           {
             "_uid": "51dce0bc-2d65-06ed-69b5-c9ac5cbb2622",

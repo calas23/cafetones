@@ -74,6 +74,28 @@ function buildModalHtml(d: DOMStringMap): string {
   html += '<h2 class="pm-name">' + name + "</h2>";
   if (subtitle) html += '<div class="pm-subtitle">' + subtitle + "</div>";
   if (description) html += '<p class="pm-desc">' + description + "</p>";
+  // Variantes (data-variants, JSON posé par modalDataAttrs) : grille nom / description / photo,
+  // emplacement vide sans photo.
+  let variants: { name?: string; description?: string; image?: string; price?: string }[] = [];
+  try {
+    variants = d.variants ? JSON.parse(d.variants) : [];
+  } catch {
+    variants = [];
+  }
+  if (variants.length) {
+    html += '<div class="pm-section"><div class="pm-section__label">' + (d.variantsLabel || "Variantes") + '</div><div class="pm-variants">';
+    variants.forEach((v) => {
+      html += '<div class="pm-variant">';
+      html += v.image
+        ? '<div class="pm-variant__image"><img src="' + v.image + '" alt="' + (v.name || "") + '" loading="lazy"></div>'
+        : '<div class="pm-variant__image pm-variant__image--empty" aria-hidden="true"></div>';
+      if (v.name) html += '<div class="pm-variant__name">' + v.name + "</div>";
+      if (v.description) html += '<div class="pm-variant__desc">' + v.description + "</div>";
+      if (v.price) html += '<div class="pm-variant__price">' + v.price + "</div>";
+      html += "</div>";
+    });
+    html += "</div></div>";
+  }
   if (acidity || body || intensity) {
     html += '<div class="pm-profile">';
     if (acidity)

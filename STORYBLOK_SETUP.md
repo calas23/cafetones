@@ -263,6 +263,16 @@ certificat auto-signé dans le navigateur.
   alors une couleur de titre claire dans l'onglet Typographie ; 100 = couleur
   pleine) → **Couleur de fond** (hex, vide = crème d'origine) → Save → Publish.
   Image vide = bandeau uni d'origine.
+- **Page Notre gamme — variantes d'un produit dans sa fenêtre** (ex. les
+  panettones : al caffè, al cioccolato, mandorlato, al limoncello) : cliquer le
+  produit (ex. « Le Panettone » dans Pâtisseries italiennes) → onglet **Fiche
+  détaillée (fenêtre au clic)** → **Variantes (dans la fenêtre du produit)** →
+  bouton + → **Variante de produit** → **Nom**, **Description**, **Photo**
+  (Upload ou image de la bibliothèque ; vide = emplacement vide en pointillés,
+  à compléter plus tard), **Prix** (optionnel) → Save → Publish. **Variantes —
+  titre de la liste** : titre affiché au-dessus (vide = « Variantes »). Les
+  variantes apparaissent dans la fenêtre qui s'ouvre au clic sur le produit,
+  sous sa description.
 - **Page Notre gamme — titre « Notre gamme complète »** (et bandeaux simples
   des pages À propos et Contact) : cliquer le bandeau (bloc Héros — Bandeau
   simple) → onglet **Typographie** → **Titre — police / taille (%) / couleur**
@@ -455,6 +465,9 @@ certificat auto-signé dans le navigateur.
   écraser ce qui est déjà renseigné sur la cible ; `rename_fields`
   (`ancien:nouveau,…`) déplace des valeurs à l'intérieur de la cible après un
   renommage de champs (l'ancien champ est vidé).
+  `upload-assets` envoie des images de `public/img` dans la bibliothèque du
+  space (noms de fichiers séparés par des virgules dans `fields`) ; les images
+  déjà présentes sont réutilisées.
 
 ## 4. Référence des blocs
 
@@ -1223,7 +1236,7 @@ certificat auto-signé dans le navigateur.
 | `contact_label` | Texte | Bouton contact — texte |
 | `contact_link` | Texte | Bouton contact — lien |
 
-## Groupe « Éléments » (18)
+## Groupe « Éléments » (19)
 
 ### `nav_link` — Lien de navigation *(bloc imbriquable, groupe Éléments)*
 
@@ -1323,6 +1336,8 @@ certificat auto-signé dans le navigateur.
 | `format` | Texte | Format |
 | `price` | Texte | Prix |
 | `machine_info` | Texte long | Info machine (encart) |
+| `variants_label` | Texte | Variantes — titre de la liste |
+| `variants` | Liste de blocs (product_variant) | Variantes (dans la fenêtre du produit) |
 | `table_desc` | Texte | Tableau — description |
 | `table_format` | Texte | Tableau — format |
 | `table_price` | Texte | Tableau — prix |
@@ -1370,6 +1385,15 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Texte |
 | `delay` | Texte | Délai d'animation (1-4, vide = aucun) |
+
+### `product_variant` — Variante de produit (fenêtre) *(bloc imbriquable, groupe Éléments)*
+
+| Champ (nom technique) | Type | Libellé |
+|---|---|---|
+| `name` | Texte | Nom |
+| `description` | Texte long | Description |
+| `image` | Image | Photo (optionnelle) |
+| `price` | Texte | Prix (optionnel) |
 
 ### `trust_item` — Élément de confiance (héros) *(bloc imbriquable, groupe Éléments)*
 

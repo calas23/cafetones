@@ -3,7 +3,8 @@
 //   STORY_SLUG  story cible (défaut config/site-settings)
 //   BLOCK       vide = racine du contenu ; sinon _uid ou nom de composant du bloc cible
 //               (premier bloc de ce composant trouvé, recherche dans tous les blocs imbriqués)
-//   FIELDS      objet JSON de valeurs simples, ex. {"layout":"split"} (peut être vide si COPY_FROM)
+//   FIELDS      objet JSON, ex. {"layout":"split"} ; une valeur peut aussi être un objet (asset) ou une
+//               liste de blocs (les blocs imbriqués sans _uid en reçoivent un) ; vide possible si COPY_FROM
 //   COPY_FROM   optionnel : "slug" ou "slug#bloc" d'où copier des champs (ex.
 //               pages/cafe-bureau-entreprise#landing_hero), y compris des images (objets asset)
 //   COPY_FIELDS champs à copier, séparés par des virgules ; seuls les champs encore vides sur la
@@ -14,6 +15,7 @@
 // DRY_RUN=1 affiche les valeurs avant/après sans écrire ; PUBLISH=1 publie aussi.
 
 import { fileURLToPath } from "node:url";
+import { randomUUID } from "node:crypto";
 import { createClient } from "../mapi.mjs";
 
 const isBlok = (v) => v && typeof v === "object" && !Array.isArray(v) && typeof v.component === "string";
@@ -38,6 +40,15 @@ function findBlok(node, key) {
   return null;
 }
 
+// Un bloc imbriqué posé via FIELDS sans _uid en reçoit un (Storyblok l'exige).
+function ensureUids(node) {
+  if (Array.isArray(node)) node.forEach(ensureUids);
+  else if (node && typeof node === "object") {
+    if (typeof node.component === "string" && !node._uid) node._uid = randomUUID();
+    Object.values(node).forEach(ensureUids);
+  }
+}
+
 const isEmpty = (v) =>
   v === undefined ||
   v === null ||
@@ -58,7 +69,7 @@ function parseFields(raw) {
   }
   for (const [k, v] of Object.entries(fields)) {
     if (!/^[a-z0-9_]+$/i.test(k)) throw new Error(`Nom de champ invalide : ${k}`);
-    if (typeof v !== "string" && typeof v !== "number" && typeof v !== "boolean") throw new Error(`Valeur non simple pour ${k}`);
+    if (v === null || typeof v === "function") throw new Error(`Valeur invalide pour ${k}`);
   }
   return fields;
 }
@@ -147,6 +158,7 @@ async function main() {
     return;
   }
   Object.assign(target, changes);
+  ensureUids(changes);
   await client.saveStory(story.id, content, { publish });
   console.log(publish ? "\n✅ Story modifiée et publiée." : "\n✅ Story modifiée (brouillon) : cliquer Publish dans Storyblok pour la mettre en ligne.");
 }
