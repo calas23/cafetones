@@ -450,7 +450,7 @@ export const COMPONENTS = [
       }),
       patisserie_style: boolean("Style carte pâtisserie (page gamme)"),
       delay: DELAY,
-      "tab-fiche": { type: "tab", display_name: "Fiche détaillée (fenêtre au clic)", keys: ["name", "subtitle", "description", "acidity", "body", "intensity", "roast", "notes", "origins", "certifications", "medals", "caffeine", "ingredients", "ingredients_glaze", "weight", "packaging", "order_period", "format", "price", "machine_info"] },
+      "tab-fiche": { type: "tab", display_name: "Fiche détaillée (fenêtre au clic)", keys: ["name", "subtitle", "description", "variants_label", "variants", "acidity", "body", "intensity", "roast", "notes", "origins", "certifications", "medals", "caffeine", "ingredients", "ingredients_glaze", "weight", "packaging", "order_period", "format", "price", "machine_info"] },
       name: text("Nom (la fiche ne s'ouvre que s'il est rempli)"),
       subtitle: text("Sous-titre"),
       description: textarea("Description complète"),
@@ -471,6 +471,10 @@ export const COMPONENTS = [
       format: text("Format"),
       price: text("Prix"),
       machine_info: textarea("Info machine (encart)"),
+      variants_label: text("Variantes — titre de la liste", { description: "Vide = « Variantes »." }),
+      variants: bloks("Variantes (dans la fenêtre du produit)", ["product_variant"], {
+        description: "Déclinaisons du produit, ex. les différents panettones : chacune avec nom, description et photo. Affichées dans la fenêtre au clic, sous la description.",
+      }),
       "tab-tarifs": { type: "tab", display_name: "Tableau tarifs (page Bureau)", keys: ["table_desc", "table_format", "table_price", "table_unit", "table_badge_label", "table_badge_style", "card_desc", "card_amount", "card_unit", "card_badge_label", "card_badge_style"] },
       table_desc: text("Tableau — description"),
       table_format: text("Tableau — format"),
@@ -527,6 +531,20 @@ export const COMPONENTS = [
       title: text("Titre"),
       text: textarea("Texte"),
       delay: DELAY,
+    },
+  },
+  {
+    name: "product_variant",
+    display_name: "Variante de produit (fenêtre)",
+    group: "Éléments",
+    schema: {
+      name: text("Nom", { description: "Ex. Panettone al caffè." }),
+      description: textarea("Description"),
+      image: asset("Photo (optionnelle)", {
+        allow_external_url: true,
+        description: "Vide = emplacement vide, à compléter plus tard.",
+      }),
+      price: text("Prix (optionnel)"),
     },
   },
   {

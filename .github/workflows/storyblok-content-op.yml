@@ -15,6 +15,7 @@ on:
           - merge-cert-sections
           - set-story-fields
           - dump-story
+          - upload-assets
         default: merge-cert-sections
       dry_run:
         description: "Simulation (n'écrit rien dans Storyblok)"
@@ -33,7 +34,7 @@ on:
         type: string
         default: "Nos certifications et récompenses"
       fields:
-        description: "Champs à poser, objet JSON (set-story-fields), ex. {\"instagram_url\":\"https://…\"}"
+        description: "set-story-fields : champs à poser, objet JSON, ex. {\"instagram_url\":\"https://…\"} — upload-assets : fichiers de public/img à envoyer, séparés par des virgules"
         type: string
         default: ""
       block:
