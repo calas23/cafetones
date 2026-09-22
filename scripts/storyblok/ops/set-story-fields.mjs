@@ -4,7 +4,9 @@
 //   BLOCK       vide = racine du contenu ; sinon _uid ou nom de composant du bloc cible
 //               (premier bloc de ce composant trouvé, recherche dans tous les blocs imbriqués)
 //   FIELDS      objet JSON, ex. {"layout":"split"} ; une valeur peut aussi être un objet (asset) ou une
-//               liste de blocs (les blocs imbriqués sans _uid en reçoivent un) ; vide possible si COPY_FROM
+//               liste de blocs (les blocs imbriqués sans _uid en reçoivent un) ; vide possible si COPY_FROM.
+//               Une image de la bibliothèque se référence par son nom de fichier : {"$asset":"photo.jpg",
+//               "alt":"…"} est remplacé par l'objet asset complet (id, adresse CDN) trouvé dans le space.
 //   COPY_FROM   optionnel : "slug" ou "slug#bloc" d'où copier des champs (ex.
 //               pages/cafe-bureau-entreprise#landing_hero), y compris des images (objets asset)
 //   COPY_FIELDS champs à copier, séparés par des virgules ; seuls les champs encore vides sur la
@@ -47,6 +49,25 @@ function ensureUids(node) {
     if (typeof node.component === "string" && !node._uid) node._uid = randomUUID();
     Object.values(node).forEach(ensureUids);
   }
+}
+
+// Remplace chaque {"$asset": "nom.jpg", "alt": "…"} par l'objet asset Storyblok correspondant
+// (recherché par nom de fichier dans la bibliothèque du space). Erreur si l'image est absente.
+async function resolveAssets(client, node) {
+  if (Array.isArray(node)) {
+    for (let i = 0; i < node.length; i++) node[i] = await resolveAssets(client, node[i]);
+    return node;
+  }
+  if (!node || typeof node !== "object") return node;
+  if (typeof node.$asset === "string") {
+    const name = node.$asset.trim();
+    const found = await client.api("GET", `/assets?search=${encodeURIComponent(name)}&per_page=100`);
+    const hit = (found.assets || []).find((a) => (a.filename || "").endsWith(`/${name}`));
+    if (!hit) throw new Error(`Image « ${name} » introuvable dans la bibliothèque (lancer upload-assets d'abord).`);
+    return { id: hit.id, alt: node.alt || "", name: "", focus: "", title: "", source: "", filename: hit.filename, copyright: "", fieldtype: "asset", meta_data: {}, is_external_url: false };
+  }
+  for (const k of Object.keys(node)) node[k] = await resolveAssets(client, node[k]);
+  return node;
 }
 
 const isEmpty = (v) =>
@@ -106,7 +127,7 @@ async function main() {
   const where = blockKey ? `bloc ${target.component} (${target._uid})` : "racine du contenu";
 
   // Champs copiés depuis une autre story / un autre bloc, uniquement là où la cible est vide.
-  const changes = { ...fields };
+  const changes = await resolveAssets(client, { ...fields });
   if (copyFrom && copyFields.length) {
     const [srcSlug, srcKey] = copyFrom.split("#");
     const srcFound = await client.findStory(srcSlug);
