@@ -15,6 +15,8 @@ type AboutStoryBlok = SbBlok & {
   title?: string;
   text?: string;
   image?: SbAsset;
+  image_style?: string; // card (défaut : coins arrondis + ombre) | seamless (sans cadre, fond blanc fondu)
+  image_scale?: string | number; // largeur de la colonne image par rapport au texte, % (vide = 100)
   image_width?: string;
   image_height?: string;
   quote?: string;
@@ -26,11 +28,17 @@ export function AboutStorySection({ blok }: { blok: AboutStoryBlok }) {
   // Onglet « Typographie » : titre.
   const title = blockTextStyle(blok, "title");
   const titleStyle = { ...title.style };
+  // « Taille de l'image (%) » : part de largeur de la colonne image (--about-cols, css/about.css,
+  // ordinateur). Vide = colonnes d'origine 3fr 2fr, aucun style posé.
+  const rawScale = blok.image_scale;
+  const imgScale = rawScale === undefined || rawScale === null || String(rawScale).trim() === "" ? 100 : pxOr(rawScale, 100, 30, 300);
+  const gridStyle = imgScale !== 100 ? ({ "--about-cols": `minmax(0, 3fr) minmax(0, ${(2 * imgScale) / 100}fr)` } as CSSProperties) : undefined;
+  const seamless = blok.image_style === "seamless";
   return (
     <section className="section" {...storyblokEditable(blok)}>
       <FontLink href={title.href} />
       <div className="container">
-        <div className="about-story">
+        <div className="about-story" style={gridStyle}>
           <div className="about-story__text animate-on-scroll">
             <h2 style={Object.keys(titleStyle).length ? titleStyle : undefined}>{fmt(blok.title)}</h2>
             {paras.map((p, i) => (
@@ -38,7 +46,7 @@ export function AboutStorySection({ blok }: { blok: AboutStoryBlok }) {
             ))}
           </div>
 
-          <div className="about-story__visual animate-on-scroll delay-1">
+          <div className={seamless ? "about-story__visual about-story__visual--seamless animate-on-scroll delay-1" : "about-story__visual animate-on-scroll delay-1"}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={assetUrl(blok.image)}

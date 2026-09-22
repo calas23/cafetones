@@ -297,6 +297,12 @@ certificat auto-signé dans le navigateur.
   dans la section à garder, ajouter les cartes de l'autre (bouton + → Carte
   certification, ou ⋯ → Copy / Paste), adapter le titre, puis supprimer
   l'autre section (⋯ → Delete) → Save → Publish.
+- **Page À propos — image de « Qui sommes-nous ? »** : cliquer la section
+  (bloc Section histoire) → **Style de l'image** (« Sans cadre » : plus de
+  coins arrondis ni d'ombre, fond blanc de l'illustration fondu dans la page ;
+  « Carte » = rendu d'origine) et **Taille de l'image (%)** (largeur de la
+  colonne image par rapport au texte sur ordinateur : 100 = actuelle, 150 =
+  plus large, 70 = plus petite, entre 30 et 300) → Save → Publish.
 - **Page Contact — titres** : « Contactez-nous » : cliquer le bandeau (bloc
   Héros — Bandeau simple) → onglet **Typographie** → **Titre — police / taille
   (%) / couleur**. « Envoyez-nous un message » et les titres de la colonne de
@@ -1121,6 +1127,8 @@ certificat auto-signé dans le navigateur.
 | `title` | Texte | Titre |
 | `text` | Texte long | Paragraphes (séparés par une ligne vide) |
 | `image` | Image | Image |
+| `image_style` | Choix — valeurs : card · seamless | Style de l'image |
+| `image_scale` | Nombre | Taille de l'image (%) |
 | `image_width` | Texte | Largeur HTML de l'image (px) |
 | `image_height` | Texte | Hauteur HTML de l'image (px) |
 | `quote` | Texte | Citation |
