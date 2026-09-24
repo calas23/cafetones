@@ -477,6 +477,13 @@ certificat auto-signé dans le navigateur.
   `upload-assets` envoie des images de `public/img` dans la bibliothèque du
   space (noms de fichiers séparés par des virgules dans `fields`) ; les images
   déjà présentes sont réutilisées.
+  `export-content` (lecture seule) exporte toutes les pages (brouillon courant)
+  dans `scripts/storyblok/content/live/` au format des seeds, et le workflow
+  pousse ce dossier seul sur la branche `content/live-export` (instantané
+  remplacé à chaque export) : sauvegarde du contenu saisi, et moyen de rejouer
+  le site en local avec le contenu réel (copier ces fichiers dans
+  `content/stories/` puis `STORYBLOK_LOCAL_CONTENT=1 npm run build`), par
+  exemple pour diagnostiquer l'affichage sur téléphone.
 
 ## 4. Référence des blocs
 
