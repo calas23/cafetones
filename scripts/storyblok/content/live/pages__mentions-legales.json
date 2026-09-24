@@ -1,0 +1,707 @@
+{
+  "name": "Mentions légales",
+  "slug": "mentions-legales",
+  "full_slug": "pages/mentions-legales",
+  "published": true,
+  "unpublished_changes": false,
+  "exported_at": "2026-09-24T11:39:47.959Z",
+  "content": {
+    "_uid": "c8c8a083-5f86-338b-c90c-41b8eaf5ba16",
+    "body": [
+      {
+        "_uid": "3573086e-e584-76d2-cc39-cdefb706da10",
+        "phone": "06 62 11 97 48",
+        "title": "Mentions légales",
+        "back_link": "/",
+        "component": "legal_section",
+        "back_label": "← Retour à l'accueil",
+        "rgpd_title": "Politique de confidentialité",
+        "content_rgpd": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Responsable du traitement",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "TONES SAS, 83 rue de Reuilly, 75012 Paris.",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": " Contact : cafetones@free.fr",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Données collectées",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Lorsque vous remplissez un formulaire de contact ou de demande de dégustation sur notre site, nous collectons les données suivantes :",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "bullet_list",
+              "content": [
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Nom et prénom",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Adresse email",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Numéro de téléphone",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Nom de l'entreprise",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Nombre de collaborateurs (optionnel)",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Le contenu de votre message",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Finalité du traitement",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Les données collectées sont utilisées exclusivement pour :",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "bullet_list",
+              "content": [
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Répondre à vos demandes de contact, de devis ou de dégustation",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Vous recontacter dans le cadre de votre demande",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Assurer le suivi commercial de votre dossier",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Vos données ne sont jamais cédées, vendues ou partagées avec des tiers à des fins commerciales.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Base légale",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Le traitement de vos données repose sur votre consentement (article 6.1.a du RGPD), donné lors de la soumission du formulaire.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Durée de conservation",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Vos données sont conservées pendant une durée maximale de 3 ans à compter de votre dernier contact avec TONES SAS, conformément aux recommandations de la CNIL.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Vos droits",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez des droits suivants :",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "bullet_list",
+              "content": [
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Droit d'accès à vos données personnelles",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Droit de rectification",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Droit à l'effacement (droit à l'oubli)",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Droit à la limitation du traitement",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Droit à la portabilité de vos données",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Droit d'opposition",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Pour exercer ces droits, contactez-nous à : cafetones@free.fr",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "En cas de litige, vous pouvez adresser une réclamation à la CNIL (",
+                  "type": "text"
+                },
+                {
+                  "text": "www.cnil.fr",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "https://www.cnil.fr",
+                        "target": "_blank",
+                        "linktype": "url"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "text": ").",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Cookies",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Le site cafetones.fr utilise Google Tag Manager et Google Ads à des fins de mesure d'audience et de suivi des conversions publicitaires.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Ces outils peuvent déposer des cookies sur votre navigateur. Vous pouvez configurer votre navigateur pour refuser les cookies ou être informé de leur dépôt.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Aucun cookie n'est déposé à des fins de publicité ciblée ou de revente de données.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Modification de la politique",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "TONES SAS se réserve le droit de modifier la présente politique de confidentialité à tout moment. La version en vigueur est celle accessible sur le site cafetones.fr.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Dernière mise à jour : avril 2026.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        "content_mentions": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Éditeur du site",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Raison sociale : TONES SAS",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": " Adresse du siège social : 83 rue de Reuilly, 75012 Paris, France",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": " Numéro de téléphone : ",
+                  "type": "text"
+                },
+                {
+                  "text": "06 62 11 97 48",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": " Adresse email : cafetones@free.fr",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": " Numéro SIRET : 43883041600014",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": " Numéro de TVA intracommunautaire : FR 82438830416",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": " Directrice de la publication : Anne SENOT",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Hébergement",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Le site cafetones.fr est hébergé par :",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Vercel Inc.",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": " 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": " Site web : ",
+                  "type": "text"
+                },
+                {
+                  "text": "https://vercel.com",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "https://vercel.com",
+                        "target": "_blank",
+                        "linktype": "url"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Propriété intellectuelle",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "L'ensemble du contenu du site cafetones.fr (textes, images, logos, illustrations) est la propriété de TONES SAS ou de ses partenaires (La Genovese, Musetti) et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Toute reproduction, représentation, modification ou exploitation totale ou partielle du contenu du site, par quelque procédé que ce soit, sans l'autorisation préalable et écrite de TONES SAS, est interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "text": "Responsabilité",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "TONES SAS s'efforce de fournir des informations aussi précises que possible sur le site cafetones.fr. Toutefois, TONES SAS ne pourra être tenue responsable des omissions, des inexactitudes ou des carences dans la mise à jour des informations.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Les prix indiqués sur le site sont donnés à titre indicatif et peuvent être modifiés à tout moment. Seul un devis personnalisé établi par TONES SAS fait foi.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Les photographies des produits sont non contractuelles.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "jsonld": "",
+    "og_title": "",
+    "component": "page",
+    "seo_title": "Mentions Légales et Politique de Confidentialité | TONES",
+    "style_scopes": [],
+    "og_description": "",
+    "breadcrumb_path": "/pages/mentions-legales",
+    "seo_description": "Mentions légales, conditions d'utilisation et politique de confidentialité du site cafetones.fr — TONES SAS, distributeur café italien.",
+    "breadcrumb_label": "Mentions légales"
+  }
+}

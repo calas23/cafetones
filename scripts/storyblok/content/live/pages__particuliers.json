@@ -1,0 +1,618 @@
+{
+  "name": "Particuliers",
+  "slug": "particuliers",
+  "full_slug": "pages/particuliers",
+  "published": true,
+  "unpublished_changes": true,
+  "exported_at": "2026-09-24T11:39:47.959Z",
+  "content": {
+    "_uid": "8dae52b3-2e58-fedf-f697-145c68a8593b",
+    "body": [
+      {
+        "_uid": "4f521eb6-899b-262b-78eb-26a516dccbae",
+        "badge": "Pour les amateurs de bon café",
+        "image": {
+          "alt": "Préparation d'un café à la maison",
+          "filename": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80",
+          "fieldtype": "asset"
+        },
+        "title": "Le café italien authentique, chez vous",
+        "buttons": [
+          {
+            "_uid": "f982d8a1-aacd-0698-4bc9-0d0a10860a39",
+            "icon": "phone",
+            "link": "tel:+33662119748",
+            "size": "lg",
+            "label": "Appelez-nous — 06 62 11 97 48",
+            "style": "primary",
+            "location": "hero-particuliers",
+            "component": "button",
+            "phone_svg": false
+          },
+          {
+            "_uid": "9612402d-3fb8-a540-3c69-bd10104abe9d",
+            "icon": "none",
+            "link": "#contact-particuliers",
+            "size": "lg",
+            "label": "Nous écrire",
+            "style": "secondary",
+            "location": "",
+            "component": "button",
+            "phone_svg": false
+          }
+        ],
+        "subtitle": "Retrouvez chez vous le goût d'un vrai espresso italien. Grain pour votre moulin, moulu pour la moka, pods pour la machine — La Genovese vous livre à Paris et en Île-de-France.",
+        "component": "part_hero",
+        "image_width": "600",
+        "image_height": "400"
+      },
+      {
+        "_uid": "18f69a08-a74f-996d-c4f6-8618f488a56d",
+        "badge": "Simple comme un espresso",
+        "steps": [
+          {
+            "_uid": "c9abac21-524c-2ebc-523d-31dfd9538dd0",
+            "text": "Dites-nous ce qui vous ferait plaisir : grain, moulu, pods, un mélange en particulier ? Nous vous conseillons selon vos goûts et votre machine.",
+            "delay": "",
+            "title": "Appelez-nous ou écrivez-nous",
+            "component": "step_item"
+          },
+          {
+            "_uid": "95fd8de0-d0ad-d0c1-0a8b-52c814bb6b99",
+            "text": "Votre café est préparé avec soin. Si vous le souhaitez, nous pouvons aussi venir chez vous pour une dégustation gratuite de plusieurs mélanges.",
+            "delay": "1",
+            "title": "Nous préparons votre commande",
+            "component": "step_item"
+          },
+          {
+            "_uid": "ea81ce70-2cf9-a810-2bdf-206baec7c44c",
+            "text": "Livraison à Paris et en Île-de-France, du lundi au vendredi. Directement chez vous, en main propre.",
+            "delay": "2",
+            "title": "Nous vous livrons chez vous",
+            "component": "step_item"
+          }
+        ],
+        "title": "Comment ça marche",
+        "subtitle": "Pas de compte en ligne, pas de plateforme compliquée. Chez TONES, c'est simple et humain.",
+        "anchor_id": "",
+        "component": "steps_section",
+        "illustration": "moka",
+        "illustration_size": "md",
+        "illustration_position": "right"
+      },
+      {
+        "_uid": "5dc60256-9ef9-1747-83bb-874d61097d06",
+        "badge": "Notre sélection maison",
+        "title": "Des cafés pour chaque moment de la journée",
+        "groups": [
+          {
+            "_uid": "9da90a65-5bfa-92dc-80ff-cb1550154f3f",
+            "note": "",
+            "title": "En grain — pour moulin et machine à grain",
+            "products": [
+              {
+                "_uid": "763a25c4-a6c4-cccd-056c-ddbf03685840",
+                "body": "3",
+                "name": "Anniversario",
+                "delay": "",
+                "image": {
+                  "id": 216067882047563,
+                  "alt": "Café en grain La Genovese Anniversario 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/14106/57b803c845/grain-anniversario-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Chocolat au lait, Noisette, Fruits rouges, Floral",
+                "price": "25,20 €/kg",
+                "format": "Sachet 250g",
+                "acidity": "4",
+                "origins": "Brésil, Honduras, Colombie, Éthiopie",
+                "subtitle": "Legendary Blend",
+                "component": "product_card",
+                "intensity": "3",
+                "badge_label": "100% Arabica",
+                "badge_style": "gold",
+                "description": "Hommage à la tradition. Chocolat au lait, noisette torréfiée, fruits rouges, notes florales.",
+                "image_width": "500",
+                "display_desc": "Chocolat, fruits exotiques, floral. Un café d'exception.",
+                "display_name": "Anniversario — Legendary Blend",
+                "image_height": "707",
+                "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+                "display_price": "25,20 €/kg"
+              },
+              {
+                "_uid": "41606975-95ff-2a7f-6ada-1d8c1911c822",
+                "body": "4",
+                "name": "Royal",
+                "delay": "",
+                "image": {
+                  "id": 216067891427404,
+                  "alt": "Café en grain La Genovese Royal 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/31640/8545104661/grain-royal-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Chocolat, Noisette, Épices, Fruits rouges",
+                "price": "25,20 €/kg",
+                "format": "Sachet 250g",
+                "acidity": "3",
+                "origins": "Brésil, Honduras, Colombie, Inde",
+                "subtitle": "Luxury Blend",
+                "component": "product_card",
+                "intensity": "4",
+                "badge_label": "100% Arabica",
+                "badge_style": "gold",
+                "description": "Corps velouté et richesse aromatique. Chocolat noir, noisette, muscade.",
+                "image_width": "500",
+                "display_desc": "Chocolat noir, noisette, muscade. Corps velouté.",
+                "display_name": "Royal — Luxury Blend",
+                "image_height": "707",
+                "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+                "display_price": "25,20 €/kg"
+              },
+              {
+                "_uid": "c492c31c-9920-c470-a67b-14a5207a6352",
+                "body": "4",
+                "name": "Oro",
+                "delay": "",
+                "image": {
+                  "id": 216067900647501,
+                  "alt": "Café en grain La Genovese Oro 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/15513/b7ef4aad25/grain-oro-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Caramel, Noisette, Chocolat noir, Épices",
+                "price": "23,20 €/kg",
+                "format": "Sachet 250g",
+                "acidity": "2",
+                "origins": "Brésil, Honduras, Colombie, Inde",
+                "subtitle": "Supreme Blend",
+                "component": "product_card",
+                "intensity": "3",
+                "description": "Caramel, noisette, chocolat. Équilibré et crémeux.",
+                "image_width": "500",
+                "display_desc": "Caramel, noisette, chocolat. Équilibré et crémeux.",
+                "display_name": "Oro — Supreme Blend",
+                "image_height": "707",
+                "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+                "display_price": "23,20 €/kg"
+              },
+              {
+                "_uid": "15657843-1f50-bcb2-8937-c2cecf48f156",
+                "body": "3",
+                "name": "Juta Bio",
+                "delay": "",
+                "image": {
+                  "id": 216067910457423,
+                  "alt": "Café en grain La Genovese Juta Bio 250g",
+                  "name": "",
+                  "focus": "",
+                  "title": "",
+                  "source": "",
+                  "filename": "https://a.storyblok.com/f/294953800459400/49319/c95379032a/grain-juta-bio-250g.jpg",
+                  "copyright": "",
+                  "fieldtype": "asset",
+                  "meta_data": {},
+                  "is_external_url": false
+                },
+                "notes": "Miel, Amande, Chocolat noir, Caramel",
+                "price": "26,20 €/kg",
+                "format": "Sachet 250g",
+                "acidity": "4",
+                "origins": "Honduras, Pérou",
+                "subtitle": "Pure Organic",
+                "component": "product_card",
+                "intensity": "3",
+                "badge_label": "Bio",
+                "badge_style": "simple",
+                "description": "Miel, amande, chocolat noir. 100% Arabica bio certifié Rainforest Alliance.",
+                "image_width": "500",
+                "display_desc": "Miel, amande, chocolat noir. 100% Arabica bio certifié.",
+                "display_name": "Juta Bio — Pure Organic",
+                "image_height": "707",
+                "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+                "display_price": "26,20 €/kg"
+              },
+              {
+                "_uid": "c71891e2-6327-069b-1aa3-1525cbbe21e8",
+                "body": "4",
+                "name": "Orientale",
+                "delay": "",
+                "image": {
+                  "id": 216067919824976,
+                  "alt": "Café en grain La Genovese Orientale 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/32461/50cc9f2c9e/grain-orientale-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Caramel, Noisette, Chocolat noir, Épices",
+                "price": "Sur demande",
+                "format": "Sachet 250g",
+                "acidity": "1",
+                "origins": "Brésil, Inde",
+                "subtitle": "Prestige Blend",
+                "component": "product_card",
+                "intensity": "3",
+                "description": "Intensité, structure et personnalité affirmée. Caramel, épices, chocolat noir.",
+                "image_width": "500",
+                "display_desc": "Caramel, épices, chocolat noir. Corsé et aromatique.",
+                "display_name": "Orientale — Prestige Blend",
+                "image_height": "707",
+                "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+                "display_price": "Sur demande"
+              },
+              {
+                "_uid": "568d7cda-5738-4c26-50f5-b8454ab133ba",
+                "body": "5",
+                "name": "Colonial",
+                "delay": "",
+                "image": {
+                  "id": 216067929020497,
+                  "alt": "Café en grain La Genovese Coloniale 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/22281/d12d8c26e9/grain-coloniale-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Caramel, Noisette, Chocolat noir, Épices",
+                "price": "19,20 €/kg",
+                "format": "Sachet 250g",
+                "acidity": "1",
+                "origins": "Brésil, Inde, Vietnam",
+                "subtitle": "Premium Robusta",
+                "component": "product_card",
+                "intensity": "4",
+                "description": "Fort, crème dense, intense. Pour les amateurs d'espresso corsé.",
+                "image_width": "500",
+                "display_desc": "Fort, crème dense, intense. Pour les amateurs d'espresso corsé.",
+                "display_name": "Coloniale — Premium Robusta",
+                "image_height": "707",
+                "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
+                "display_price": "19,20 €/kg"
+              }
+            ],
+            "component": "product_group"
+          },
+          {
+            "_uid": "594fb3f0-f765-2c5c-e970-038bf31e062d",
+            "note": "",
+            "title": "En moulu — moka, espresso, filtre",
+            "products": [
+              {
+                "_uid": "685e6a53-7e60-cc45-7539-7f723551481d",
+                "name": "Blue Gold",
+                "delay": "",
+                "image": {
+                  "id": 216067715758130,
+                  "alt": "Café moulu La Genovese Blue Gold 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/75600/a05b91f8fc/moulu-blue-gold-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Corps rond, Notes classiques",
+                "price": "6,00 €",
+                "format": "Sachet 250g",
+                "subtitle": "Moka Style",
+                "component": "product_card",
+                "badge_label": "100% Arabica",
+                "badge_style": "gold",
+                "description": "Arôme plein et intense, pour les palais exigeants.",
+                "image_width": "1000",
+                "display_desc": "Arôme plein et intense, pour les palais exigeants.",
+                "display_name": "Blue Gold — 250g",
+                "image_height": "1414",
+                "display_price": "6,00 €"
+              },
+              {
+                "_uid": "510d9cb8-77c4-0878-e5ca-3df275dab354",
+                "name": "Daily Moka",
+                "delay": "",
+                "image": {
+                  "id": 216067734661174,
+                  "alt": "Café moulu La Genovese Daily Moka 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/18789/14bb931dbf/moulu-daily-moka-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Chocolat, Noisette, Muscade",
+                "price": "Sur demande",
+                "format": "Boîte 250g",
+                "subtitle": "Moka Style",
+                "component": "product_card",
+                "badge_label": "100% Arabica",
+                "badge_style": "gold",
+                "description": "Chocolat noir, noisette, muscade. Parfait pour la moka.",
+                "image_width": "500",
+                "display_desc": "Chocolat noir, noisette, muscade. Parfait pour la moka.",
+                "display_name": "Daily Moka — 250g",
+                "image_height": "707",
+                "display_price": "Sur demande"
+              },
+              {
+                "_uid": "e00b3af1-50e9-3042-2e1f-287595d19b0b",
+                "name": "Tradizione",
+                "delay": "",
+                "image": {
+                  "id": 216067725244469,
+                  "alt": "Café moulu La Genovese Tradizione 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/68743/5b7d49a9d5/moulu-tradizione-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Fort, Assertif",
+                "price": "Sur demande",
+                "format": "Sachet 250g",
+                "subtitle": "Moka Style",
+                "component": "product_card",
+                "description": "Arabica/Robusta. Fort, assertif, pour bien démarrer la journée.",
+                "image_width": "500",
+                "display_desc": "Arabica/Robusta. Fort, assertif, pour bien démarrer la journée.",
+                "display_name": "Tradizione — 250g",
+                "image_height": "707",
+                "display_price": "Sur demande"
+              },
+              {
+                "_uid": "fe8ca695-ba27-63e8-0069-902a3d34eacf",
+                "name": "Juta Bio moulu",
+                "delay": "",
+                "image": {
+                  "id": 216067753912376,
+                  "alt": "Café moulu La Genovese Juta Bio 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/49319/4aa0cd1298/moulu-juta-bio-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Miel, Amande, Chocolat",
+                "price": "8,00 €",
+                "format": "Sachet 250g",
+                "subtitle": "Pure Organic",
+                "component": "product_card",
+                "badge_label": "Bio",
+                "badge_style": "simple",
+                "description": "Miel, amande, chocolat. 100% Arabica bio.",
+                "image_width": "500",
+                "display_desc": "Miel, amande, chocolat. 100% Arabica bio.",
+                "display_name": "Juta Bio moulu — 250g",
+                "image_height": "707",
+                "display_price": "8,00 €"
+              },
+              {
+                "_uid": "7e9f7935-2d75-9895-eaeb-f364d9370ed7",
+                "name": "Décaféiné moulu",
+                "delay": "",
+                "image": {
+                  "id": 216067744094263,
+                  "alt": "Café moulu La Genovese Décaféiné 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/22107/fec57f18cc/moulu-dek-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Doux, Velouté",
+                "price": "7,50 €",
+                "format": "Boîte 250g",
+                "subtitle": "Premium Blend",
+                "component": "product_card",
+                "description": "Arôme doux et velouté, moins de 0,1% de caféine.",
+                "image_width": "500",
+                "display_desc": "Arôme doux et velouté, moins de 0,1% de caféine.",
+                "display_name": "Décaféiné moulu — 250g",
+                "image_height": "707",
+                "display_price": "7,50 €"
+              },
+              {
+                "_uid": "140e7fef-e01c-18a7-8b36-2390d314d219",
+                "name": "Bio Décaféiné moulu",
+                "delay": "",
+                "image": {
+                  "id": 216067753912376,
+                  "alt": "Café moulu La Genovese Bio Décaféiné 250g",
+                  "filename": "https://a.storyblok.com/f/294953800459400/49319/4aa0cd1298/moulu-juta-bio-250g.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Bio, Doux",
+                "price": "8,20 €",
+                "format": "Sachet 250g",
+                "component": "product_card",
+                "badge_label": "Bio",
+                "badge_style": "simple",
+                "description": "Bio et décaféiné — le meilleur des deux mondes.",
+                "image_width": "500",
+                "display_desc": "Bio et décaféiné — le meilleur des deux mondes.",
+                "display_name": "Bio Décaféiné moulu — 250g",
+                "image_height": "707",
+                "display_price": "8,20 €"
+              }
+            ],
+            "component": "product_group"
+          },
+          {
+            "_uid": "daa6e66b-7013-f2df-4b31-357f4217780c",
+            "note": "Capsules compatibles Nespresso*. *Nespresso est une marque déposée, non affiliée à TONES.",
+            "title": "En pods et dosettes",
+            "products": [
+              {
+                "_uid": "46d2d5ce-42c5-a5f8-f942-4d2ac41f3cd1",
+                "name": "Capsules compatibles Nespresso",
+                "delay": "",
+                "image": {
+                  "id": 216067686447138,
+                  "alt": "Capsules café La Genovese compatibles Nespresso",
+                  "filename": "https://a.storyblok.com/f/294953800459400/71854/894cfa49a4/capsule-oro.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Équilibré, Crémeux",
+                "price": "Sur demande",
+                "component": "product_card",
+                "description": "Oro, Coloniale, Bio, Dek — boîtes de 10 capsules.",
+                "image_width": "500",
+                "display_desc": "Oro, Coloniale, Bio, Dek — boîtes de 10 capsules. Le café La Genovese dans votre machine.",
+                "display_name": "Capsules compatibles Nespresso",
+                "image_height": "707",
+                "display_price": "Sur demande"
+              },
+              {
+                "_uid": "d1b9da7a-222f-2e15-73a3-07af60d0c0d4",
+                "name": "Dosettes ESE compostables",
+                "delay": "",
+                "image": {
+                  "id": 216067938728018,
+                  "alt": "Dosettes ESE café La Genovese",
+                  "filename": "https://a.storyblok.com/f/294953800459400/168037/115e9f156c/dosette-grands-crus.jpg",
+                  "fieldtype": "asset"
+                },
+                "notes": "Pratique, Éco",
+                "price": "À partir de 0,45 €/café",
+                "component": "product_card",
+                "description": "Oro, Bio, Décaféiné — boîtes de 25 dosettes. Pratiques et éco-responsables.",
+                "image_width": "1000",
+                "display_desc": "Oro, Bio, Décaféiné — boîtes de 25 dosettes. Pratiques et éco-responsables.",
+                "display_name": "Dosettes ESE compostables",
+                "image_height": "1414",
+                "display_price": "À partir de 0,45 €/café"
+              }
+            ],
+            "component": "product_group"
+          }
+        ],
+        "subtitle": "Que vous prépariez votre café à la moka, à la machine espresso ou au moulin, nous avons le mélange qu'il vous faut.",
+        "component": "part_products_section"
+      },
+      {
+        "_uid": "6f0bd14b-bcbc-0b97-e284-41dc1b5f8382",
+        "cards": [
+          {
+            "_uid": "3c7982e5-f466-3263-53d8-3d9213ee8005",
+            "name": "Le Panettone",
+            "delay": "",
+            "image": {
+              "id": 216067854903368,
+              "alt": "Panettone La Genovese",
+              "filename": "https://a.storyblok.com/f/294953800459400/14569/14f48a69b5/patisserie-panettone.jpg",
+              "fieldtype": "asset"
+            },
+            "weight": "1 kg",
+            "component": "product_card",
+            "packaging": "Papier alimentaire personnalisé La Genovese",
+            "description": "Le gâteau traditionnel italien de Noël. Glacé aux amandes, de couleur marron noisette, il abrite en son sein la force suave des raisins secs et des écorces d'oranges confites. Selon la légende, il aurait été servi à la cour du duc de Milan au moment de Noël.",
+            "ingredients": "Farine, sucre, beurre, jaune d'œuf, levure naturelle, monoglycérides, sel, arômes naturels, raisins secs, glaçage d'amandes, écorce d'orange, fruits confits",
+            "display_desc": "Le gâteau traditionnel italien de Noël. Glacé aux amandes, raisins secs et écorces d'oranges confites.",
+            "display_name": "Le Panettone",
+            "order_period": "Septembre — livraison en décembre",
+            "seasonal_note": "Commande en septembre, livraison en décembre.",
+            "display_format": "1 kg — emballage personnalisé La Genovese",
+            "ingredients_glaze": "Sucre granulé, albumen, sucre glacé, farine de riz grillé, pâte de noisette, huile de graines, poudre de cacao"
+          },
+          {
+            "_uid": "d56c3f43-b45f-af1b-3e3a-92dc50a05dbb",
+            "name": "Le Pandoro",
+            "delay": "1",
+            "image": {
+              "id": 216067863595081,
+              "alt": "Pandoro La Genovese",
+              "filename": "https://a.storyblok.com/f/294953800459400/23645/0a6f30d230/patisserie-pandoro.jpg",
+              "fieldtype": "asset"
+            },
+            "weight": "1 kg",
+            "component": "product_card",
+            "packaging": "Papier alimentaire personnalisé La Genovese",
+            "description": "Grâce à un processus ancestral et totalement naturel de levage, le gâteau exprime une douceur incomparable. La croûte dorée accueille sa robe de sucre glace. L'intérieur immaculé est dépourvu de toute garniture, laissant s'épanouir la saveur douce et l'arôme intense si caractéristique.",
+            "ingredients": "Farine, sucre, beurre, jaune d'œuf, levure naturelle, monoglycérides, sel, arômes naturels",
+            "display_desc": "Douceur incomparable grâce à un levage ancestral et naturel. Sa robe de sucre glace accueille un intérieur immaculé.",
+            "display_name": "Le Pandoro",
+            "order_period": "Septembre — livraison en décembre",
+            "seasonal_note": "Commande en septembre, livraison en décembre.",
+            "display_format": "1 kg — emballage personnalisé La Genovese"
+          },
+          {
+            "_uid": "3ab3e6fd-d456-fe02-6600-bc45f09ec5dd",
+            "name": "La Colombe",
+            "delay": "2",
+            "image": {
+              "id": 216067872831562,
+              "alt": "Colombe La Genovese",
+              "filename": "https://a.storyblok.com/f/294953800459400/27901/9a27e860bb/patisserie-colomba.jpg",
+              "fieldtype": "asset"
+            },
+            "weight": "750 g",
+            "component": "product_card",
+            "packaging": "Papier alimentaire personnalisé La Genovese",
+            "description": "Identique au panettone dans sa composition, mais moulée en forme de colombe et parsemée de sucre perlé. Traditionnellement servie à Pâques. La légende veut qu'un pâtissier ait offert ce gâteau en signe de paix au roi lombard Alboïn en l'an 572.",
+            "ingredients": "Farine, sucre, beurre, jaune d'œuf, levure naturelle, monoglycérides, sel, arômes naturels, raisins secs, glaçage d'amandes, écorce d'orange, fruits confits",
+            "display_desc": "Identique au panettone, moulée en forme de colombe et parsemée de sucre perlé. Traditionnellement servie à Pâques.",
+            "display_name": "La Colombe",
+            "order_period": "Février — livraison en avril",
+            "seasonal_note": "Commande en février, livraison en avril.",
+            "display_format": "750 g — emballage personnalisé La Genovese",
+            "ingredients_glaze": "Sucre granulé, albumen, sucre glacé, farine de riz grillé, pâte de noisette, huile de graines, poudre de cacao"
+          }
+        ],
+        "title": "Les douceurs italiennes traditionnelles",
+        "subtitle": "Pour accompagner votre café ou pour offrir, découvrez les pâtisseries La Genovese.",
+        "component": "pastries_section",
+        "illustration": "croissant",
+        "illustration_size": "sm",
+        "illustration_position": "right"
+      },
+      {
+        "_uid": "03aafe93-8f6f-9f66-0728-fc972b36a730",
+        "badge": "",
+        "cards": [
+          {
+            "_uid": "8d7089dd-4708-39a3-5833-1e73377d8518",
+            "icon": "medal",
+            "text": "Torréfié à Albenga par La Genovese depuis 1936. Médaillé internationalement.",
+            "delay": "",
+            "title": "Café italien authentique",
+            "component": "b2b_card"
+          },
+          {
+            "_uid": "37cbac24-23f1-eaec-3f35-6ef8b69a1493",
+            "icon": "phone",
+            "text": "La gérante vous conseille par téléphone selon vos goûts et votre machine. Dégustation possible sur demande.",
+            "delay": "1",
+            "title": "Conseil personnalisé",
+            "component": "b2b_card"
+          },
+          {
+            "_uid": "c5bde0e7-2bf3-5d3b-1bde-df1d36ed96fb",
+            "icon": "shield",
+            "text": "Approvisionnement direct depuis la torréfaction. Pas de stock dormant — du café frais.",
+            "delay": "2",
+            "title": "Fraîcheur garantie",
+            "component": "b2b_card"
+          }
+        ],
+        "title": "Pourquoi commander chez TONES",
+        "component": "b2b_section",
+        "background": "cream",
+        "grid_margin_top": true
+      },
+      {
+        "_uid": "e6cfeaf4-19b2-b3be-0511-aa7bbd52bd94",
+        "note": "En soumettant ce formulaire, vous acceptez d'être recontacté par TONES. Aucune donnée n'est cédée à des tiers.",
+        "email": "cafetones@free.fr",
+        "phone": "06 62 11 97 48",
+        "title": "Envie de goûter ?",
+        "subtitle": "Appelez-nous directement ou laissez-nous un message. Nous vous rappelons rapidement.",
+        "anchor_id": "contact-particuliers",
+        "component": "part_contact_section",
+        "hours_text": "Du lundi au vendredi, 8h — 18h",
+        "advice_text": "Nous vous conseillons et nous prenons votre commande par téléphone.",
+        "phone_title": "Appelez-nous",
+        "submit_label": "Envoyer",
+        "success_text": "Nous vous rappelons rapidement pour préparer votre commande.",
+        "success_title": "Message envoyé !",
+        "phone_location": "contact-particuliers"
+      },
+      {
+        "_uid": "0e7235fc-f076-d09d-af96-2fb6dc510b7c",
+        "call_link": "tel:+33662119748",
+        "component": "sticky_cta",
+        "call_label": "Appeler",
+        "contact_link": "#contact-particuliers",
+        "contact_label": "Commander"
+      }
+    ],
+    "jsonld": "",
+    "og_title": "Café Italien pour Particuliers | TONES — Livraison IDF",
+    "component": "page",
+    "seo_title": "Café Italien pour Particuliers — Grain, Moulu, Capsules | TONES — Livraison IDF",
+    "style_scopes": [
+      "particuliers"
+    ],
+    "og_description": "Café La Genovese livré chez vous à Paris et en Île-de-France. Grain, moulu, pods.",
+    "breadcrumb_path": "/pages/particuliers",
+    "seo_description": "Commandez votre café italien La Genovese directement chez vous à Paris et en Île-de-France. Grain, moulu, pods. Dégustation sur demande. Torréfaction artisanale depuis 1936.",
+    "breadcrumb_label": "Particuliers"
+  }
+}

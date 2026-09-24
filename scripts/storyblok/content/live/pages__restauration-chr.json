@@ -1,0 +1,334 @@
+{
+  "name": "Restauration & CHR",
+  "slug": "restauration-chr",
+  "full_slug": "pages/restauration-chr",
+  "published": true,
+  "unpublished_changes": true,
+  "exported_at": "2026-09-24T11:39:47.959Z",
+  "content": {
+    "_uid": "bea3665c-3332-9447-33ec-5bd0f62fa2cb",
+    "body": [
+      {
+        "_uid": "b9b63907-b934-94a8-c10e-1dd5d21ac21f",
+        "badge": "Partenaire des restaurateurs depuis + de 25 ans",
+        "image": {
+          "id": 221038201945357,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "source": "",
+          "filename": "https://a.storyblok.com/f/294953800459400/2048x2048/00aa076487/chr-illustration.png",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {
+            "size": "2048x2048"
+          },
+          "is_external_url": false
+        },
+        "title": "L'espresso italien que vos clients méritent",
+        "layout": "split",
+        "buttons": [
+          {
+            "_uid": "7edbb23a-b967-b8a7-2876-aa90a88d1f9b",
+            "icon": "phone",
+            "link": "tel:+33662119748",
+            "size": "sm",
+            "label": "Appelez-nous — 06 62 11 97 48",
+            "style": "primary",
+            "location": "hero-chr",
+            "component": "button",
+            "phone_svg": true
+          },
+          {
+            "_uid": "245698dd-8281-578b-2a8c-61bb7a4e6058",
+            "icon": "none",
+            "link": "#degustation-chr",
+            "size": "sm",
+            "label": "Demander une dégustation",
+            "style": "white",
+            "location": "",
+            "component": "button",
+            "phone_svg": false
+          }
+        ],
+        "subtitle": "Café premium torréfié en Italie, livré à Paris et en Île-de-France. Si besoin, vente, installation et maintenance de votre machine par notre prestataire (06 98 37 00 67). TONES accompagne les restaurateurs exigeants.",
+        "component": "chr_hero",
+        "badge_font": "",
+        "badge_size": "",
+        "text_shift": "100",
+        "title_font": "Italianno",
+        "title_size": "100",
+        "badge_scale": "120",
+        "image_bleed": true,
+        "image_scale": "150",
+        "image_style": "seamless",
+        "section_zoom": "",
+        "content_width": "800",
+        "subtitle_font": "",
+        "subtitle_size": "",
+        "badge_text_size": "80",
+        "content_spacing": "80",
+        "overlay_opacity": "0",
+        "section_spacing": "10",
+        "background_image": {
+          "id": null,
+          "alt": null,
+          "name": "",
+          "focus": null,
+          "title": null,
+          "filename": null,
+          "copyright": null,
+          "fieldtype": "asset",
+          "meta_data": {},
+          "is_external_url": false
+        }
+      },
+      {
+        "_uid": "29182848-cfd4-c814-caa3-1160afbc857f",
+        "items": [
+          {
+            "_uid": "6e00be6a-bf94-f17f-2f86-95eaa4fdcf53",
+            "icon": "wrench",
+            "text": "Vente, installation et maintenance de votre machine à café professionnelle",
+            "delay": "1",
+            "title": "Prestataire technique (06 98 37 00 67)",
+            "component": "reassurance_item"
+          },
+          {
+            "_uid": "0567fb6b-c6fa-6733-b8ab-168a1e199b9c",
+            "icon": "coffee",
+            "text": "Nous venons dans votre établissement — gratuit, sans engagement",
+            "delay": "2",
+            "title": "Dégustation sur site",
+            "component": "reassurance_item"
+          },
+          {
+            "_uid": "28dc1b03-df4a-9ab0-0ce2-c72e2bc7705e",
+            "icon": "medal",
+            "text": "La Genovese depuis 1936 — médaillée internationalement",
+            "delay": "3",
+            "title": "Torréfaction italienne",
+            "component": "reassurance_item"
+          }
+        ],
+        "component": "reassurance_section"
+      },
+      {
+        "_uid": "f70de92f-76f7-7d84-b77a-a2d415e16469",
+        "badge": "Simple et rapide",
+        "steps": [
+          {
+            "_uid": "687a61f5-3cff-7164-84fa-15bd03cb5da6",
+            "text": "Notre gérante se déplace avec une sélection de cafés à déguster. Vos équipes testent les mélanges en conditions réelles, sur votre machine ou la nôtre.",
+            "delay": "",
+            "title": "Nous venons dans votre établissement",
+            "component": "step_item"
+          },
+          {
+            "_uid": "f7ad9176-bc50-fa41-bc6d-e5645afb45e7",
+            "text": "Ensemble, nous choisissons le ou les mélanges qui correspondent à votre clientèle. Espresso classique, bio, décaféiné — chaque établissement a son profil.",
+            "delay": "1",
+            "title": "Nous nous adaptons à votre carte",
+            "component": "step_item"
+          },
+          {
+            "_uid": "6ecfec14-068b-f5e7-f238-f2350e982005",
+            "text": "Nous vous livrons régulièrement à Paris et en Île-de-France. Si besoin, vente, installation et maintenance de votre machine par notre prestataire (06 98 37 00 67).",
+            "delay": "2",
+            "title": "Nous livrons, installons et suivons",
+            "component": "step_item"
+          }
+        ],
+        "title": "Comment ça marche",
+        "subtitle": "Du premier contact à votre première livraison, tout se fait en quelques jours.",
+        "anchor_id": "",
+        "component": "steps_section",
+        "badge_size": "",
+        "title_size": "70",
+        "illustration": "moka",
+        "subtitle_font": "",
+        "badge_text_size": "",
+        "illustration_flip": false,
+        "illustration_size": "md",
+        "illustration_image": {
+          "id": 221401488604496,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "source": "",
+          "filename": "https://a.storyblok.com/f/294953800459400/2048x2048/362995861e/coffee-grain.png",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {
+            "size": "2048x2048"
+          },
+          "is_external_url": false
+        },
+        "illustration_width": "250",
+        "illustration_opacity": "75",
+        "illustration_position": "right",
+        "illustration_left_flip": true,
+        "illustration_left_image": {
+          "id": 221401488616786,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "source": "",
+          "filename": "https://a.storyblok.com/f/294953800459400/2048x2048/01dfd0cac7/italian-kettle.png",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {
+            "size": "2048x2048"
+          },
+          "is_external_url": false
+        },
+        "illustration_left_width": "200",
+        "illustration_left_opacity": "80"
+      },
+      {
+        "_uid": "354fbd69-f25a-b004-a981-65c40b59af3e",
+        "cards": [
+          {
+            "_uid": "1104be0c-2af7-f62a-631a-321d27834258",
+            "note": "Demandez le catalogue lors de votre dégustation.",
+            "text": "Équipez votre établissement avec les services de tasses et soucoupes La Genovese. Tasses espresso et cappuccino aux couleurs de la marque, pour une présentation soignée.",
+            "delay": "",
+            "image": {
+              "id": 216067948816467,
+              "alt": "Tasse cappuccino La Genovese Anniversario",
+              "filename": "https://a.storyblok.com/f/294953800459400/39875/35c0b962df/tasse-cappuccino-anniversario.jpg",
+              "fieldtype": "asset"
+            },
+            "title": "Tasses La Genovese",
+            "component": "extra_card",
+            "button_link": "/pages/contact",
+            "button_label": "En savoir plus"
+          },
+          {
+            "_uid": "8318dfd2-4082-cb36-c1d9-f682d79134e8",
+            "note": "Panettone et Pandoro : commande en septembre, livraison en décembre. Colombe : commande en février, livraison en avril.",
+            "text": "Panettone, Pandoro, Colombe — les gâteaux traditionnels italiens, sélectionnés par La Genovese. Parfaits pour accompagner le café ou en dessert. Commande saisonnière.",
+            "delay": "1",
+            "image": {
+              "id": 216067863595081,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "https://a.storyblok.com/f/294953800459400/23645/0a6f30d230/patisserie-pandoro.jpg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {
+                "size": "370x246"
+              },
+              "is_external_url": false
+            },
+            "title": "Pâtisseries italiennes",
+            "component": "extra_card",
+            "button_link": "/pages/notre-gamme#patisseries",
+            "button_label": "En savoir plus"
+          }
+        ],
+        "title": "Pour sublimer l'expérience café",
+        "subtitle": "Au-delà du café, TONES accompagne votre offre gourmande.",
+        "component": "chr_extras_section",
+        "title_size": "70",
+        "image_scale": "150",
+        "subtitle_font": ""
+      },
+      {
+        "_uid": "53e028e6-baf8-782c-2aa8-079ccdbdca57",
+        "badge": "Pensé pour les restaurateurs",
+        "cards": [
+          {
+            "_uid": "1eec16e9-9c80-31c6-a58c-09e987296192",
+            "icon": "wrench",
+            "text": "Vente, installation et maintenance de votre machine à café professionnelle par notre prestataire.",
+            "delay": "1",
+            "title": "Prestataire technique (06 98 37 00 67)",
+            "component": "b2b_card"
+          },
+          {
+            "_uid": "acaa6597-6651-1d42-07a8-b11df0c0ac7c",
+            "icon": "coffee",
+            "text": "Nous venons avec nos mélanges. Votre équipe goûte et choisit en conditions réelles.",
+            "delay": "2",
+            "title": "Dégustation gratuite sur site",
+            "component": "b2b_card"
+          },
+          {
+            "_uid": "66513968-35bf-b725-44cb-81d6cfaae9af",
+            "icon": "users",
+            "text": "Pas de plateforme, pas de call center. Vous échangez directement avec notre gérante.",
+            "delay": "3",
+            "title": "Un interlocuteur unique",
+            "component": "b2b_card"
+          },
+          {
+            "_uid": "7e05ff38-f5d0-0df2-d727-7e9b8facebb0",
+            "icon": "medal",
+            "text": "La Genovese, Albenga, depuis 1936. Médaillée 10 fois à l'International Coffee Tasting.",
+            "delay": "4",
+            "title": "Torréfaction italienne certifiée",
+            "component": "b2b_card"
+          }
+        ],
+        "title": "Pourquoi les établissements nous font confiance",
+        "component": "b2b_section",
+        "background": "default",
+        "title_font": "",
+        "title_size": "70",
+        "grid_margin_top": false
+      },
+      {
+        "_uid": "7a668ffc-9c74-50c1-cf6e-2212345babc2",
+        "note": "En soumettant ce formulaire, vous acceptez d'être recontacté par TONES. Aucune donnée n'est cédée à des tiers.",
+        "phone": "06 62 11 97 48",
+        "title": "Réservez votre dégustation gratuite",
+        "variant": "degustation_chr",
+        "subtitle": "Nous nous déplaçons dans votre établissement avec nos meilleurs mélanges. Gratuit, sans engagement.",
+        "anchor_id": "degustation-chr",
+        "component": "quote_form_section",
+        "form_name": "degustation-chr",
+        "separator": "Ou laissez-nous vos coordonnées",
+        "title_size": "70",
+        "phone_hours": "Du lundi au vendredi, 8h — 18h",
+        "phone_label": "Appelez-nous directement",
+        "submit_label": "Demander ma dégustation gratuite",
+        "success_text": "Nous vous recontactons sous 24h pour planifier votre dégustation gratuite. À très bientôt dans votre établissement !",
+        "style_variant": "cream_chr",
+        "subtitle_font": "",
+        "subtitle_size": "",
+        "success_title": "Demande envoyée !",
+        "phone_location": "degustation-chr-form"
+      },
+      {
+        "_uid": "20d2b513-1129-bc6e-c8cd-d517757f24f5",
+        "call_link": "tel:+33662119748",
+        "component": "sticky_cta",
+        "call_label": "Appeler",
+        "contact_link": "#degustation-chr",
+        "contact_label": "Dégustation gratuite"
+      }
+    ],
+    "jsonld": "{\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"LocalBusiness\",\n    \"name\": \"TONES - Distributeur Café Italien\",\n    \"description\": \"Distributeur exclusif café La Genovese en France Nord. Café italien premium livré gratuitement en Île-de-France pour les restaurants, hôtels, bars et brasseries.\",\n    \"url\": \"https://cafetones.fr\",\n    \"telephone\": \"+33662119748\",\n    \"email\": \"cafetones@free.fr\",\n    \"address\": {\n      \"@type\": \"PostalAddress\",\n      \"streetAddress\": \"83 rue de Reuilly\",\n      \"addressLocality\": \"Paris\",\n      \"postalCode\": \"75012\",\n      \"addressCountry\": \"FR\"\n    },\n    \"areaServed\": {\n      \"@type\": \"GeoCircle\",\n      \"geoMidpoint\": {\n        \"@type\": \"GeoCoordinates\",\n        \"latitude\": 48.8566,\n        \"longitude\": 2.3522\n      },\n      \"geoRadius\": \"60000\"\n    },\n    \"openingHours\": \"Mo-Fr 08:00-18:00\",\n    \"priceRange\": \"€€\"\n  }",
+    "og_title": "Café Italien pour Restaurants & CHR | TONES",
+    "component": "page",
+    "font_body": "",
+    "page_zoom": "",
+    "seo_title": "Café Italien pour Restaurants, Hôtels, Bars & Brasseries | TONES — Île-de-France",
+    "font_display": "nunito",
+    "style_scopes": [
+      "chr"
+    ],
+    "heading_scale": "",
+    "og_description": "Café premium, dégustation gratuite, prestataire technique (06 98 37 00 67). Torréfaction italienne médaillée.",
+    "breadcrumb_path": "/pages/restauration-chr",
+    "seo_description": "Fournisseur café italien pour CHR à Paris et en Île-de-France. Dégustation gratuite. La Genovese depuis 1936.",
+    "breadcrumb_label": "CHR"
+  }
+}

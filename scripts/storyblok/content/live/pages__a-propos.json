@@ -1,0 +1,339 @@
+{
+  "name": "À propos",
+  "slug": "a-propos",
+  "full_slug": "pages/a-propos",
+  "published": true,
+  "unpublished_changes": false,
+  "exported_at": "2026-09-24T11:39:47.959Z",
+  "content": {
+    "_uid": "934e4550-550d-2dc6-e28f-05abd00fa3e8",
+    "body": [
+      {
+        "_uid": "f138b463-8232-16df-b3ca-d5d6ec628383",
+        "text": "Depuis plus de 25 ans, TONES fait le lien entre l'excellence des torréfacteurs italiens et les professionnels de Paris et Île-de-France.",
+        "badge": "Notre histoire",
+        "title": "Plus qu'un distributeur, un passionné de café",
+        "component": "page_hero",
+        "text_font": "",
+        "badge_font": "",
+        "badge_size": "",
+        "title_font": "Italianno",
+        "title_size": "",
+        "section_zoom": "",
+        "background_size": "",
+        "badge_text_size": "",
+        "background_image": {
+          "id": null,
+          "alt": null,
+          "name": "",
+          "focus": null,
+          "title": null,
+          "filename": null,
+          "copyright": null,
+          "fieldtype": "asset",
+          "meta_data": {},
+          "is_external_url": false
+        },
+        "background_position": ""
+      },
+      {
+        "_uid": "19eeb485-a6a0-5e73-6360-0c2eff900259",
+        "text": "TONES est né d'une passion simple : le vrai café italien. Celui que l'on déguste dans les bars d'Albenga et Milan, torréfié avec soin par des maisons familiales.\n\nDistributeur exclusif de La Genovese pour la France Nord et distributeur Musetti, nous avons fait le choix de travailler uniquement avec des torréfacteurs qui partagent notre exigence : des grains sélectionnés, une torréfaction artisanale, et un goût qui ne ment pas.\n\nNotre métier va au-delà de la livraison de café. Nous conseillons nos clients sur le choix des mélanges, les accompagnons dans l'acquisition de leur machine, et assurons un service de proximité.",
+        "image": {
+          "id": 222719022475147,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "source": "",
+          "filename": "https://a.storyblok.com/f/294953800459400/2048x2048/947c8155e1/anne-portrait.png",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {
+            "size": "2048x2048"
+          },
+          "is_external_url": false
+        },
+        "quote": "\"Le vrai goût du café, c'est notre priorité.\"",
+        "title": "Qui sommes-nous ?",
+        "component": "about_story_section",
+        "title_font": "",
+        "title_size": "70",
+        "image_scale": "170",
+        "image_style": "seamless",
+        "image_width": "600",
+        "image_height": "400",
+        "quote_author": "— L'équipe TONES"
+      },
+      {
+        "_uid": "cbf364e9-dcf1-4e58-4499-0a546d42e191",
+        "title": "Nos torréfacteurs partenaires",
+        "card_gap": "70",
+        "roasters": [
+          {
+            "_uid": "c464abf0-30fe-d175-8271-147d2485340d",
+            "name": "La Genovese",
+            "text": "Fondée en 1936 en Italie, La Genovese est l'une des plus anciennes maisons de torréfaction du pays. Son procédé de torréfaction à Air Pur préserve les arômes originels du café tout en réduisant l'impact environnemental.\n\nTONES est le distributeur exclusif de La Genovese pour la France Nord — un partenariat de confiance construit sur des années de collaboration.",
+            "delay": "",
+            "image": {
+              "id": 219935650289678,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "https://a.storyblok.com/f/294953800459400/600x600/a7bcbad154/marchio-la-genovese-2020.jpg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "since": "Depuis 1936",
+            "blends": [
+              {
+                "_uid": "dc8354f4-6ca3-35f1-1b90-8a9c029b27b8",
+                "name": "Anniversario",
+                "text": "100% Arabica, notes chocolat et fruits exotiques",
+                "component": "blend_item"
+              },
+              {
+                "_uid": "f9846254-160a-5aa1-2be9-b004097d854b",
+                "name": "Oro",
+                "text": "80% Arabica, 20% Robusta, équilibré et crémeux",
+                "component": "blend_item"
+              },
+              {
+                "_uid": "c6348e93-94ee-dc9d-9124-ec04b259485f",
+                "name": "Colonial",
+                "text": "40% Arabica, 60% Robusta. Corsé, crème dense, espresso puissant",
+                "component": "blend_item"
+              },
+              {
+                "_uid": "f59575b5-feb1-5872-ac7e-c7373f64ab06",
+                "name": "Bio",
+                "text": "100% Arabica biologique, certifié Rainforest Alliance",
+                "component": "blend_item"
+              },
+              {
+                "_uid": "42e51139-c234-cfb7-0091-a34ecbab9772",
+                "name": "Dosette Oro",
+                "text": "80% Arabica, 20% Robusta en pastille ESE",
+                "component": "blend_item"
+              },
+              {
+                "_uid": "bc2c5550-a08a-da64-5867-d8720a616571",
+                "name": "Dosette Décaféinée",
+                "text": "Saveur préservée, sans caféine",
+                "component": "blend_item"
+              }
+            ],
+            "component": "roaster_card",
+            "image_fit": "cover",
+            "blends_title": "Mélanges phares"
+          },
+          {
+            "_uid": "60c71621-6b1d-aacd-49ef-85ca5670a3d0",
+            "name": "Musetti",
+            "text": "Fondée en 1934, Musetti est une référence de la torréfaction italienne. Ses mélanges se distinguent par leur richesse aromatique et leur constance.\n\nEn complément de l'offre La Genovese, TONES distribue les cafés Musetti pour offrir à ses clients une palette de saveurs encore plus large.",
+            "delay": "1",
+            "image": {
+              "id": 223443413147480,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "source": "",
+              "filename": "https://a.storyblok.com/f/294953800459400/400x288/a74a4bb211/images.png",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {},
+              "is_external_url": false
+            },
+            "since": "Depuis 1934",
+            "blends": [
+              {
+                "_uid": "194bd92e-6265-b200-ad3e-cf918275b27d",
+                "name": "Dosettes 100% Arabica",
+                "text": "",
+                "component": "blend_item"
+              }
+            ],
+            "component": "roaster_card",
+            "image_fit": "cover",
+            "blends_title": "Disponible en"
+          }
+        ],
+        "subtitle": "Deux maisons italiennes familiales, unies par la même passion de l'excellence.",
+        "component": "roasters_section",
+        "title_font": "",
+        "title_size": "150",
+        "image_scale": "150",
+        "illustration": "plant",
+        "section_zoom": "90",
+        "subtitle_font": "",
+        "illustration_size": "lg",
+        "illustration_opacity": "",
+        "illustration_position": "right",
+        "illustration_left_width": ""
+      },
+      {
+        "_uid": "e11e46b5-b4c1-f8eb-782c-42a465f43a17",
+        "cards": [
+          {
+            "_uid": "b8369361-eb4f-f9bf-e78b-0982693fe5f5",
+            "icon": "check-circle",
+            "text": "Système Qualité certifié depuis 2004 pour le suivi complet des activités, de l'achat des matières premières à la commercialisation.",
+            "delay": "",
+            "title": "UNI EN ISO 9001:2015",
+            "component": "cert_card"
+          },
+          {
+            "_uid": "7eecd1a7-a5c7-d5e1-2a35-62f3beb0e780",
+            "icon": "pin-check",
+            "text": "Café biologique certifié depuis 2013, cultivé sans pesticides ni engrais chimiques.",
+            "delay": "1",
+            "title": "Certification Bio (CCPB)",
+            "component": "cert_card"
+          },
+          {
+            "_uid": "f7ac0a5b-bb7a-3bb2-cbe5-21b58500bc17",
+            "icon": "globe",
+            "text": "Partenaire depuis 2017. Agriculture durable, respect de l'environnement et des communautés productrices.",
+            "delay": "2",
+            "title": "Rainforest Alliance",
+            "component": "cert_card"
+          },
+          {
+            "_uid": "32be598d-2099-f8b6-a15a-f71e4dd4cab7",
+            "icon": "star",
+            "text": "Les mélanges Anniversario, Royal et Oro certifiés depuis 2008 par l'Institut National de l'Espresso Italien.",
+            "delay": "3",
+            "title": "Espresso Italiano (INEI)",
+            "component": "cert_card"
+          },
+          {
+            "_uid": "ddae7769-181b-df57-97d5-a30639b23d79",
+            "icon": "shield",
+            "text": "Plan HACCP certifié pour la sécurité alimentaire, conforme aux normes européennes d'hygiène.",
+            "delay": "4",
+            "title": "HACCP",
+            "component": "cert_card"
+          },
+          {
+            "_uid": "18937345-8f2f-03ca-9ae7-e7e5fb5bde5a",
+            "icon": "file-text",
+            "text": "Chaque lot de café est entièrement traçable, du grain vert à la livraison finale.",
+            "delay": "4",
+            "title": "Traçabilité totale",
+            "component": "cert_card"
+          },
+          {
+            "_uid": "fbcf1d1f-b62a-7851-f649-16ca90eb142c",
+            "icon": "medal",
+            "text": "Médailles d'or — Anniversario et Royal : 2012, 2016, 2018, 2020, 2021. Oro : 2008, 2010, 2012, 2014, 2016. Juta Bio : 2018, 2021, 2022, 2023.",
+            "delay": "",
+            "title": "International Coffee Tasting",
+            "component": "cert_card"
+          },
+          {
+            "_uid": "e908f73c-3baa-0913-f8bb-2dd81aeb8c8e",
+            "icon": "medal",
+            "text": "Récompense pour l'excellence de la torréfaction et la qualité constante des mélanges.",
+            "delay": "1",
+            "title": "Grand Prix Isola 2014",
+            "component": "cert_card"
+          }
+        ],
+        "title": "Nos certifications et récompenses",
+        "subtitle": "La qualité de nos cafés est garantie par des organismes indépendants.",
+        "component": "cert_cards_section",
+        "background": "default",
+        "title_font": "",
+        "title_size": "80",
+        "subtitle_font": ""
+      },
+      {
+        "_uid": "afca2077-103b-be24-7262-1123b611125c",
+        "text": "Le procédé de torréfaction à Air Pur, utilisé par La Genovese, est une technique artisanale qui permet de torréfier les grains de café en préservant l'intégralité de leurs arômes naturels.\n\nContrairement aux méthodes industrielles, cette approche douce respecte le grain et réduit significativement les émissions liées au processus de torréfaction.\n\nLe résultat : un café au goût plus authentique, plus rond, sans l'amertume excessive que l'on retrouve dans les torréfactions rapides.",
+        "title": "La torréfaction à Air Pur",
+        "traits": [
+          {
+            "_uid": "29625927-b3ec-3c75-6687-37fa05bff98d",
+            "desc": "Couleur marron noisette, dense et épaisse",
+            "label": "Crème",
+            "component": "trait_item"
+          },
+          {
+            "_uid": "f25c273d-0745-bdeb-565b-7eb6267fc1ab",
+            "desc": "La crème tient entre 3 et 4 minutes",
+            "label": "Durée",
+            "component": "trait_item"
+          },
+          {
+            "_uid": "dfaab3e7-0d74-7fc5-4985-db5a81cb4bd5",
+            "desc": "Juste, plein et dense en bouche",
+            "label": "Corps",
+            "component": "trait_item"
+          },
+          {
+            "_uid": "09914f9a-f99d-7641-cc0d-8a84c897ef83",
+            "desc": "Arômes perceptibles jusqu'à 30 minutes",
+            "label": "Persistance",
+            "component": "trait_item"
+          }
+        ],
+        "component": "airpur_section",
+        "title_font": "",
+        "title_size": "70"
+      },
+      {
+        "_uid": "d7e436dc-ca79-6451-6977-ef303ca3daba",
+        "text": "Réservez votre dégustation gratuite — nous nous déplaçons dans vos locaux avec nos meilleurs mélanges.",
+        "theme": "cream",
+        "title": "Envie de goûter la différence ?",
+        "buttons": [
+          {
+            "_uid": "deb879ff-db07-ffac-2437-c7a5dc865f02",
+            "icon": "phone",
+            "link": "tel:+33662119748",
+            "size": "lg",
+            "label": "Appelez-nous",
+            "style": "primary",
+            "location": "about-cta",
+            "component": "button",
+            "phone_svg": false
+          },
+          {
+            "_uid": "bbba7e48-7b85-18ca-689b-580aac4ca4ff",
+            "icon": "none",
+            "link": "/pages/cafe-bureau-entreprise#degustation",
+            "size": "lg",
+            "label": "Réserver ma dégustation",
+            "style": "secondary",
+            "location": "",
+            "component": "button",
+            "phone_svg": false
+          }
+        ],
+        "component": "cta_section",
+        "text_font": "",
+        "title_size": "70"
+      }
+    ],
+    "jsonld": "",
+    "og_title": "À Propos de TONES — Distributeur Café Italien | Paris et Île-de-France",
+    "component": "page",
+    "font_body": "",
+    "page_zoom": "",
+    "seo_title": "À Propos de TONES — Distributeur Café Italien depuis plus de 25 ans | Île-de-France",
+    "font_display": "",
+    "style_scopes": [
+      "about"
+    ],
+    "heading_scale": "",
+    "og_description": "Plus de 25 ans d'expérience, torréfaction italienne artisanale, café médaillé internationalement.",
+    "breadcrumb_path": "/pages/a-propos",
+    "seo_description": "TONES, distributeur exclusif La Genovese en France Nord. Plus de 25 ans d'expérience, torréfaction italienne artisanale, café médaillé internationalement.",
+    "breadcrumb_label": "À propos"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "name": "Réglages du site",
+  "slug": "site-settings",
+  "full_slug": "config/site-settings",
+  "published": true,
+  "unpublished_changes": true,
+  "exported_at": "2026-09-24T11:39:47.959Z",
+  "content": {
+    "_uid": "33d371e3-f786-c2fb-6ee0-765a9d22a821",
+    "logo": {
+      "id": 216067648796699,
+      "alt": "TONES — Café Italien",
+      "filename": "https://a.storyblok.com/f/294953800459400/6561/55df197635/logo-tones.svg",
+      "fieldtype": "asset"
+    },
+    "email": "cafetones@free.fr",
+    "hours": "Lun — Ven : 8h — 18h",
+    "phone": "06 62 11 97 48",
+    "address": "83 rue de Reuilly, 75012 Paris",
+    "palette": "marine",
+    "color_bg": "#FBF9F7",
+    "cta_link": "/pages/contact",
+    "component": "site_settings",
+    "copyright": "© 2026 TONES SAS — Distributeur exclusif café La Genovese France Nord",
+    "cta_label": "Demander un devis",
+    "font_body": "poppins",
+    "footer_bg": "",
+    "nav_links": [
+      {
+        "_uid": "b2b7dd73-859e-a429-52fe-d100de5e4aac",
+        "link": "/pages/cafe-bureau-entreprise",
+        "label": "Bureau & Entreprise",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "dde75855-aa49-7926-ce6a-39082262fa16",
+        "link": "/pages/restauration-chr",
+        "label": "CHR",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "1d1505e5-4b8c-5cbb-c70d-3b681938e7cf",
+        "link": "/pages/particuliers",
+        "label": "Particuliers",
+        "hidden": true,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "238690d5-0dfc-e17a-e1c7-adc260fd0e6a",
+        "link": "/pages/notre-gamme",
+        "label": "Notre gamme",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "3a99d839-2c1f-9281-69a9-827bf535abcc",
+        "link": "/pages/a-propos",
+        "label": "À propos",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "a136ef5f-968d-d101-10d5-71a252541be2",
+        "link": "/pages/contact",
+        "label": "Contact",
+        "hidden": false,
+        "component": "nav_link"
+      }
+    ],
+    "color_dark": "#6D071A",
+    "color_text": "",
+    "legal_link": "/pages/mentions-legales",
+    "text_scale": "120",
+    "footer_desc": "Distributeur exclusif La Genovese France Nord. Café italien premium livré à Paris et en Île-de-France depuis plus de 25 ans.",
+    "footer_zoom": "65",
+    "legal_label": "Mentions légales",
+    "logo_height": "125",
+    "color_accent": "#550C18",
+    "color_bg_alt": "#FBF9F7",
+    "font_display": "poppins",
+    "privacy_link": "/pages/mentions-legales#rgpd",
+    "font_subtitle": "Mukta Malar",
+    "footer_layout": "site",
+    "header_layout": "wide",
+    "heading_scale": "150",
+    "instagram_url": "https://www.instagram.com/cafetones75/",
+    "privacy_label": "Politique de confidentialité",
+    "header_nav_gap": "60",
+    "subtitle_scale": "",
+    "instagram_label": "",
+    "footer_icon_size": "22",
+    "footer_nav_links": [
+      {
+        "_uid": "704374db-3fa7-9abb-29de-58af6e9f5784",
+        "link": "/",
+        "label": "Accueil",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "0c3d5da5-20a1-a19a-ec3d-68c7c8e8479c",
+        "link": "/pages/cafe-bureau-entreprise",
+        "label": "Bureau & Entreprise",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "ae5454fe-7c1a-b5f0-c835-79053503c05f",
+        "link": "/pages/restauration-chr",
+        "label": "CHR",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "d3107694-0b5d-0d70-c53b-e5a491712345",
+        "link": "/pages/particuliers",
+        "label": "Particuliers",
+        "hidden": true,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "842c7e35-ae02-aa4e-ac58-80e75169e221",
+        "link": "/pages/notre-gamme",
+        "label": "Notre gamme",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "a756948d-8c8d-d6c7-2357-f3bf5e4ed039",
+        "link": "/pages/a-propos",
+        "label": "À propos",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "50f67cc8-4483-fde6-ef58-9026b720659f",
+        "link": "/pages/contact",
+        "label": "Contact",
+        "hidden": false,
+        "component": "nav_link"
+      }
+    ],
+    "footer_text_size": "140",
+    "footer_text_color": "",
+    "footer_cafes_links": [
+      {
+        "_uid": "960ce01c-d2ab-bb44-3ad5-0eecce320dac",
+        "link": "/pages/notre-gamme#grains",
+        "label": "Grains",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "6cd84764-25cd-2217-adc2-12311a85f320",
+        "link": "/pages/notre-gamme#moulus",
+        "label": "Moulus",
+        "hidden": false,
+        "component": "nav_link"
+      },
+      {
+        "_uid": "c0c747d4-c76b-c92e-5c98-4e2a6f7099a7",
+        "link": "/pages/notre-gamme#pods",
+        "label": "Pods",
+        "hidden": false,
+        "component": "nav_link"
+      }
+    ],
+    "footer_logo_height": "120",
+    "footer_nav_heading": "Navigation",
+    "header_actions_gap": "30",
+    "font_body_custom_url": "",
+    "footer_cafes_heading": "Nos cafés",
+    "footer_heading_color": "#FBF9F7",
+    "mobile_menu_cta_link": "/pages/contact",
+    "font_body_custom_name": "",
+    "mobile_menu_cta_label": "Demander un devis",
+    "footer_contact_heading": "Contact",
+    "font_display_custom_url": "",
+    "font_display_custom_name": ""
+  }
+}
