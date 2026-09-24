@@ -16,5 +16,13 @@ export function textScaleVars(settings: SiteSettings | null | undefined): CSSPro
   set("--scale-text", settings?.text_scale, 70, 150);
   set("--scale-headings", settings?.heading_scale, 70, 200);
   set("--scale-subtitle", settings?.subtitle_scale, 50, 200); // sous-titres seuls (classe sb-subtitle)
+  // « Téléphone : intensité des agrandissements (%) » : part des agrandissements (texte, titres,
+  // badges, sections, logo du menu, hauteur des bandeaux, photos) appliquée sous 768 px.
+  // Vide = 50 (valeur par défaut de css/style.css) ; 0 = tailles standard du site sur téléphone ;
+  // 100 = mêmes agrandissements que sur ordinateur.
+  const rawMobile = settings?.mobile_scale;
+  if (rawMobile !== undefined && rawMobile !== null && String(rawMobile).trim() !== "") {
+    vars["--damp-mobile"] = String(pxOr(rawMobile as string | number, 50, 0, 100) / 100);
+  }
   return Object.keys(vars).length ? (vars as CSSProperties) : undefined;
 }

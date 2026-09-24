@@ -137,7 +137,7 @@ main.page-home .home-product-card:hover {
 /* --card-img-scale : « Taille des photos » de la section best-sellers, 1 = origine */
 main.page-home .home-product-card__image {
   background-color: var(--color-cream-warm);
-  height: calc(220px * var(--card-img-scale, 1));
+  height: calc(220px * (1 + (var(--card-img-scale, 1) - 1) * var(--damp, 1)));
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -145,7 +145,7 @@ main.page-home .home-product-card__image {
   overflow: hidden;
 }
 main.page-home .home-product-card__image img {
-  max-height: calc(200px * var(--card-img-scale, 1));
+  max-height: calc(200px * (1 + (var(--card-img-scale, 1) - 1) * var(--damp, 1)));
   width: auto;
   max-width: 100%;
   object-fit: contain;

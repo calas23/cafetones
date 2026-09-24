@@ -156,7 +156,7 @@ main.page-chr .chr-extra-card {
    la grille .chr-extras) ; 1 (absente) = hauteur d'origine. La photo remplit la zone
    (object-fit: cover) : plus la zone est haute, moins la photo est rognée. */
 main.page-chr .chr-extra-card__image {
-  height: calc(180px * var(--extra-img-scale, 1));
+  height: calc(180px * (1 + (var(--extra-img-scale, 1) - 1) * var(--damp, 1)));
   background-color: var(--color-cream-warm);
   overflow: hidden;
   border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;

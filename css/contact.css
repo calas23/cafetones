@@ -15,6 +15,12 @@ main.page-contact .contact-form-card {
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
 }
+/* Téléphone : marges intérieures réduites, les champs ont la largeur de l'écran. */
+@media (max-width: 767px) {
+  main.page-contact .contact-form-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
 main.page-contact .contact-form-card h2 {
   margin-bottom: 0.25rem;
 }

@@ -145,6 +145,15 @@ certificat auto-signé dans le navigateur.
 - **Changer la taille des textes** : même onglet **Polices** → **Taille du
   texte (%)** (tout le site, 100 = actuel, ex. 110 pour agrandir un peu) et
   **Taille des titres (%)** (titres seulement, en plus) → Save → Publish.
+- **Affichage sur téléphone** : les agrandissements réglés en regardant
+  l'écran d'ordinateur (taille du texte, des titres, des badges, d'une
+  section, du pied de page, du logo du menu, hauteur minimale d'un bandeau,
+  taille des photos des cartes) s'appliquent à moitié sur téléphone (écran de
+  moins de 768 px) : par ex. des titres à 150 % s'affichent à 125 %. Pour
+  changer cette part : Réglages du site → onglet **Téléphone** → **Téléphone :
+  intensité des agrandissements (%)** (0 = tailles standard du site sur
+  téléphone, 100 = comme sur ordinateur, vide = 50) → Save → Publish. Sans
+  effet sur ordinateur.
 - **Même police pour tous les sous-titres** : Réglages du site → onglet
   **Polices** → **Police des sous-titres** (et **Taille des sous-titres (%)**)
   → Save → Publish. Vaut pour toutes les pages ; un « Sous-titre — police »
@@ -546,6 +555,7 @@ certificat auto-signé dans le navigateur.
 | `text_scale` | Nombre | Taille du texte (%) |
 | `heading_scale` | Nombre | Taille des titres (%) |
 | `subtitle_scale` | Nombre | Taille des sous-titres (%) |
+| `mobile_scale` | Nombre | Téléphone : intensité des agrandissements (%) |
 
 ## Groupe « Sections » (32)
 

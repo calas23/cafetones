@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import type { SiteSettings } from "./types";
 import { pxOr } from "./num";
+import { zoomStyle } from "./damp";
 import { normalizeHex } from "./palette";
 
 // Onglet « Polices » des Réglages du site : police des titres et police du texte,
@@ -137,7 +138,7 @@ export function inlineTextStyle(
   }
   if (sizePct !== undefined && sizePct !== null && String(sizePct).trim() !== "") {
     const pct = pxOr(sizePct as string | number, 100, 50, 300);
-    if (pct !== 100) style.zoom = pct / 100;
+    if (pct !== 100) Object.assign(style as Record<string, string | number>, zoomStyle(pct / 100));
   }
   return { style: Object.keys(style).length ? style : undefined, href };
 }
@@ -163,7 +164,7 @@ export function badgeStyle(blok: Record<string, unknown>, prefix = "badge"): { s
   const style: Record<string, string | number> = { ...((base.style ?? {}) as Record<string, string | number>) };
   // `<prefix>_scale` : « Badge — taille (%) », tout le badge d'un coup (zoom CSS : texte, fond, icône).
   const all = scaleOf(blok[`${prefix}_scale`]);
-  if (all) style.zoom = all;
+  if (all) Object.assign(style, zoomStyle(all));
   const text = scaleOf(blok[`${prefix}_text_size`]);
   if (text) style["--badge-text-scale"] = text;
   const pad = scaleOf(blok[`${prefix}_size`]);

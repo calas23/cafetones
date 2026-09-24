@@ -333,6 +333,7 @@ export const COMPONENTS = [
       color_bg_alt: text("Fond des sections alternées", { regex: HEX_RE, description: HEX_HELP }),
       color_text: text("Couleur du texte", { regex: HEX_RE, description: HEX_HELP }),
       "tab-polices": { type: "tab", display_name: "Polices", keys: ["font_display", "font_body", "font_subtitle", "text_scale", "heading_scale", "subtitle_scale"] },
+      "tab-mobile": { type: "tab", display_name: "Téléphone", keys: ["mobile_scale"] },
       font_display: fontOption("Police des titres", {
         default_value: "playfair",
         description: "Police des titres (h1, h2, h3, chiffres clés). Vide = Playfair Display. " + FONT_HELP_ADD,
@@ -352,6 +353,10 @@ export const COMPONENTS = [
       }),
       subtitle_scale: number("Taille des sous-titres (%)", {
         description: "100 = taille actuelle. Agit sur tous les sous-titres du site, en plus de la taille du texte. Entre 50 et 200.",
+      }),
+      mobile_scale: number("Téléphone : intensité des agrandissements (%)", {
+        description:
+          "Sur téléphone (écran de moins de 768 px), les agrandissements réglés ici et dans les pages (taille du texte, des titres, des badges, d'une section, du pied de page, du logo du menu, hauteur minimale d'un bandeau, taille des photos des cartes) s'appliquent à cette intensité. 0 = tailles standard du site sur téléphone, 50 = la moitié de l'agrandissement (ex. titres 150 % → 125 %), 100 = mêmes agrandissements que sur ordinateur. Vide = 50. Sans effet sur ordinateur.",
       }),
     },
   },

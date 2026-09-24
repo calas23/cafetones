@@ -10,7 +10,9 @@ const HEADER_DEFAULT = 72;
 // Variables CSS posées sur <html> quand « Hauteur du logo du menu (px) » est renseignée
 // dans les Réglages du site. Champ vide → undefined : aucun attribut style, rendu d'origine.
 // Le mobile suit la même proportion qu'à l'origine (48/64) et la barre de menu garde sa marge
-// de 8 px autour du logo, sans jamais descendre sous 72 px.
+// de 8 px autour du logo, sans jamais descendre sous 72 px. Sur téléphone, css/style.css applique
+// l'agrandissement du logo à l'intensité « Téléphone » des Réglages du site (--logo-height-mobile
+// et --header-height y sont calculées à partir de --logo-height-mobile-raw).
 export function headerSizeVars(settings: SiteSettings | null | undefined): CSSProperties | undefined {
   const raw = settings?.logo_height;
   if (raw === undefined || raw === null || String(raw).trim() === "") return undefined;
@@ -19,7 +21,7 @@ export function headerSizeVars(settings: SiteSettings | null | undefined): CSSPr
   const header = Math.max(HEADER_DEFAULT, desktop + (HEADER_DEFAULT - LOGO_DESKTOP));
   return {
     "--logo-height": `${desktop}px`,
-    "--logo-height-mobile": `${mobile}px`,
-    "--header-height": `${header}px`,
+    "--logo-height-mobile-raw": `${mobile}px`,
+    "--header-height-desktop": `${header}px`,
   } as CSSProperties;
 }

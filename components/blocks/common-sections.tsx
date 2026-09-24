@@ -127,7 +127,9 @@ export function EspressoTextSection({ blok }: { blok: EspressoTextBlok }) {
   const imgUrl = assetUrl(blok.image);
   const rawImg = blok.image_scale;
   const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 30, 150);
-  const imgStyle = imgScale !== 100 ? ({ transform: `scale(${imgScale / 100})` } as CSSProperties) : undefined;
+  // Échelle visuelle (transform) appliquée par css/style.css à partir de 900 px seulement : sur
+  // téléphone l'image occupe déjà toute la largeur, un agrandissement déborderait de l'écran.
+  const imgStyle = imgScale !== 100 ? ({ "--espresso-img-transform": `scale(${imgScale / 100})` } as CSSProperties) : undefined;
   // « Espace entre le texte et l'image (px) » : gap de la grille deux colonnes (vide = 4rem d'origine).
   const rawGap = blok.image_gap;
   const gap = rawGap === undefined || rawGap === null || String(rawGap).trim() === "" ? -1 : pxOr(rawGap as string | number, -1, 0, 300);
