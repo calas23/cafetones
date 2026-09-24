@@ -3,6 +3,7 @@ import { Icon } from "@/components/Icon";
 import { PhoneText } from "@/components/PhoneText";
 import { telHref } from "@/lib/phone";
 import { pxOr } from "@/lib/num";
+import { zoomStyle } from "@/lib/damp";
 import { normalizeHex } from "@/lib/palette";
 import { assetUrl, type SbBlok, type SiteSettings } from "@/lib/types";
 
@@ -29,7 +30,7 @@ export function Footer({ settings }: { settings: SiteSettings | null }) {
   const rawText = settings?.footer_text_size;
   const textScale = rawText === undefined || rawText === null || String(rawText).trim() === "" ? 100 : pxOr(rawText, 100, 50, 200);
   const footerStyle: Record<string, string | number> = {};
-  if (footerZoom !== 100) footerStyle.zoom = footerZoom / 100;
+  if (footerZoom !== 100) Object.assign(footerStyle, zoomStyle(footerZoom / 100));
   if (textScale !== 100) footerStyle["--footer-text-scale"] = textScale / 100;
   // « Taille des icônes de la colonne Contact (px) » : vide = 16 (taille d'origine, aucune variable posée).
   const rawIcon = settings?.footer_icon_size;

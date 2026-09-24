@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import type { SbBlok } from "@/lib/types";
 import { normalizeHex } from "@/lib/palette";
 import { pxOr } from "@/lib/num";
+import { zoomStyle } from "@/lib/damp";
 import { resolveFont } from "@/lib/fonts";
 import { FontLink } from "@/components/FontLink";
 
@@ -85,7 +86,7 @@ export default function Page({ blok }: { blok: PageBlok }) {
   if (display) mainStyle["--font-display"] = `'${display.family}', ${display.fallback}`;
   if (body) mainStyle["--font-body"] = `'${body.family}', ${body.fallback}`;
   if (headingScale !== 100) mainStyle["--scale-headings"] = headingScale / 100;
-  if (pageZoom !== 100) mainStyle.zoom = pageZoom / 100;
+  if (pageZoom !== 100) Object.assign(mainStyle, zoomStyle(pageZoom / 100));
   return (
     <>
       {label ? (
@@ -130,7 +131,7 @@ export default function Page({ blok }: { blok: PageBlok }) {
           const style: Record<string, string | number> = {};
           if (background) style["--sb-bg"] = background;
           if (spacing !== 100) style["--sb-space"] = String(spacing / 100);
-          if (zoom !== 100) style.zoom = zoom / 100;
+          if (zoom !== 100) Object.assign(style, zoomStyle(zoom / 100));
           return (
             <div className={background ? "sb-bg" : undefined} style={style as CSSProperties} key={nested._uid}>
               <StoryblokServerComponent blok={nested} />

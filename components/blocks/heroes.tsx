@@ -117,7 +117,9 @@ export function PageHero({ blok }: { blok: PageHeroBlok }) {
   // exemple pour laisser la place à une image entière. Vide = hauteur du texte, rendu d'origine.
   const rawHeight = blok.min_height;
   const minHeight = rawHeight === undefined || rawHeight === null || String(rawHeight).trim() === "" ? 0 : pxOr(rawHeight, 0, 200, 1200);
-  if (minHeight) sectionStyle.minHeight = `${minHeight}px`;
+  // Posée en variable (--page-hero-min, lue par .page-hero--tall) : sur téléphone la hauteur
+  // s'applique à l'intensité « Téléphone » des Réglages du site (css/style.css).
+  if (minHeight) sectionStyle["--page-hero-min"] = `${minHeight}px`;
   const tall = minHeight > 0 || (!!bg && blok.background_size === "fit");
   const classes = ["page-hero", bg ? "page-hero--image" : "", tall ? "page-hero--tall" : ""].filter(Boolean).join(" ");
   return (
