@@ -16,6 +16,7 @@ on:
           - set-story-fields
           - dump-story
           - upload-assets
+          - export-content
         default: merge-cert-sections
       dry_run:
         description: "Simulation (n'écrit rien dans Storyblok)"
@@ -57,6 +58,9 @@ on:
 jobs:
   op:
     runs-on: ubuntu-latest
+    # contents: write uniquement pour pousser l'export du contenu (op export-content) sur sa branche.
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -78,3 +82,16 @@ jobs:
           COPY_FIELDS: ${{ inputs.copy_fields }}
           RENAME_FIELDS: ${{ inputs.rename_fields }}
         run: node "scripts/storyblok/ops/${{ inputs.op }}.mjs"
+
+      # export-content : le dossier scripts/storyblok/content/live/ (brouillons de toutes les pages)
+      # est poussé, seul, sur la branche `content/live-export` (instantané remplacé à chaque export).
+      # Sert à rejouer le site en local avec le contenu réel, ou de sauvegarde du contenu saisi.
+      - name: Publier l'export sur la branche content/live-export
+        if: inputs.op == 'export-content'
+        run: |
+          git checkout -q --orphan content/live-export
+          git reset -q
+          git add -f scripts/storyblok/content/live
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Export du contenu Storyblok (brouillons) — $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -f origin content/live-export
