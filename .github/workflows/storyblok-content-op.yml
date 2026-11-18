@@ -17,6 +17,7 @@ on:
           - dump-story
           - upload-assets
           - export-content
+          - check-assets
         default: merge-cert-sections
       dry_run:
         description: "Simulation (n'écrit rien dans Storyblok)"
