@@ -41,6 +41,28 @@ async function main() {
     const full = await client.getStory(s.id);
     drafts[s.full_slug] = { assets: assetsOf(full.content), unpublished: !!full.unpublished_changes };
   }
+  // Version publiée réelle (API de contenu, token public du space) : ce que le site public reçoit.
+  const keys = (await client.api("GET", "/api_keys")).api_keys || [];
+  const pub = keys.find((k) => k.access === "public");
+  const cdnHost = { "https://mapi.storyblok.com": "https://api.storyblok.com", "https://api-us.storyblok.com": "https://api-us.storyblok.com" }[client.host?.() || "https://mapi.storyblok.com"] || "https://api.storyblok.com";
+  const published = {};
+  if (pub) {
+    for (const s of stories) {
+      const res = await fetch(`${cdnHost}/v2/cdn/stories/${s.full_slug}?version=published&token=${pub.token}&cv=${Date.now()}`);
+      if (res.ok) {
+        const data = await res.json();
+        published[s.full_slug] = { assets: assetsOf(data.story.content), published_at: data.story.published_at };
+      } else {
+        published[s.full_slug] = { status: res.status };
+      }
+    }
+    console.log("\nVersion publiée (API de contenu) :");
+    for (const [slug, p] of Object.entries(published)) {
+      const d = drafts[slug];
+      const onlyDraft = p.assets ? [...d.assets].filter((a) => !p.assets.has(a)).map((a) => a.split("/").pop()) : [];
+      console.log(`  ${slug} : ${p.assets ? `publiée le ${p.published_at}` : `HTTP ${p.status} (non publiée ?)`}${onlyDraft.length ? ` — images seulement dans le brouillon : ${onlyDraft.join(", ")}` : ""}`);
+    }
+  } else console.log("\n(aucun token public trouvé : version publiée non vérifiée)");
   const seen = new Map();
   for (const p of PAGES) {
     const res = await fetch(`${SITE}${p}`, { headers: { "User-Agent": "Mozilla/5.0 (check-assets)" } });
