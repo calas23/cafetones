@@ -134,7 +134,7 @@
                 "notes": "Chocolat, Noisette, Épices, Fruits rouges",
                 "origins": "Brésil, Honduras, Colombie, Inde",
                 "format": "Sachet 250g",
-                "price": "26,00 €/kg",
+                "price": "25,20 €/kg",
                 "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
                 "image": {
                   "filename": "/img/grain-royal-250g.jpg",
@@ -146,7 +146,7 @@
                 "badge_label": "100% Arabica",
                 "display_name": "Royal — Luxury Blend",
                 "display_desc": "Chocolat noir, noisette, muscade. Corps velouté.",
-                "display_price": "26,00 €/kg"
+                "display_price": "25,20 €/kg"
               },
               {
                 "_uid": "c492c31c-9920-c470-a67b-14a5207a6352",
@@ -412,7 +412,7 @@
                 "name": "Dosettes ESE compostables",
                 "description": "Oro, Bio, Décaféiné — boîtes de 25 dosettes. Pratiques et éco-responsables.",
                 "notes": "Pratique, Éco",
-                "price": "À partir de 0,46 €/café",
+                "price": "À partir de 0,45 €/café",
                 "image": {
                   "filename": "/img/dosette-grands-crus.jpg",
                   "alt": "Dosettes ESE café La Genovese"
@@ -422,7 +422,7 @@
                 "delay": "",
                 "display_name": "Dosettes ESE compostables",
                 "display_desc": "Oro, Bio, Décaféiné — boîtes de 25 dosettes. Pratiques et éco-responsables.",
-                "display_price": "À partir de 0,46 €/café"
+                "display_price": "À partir de 0,45 €/café"
               }
             ],
             "note": "Capsules compatibles Nespresso*. *Nespresso est une marque déposée, non affiliée à TONES."
