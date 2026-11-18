@@ -259,7 +259,7 @@
             "description": "80% Arabica, 20% Robusta. Pastilles ESE équilibrées et crémeuses.",
             "notes": "Équilibré, Crémeux",
             "format": "x150 pastilles ESE",
-            "price": "68,30 € HT (0,46 €/café)",
+            "price": "67,50 € HT (0,45 €/café)",
             "image": {
               "filename": "/img/capsule-oro.jpg",
               "alt": "Capsules et dosettes café La Genovese Oro"
@@ -269,7 +269,7 @@
             "delay": "3",
             "display_name": "Dosettes Oro x150",
             "display_desc": "Pastilles ESE — prêtes à l'emploi.",
-            "display_price": "0,46 € HT/café",
+            "display_price": "0,45 € HT/café",
             "medals_label": ""
           }
         ],
