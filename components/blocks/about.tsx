@@ -6,7 +6,7 @@ import { FontLink } from "@/components/FontLink";
 import { Icon } from "@/components/Icon";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { fmt, paragraphs } from "@/lib/text";
-import { assetUrl, type SbAsset, type SbBlok } from "@/lib/types";
+import { assetUrl, imageUrl, type SbAsset, type SbBlok } from "@/lib/types";
 import { aos } from "./common-sections";
 
 // Sections de la page À propos.
@@ -49,7 +49,7 @@ export function AboutStorySection({ blok }: { blok: AboutStoryBlok }) {
           <div className={seamless ? "about-story__visual about-story__visual--seamless animate-on-scroll delay-1" : "about-story__visual animate-on-scroll delay-1"}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={assetUrl(blok.image)}
+              src={imageUrl(blok.image, 1200)}
               alt={blok.image?.alt || ""}
               loading="lazy"
               width={blok.image_width || undefined}
@@ -122,7 +122,7 @@ export function RoastersSection({ blok }: { blok: RoastersBlok }) {
               {assetUrl(r.image) ? (
                 <div className={r.image_fit === "contain" ? "about-roaster-card__image about-roaster-card__image--contain" : "about-roaster-card__image"}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={assetUrl(r.image)} alt={r.image?.alt || r.name || ""} loading="lazy" />
+                  <img src={imageUrl(r.image, 900)} alt={r.image?.alt || r.name || ""} loading="lazy" />
                 </div>
               ) : null}
               <div className="about-roaster-card__header">
@@ -187,7 +187,7 @@ export function CertCardsSection({ blok }: { blok: CertCardsBlok }) {
               {assetUrl(card.image) ? (
                 <div className="about-cert-card__logo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={assetUrl(card.image)} alt={card.image?.alt || card.title || ""} loading="lazy" />
+                  <img src={imageUrl(card.image, 600)} alt={card.image?.alt || card.title || ""} loading="lazy" />
                 </div>
               ) : (
                 <div className="about-cert-card__icon">
