@@ -1546,13 +1546,18 @@ p {
     gap: 4rem;
   }
 
-  /* Ligne du bas sur toute la largeur de l'écran, même en disposition « largeur du site », et sur une
-     seule ligne : le texte © et les liens ne se coupent jamais ; si les deux ne tiennent vraiment pas
-     côte à côte, les liens passent entiers à la ligne suivante. */
-  .footer__bottom-wrap {
-    max-width: none;
-    padding-left: 3rem;
-    padding-right: 3rem;
+  /* Ligne du bas sur une seule ligne, à la largeur du pied de page : le texte © et les liens ne se
+     coupent jamais ; si les deux ne tiennent vraiment pas côte à côte, les liens passent entiers à la
+     ligne suivante. Sa taille de texte suit « Taille des textes du pied de page » au plus jusqu'à 125 %
+     (au-delà la ligne ne tiendrait plus à la largeur du site). */
+  .footer__bottom {
+    font-size: calc(0.78rem * min(1.25, 1 + (var(--footer-text-scale, 1) - 1) * var(--damp, 1)));
+  }
+
+  .footer--wide .footer__bottom {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer__bottom {
