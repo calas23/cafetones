@@ -42,7 +42,7 @@ async function main() {
     drafts[s.full_slug] = { assets: assetsOf(full.content), unpublished: !!full.unpublished_changes };
   }
   // Version publiée réelle (API de contenu, token public du space) : ce que le site public reçoit.
-  const keys = (await client.api("GET", "/api_keys")).api_keys || [];
+  const keys = await client.api("GET", "/api_keys").then((r) => r.api_keys || []).catch((e) => { console.log(`\n(api_keys inaccessible avec ce token : ${String(e.message).slice(0, 80)})`); return []; });
   const pub = keys.find((k) => k.access === "public");
   const cdnHost = { "https://mapi.storyblok.com": "https://api.storyblok.com", "https://api-us.storyblok.com": "https://api-us.storyblok.com" }[client.host?.() || "https://mapi.storyblok.com"] || "https://api.storyblok.com";
   const published = {};
@@ -63,10 +63,14 @@ async function main() {
       console.log(`  ${slug} : ${p.assets ? `publiée le ${p.published_at}` : `HTTP ${p.status} (non publiée ?)`}${onlyDraft.length ? ` — images seulement dans le brouillon : ${onlyDraft.join(", ")}` : ""}`);
     }
   } else console.log("\n(aucun token public trouvé : version publiée non vérifiée)");
+  // Plan du site public (slugs publiés vus par le site) et en-têtes de cache Vercel de chaque page.
+  const sitemap = await fetch(`${SITE}/sitemap.xml`).then((r) => r.text()).catch(() => "");
+  console.log(`\nsitemap.xml : ${[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(SITE, "") || "/").join(", ") || "(vide / absent)"}`);
   const seen = new Map();
   for (const p of PAGES) {
-    const res = await fetch(`${SITE}${p}`, { headers: { "User-Agent": "Mozilla/5.0 (check-assets)" } });
+    const res = await fetch(`${SITE}${p}?v=${Date.now()}`, { headers: { "User-Agent": "Mozilla/5.0 (check-assets)", "Cache-Control": "no-cache" } });
     const html = await res.text();
+    console.log(`\n   cache Vercel : x-vercel-cache=${res.headers.get("x-vercel-cache")} age=${res.headers.get("age")} cache-control=${res.headers.get("cache-control")}`);
     const urls = new Set();
     for (const m of html.matchAll(/<img[^>]+src="([^"]+)"/g)) urls.add(m[1]);
     for (const m of html.matchAll(/url\((?:&quot;|"|')?([^"')&]+)(?:&quot;|"|')?\)/g)) urls.add(m[1]);
