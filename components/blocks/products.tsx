@@ -6,7 +6,7 @@ import { PricingToggle } from "./PricingToggle";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { fmt } from "@/lib/text";
 import { pxOr } from "@/lib/num";
-import { assetUrl, type SbAsset, type SbBlok } from "@/lib/types";
+import { assetUrl, imageUrl, type SbAsset, type SbBlok } from "@/lib/types";
 import { aos } from "./common-sections";
 
 // Cartes produit (une seule définition de bloc, plusieurs rendus selon la
@@ -98,12 +98,12 @@ export function modalDataAttrs(p: ProductCardBlok): Record<string, string> {
     ["data-format", p.format],
     ["data-price", p.price],
     ["data-machine-info", p.machine_info],
-    ["data-image", assetUrl(p.image) || undefined],
+    ["data-image", imageUrl(p.image, 900) || undefined],
   ];
   for (const [k, v] of map) if (v) attrs[k] = v;
   if (p.categories) attrs["data-categories"] = p.categories;
   // Variantes (fenêtre) : JSON lu par buildModalHtml (components/behaviors/GlobalBehaviors.tsx).
-  const variants = (p.variants ?? []).map((v) => ({ name: v.name || "", description: v.description || "", image: assetUrl(v.image) || "", price: v.price || "" }));
+  const variants = (p.variants ?? []).map((v) => ({ name: v.name || "", description: v.description || "", image: imageUrl(v.image, 600) || "", price: v.price || "" }));
   if (variants.length) {
     attrs["data-variants"] = JSON.stringify(variants);
     if (p.variants_label) attrs["data-variants-label"] = p.variants_label;
@@ -131,7 +131,7 @@ function CardImg({ p, lazy = true }: { p: ProductCardBlok; lazy?: boolean }) {
   // eslint-disable-next-line @next/next/no-img-element
   return (
     <img
-      src={assetUrl(p.image)}
+      src={imageUrl(p.image, 600)}
       alt={p.image?.alt || ""}
       loading={lazy ? "lazy" : undefined}
       width={p.image_width || undefined}
@@ -438,7 +438,7 @@ export function PricingSection({ blok }: { blok: PricingSectionBlok }) {
                 <tr key={p._uid} {...modalDataAttrs(p)}>
                   <td>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={assetUrl(p.image)} alt="" className="table-thumb" loading="lazy" />
+                    <img src={imageUrl(p.image, 200)} alt="" className="table-thumb" loading="lazy" />
                   </td>
                   <td>
                     <span className="product-name">{p.display_name}</span>
@@ -629,7 +629,7 @@ export function ChrExtrasSection({ blok }: { blok: ChrExtrasBlok }) {
 
         <div className="chr-extras" style={imgScale !== 100 ? ({ "--extra-img-scale": imgScale / 100 } as CSSProperties) : undefined}>
           {(blok.cards ?? []).map((card) => {
-            const imgUrl = assetUrl(card.image);
+            const imgUrl = imageUrl(card.image, 900);
             return (
               <div className={`chr-extra-card ${aos(card.delay)}`} key={card._uid} {...storyblokEditable(card)}>
                 {imgUrl ? (

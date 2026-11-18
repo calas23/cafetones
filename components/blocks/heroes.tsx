@@ -6,7 +6,7 @@ import { pxOr } from "@/lib/num";
 import { badgeStyle, blockTextStyle } from "@/lib/fonts";
 import { hexToRgbList, normalizeHex } from "@/lib/palette";
 import { FontLink } from "@/components/FontLink";
-import { assetUrl, type SbAsset, type SbBlok } from "@/lib/types";
+import { assetUrl, imageUrl, type SbAsset, type SbBlok } from "@/lib/types";
 import { Buttons } from "./shared";
 
 // Les 5 héros du site, markup identique à l'original.
@@ -26,6 +26,7 @@ type HeroHomeBlok = SbBlok & {
 export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
   const light = blok.theme === "light";
   const logoHeight = pxOr(blok.badge_logo_height, 30, 12, 120);
+  // Fond du bandeau d'accueil servi tel quel (pas de passage par le service d'images, à la demande de la cliente).
   const bg = assetUrl(blok.background_image);
   // Onglet « Typographie » du bloc : police / taille du titre et du sous-titre, style du badge.
   const title = blockTextStyle(blok, "title");
@@ -52,7 +53,7 @@ export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
             {assetUrl(blok.badge_logo) ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src={assetUrl(blok.badge_logo)}
+                src={imageUrl(blok.badge_logo, 400)}
                 alt={blok.badge_logo?.alt || "TONES"}
                 style={{ height: `${logoHeight}px`, width: "auto", filter: light ? "brightness(0)" : "brightness(0) invert(1)" }}
               />
@@ -93,7 +94,7 @@ export function PageHero({ blok }: { blok: PageHeroBlok }) {
   // Onglet « Fond » : image en couverture, voile de la couleur de fond (hex choisi, sinon fond
   // d'origine du bandeau) à l'opacité choisie (vide = 70 %, 0 = image telle quelle). Sans image :
   // rendu d'origine, aucun style posé (voir .page-hero--image dans css/style.css).
-  const bg = assetUrl(blok.background_image);
+  const bg = imageUrl(blok.background_image, 1920);
   const sectionStyle: Record<string, string> = {};
   if (bg) {
     sectionStyle.backgroundImage = `url("${bg}")`;
@@ -184,7 +185,7 @@ export function LandingHero({ blok, telLinks = false, variant }: { blok: Landing
   if (textShift) sectionVars["--hero-text-shift"] = `${textShift}px`;
   const sectionStyle = Object.keys(sectionVars).length ? (sectionVars as CSSProperties) : undefined;
   const trustItems = blok.trust_items ?? [];
-  const imgUrl = assetUrl(blok.image);
+  const imgUrl = imageUrl(blok.image, 1200);
   return (
     <section className={chr ? (blok.image_bleed ? "hero hero--chr hero--bleed" : "hero hero--chr") : "hero"} style={sectionStyle} {...storyblokEditable(blok)}>
       <FontLink href={badge.href} />
@@ -263,7 +264,7 @@ export function PartHero({ blok }: { blok: PartHeroBlok }) {
           <div className="part-hero__visual">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={assetUrl(blok.image)}
+              src={imageUrl(blok.image, 1200)}
               alt={blok.image?.alt || ""}
               loading="eager"
               width={blok.image_width || undefined}
@@ -319,7 +320,7 @@ export function ChrHero({ blok }: { blok: ChrHeroBlok }) {
   const title = blockTextStyle(blok, "title");
   const subtitle = blockTextStyle(blok, "subtitle");
   // Onglet « Fond » : image, couleur et opacité du voile.
-  const bg = assetUrl(blok.background_image);
+  const bg = imageUrl(blok.background_image, 1920);
   const overlay = chrOverlay(blok.background, blok.overlay_opacity);
   // « Largeur du bloc de texte (px) » : largeur max du badge, du titre, du sous-titre et des boutons.
   const rawWidth = blok.content_width;

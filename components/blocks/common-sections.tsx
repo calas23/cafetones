@@ -6,7 +6,7 @@ import { FontLink } from "@/components/FontLink";
 import { Icon } from "@/components/Icon";
 import { Illustration, type IllustrationProps } from "@/components/Illustration";
 import { fmt, fmtTel, paragraphs } from "@/lib/text";
-import { assetUrl, type SbAsset, type SbBlok } from "@/lib/types";
+import { assetUrl, imageUrl, type SbAsset, type SbBlok } from "@/lib/types";
 import { Buttons } from "./shared";
 
 // Sections transverses — markup copié de l'existant, textes depuis Storyblok.
@@ -70,7 +70,7 @@ export function UniversesSection({ blok }: { blok: UniversesBlok }) {
             <div className={`home-universe-card ${aos(card.delay)}${card.hidden ? " card-hidden" : ""}`} key={card._uid}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={assetUrl(card.image)}
+                src={imageUrl(card.image, 900)}
                 alt={card.image?.alt || ""}
                 loading="lazy"
                 width={card.image_width || undefined}
@@ -124,7 +124,7 @@ export function EspressoTextSection({ blok }: { blok: EspressoTextBlok }) {
   );
   // Onglet « Image » : disposition texte à gauche + image à droite (css/style.css, .espresso-split).
   const split = blok.layout === "split";
-  const imgUrl = assetUrl(blok.image);
+  const imgUrl = imageUrl(blok.image, 1200);
   const rawImg = blok.image_scale;
   const imgScale = rawImg === undefined || rawImg === null || String(rawImg).trim() === "" ? 100 : pxOr(rawImg as string | number, 100, 30, 150);
   // Échelle visuelle (transform) appliquée par css/style.css à partir de 900 px seulement : sur

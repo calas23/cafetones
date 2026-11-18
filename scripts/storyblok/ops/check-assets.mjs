@@ -15,7 +15,7 @@ const fmt = (n) => (n >= 1024 * 1024 ? `${(n / 1024 / 1024).toFixed(1)} Mo` : `$
 
 async function head(url) {
   try {
-    const res = await fetch(url, { method: "GET", headers: { Range: "bytes=0-0" } });
+    const res = await fetch(url, { method: "GET", headers: { Range: "bytes=0-0", Accept: "image/avif,image/webp,image/*,*/*;q=0.8" } });
     const total = res.headers.get("content-range")?.split("/")[1] || res.headers.get("content-length") || "?";
     return { status: res.status, type: res.headers.get("content-type") || "?", size: Number(total) || 0 };
   } catch (e) {

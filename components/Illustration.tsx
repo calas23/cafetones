@@ -1,5 +1,5 @@
 import { pxOr } from "@/lib/num";
-import { assetUrl, type SbAsset } from "@/lib/types";
+import { assetUrl, imageUrl, type SbAsset } from "@/lib/types";
 
 // Illustrations de section (Storyblok, champs « Illustration gauche / droite — … ») : une image de
 // chaque côté du titre, posée en absolu (wrapper .illustration--left / --right, css/illustrations.css),
@@ -40,8 +40,9 @@ function Side({ position, image, width: rawW, opacity: rawO, flip }: SideProps) 
 }
 
 export function Illustration(p: IllustrationProps) {
-  const left = assetUrl(p.illustration_left_image);
-  const right = assetUrl(p.illustration_image);
+  // Illustrations affichées entre 120 et 400 px : 800 px suffisent, écrans Retina compris.
+  const left = imageUrl(p.illustration_left_image, 800);
+  const right = imageUrl(p.illustration_image, 800);
   if (!left && !right) return null;
   const legacy = p.illustration_position === "left" || p.illustration_position === "corner-br" ? p.illustration_position : "";
   const rightPosition = !left && legacy ? legacy : "right";
