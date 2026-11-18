@@ -240,7 +240,7 @@
             "description": "Arôme doux et velouté, moins de 0,1% de caféine. Goût 100% traditionnel.",
             "notes": "Doux, Velouté",
             "format": "Boîte pressurisée 250g",
-            "price": "7,50 € HT",
+            "price": "8,30 € HT",
             "image": {
               "filename": "/img/moulu-dek-250g.jpg",
               "alt": "Café moulu décaféiné La Genovese Dek 250g"
@@ -250,7 +250,7 @@
             "delay": "4",
             "display_name": "Dek — Décaféiné Moulu",
             "display_desc": "Arôme doux et velouté, moins de 0,1% de caféine. Goût 100% traditionnel.",
-            "display_price": "7,50 € HT",
+            "display_price": "8,30 € HT",
             "display_format": "Boîte pressurisée 250g",
             "medals_label": ""
           }

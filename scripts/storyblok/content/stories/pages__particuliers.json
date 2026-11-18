@@ -265,7 +265,7 @@
                 "description": "Arôme plein et intense, pour les palais exigeants.",
                 "notes": "Corps rond, Notes classiques",
                 "format": "Sachet 250g",
-                "price": "6,00 €",
+                "price": "6,80 €",
                 "image": {
                   "filename": "/img/moulu-blue-gold-250g.jpg",
                   "alt": "Café moulu La Genovese Blue Gold 250g"
@@ -276,7 +276,7 @@
                 "badge_label": "100% Arabica",
                 "display_name": "Blue Gold — 250g",
                 "display_desc": "Arôme plein et intense, pour les palais exigeants.",
-                "display_price": "6,00 €"
+                "display_price": "6,80 €"
               },
               {
                 "_uid": "510d9cb8-77c4-0878-e5ca-3df275dab354",
@@ -327,7 +327,7 @@
                 "description": "Miel, amande, chocolat. 100% Arabica bio.",
                 "notes": "Miel, Amande, Chocolat",
                 "format": "Sachet 250g",
-                "price": "8,00 €",
+                "price": "8,80 €",
                 "image": {
                   "filename": "/img/moulu-juta-bio-250g.jpg",
                   "alt": "Café moulu La Genovese Juta Bio 250g"
@@ -338,7 +338,7 @@
                 "badge_label": "Bio",
                 "display_name": "Juta Bio moulu — 250g",
                 "display_desc": "Miel, amande, chocolat. 100% Arabica bio.",
-                "display_price": "8,00 €"
+                "display_price": "8,80 €"
               },
               {
                 "_uid": "7e9f7935-2d75-9895-eaeb-f364d9370ed7",
@@ -348,7 +348,7 @@
                 "description": "Arôme doux et velouté, moins de 0,1% de caféine.",
                 "notes": "Doux, Velouté",
                 "format": "Boîte 250g",
-                "price": "7,50 €",
+                "price": "8,30 €",
                 "image": {
                   "filename": "/img/moulu-dek-250g.jpg",
                   "alt": "Café moulu La Genovese Décaféiné 250g"
@@ -358,7 +358,7 @@
                 "delay": "",
                 "display_name": "Décaféiné moulu — 250g",
                 "display_desc": "Arôme doux et velouté, moins de 0,1% de caféine.",
-                "display_price": "7,50 €"
+                "display_price": "8,30 €"
               },
               {
                 "_uid": "140e7fef-e01c-18a7-8b36-2390d314d219",
@@ -367,7 +367,7 @@
                 "description": "Bio et décaféiné — le meilleur des deux mondes.",
                 "notes": "Bio, Doux",
                 "format": "Sachet 250g",
-                "price": "8,20 €",
+                "price": "9,00 €",
                 "image": {
                   "filename": "/img/moulu-juta-bio-250g.jpg",
                   "alt": "Café moulu La Genovese Bio Décaféiné 250g"
@@ -378,7 +378,7 @@
                 "badge_label": "Bio",
                 "display_name": "Bio Décaféiné moulu — 250g",
                 "display_desc": "Bio et décaféiné — le meilleur des deux mondes.",
-                "display_price": "8,20 €"
+                "display_price": "9,00 €"
               }
             ],
             "note": ""
@@ -412,7 +412,7 @@
                 "name": "Dosettes ESE compostables",
                 "description": "Oro, Bio, Décaféiné — boîtes de 25 dosettes. Pratiques et éco-responsables.",
                 "notes": "Pratique, Éco",
-                "price": "À partir de 0,45 €/café",
+                "price": "À partir de 0,46 €/café",
                 "image": {
                   "filename": "/img/dosette-grands-crus.jpg",
                   "alt": "Dosettes ESE café La Genovese"
@@ -422,7 +422,7 @@
                 "delay": "",
                 "display_name": "Dosettes ESE compostables",
                 "display_desc": "Oro, Bio, Décaféiné — boîtes de 25 dosettes. Pratiques et éco-responsables.",
-                "display_price": "À partir de 0,45 €/café"
+                "display_price": "À partir de 0,46 €/café"
               }
             ],
             "note": "Capsules compatibles Nespresso*. *Nespresso est une marque déposée, non affiliée à TONES."
