@@ -78,7 +78,8 @@ const isEmpty = (v) =>
   (Array.isArray(v) && v.length === 0) ||
   (typeof v === "object" && !Array.isArray(v) && !v.filename && !v.id && Object.keys(v).length === 0);
 
-function parseFields(raw) {
+// `multi` (BLOCK="*") : les clés de premier niveau sont des _uid ou composants, pas des noms de champs.
+function parseFields(raw, multi = false) {
   if (!raw.trim()) return {};
   let fields;
   try {
@@ -90,7 +91,7 @@ function parseFields(raw) {
     throw new Error("FIELDS doit être un objet JSON, ex. {\"instagram_url\":\"https://…\"}");
   }
   for (const [k, v] of Object.entries(fields)) {
-    if (!/^[a-z0-9_]+$/i.test(k)) throw new Error(`Nom de champ invalide : ${k}`);
+    if (!(multi ? /^[a-z0-9_-]+$/i : /^[a-z0-9_]+$/i).test(k)) throw new Error(`Nom de champ invalide : ${k}`);
     if (v === null || typeof v === "function") throw new Error(`Valeur invalide pour ${k}`);
   }
   return fields;
@@ -101,7 +102,7 @@ async function main() {
   const blockKey = (process.env.BLOCK || "").trim();
   const dry = process.env.DRY_RUN === "1";
   const publish = process.env.PUBLISH === "1";
-  const fields = parseFields(process.env.FIELDS || "");
+  const fields = parseFields(process.env.FIELDS || "", blockKey === "*");
   const copyFrom = (process.env.COPY_FROM || "").trim();
   const copyFields = (process.env.COPY_FIELDS || "").split(",").map((s) => s.trim()).filter(Boolean);
   const renames = (process.env.RENAME_FIELDS || "")
