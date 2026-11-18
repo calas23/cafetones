@@ -85,7 +85,6 @@ export function assetUrl(asset?: SbAsset | string): string {
 // (hauteur proportionnelle) et servie en WebP quand le navigateur l'accepte — une illustration PNG de
 // 2048 px et 1,5 Mo devient ~80 Ko. Seules les images matricielles hébergées sur a.storyblok.com sont
 // transformées ; SVG, GIF, chemins locaux (/img/…) et adresses externes sont renvoyés tels quels.
-// (Le fond du bandeau d'accueil n'y passe pas : voir HeroHome dans components/blocks/heroes.tsx.)
 // Jamais agrandie : si l'original (dimensions lues dans l'adresse, ex. …/2048x2048/…) est plus petit
 // que `width`, il est servi à sa taille ; adresse sans dimensions = conversion WebP seule (/m/).
 export function imageUrl(asset: SbAsset | string | undefined, width: number): string {
