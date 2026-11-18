@@ -26,8 +26,8 @@ type HeroHomeBlok = SbBlok & {
 export function HeroHome({ blok }: { blok: HeroHomeBlok }) {
   const light = blok.theme === "light";
   const logoHeight = pxOr(blok.badge_logo_height, 30, 12, 120);
-  // Fond du bandeau d'accueil servi tel quel (pas de passage par le service d'images, à la demande de la cliente).
-  const bg = assetUrl(blok.background_image);
+  // Fond du bandeau d'accueil : plein écran, servi à 1920 px de large (service d'images Storyblok, WebP).
+  const bg = imageUrl(blok.background_image, 1920);
   // Onglet « Typographie » du bloc : police / taille du titre et du sous-titre, style du badge.
   const title = blockTextStyle(blok, "title");
   const subtitle = blockTextStyle(blok, "subtitle");
