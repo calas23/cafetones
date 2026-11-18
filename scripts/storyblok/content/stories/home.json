@@ -180,7 +180,7 @@
             "certifications": "Espresso Italiano (INEI)",
             "medals": "2012, 2016, 2018, 2020, 2021, 2022, 2023",
             "format": "Bonbonne 3kg / Sachet 1kg",
-            "price": "25,20 € HT/kg",
+            "price": "27,00 € HT/kg",
             "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
             "image": {
               "filename": "/img/grain-anniversario-1kg.jpg",
@@ -192,7 +192,7 @@
             "badge_label": "100% Arabica",
             "display_name": "La Genovese Anniversario",
             "display_desc": "Notes chocolat, fruits exotiques. Un café d'exception.",
-            "display_price": "25,20 € HT/kg",
+            "display_price": "27,00 € HT/kg",
             "medals_label": "7 médailles ICT"
           },
           {
@@ -209,7 +209,7 @@
             "certifications": "Espresso Italiano",
             "medals": "2008, 2010, 2012, 2014, 2016",
             "format": "Sachet 1kg",
-            "price": "23,20 € HT/kg",
+            "price": "24,00 € HT/kg",
             "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
             "image": {
               "filename": "/img/grain-oro-1kg.jpg",
@@ -220,7 +220,7 @@
             "delay": "1",
             "display_name": "La Genovese Oro",
             "display_desc": "Équilibré, crémeux. Le passe-partout.",
-            "display_price": "23,20 € HT/kg",
+            "display_price": "24,00 € HT/kg",
             "medals_label": "5 médailles ICT"
           },
           {
@@ -237,7 +237,7 @@
             "certifications": "Rainforest Alliance, CCPB",
             "medals": "2018, 2021, 2022, 2023",
             "format": "Sachet 1kg",
-            "price": "26,20 € HT/kg",
+            "price": "27,00 € HT/kg",
             "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
             "image": {
               "filename": "/img/grain-juta-bio-1kg.jpg",
@@ -249,7 +249,7 @@
             "badge_label": "Bio",
             "display_name": "La Genovese Bio",
             "display_desc": "100% Arabica bio, certifié Rainforest Alliance.",
-            "display_price": "26,20 € HT/kg",
+            "display_price": "27,00 € HT/kg",
             "medals_label": "4 médailles ICT"
           },
           {

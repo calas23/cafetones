@@ -468,7 +468,10 @@ certificat auto-signé dans le navigateur.
   `scripts/storyblok/ops/`, client API partagé `scripts/storyblok/mapi.mjs`.
   `set-story-fields` pose des champs simples (`fields`, objet JSON) sur une
   story, ou sur un bloc précis de la page (`block` = nom de composant ou
-  `_uid`, ex. `chr_hero`) ; `copy_from` + `copy_fields` copient en plus des
+  `_uid`, ex. `chr_hero`), ou sur plusieurs blocs d'un coup (`block` = `*`
+  et `fields` = `{"<_uid>": {"champ": "valeur"}, …}`, ex. nouveaux tarifs sur
+  toutes les fiches produit d'une page, enregistrés en une fois) ;
+  `copy_from` + `copy_fields` copient en plus des
   champs (images comprises) depuis une autre page ou un autre bloc, ex.
   `pages/cafe-bureau-entreprise#landing_hero` et `image,image_style`, sans
   écraser ce qui est déjà renseigné sur la cible ; `rename_fields`

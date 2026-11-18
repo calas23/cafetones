@@ -108,7 +108,7 @@
                 "notes": "Chocolat au lait, Noisette, Fruits rouges, Floral",
                 "origins": "Brésil, Honduras, Colombie, Éthiopie",
                 "format": "Sachet 250g",
-                "price": "25,20 €/kg",
+                "price": "27,00 €/kg",
                 "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
                 "image": {
                   "filename": "/img/grain-anniversario-250g.jpg",
@@ -120,7 +120,7 @@
                 "badge_label": "100% Arabica",
                 "display_name": "Anniversario — Legendary Blend",
                 "display_desc": "Chocolat, fruits exotiques, floral. Un café d'exception.",
-                "display_price": "25,20 €/kg"
+                "display_price": "27,00 €/kg"
               },
               {
                 "_uid": "41606975-95ff-2a7f-6ada-1d8c1911c822",
@@ -134,7 +134,7 @@
                 "notes": "Chocolat, Noisette, Épices, Fruits rouges",
                 "origins": "Brésil, Honduras, Colombie, Inde",
                 "format": "Sachet 250g",
-                "price": "25,20 €/kg",
+                "price": "26,00 €/kg",
                 "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
                 "image": {
                   "filename": "/img/grain-royal-250g.jpg",
@@ -146,7 +146,7 @@
                 "badge_label": "100% Arabica",
                 "display_name": "Royal — Luxury Blend",
                 "display_desc": "Chocolat noir, noisette, muscade. Corps velouté.",
-                "display_price": "25,20 €/kg"
+                "display_price": "26,00 €/kg"
               },
               {
                 "_uid": "c492c31c-9920-c470-a67b-14a5207a6352",
@@ -160,7 +160,7 @@
                 "notes": "Caramel, Noisette, Chocolat noir, Épices",
                 "origins": "Brésil, Honduras, Colombie, Inde",
                 "format": "Sachet 250g",
-                "price": "23,20 €/kg",
+                "price": "24,00 €/kg",
                 "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
                 "image": {
                   "filename": "/img/grain-oro-250g.jpg",
@@ -171,7 +171,7 @@
                 "delay": "",
                 "display_name": "Oro — Supreme Blend",
                 "display_desc": "Caramel, noisette, chocolat. Équilibré et crémeux.",
-                "display_price": "23,20 €/kg"
+                "display_price": "24,00 €/kg"
               },
               {
                 "_uid": "15657843-1f50-bcb2-8937-c2cecf48f156",
@@ -185,7 +185,7 @@
                 "notes": "Miel, Amande, Chocolat noir, Caramel",
                 "origins": "Honduras, Pérou",
                 "format": "Sachet 250g",
-                "price": "26,20 €/kg",
+                "price": "27,00 €/kg",
                 "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
                 "image": {
                   "filename": "/img/grain-juta-bio-250g.jpg",
@@ -197,7 +197,7 @@
                 "badge_label": "Bio",
                 "display_name": "Juta Bio — Pure Organic",
                 "display_desc": "Miel, amande, chocolat noir. 100% Arabica bio certifié.",
-                "display_price": "26,20 €/kg"
+                "display_price": "27,00 €/kg"
               },
               {
                 "_uid": "c71891e2-6327-069b-1aa3-1525cbbe21e8",
@@ -236,7 +236,7 @@
                 "notes": "Caramel, Noisette, Chocolat noir, Épices",
                 "origins": "Brésil, Inde, Vietnam",
                 "format": "Sachet 250g",
-                "price": "19,20 €/kg",
+                "price": "20,00 €/kg",
                 "machine_info": "Pour vente, installation et maintenance de votre machine à café : notre prestataire DepanResto (06 98 37 00 67)",
                 "image": {
                   "filename": "/img/grain-coloniale-250g.jpg",
@@ -247,7 +247,7 @@
                 "delay": "",
                 "display_name": "Coloniale — Premium Robusta",
                 "display_desc": "Fort, crème dense, intense. Pour les amateurs d'espresso corsé.",
-                "display_price": "19,20 €/kg"
+                "display_price": "20,00 €/kg"
               }
             ],
             "note": ""
