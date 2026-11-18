@@ -39,7 +39,7 @@ on:
         type: string
         default: ""
       block:
-        description: "set-story-fields : bloc cible (_uid ou nom de composant, ex. chr_hero) ; vide = racine de la story"
+        description: "set-story-fields : bloc cible (_uid ou nom de composant, ex. chr_hero) ; vide = racine de la story ; * = plusieurs blocs, fields = {\"<_uid>\": {…}, …}"
         type: string
         default: ""
       copy_from:

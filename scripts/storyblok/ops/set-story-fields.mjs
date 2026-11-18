@@ -2,7 +2,8 @@
 // précis de la story, sans toucher au reste.
 //   STORY_SLUG  story cible (défaut config/site-settings)
 //   BLOCK       vide = racine du contenu ; sinon _uid ou nom de composant du bloc cible
-//               (premier bloc de ce composant trouvé, recherche dans tous les blocs imbriqués)
+//               (premier bloc de ce composant trouvé, recherche dans tous les blocs imbriqués) ;
+//               "*" = plusieurs blocs : FIELDS = {"<_uid>": {champ: valeur, …}, …}
 //   FIELDS      objet JSON, ex. {"layout":"split"} ; une valeur peut aussi être un objet (asset) ou une
 //               liste de blocs (les blocs imbriqués sans _uid en reçoivent un) ; vide possible si COPY_FROM.
 //               Une image de la bibliothèque se référence par son nom de fichier : {"$asset":"photo.jpg",
@@ -122,6 +123,38 @@ async function main() {
   if (!found) throw new Error(`Story ${slug} introuvable.`);
   const story = await client.getStory(found.id);
   const content = story.content || {};
+
+  // BLOCK="*" : plusieurs blocs d'un coup. FIELDS = {"<_uid ou composant>": {champ: valeur, …}, …} ;
+  // chaque bloc reçoit ses propres champs, la story est enregistrée une seule fois (ex. nouveaux tarifs
+  // sur toutes les fiches produit d'une page).
+  if (blockKey === "*") {
+    if (copyFrom || renames.length) throw new Error("BLOCK=* : seul FIELDS est pris en compte (pas de copie ni de renommage).");
+    const entries = Object.entries(fields);
+    if (!entries.length || !entries.every(([, v]) => v && typeof v === "object" && !Array.isArray(v))) {
+      throw new Error('BLOCK=* : FIELDS doit être {"<_uid>": {"champ": "valeur"}, …}.');
+    }
+    console.log(`\nStory ${slug} (id ${story.id}) → ${entries.length} blocs :`);
+    for (const [key, blockFields] of entries) {
+      const target = findBlok(content.body ?? content, key);
+      if (!target) throw new Error(`Bloc « ${key} » introuvable dans ${slug}.`);
+      for (const k of Object.keys(blockFields)) if (!/^[a-z0-9_]+$/i.test(k)) throw new Error(`Nom de champ invalide : ${k}`);
+      const changes = await resolveAssets(client, { ...blockFields });
+      console.log(`  bloc ${target.component} (${target._uid}${target.name ? ` — ${target.name}` : ""}) :`);
+      for (const [k, v] of Object.entries(changes)) {
+        console.log(`    ${k} : ${JSON.stringify(target[k] ?? "").slice(0, 120)} → ${JSON.stringify(v).slice(0, 120)}`);
+      }
+      Object.assign(target, changes);
+      ensureUids(changes);
+    }
+    if (dry) {
+      console.log("\n[DRY_RUN] Aucune écriture. Relancer sans simulation pour appliquer.");
+      return;
+    }
+    await client.saveStory(story.id, content, { publish });
+    console.log(publish ? "\n✅ Story modifiée et publiée." : "\n✅ Story modifiée (brouillon) : cliquer Publish dans Storyblok pour la mettre en ligne.");
+    return;
+  }
+
   const target = blockKey ? findBlok(content.body ?? content, blockKey) : content;
   if (!target) throw new Error(`Bloc « ${blockKey} » introuvable dans ${slug}.`);
   const where = blockKey ? `bloc ${target.component} (${target._uid})` : "racine du contenu";
