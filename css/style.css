@@ -1546,15 +1546,23 @@ p {
     gap: 4rem;
   }
 
-  .footer--wide .footer__bottom {
-    max-width: var(--max-width);
-    margin-left: auto;
-    margin-right: auto;
+  /* Ligne du bas sur toute la largeur de l'écran, même en disposition « largeur du site », et sur une
+     seule ligne : le texte © et les liens ne se coupent jamais ; si les deux ne tiennent vraiment pas
+     côte à côte, les liens passent entiers à la ligne suivante. */
+  .footer__bottom-wrap {
+    max-width: none;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .footer__bottom {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 0.5rem 2rem;
+  }
+  .footer__bottom > * {
+    white-space: nowrap;
   }
 
   .sticky-cta {
