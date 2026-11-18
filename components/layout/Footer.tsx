@@ -101,11 +101,7 @@ export function Footer({ settings }: { settings: SiteSettings | null }) {
           </div>
           </div>
         </div>
-      </div>
 
-      {/* Ligne du bas sur toute la largeur de l'écran (quelle que soit la disposition du pied de page),
-          pour que le © et les liens tiennent sur une seule ligne (css/style.css, .footer__bottom-wrap). */}
-      <div className="container footer__bottom-wrap">
         <div className="footer__bottom">
           <span>{settings?.copyright}</span>
           <div>
